@@ -9,6 +9,7 @@ from pathlib import Path
 ###############
 # Definitions #
 ###############
+filename = "/mnt/etc/nixos/hardware-configuration.nix"
 def run_command(command, cwd=None):
     result = subprocess.run(command, cwd=cwd)
     if result.returncode != 0:
@@ -49,15 +50,6 @@ run_command(["mkfs.ext4", "/dev/nvme0n1p2"])
 run_command(["mount", "/dev/nvme0n1p2", "/mnt"])
 
 
-#############
-# Swap File #
-#############
-run_command(["dd", "if=/dev/zero", "of=/mnt/swap", "bs=1M", "count=8192"])
-run_command(["chmod", "600", "/mnt/swap"])
-run_command(["mkswap", "/mnt/swap"])
-run_command(["swapon", "/mnt/swap"])
-
-
 ##########################
 # Mounting EFI Partition #
 ##########################
@@ -68,7 +60,7 @@ run_command(["mount", "/dev/nvme0n1p1", "/mnt/boot"])
 #############################
 # Cloning GitHub Repository #
 #############################
-run_command(["git", "clone", "https://github.com/Vonixxx/VonixOS.git", "/home/nixos/NixOS"])
+run_command(["git", "clone", "https://github.com/Vonixxx/VonixOS.git", "/home/nixos/VonixOS"])
 
 
 ##########################################
@@ -80,7 +72,7 @@ run_command(["nixos-generate-config", "--root", "/mnt"])
 ########################################
 # Copying Personal NixOS Configuration #
 ########################################
-shutil.copytree("/home/nixos/NixOS", "/mnt/etc/nixos", dirs_exist_ok=True)
+shutil.copytree("/home/nixos/VonixOS", "/mnt/etc/nixos", dirs_exist_ok=True)
 
 
 ###################################
@@ -93,15 +85,20 @@ run_command(["nixos-install"], cwd="/mnt/etc/nixos")
 # Copying Personal NixOS Configuration > Home #
 # + Initialising as Git Repository            #
 ###############################################
-shutil.copytree("/home/nixos/NixOS", "/mnt/home/vonix/NixOS", dirs_exist_ok=True)
-run_command(["git", "config", "user.name", "'Vonixxx'"], cwd="/mnt/home/vonix/NixOS")
-run_command(["git", "config", "user.email", "vonixxxwork@tuta.io"], cwd="/mnt/home/vonix/NixOS")
-run_command(["git", "config", "init.defaultBranch", "main"], cwd="/mnt/home/vonix/NixOS")
+shutil.copytree("/home/nixos/VonixOS", "/mnt/home/vonix/VonixOS", dirs_exist_ok=True)
+run_command(["git", "config", "user.name", "'Vonixxx'"], cwd="/mnt/home/vonix/VonixOS")
+run_command(["git", "config", "user.email", "vonixxxwork@tuta.io"], cwd="/mnt/home/vonix/VonixOS")
 
 
-##########################
-# Appending Swap > fstab #
-##########################
-run_command(["mount", "-o", "remount,rw", "/mnt"])
-with open("/mnt/etc/fstab", "a") as f:
-    f.write("/swap none swap sw 0 0\n")
+############################################
+# Adding Swap > hardware-configuration.nix #
+############################################
+content = '''{
+    device = "/var/swap";
+    size = 8*1024;
+  }'''
+with open(filename, 'r') as file:
+    contents = file.read()
+contents = contents.replace('swapDevices = [ ];', f'swapDevices = [ {content} ];')
+with open(filename, 'w') as file:
+    file.write(contents)
