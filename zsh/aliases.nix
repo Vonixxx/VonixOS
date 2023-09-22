@@ -28,7 +28,7 @@
        commit = "git commit -a -m";
        push   = "git push -u origin main";
        update = "sudo nix-channel --update && sudo nixos-rebuild switch --upgrade";
-       copy   = "ls /etc/nixos | grep -v 'hardware-configuration.nix' | sudo xargs rm -r -f /etc/nixos && sudo cp -r ./ /etc/nixos";
+       copy   = "sudo rm -r /etc/nixos/^hardware-configuration.nix(.N) && sudo cp -a -r ~/VonixOS/* /etc/nixos";
      };
    };
  };
