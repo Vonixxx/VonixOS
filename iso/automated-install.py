@@ -31,8 +31,8 @@ run_command(["parted", "/dev/nvme0n1", "mklabel", "gpt"])
 ############################
 # Boot and Root Partitions #
 ############################
-run_command(["parted", "/dev/nvme0n1", "mkpart", "", "fat32", "1MiB", "513MiB"])
-run_command(["parted", "/dev/nvme0n1", "mkpart", "", "515MiB", "230515MiB"])
+run_command(["parted", "/dev/nvme0n1", "mkpart", "boot", "fat32", "1MiB", "513MiB"])
+run_command(["parted", "/dev/nvme0n1", "mkpart", "nixos", "515MiB", "236096MiB"])
 
 
 ##############
@@ -68,7 +68,7 @@ run_command(["mount", "/dev/nvme0n1p1", "/mnt/boot"])
 #############################
 # Cloning GitHub Repository #
 #############################
-run_command(["git", "clone", "https://github.com/Vonixxx/NixOS.git", "/home/nixos/NixOS"])
+run_command(["git", "clone", "https://github.com/Vonixxx/VonixOS.git", "/home/nixos/NixOS"])
 
 
 ##########################################
