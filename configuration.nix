@@ -160,6 +160,14 @@
    noto-fonts-emoji
    (nerdfonts.override { fonts = [ "CascadiaCode" ]; })
  ];
+ 
+ ##########
+ # Flakes #
+ ##########
+ nix = {
+   package = pkgs.nixFlakes;
+   extraOptions = "experimental-features = nix-command flakes";
+ };
 
 
  ################
@@ -168,6 +176,7 @@
  users.users.vonix = {
    isNormalUser   = true;
    description    = "Vonix";
+   home           = "/home/vonix";
    extraGroups    = [ "networkmanager" "wheel" "video" "libvirtd" ];
    hashedPassword = "$6$2apmrKDHbo.NXO.l$R8rgwCFVrbnU5rJDgtb2qMFcbPFqCAdDkm2Mn8sVU.gw9YMGu9oBXZTLdyiybKaiOXaKxdPDeGhQpzccwn93D1";
  };

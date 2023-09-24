@@ -6,40 +6,77 @@ import subprocess
 from pathlib import Path
 
 
+#############
+# Variables #
+#############
+filename = "/mnt/etc/nixos/hardware-configuration.nix"
+
+
 ###############
 # Definitions #
 ###############
-filename = "/mnt/etc/nixos/hardware-configuration.nix"
 def run_command(command, cwd=None):
-    result = subprocess.run(command, cwd=cwd)
+    result = subprocess.run(command, cwd=cwd, capture_output=True, text=True)
     if result.returncode != 0:
-        raise Exception(f"Command {command} failed with code {result.returncode}")
-    return result
+        raise Exception(f"Command {command} failed: {result.stderr}")
+    return result.stdout
+def get_disk_devices():
+    output = run_command(["parted", "--list"])
+    devices = []
+    for line in output.splitlines():
+        if "Disk /dev/" in line:
+            devices.append(line.split(":")[0].replace("Disk", "").strip())
+    return devices
+
+
+###############
+# Choose Disk #
+###############
+def main():
+    devices = get_disk_devices()
+
+    print("Available disk devices:")
+    for idx, device in enumerate(devices, 1):
+        print(f"{idx}. {device}")
+
+    choice = int(input("Please select a device by number: "))
+    if 1 <= choice <= len(devices):
+        selected_device = devices[choice-1]
+        print(f"You selected: {selected_device}")
+        
+        print(run_command(["parted", selected_device, "print"]))
+    else:
+        print("Invalid choice.")
+
+if __name__ == "__main__":
+    main()
 
 
 ###############
 # Wiping Disk #
 ###############
-run_command(["wipefs", "-a", "/dev/nvme0n1"])
+run_command(["wipefs", "-a", selected_device])
 
 
 #######################
 # GPT Partition Tabel #
 #######################
-run_command(["parted", "/dev/nvme0n1", "mklabel", "gpt"])
+run_command(["parted", selected_device, "mklabel", "gpt"])
 
 
 ############################
 # Boot and Root Partitions #
 ############################
-run_command(["parted", "/dev/nvme0n1", "mkpart", "boot", "fat32", "1MiB", "513MiB"])
-run_command(["parted", "/dev/nvme0n1", "mkpart", "nixos", "515MiB", "236096MiB"])
+run_command(["parted", selected_device, "mkpart", "boot", "fat32", "1MiB", "513MiB"])
+size = input("Enter desired root partition size (in GB): ")
+end_position = f"{size}GiB"
+run_command(["parted", selected_device, "mkpart", "nixos", "515MiB", end_position])
 
 
 ##############
 # Formatting #
 ##############
-run_command(["parted", "/dev/nvme0n1", "set", "1", "esp", "on"])
+run_command(["parted", selected_device, "set", "1", "esp", "on"])
 run_command(["mkfs.vfat", "/dev/nvme0n1p1"])
 run_command(["mkfs.ext4", "/dev/nvme0n1p2"])
 
