@@ -174,7 +174,7 @@
    isNormalUser   = true;
    description    = "Vonix";
    home           = "/home/vonix";
-   extraGroups    = [ "networkmanager" "wheel" "video" "libvirtd" ];
+   extraGroups    = [ "networkmanager" "users" "wheel" "video" "libvirtd" ];
    hashedPassword = "$6$2apmrKDHbo.NXO.l$R8rgwCFVrbnU5rJDgtb2qMFcbPFqCAdDkm2Mn8sVU.gw9YMGu9oBXZTLdyiybKaiOXaKxdPDeGhQpzccwn93D1";
  };
 
