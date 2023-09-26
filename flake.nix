@@ -1,14 +1,39 @@
+###########
+# VonixOS #
+#######################
+# Flake Configuration #
+#######################
+
 {
-  description = "A very basic flake";
+  description = "Laptop";
 
   inputs = {
-    nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
+    nixneovim = {
+      url = github:nixneovim/nixneovim;
+    };
+    home-manager = {
+      inputs.nixpkgs.follows = "nixpkgs";
+      url = github:nix-community/home-manager;
+    };
+    nixpkgs = {
+      url = github:NixOS/nixpkgs/nixos-unstable;
+    };
   };
 
-  outputs = { self, nixpkgs }: {
+
+  outputs = { self, nixpkgs, home-manager, nixneovim }: {
    nixosConfigurations.vonix = nixpkgs.lib.nixosSystem {
      system = "x86_64-linux";
-     modules = [ ./configuration.nix ];
+     modules = [ 
+       ./configuration.nix 
+       nixneovim.nixosModules.default 
+       { nixpkgs.overlays = [ nixneovim.overlays.default ]; }
+       home-manager.nixosModules.home-manager {
+        home-manager.useGlobalPkgs   = true;
+        home-manager.useUserPackages = true;
+        home-manager.users.vonix = { imports = [ ../home-manager/default.nix ]; };
+       }
+     ];
    };
  };
 }

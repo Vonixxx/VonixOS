@@ -3,7 +3,7 @@
 ##############################
 # Home Manager Configuration #
 ##############################
-{ config, pkgs, ... }:
+{ config, pkgs, nixneovim, ... }:
 
 #############
 # Variables #
