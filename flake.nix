@@ -20,10 +20,12 @@
   outputs = { self, nixpkgs, nixneovim }: {
    nixosConfigurations.vonix = nixpkgs.lib.nixosSystem {
      system = "x86_64-linux";
+     specialArgs = {
+       overlays = [ nixneovim.overlays.default ];
+     };
      modules = [ 
        ./configuration.nix 
-       nixneovim.nixosModules.nixos
-       { nixpkgs.overlays = [ nixneovim.overlays.default ]; }
+       nixneovim.nixosModules.default
      ];
    };
  };
