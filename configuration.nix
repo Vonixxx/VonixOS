@@ -25,7 +25,7 @@
    #./waybar/default.nix
    #./joshuto/default.nix
    #./wlsunset/default.nix
-   ## ./home-manager/default.nix
+   ./home-manager/default.nix
    #./login-manager/default.nix
    ###############
    # Base System #

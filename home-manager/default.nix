@@ -29,7 +29,7 @@ in
  ########################
  # Home Manager Version #
  ########################
- home-manager.users.vonix = { pkgs, ... }: {
-   home.stateVersion = "23.05";
- };
+ #home-manager.users.vonix = { pkgs, ... }: {
+ #  home.stateVersion = "23.05";
+ #};
 }
