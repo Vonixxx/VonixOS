@@ -28,7 +28,7 @@
        overlays = [ nixneovim.overlays.default ];
      };
      modules = [ 
-       ./configuration.nix 
+       ./system/configuration.nix 
        home-manager.nixosModules.home-manager 
        {
         home-manager.users.vonix = {

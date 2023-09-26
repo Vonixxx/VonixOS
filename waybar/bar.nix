@@ -6,17 +6,6 @@
 { config, pkgs, ... }:
 
 {
- ###########
- # Imports #
- ###########
- imports = [
-   ../home-manager/default.nix
- ];
-
-
- #######
- # Bar #
- #######
  home-manager.users.vonix = { pkgs, ... }: {
    programs.waybar = {
     settings = [{

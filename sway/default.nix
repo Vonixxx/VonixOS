@@ -13,7 +13,6 @@
    ./output.nix
    ./styling.nix
    ./keybindings.nix
-   ../home-manager/default.nix
  ];
 
 

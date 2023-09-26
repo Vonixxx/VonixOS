@@ -10,7 +10,7 @@
  # Imports #
  ###########
  imports = [
-   ../home-manager/default.nix
+   #../home-manager/default.nix
  ];
 
 

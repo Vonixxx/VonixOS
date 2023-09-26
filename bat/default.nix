@@ -11,7 +11,6 @@
  ###########
  imports = [
    ./styling.nix
-   ../home-manager/default.nix
  ];
 
 

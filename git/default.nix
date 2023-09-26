@@ -6,17 +6,6 @@
 { config, pkgs, ... }:
 
 {
- ###########
- # Imports #
- ###########
- imports = [
-   ../home-manager/default.nix
- ];
-
-
- #######
- # Git #
- #######
  home-manager.users.vonix = { pkgs, ... }: {
    programs.git = {
      enable = true;

@@ -6,17 +6,6 @@
 { config, pkgs, ... }:
 
 {
- ###########
- # Imports #
- ###########
- imports = [
-   ../home-manager/default.nix
- ];
-
-
- ###########
- # General #
- ###########
  home-manager.users.vonix = { pkgs, ... }: {
    programs.joshuto = {
      settings = {

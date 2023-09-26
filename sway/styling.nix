@@ -17,16 +17,7 @@ let
   };
 in
 
-
 {
- ###########
- # Imports #
- ###########
- imports = [
-   ../home-manager/default.nix
- ];
-
-
  ###########
  # Styling #
  ###########

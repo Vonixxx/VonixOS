@@ -6,17 +6,6 @@
 { config, pkgs, ... }:
 
 {
- ###########
- # Imports #
- ###########
- imports = [
-   ../home-manager/default.nix
- ];
-
-
- ###############
- # Keybindings #
- ###############
  home-manager.users.vonix = { pkgs, ... }: {
    programs.joshuto = {
      keymap = {

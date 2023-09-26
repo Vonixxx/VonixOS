@@ -6,17 +6,6 @@
 { config, pkgs, ... }:
 
 {
- ###########
- # Imports #
- ###########
- imports = [
-   ../home-manager/default.nix
- ];
-
-
- ##########
- # Prezto #
- ##########
  home-manager.users.vonix = { pkgs, ... }: {
    programs.zsh = {
      prezto = {

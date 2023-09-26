@@ -6,17 +6,6 @@
 { config, pkgs, ... }:
 
 {
- ###########
- # Imports #
- ###########
- imports = [
-   ../home-manager/default.nix
- ];
-
-
- #########
- # Kitty #
- #########
  home-manager.users.vonix = { pkgs, ... }: {
    programs.kitty = {
      enable = true;

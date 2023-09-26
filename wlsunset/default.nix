@@ -6,17 +6,6 @@
 { config, pkgs, ... }:
 
 {
- ###########
- # Imports #
- ###########
- imports = [
-   ../home-manager/default.nix
- ];
-
-
- ############
- # WLSunset #
- ############
  home-manager.users.vonix = { pkgs, ... }: {
    services.wlsunset = {
      enable        = true;

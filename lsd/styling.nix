@@ -6,17 +6,6 @@
 { config, pkgs, ... }:
 
 {
- ###########
- # Imports #
- ###########
- imports = [
-   ../home-manager/default.nix
- ];
-
-
- #######
- # LSD #
- #######
  home-manager.users.vonix = { pkgs, ... }: {
    programs.lsd = {
      settings = {

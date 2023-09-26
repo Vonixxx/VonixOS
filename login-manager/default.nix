@@ -6,9 +6,6 @@
 { config, pkgs, ... }:
 
 {
- #################
- # Login Manager #
- #################
  services.greetd = {
    enable = true;
    settings = {

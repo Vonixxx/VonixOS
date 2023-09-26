@@ -12,7 +12,6 @@
  imports = [
    ./bar.nix
    ./css.nix
-   ../home-manager/default.nix
  ];
  
 

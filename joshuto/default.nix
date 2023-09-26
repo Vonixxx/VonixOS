@@ -14,7 +14,6 @@
    ./styling.nix
    ./mimetypes.nix
    ./keybindings.nix
-   ../home-manager/default.nix
  ];
 
 

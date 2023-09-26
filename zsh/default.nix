@@ -13,7 +13,6 @@
    ./zshrc.nix
    ./prezto.nix
    ./aliases.nix
-   ../home-manager/default.nix
  ];
 
 

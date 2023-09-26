@@ -6,17 +6,6 @@
 { config, pkgs, ... }:
 
 {
- ###########
- # Imports #
- ###########
- imports = [
-   ../home-manager/default.nix
- ];
-
-
- ###########
- # Aliases #
- ###########
  home-manager.users.vonix = { pkgs, ... }: {
    programs.zsh = {
      shellAliases = {
