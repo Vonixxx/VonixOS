@@ -11,12 +11,12 @@
     nixneovim = {
       url = github:nixneovim/nixneovim;
     };
+    home-manager = {
+      inputs.nixpkgs.follows = "nixpkgs";
+      url = github:nix-community/home-manager;
+    };
     nixpkgs = {
       url = github:NixOS/nixpkgs/nixos-unstable;
-    };
-    home-manager = {
-      url = "github:nix-community/home-manager";
-      inputs.nixpkgs.follows = "nixpkgs";
     };
   };
 
@@ -33,9 +33,26 @@
        {
         home-manager.users.vonix = {
           home.stateVersion = "23.11";
-          imports = [ nixneovim.nixosModules.default ];
+          imports = [ 
+	    nixneovim.nixosModules.default 
+	  ];
           programs.nixneovim = {
             enable = true;
+	    plugins = {
+	      treesitter = {
+	        enable = true;
+		installAllGrammars = true;
+	      };
+	      lualine = { 
+	        enable = true;
+		theme  = "16color";
+	      };
+	    };
+	    colorschemes.base16 = {
+	      enable      = true;
+	      useTruecolor = true;
+	      colorscheme = "irblack";
+	    };
           };
         };
        }

@@ -9,7 +9,7 @@
  home-manager.users.vonix = { pkgs, ... }: {
    programs.kitty = {
      enable = true;
-     theme = "Modus Vivendi";
+     theme = "IR Black";
      shellIntegration.enableZshIntegration = true;
      font = {
        name = "Cascadia Code";

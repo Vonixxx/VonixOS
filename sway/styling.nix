@@ -25,7 +25,7 @@ in
    wayland.windowManager.sway = {
      extraConfig = ''
         exec_always autotiling
-        output "*" bg /etc/Stars.jpg fill
+        output "*" bg /etc/nixos/system/Stars.jpg fill
      '';
      config = rec {
        gaps = {
