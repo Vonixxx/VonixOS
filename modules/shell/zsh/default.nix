@@ -46,15 +46,14 @@
      # Aliases #
      ###########
      shellAliases = {
-       ls     = "lsd";
-       cat    = "bat";
-       add    = "git add ./";
-       vim    = "sudo -E nvim";
-       fm     = "sudo -E joshuto";
-       commit = "git commit -a -m";
-       push   = "git push -u origin main";
-       update = "sudo nixos-rebuild switch --flake '.#vonix'";
-       copy   = "sudo rm -r /etc/nixos/^hardware-configuration.nix(.N) && sudo cp -a -r ~/VonixOS/* /etc/nixos";
+       ls        = "lsd";
+       cat       = "bat";
+       vim       = "spacevim";
+       add       = "git add ./";
+       commit    = "git commit -a -m";
+       push      = "git push -u origin main";
+       lapupdate = "sudo nixos-rebuild switch --flake '.#laptop'";
+       copy      = "sudo rm -r /etc/nixos/^hardware-configuration.nix(.N) && sudo cp -a -r ~/VonixOS/* /etc/nixos";
      };
    };
  };
