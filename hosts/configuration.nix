@@ -3,7 +3,7 @@
 #######################
 # NixOS Configuration #
 #######################
-{ config, inputs, pkgs, vars, lib, ... }:
+{ lib, pkgs, vars, config, inputs, ... }:
 
 {
  ###########

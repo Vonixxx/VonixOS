@@ -61,7 +61,7 @@ with lib;
 
    services = {
      blueman.enable = true;
-     tlp = {
+     tlp.settings = {
        enable              = true;
        auto-cpufreq.enable = true;
      };
@@ -126,7 +126,7 @@ with lib;
            #####################
            # Program Shortcuts #
            #####################
-           "${modifier}+l" = "exec ${pkgs.kitty}/bin/kitty";
+           "${modifier}+t" = "exec ${pkgs.kitty}/bin/kitty";
            "${modifier}+d" = "exec ${pkgs.fuzzel}/bin/fuzzel";
            "${modifier}+b" = "exec ${pkgs.librewolf}/bin/librewolf";
            ######################################
