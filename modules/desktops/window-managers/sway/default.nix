@@ -8,7 +8,14 @@
 with lib;
 {
  imports = [
-   ../programs
+   ../programs/bat/default.nix
+   ../programs/git/default.nix
+   ../programs/lsd/default.nix
+   ../programs/kitty/default.nix
+   ../programs/fuzzel/default.nix
+   ../programs/waybar/default.nix
+   ../programs/joshuto/default.nix
+   ../programs/wlsunset/default.nix
  ];
 
  options = {
