@@ -32,43 +32,43 @@
           all-outputs  = true;
           format       = "{icon}";
           format-icons = {
-            "1" = "<big><span font=\"Line-Awesome\"></span></big>";
-            "2" = "<big><span font=\"Line-Awesome\"></span></big>";
-            "3" = "<big><span font=\"Line-Awesome\"></span></big>";
-            "4" = "<big><span font=\"Line-Awesome\"></span></big>";
+            "1" = "<big></big>";
+            "2" = "<big></big>";
+            "3" = "<big></big>";
+            "4" = "<big></big>";
           };
         };
         "backlight" = {
           tooltip        = false;
           on-scroll-up   = "exec light -A 1";
           on-scroll-down = "exec light -U 1";
-          format         = "<span font=\"Line-Awesome\"></span> {percent}%";
+          format         = " {percent}%";
         };
 	      "disk" = {
 	       interval = 60;
 	       path     = "/";
          tooltip  = false;
-	       format   = "<span font=\"Line-Awesome\"></span>  {percentage_used}%";
+	       format   = "  {percentage_used}%";
 	      };
         "clock" = {
          interval = 30;
          tooltip  = false;
-         format   = "<span font=\"Line-Awesome\">{:  %d/%m/%y    %H:%M}</span>";
+         format   = "{:  %d/%m/%y | %H:%M}";
         };
         "custom/power" = {
           tooltip  = false;
           on-click = "exec poweroff";
-          format   = "<span foreground=\"#FF5F5F\" font=\"Line-Awesome\"></span>";
+          format   = "<span foreground=\"#BF616A\"></span>";
         };
         "custom/hibernate" = {
           tooltip  = false;
           on-click = "systemctl hibernate";
-          format   = "<span foreground=\"#338FFF\" font=\"Line-Awesome\"></span>";
+          format   = "<span foreground=\"#5E81AC\"></span>";
         };
         "custom/reboot" = {
           tooltip  = false;
           on-click = "exec reboot";
-          format   = "<span foreground=\"#EFEF00\" font=\"Line-Awesome\"></span>";
+          format   = "<span foreground=\"#EBCB8B\"></span>";
         };
         "pulseaudio" = {
           scroll-step = 5;
@@ -89,16 +89,16 @@
           format-icons               = ["" "" "" "" ""];
           tooltip-format-charging    = "Full Charge Duration: {time}";
           tooltip-format-discharging = "Discharging Duration: {time}";
-          format-charging            = "<span foreground=\"#FFFF00\" font=\"Line-Awesome\"></span>";
-          format                     = "<span foreground=\"#44DF44\" font=\"Line-Awesome\">{icon}</span>";
+          format-charging            = "<span foreground=\"#EBCB8B\"></span>";
+          format                     = "<span foreground=\"#A3BE8C\">{icon}</span>";
         };
 	      "network" = {
+          format-disconnected     = "<span foreground=\"#BF616A\"></span>";
+	        format-wifi             = "<span foreground=\"#A3bE8C\"></span>";
+	        format-ethernet         = "<span foreground=\"#A3BE8C\"></span>";
           on-click                = "kitty --hold zsh -c 'nmtui'; pkill -SIGRTMIN+8 waybar";
-	        format-wifi             = "<span foreground=\"#44DF44\" font=\"Line-Awesome\"></span>";
-	        format-ethernet         = "<span foreground=\"#44DF44\" font=\"Line-Awesome\"></span>";
-          format-disconnected     = "<span foreground=\"#FF5F5F\" font=\"Line-Awesome\"></span>";
-          tooltip-format-ethernet = "<span font=\"Line-Awesome\"></span> {ifname}\nIP: {ipaddr}\n<span font=\"Line-Awesome\"></span> {bandwidthUpBits} <span font=\"Line-Awesome\"></span> {bandwidthDownBits}";
-          tooltip-format-wifi     = "<span font=\"Line-Awesome\"></span>  {ifname} @ {essid}\nIP: {ipaddr}\nStrength: {signalStrength}%\nFrequency: {frequency}MHz\n<span font=\"Line-Awesome\"></span> {bandwidthUpBits} <span font=\"Line-Awesome\"></span> {bandwidthDownBits}";
+          tooltip-format-ethernet = "  {ifname}\nIP: {ipaddr}\n<span font=\"Line-Awesome\"></span> {bandwidthUpBits} <span font=\"Line-Awesome\"></span> {bandwidthDownBits}";
+          tooltip-format-wifi     = "  {ifname} @ {essid}\nIP: {ipaddr}\nStrength: {signalStrength}%\nFrequency: {frequency}MHz\n<span font=\"Line-Awesome\"></span> {bandwidthUpBits} <span font=\"Line-Awesome\"></span> {bandwidthDownBits}";
         };
      }];
      #############
@@ -106,9 +106,9 @@
      #############
      style = ''
         /* Colors */
-        @define-color base     #0C090A;
-        @define-color text     #FFFFFF;
-        @define-color warning  #DB7B5F;
+        @define-color base     #2E3440;
+        @define-color text     #ECEFF4;
+        @define-color warning  #D08770;
         
      
         /* Base */

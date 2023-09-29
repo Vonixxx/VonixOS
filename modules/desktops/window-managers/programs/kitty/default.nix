@@ -15,7 +15,7 @@
      ###########
      # Styling #
      ###########
-     theme = "IR Black";
+     theme = "Nord";
      ########
      # Font #
      ########

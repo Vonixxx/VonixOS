@@ -34,16 +34,16 @@ with lib;
        enable = true;
        extraPackages = with pkgs; [
          autotiling      
-	 bat
-	 fuzzel
-	 greetd.greetd
-	 greetd.tuigreet
-	 joshuto
-	 kitty
-	 lsd
-	 light
-	 tlp
-	 wlsunset
+	       bat
+	       fuzzel
+	       greetd.greetd
+	       greetd.tuigreet
+	       joshuto
+	       kitty
+	       lsd
+	       light
+	       tlp
+	       wlsunset
          wl-clipboard
        ];
      };

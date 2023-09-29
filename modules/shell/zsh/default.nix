@@ -48,7 +48,7 @@
      shellAliases = {
        ls        = "lsd";
        cat       = "bat";
-       vim       = "spacevim";
+       vim       = "spacevim -c 'colorscheme nord'";
        add       = "git add ./";
        commit    = "git commit -a -m";
        push      = "git push -u origin main";
