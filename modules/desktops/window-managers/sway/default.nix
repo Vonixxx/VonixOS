@@ -9,7 +9,6 @@ with lib;
 {
  imports = [
    ../programs/bat/default.nix
-   ../programs/git/default.nix
    ../programs/lsd/default.nix
    ../programs/kitty/default.nix
    ../programs/fuzzel/default.nix
