@@ -10,9 +10,13 @@
    ./hardware-configuration.nix
  ];
 
+ sway.enable           = true;
+ laptop.enable         = true;
+ programs.light.enable = true;
+
  boot = {
    loader = {
-     timeout = 5;
+     timeout = 3;
      systemd-boot = {
        enable = true;
        configurationLimit = 3;
@@ -22,11 +26,6 @@
      };
    };
  };
-
- sway.enable   = true;
- laptop.enable = true;
-
- programs.light.enable = true;
 
  systemd.tmpfiles.rules = [
    "d /var/lib/bluetooth 700 root root - -"

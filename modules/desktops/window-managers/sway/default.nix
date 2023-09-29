@@ -3,14 +3,15 @@
 ######################
 # Sway Configuration #
 ######################
-{ config, pkgs, host, vars, lib, ... }:
+{ lib, host, pkgs, vars, config, ... }:
 
 with lib;
 {
- ##############
- # Conditions #
- ##############
- conditions = {
+ imports = [
+   ../programs
+ ];
+
+ options = {
    sway = {
      enable = mkOption {
        default = false;
@@ -19,103 +20,73 @@ with lib;
    };
  };
 
-
- #####################
- # Condition: Laptop #
- #####################
  config = mkIf (config.sway.enable) {
    laptop.enable = true;
 
-
-   ############
-   # Packages #
-   ############
    programs = {
      sway = {
        enable = true;
        extraPackages = with pkgs; [
          autotiling      
 	 bat
-	 bemenu
+	 fuzzel
 	 greetd.greetd
 	 greetd.tuigreet
 	 joshuto
 	 kitty
 	 lsd
 	 light
+	 tlp
 	 wlsunset
          wl-clipboard
-         xwayland
        ];
      };
    };
 
-
-   ############
-   # Services #
-   ############
-   services.greetd = {
-     ##########
-     # Enable #
-     ##########
+   hardware.bluetooth = {
      enable = true;
-     ############
-     # Settings #
-     ############
      settings = {
-       default_session.command = ''
-          ${pkgs.greetd.tuigreet}/bin/tuigreet \
-          --time \
-          --asterisks \
-          --user-menu \
-          --cmd sway \
-       '';
+       General = {
+         Enable = "Source,Sink,Media,Socket";
+       };
      };
-     ###############
-     # Environment #
-     ###############
-     environment.etc."greetd/environments".text = ''
-        sway
-     '';
    };
 
+   services = {
+     blueman.enable = true;
+     tlp = {
+       enable              = true;
+       auto-cpufreq.enable = true;
+     };
+     greetd = {
+       enable = true;
+       settings = {
+         default_session.command = ''
+            ${pkgs.greetd.tuigreet}/bin/tuigreet \
+            --time \
+            --cmd sway \
+            --asterisks \
+            --user-menu \
+         '';
+       };
+     };
+   };
 
-   #######################
-   # Sway Window Manager #
-   #######################
    home-manager.users.${vars.user} = {
      wayland.windowManager.sway = {
-       ##########
-       # Enable #
-       ##########
        enable   = true;
        xwayland = true;
-       ############
-       # Settings # 
-       ############
+       extraConfig = ''
+          output "*" bg /home/vonix/VonixOS/Stars.jpg fill
+       '';
        config = rec {
-         #######################
-         # Movement and Keymap #
-         #######################
          up       = "k";
          down     = "j";
          left     = "l";
          right    = "h";
          modifier = "Mod4";
          input    = { "*" = { xkb_variant = "us"; }; };
-         ##########
-         # Output #
-         ##########
-         output = { eDP-1 = { mode = "1920x1080@60Hz"; }; };
-         #######################
-         # Extra Configuration #
-         #######################
-         extraConfig = ''
-            output "*" bg /home/vonix/VonixOS/Stars.jpg fill
-         '';
-         ###############
-         # Keybindings #
-         ###############
+         output   = { eDP-1 = { mode = "1920x1080@60Hz"; }; };
          keybindings = {
            ######################
            # Switching Position #
@@ -131,9 +102,9 @@ with lib;
            "${modifier}+r"       = "reload";
            "${modifier}+f"       = "fullscreen";
            "${modifier}+s"       = "mode resize";
-           #########
-           # Focus #
-           #########
+           ###################
+           # Switching Focus #
+           ###################
            "${modifier}+k"       = "focus up";
            "${modifier}+h"       = "focus left";
            "${modifier}+j"       = "focus down";
@@ -145,6 +116,12 @@ with lib;
            "${modifier}+2"       = "workspace number 2";
            "${modifier}+3"       = "workspace number 3";
            "${modifier}+4"       = "workspace number 4";
+           #####################
+           # Program Shortcuts #
+           #####################
+           "${modifier}+l" = "exec ${pkgs.kitty}/bin/kitty";
+           "${modifier}+d" = "exec ${pkgs.fuzzel}/bin/fuzzel";
+           "${modifier}+b" = "exec ${pkgs.librewolf}/bin/librewolf";
            ######################################
            # Switching Containers -> Workspaces #
            ######################################
@@ -152,22 +129,8 @@ with lib;
            "${modifier}+Shift+2" = "move container to workspace number 2";
            "${modifier}+Shift+3" = "move container to workspace number 3";
            "${modifier}+Shift+4" = "move container to workspace number 4";
-           #####################
-           # Program Shortcuts #
-           #####################
-           "${modifier}+d"       = "exec ${vars.bemenu}";
-           "${modifier}+Return"  = "exec ${pkgs.kitty}/bin/kitty";
-           "${modifier}+b"       = "exec ${pkgs.librewolf}/bin/librewolf";
          };
-	 ###########
-	 # Startup #
-	 ###########
-	 startup = [
-           {command = "${pkgs.autotiling}/bin/autotiling"; always = true;}
-         ];
-         ###########
-         # Styling #
-         ###########
+
          gaps = {
            top        = 15;
            left       = 15;
@@ -178,15 +141,22 @@ with lib;
            vertical   = 15;
            horizontal = 15;
          };
+
          window = { titlebar = false; };
+
          bars   = [{ command = "waybar"; }];
+
+	 startup = [
+           {command = "${pkgs.autotiling}/bin/autotiling"; always = true;}
+         ];
+
          colors = {
            background      = "${vars.swaycolors.base}";
            focused         = { childBorder = "${vars.swaycolors.white}"; border = "${vars.swaycolors.white}"; background = "${vars.swaycolors.base}"; text = "${vars.swaycolors.white}"; indicator = "${vars.swaycolors.white}"; };
            unfocused       = { childBorder = "${vars.swaycolors.black}"; border = "${vars.swaycolors.black}"; background = "${vars.swaycolors.base}"; text = "${vars.swaycolors.white}"; indicator = "${vars.swaycolors.black}"; };
            focusedInactive = { childBorder = "${vars.swaycolors.black}"; border = "${vars.swaycolors.black}"; background = "${vars.swaycolors.base}"; text = "${vars.swaycolors.white}"; indicator = "${vars.swaycolors.black}"; };
            urgent          = { childBorder = "${vars.swaycolors.white}"; border = "${vars.swaycolors.white}"; background = "${vars.swaycolors.base}"; text = "${vars.swaycolors.white}"; indicator = "${vars.swaycolors.overlay}"; };
-           placeholder     = { childBorder = "${vars.swaycolors.overlay}"; border = "${vars.swaycolors.overlay}"; background = "${vars.swaycolors.base}"; text = "${vars.swaycolors.white}"; indicator = swaycolors.overlay}"; };
+           placeholder     = { childBorder = "${vars.swaycolors.overlay}"; border = "${vars.swaycolors.overlay}"; background = "${vars.swaycolors.base}"; text = "${vars.swaycolors.white}"; indicator = "${vars.swaycolors.overlay}"; };
          };
        };
      };

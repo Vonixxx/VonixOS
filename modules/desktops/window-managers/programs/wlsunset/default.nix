@@ -3,7 +3,7 @@
 ##########################
 # WLSunset Configuration #
 ##########################
-{ pkgs, vars ... }:
+{ pkgs, vars, ... }:
 
 {
  home-manager.users.${vars.user} = {

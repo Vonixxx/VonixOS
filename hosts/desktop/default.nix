@@ -8,15 +8,22 @@
 {
  imports = [ ./hardware-configuration.nix ]
 
+ kde.enable     = true;
+ desktop.enable = true;
+
  boot = {
    loader = {
-     timeout = 5;
-     systemd-boot = {
-       enable = true;
-       configurationLimit = 3;
-     };
+     timeout = 3;
      efi = {
        canTouchEfiVariables = true;
+       efiSysMountPoint     = "/boot";
+     };
+     grub = {
+       configurationLimit = 3;
+       enable             = true;
+       efiSupport         = true;
+       useOSProber        = true;
+       devices            = [ "nodev" ];
      };
    };
  };
@@ -30,6 +37,4 @@
      ];
    };
  };
-
- sway.enable = true;
 }

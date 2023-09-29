@@ -8,13 +8,13 @@
 with lib;
 {
  options = {
-   desktop = {
+   laptop = {
      enable = mkOption {
        default = false;
        type    = types.bool;
      };
    };
-   laptop = {
+   desktop = {
      enable = mkOption {
        default = false;
        type    = types.bool;

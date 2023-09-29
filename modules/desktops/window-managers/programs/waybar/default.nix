@@ -3,7 +3,7 @@
 #####################
 # Bar Configuration #
 #####################
-{ config, pkgs, vars ... }:
+{ config, pkgs, vars, ... }:
 
 {
  home-manager.users.${vars.user} = {

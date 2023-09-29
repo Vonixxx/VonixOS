@@ -13,11 +13,11 @@
      ##########
      enable = true;
    };
-   programs.git-credential-oauth = {
-     ##########
-     # Enable #
-     ##########
-     enable = true;
-   };
+   # programs.git-credential-oauth = {
+   #   ##########
+   #   # Enable #
+   #   ##########
+   #   enable = true;
+   # };
  };
 }

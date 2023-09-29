@@ -10,9 +10,8 @@
  # Imports #
  ###########
  imports = ( 
-   import ../modules/desktops ++ 
-   import ../modules/hardware ++ 
-   import ../modules/programs  
+   import ../modules/shell    ++ 
+   import ../modules/desktops  
  );
 
 
@@ -87,12 +86,6 @@
  };
 
 
- #####################
- # Backlight Control #
- #####################
- programs.light.enable = true;
-
-
  ############
  # Timezone #
  ############
@@ -104,10 +97,12 @@
  #########################
  # Environment Variables #
  #########################
- variables = {
-   EDITOR   = "${vars.editor}";
-   VISUAL   = "${vars.editor}";
-   TERMINAL = "${vars.terminal}";
+ environment = {
+   variables = {
+     EDITOR   = "${vars.editor}";
+     VISUAL   = "${vars.editor}";
+     TERMINAL = "${vars.terminal}";
+   };
  };
 
 
@@ -206,7 +201,7 @@
  #############
  # Wallpaper #
  #############
- environment.etc."Stars.jpg".source = /home/"${vars.user}"/VonixOS/Stars.jpg;
+ environment.etc."Stars.jpg".source = /home/${vars.user}/VonixOS/Stars.jpg;
 
  
  #########

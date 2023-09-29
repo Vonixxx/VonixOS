@@ -4,7 +4,7 @@
 # Default WM/DE #
 #################
 [
- ./kde.nix
- ./sway.nix
  ./options.nix
+ ./window-managers/sway/default.nix
+ ./desktop-environments/kde/default.nix
 ]
