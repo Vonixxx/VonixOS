@@ -3,60 +3,43 @@
 #######################
 # Flake Configuration #
 #######################
-
 {
-  description = "Laptop";
+ description = "NixOS + Flake Configuration for Laptop/Desktop";
 
-  inputs = {
-    nixneovim = {
-      url = github:nixneovim/nixneovim;
-    };
-    home-manager = {
-      inputs.nixpkgs.follows = "nixpkgs";
-      url = github:nix-community/home-manager;
-    };
-    nixpkgs = {
-      url = github:NixOS/nixpkgs/nixos-unstable;
+ inputs = {
+   nixpkgs = {
+     url = "github:nixos/nixpkgs/nixos-unstable";
+   };
+   plasma-manager = {
+     inputs.nixpkgs.follows      = "nixpkgs";
+     inputs.home-manager.follows = "nixpkgs";
+     url                         = "github:pjones/plasma-manager";
+   };
+   home-manager = {
+     inputs.nixpkgs.follows = "nixpkgs";
+     url                    = "github:nix-community/home-manager/release-23.05";
+   };
+ };
+
+ outputs = inputs @ { self, nixpkgs, home-manager, plasma-manager, ... }:
+ let
+  vars = {
+    editor   = "nvim";
+    user     = "vonix";
+    terminal = "kitty";
+    swaycolors = {
+      white   = "#FFFFFF";
+      base    = "#0C090A";
+      black   = "#000000";
+      overlay = "#F88017";
     };
   };
-
-
-  outputs = { self, nixpkgs, nixneovim, home-manager }: {
-   nixosConfigurations.vonix = nixpkgs.lib.nixosSystem {
-     system = "x86_64-linux";
-     specialArgs = {
-       overlays = [ nixneovim.overlays.default ];
-     };
-     modules = [ 
-       ./system/configuration.nix 
-       home-manager.nixosModules.home-manager 
-       {
-        home-manager.users.vonix = {
-          home.stateVersion = "23.11";
-          imports = [ 
-	    nixneovim.nixosModules.default 
-	  ];
-          programs.nixneovim = {
-            enable = true;
-	    plugins = {
-	      treesitter = {
-	        enable = true;
-		installAllGrammars = true;
-	      };
-	      lualine = { 
-	        enable = true;
-		theme  = "16color";
-	      };
-	    };
-	    colorschemes.base16 = {
-	      enable      = true;
-	      useTruecolor = true;
-	      colorscheme = "irblack";
-	    };
-          };
-        };
-       }
-     ];
-   };
+ in {
+   nixosConfigurations = (
+     import ./hosts {
+      inherit (nixpkgs) lib;
+      inherit vars inputs nixpkgs home-manager plasma-manager;
+     }
+   );
  };
 }

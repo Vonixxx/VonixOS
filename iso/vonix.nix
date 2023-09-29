@@ -12,6 +12,8 @@
    wget
    python3Full
  ];
+ 
+ nix.settings.experimental-features = [ "nix-command" "flakes" ];
 
  systemd.services.fetchScript = {
    wantedBy    = [ "multi-user.target" ];
