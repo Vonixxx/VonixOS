@@ -12,6 +12,10 @@
     # Enable #
     ##########
     enable = true;
+    systemd = {
+      enable = true;
+      target = "sway-session.target";
+    };
     ############
     # Settings #
     ############
@@ -36,16 +40,16 @@
         };
         "backlight" = {
           tooltip        = false;
-          on-scroll-up   = "exec light -A 2";
-          on-scroll-down = "exec light -U 2";
+          on-scroll-up   = "exec light -A 1";
+          on-scroll-down = "exec light -U 1";
           format         = "<span font=\"Line-Awesome\"></span> {percent}%";
         };
-	"disk" = {
-	 interval = 60;
-	 path     = "/";
+	      "disk" = {
+	       interval = 60;
+	       path     = "/";
          tooltip  = false;
-	 format   = "<span font=\"Line-Awesome\"></span>  {percentage_used}%";
-	};
+	       format   = "<span font=\"Line-Awesome\"></span>  {percentage_used}%";
+	      };
         "clock" = {
          interval = 30;
          tooltip  = false;
@@ -88,10 +92,10 @@
           format-charging            = "<span foreground=\"#FFFF00\" font=\"Line-Awesome\"></span>";
           format                     = "<span foreground=\"#44DF44\" font=\"Line-Awesome\">{icon}</span>";
         };
-	"network" = {
+	      "network" = {
           on-click                = "kitty --hold zsh -c 'nmtui'; pkill -SIGRTMIN+8 waybar";
-	  format-wifi             = "<span foreground=\"#44DF44\" font=\"Line-Awesome\"></span>";
-	  format-ethernet         = "<span foreground=\"#44DF44\" font=\"Line-Awesome\"></span>";
+	        format-wifi             = "<span foreground=\"#44DF44\" font=\"Line-Awesome\"></span>";
+	        format-ethernet         = "<span foreground=\"#44DF44\" font=\"Line-Awesome\"></span>";
           format-disconnected     = "<span foreground=\"#FF5F5F\" font=\"Line-Awesome\"></span>";
           tooltip-format-ethernet = "<span font=\"Line-Awesome\"></span> {ifname}\nIP: {ipaddr}\n<span font=\"Line-Awesome\"></span> {bandwidthUpBits} <span font=\"Line-Awesome\"></span> {bandwidthDownBits}";
           tooltip-format-wifi     = "<span font=\"Line-Awesome\"></span>  {ifname} @ {essid}\nIP: {ipaddr}\nStrength: {signalStrength}%\nFrequency: {frequency}MHz\n<span font=\"Line-Awesome\"></span> {bandwidthUpBits} <span font=\"Line-Awesome\"></span> {bandwidthDownBits}";
@@ -102,7 +106,7 @@
      #############
      style = ''
         /* Colors */
-        define-color base     #0C090A;
+        @define-color base     #0C090A;
         @define-color text     #FFFFFF;
         @define-color warning  #DB7B5F;
         

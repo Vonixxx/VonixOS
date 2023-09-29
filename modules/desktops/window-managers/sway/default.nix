@@ -83,6 +83,7 @@ with lib;
      wayland.windowManager.sway = {
        enable   = true;
        xwayland = true;
+       systemd.enable = true;
        extraConfig = ''
           output "*" bg /home/vonix/VonixOS/Stars.jpg fill
        '';
@@ -149,11 +150,11 @@ with lib;
            horizontal = 15;
          };
 
+         bars = [ ];
+
          window = { titlebar = false; };
 
-         bars   = [{ command = "waybar"; }];
-
-	 startup = [
+	       startup = [
            {command = "${pkgs.autotiling}/bin/autotiling"; always = true;}
          ];
 

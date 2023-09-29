@@ -24,9 +24,9 @@
  outputs = inputs @ { self, nixpkgs, home-manager, plasma-manager, ... }:
  let
   vars = {
-    editor   = "nvim";
     user     = "vonix";
     terminal = "kitty";
+    editor   = "spacevim";
     swaycolors = {
       white   = "#FFFFFF";
       base    = "#0C090A";
