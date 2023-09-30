@@ -9,31 +9,26 @@ from pathlib import Path
 #############
 # Variables #
 #############
-filename = "/mnt/etc/nixos/hardware-configuration.nix"
+hardwareConfiguration = "/mnt/home/vonix/VonixOS/hosts/desktop/hardware-configuration.nix"
 
 
 ###############
 # Definitions #
 ###############
-def run_command(command, cwd=None):
+def runCommand(command, cwd=None):
     result = subprocess.run(command, cwd=cwd, capture_output=True, text=True)
     if result.returncode != 0:
         raise Exception(f"Command {command} failed: {result.stderr}")
     return result.stdout
-def get_disk_devices():
-    output = run_command(["parted", "--list"])
+def getDiskDevices():
+    output = runCommand(["parted", "--list"])
     devices = []
     for line in output.splitlines():
         if "Disk /dev/" in line:
             devices.append(line.split(":")[0].replace("Disk", "").strip())
     return devices
-
-
-###############
-# Choose Disk #
-###############
-def main():
-    devices = get_disk_devices()
+def chooseDisk():
+    devices = getDiskDevices()
 
     print("Available disk devices:")
     for idx, device in enumerate(devices, 1):
@@ -41,90 +36,93 @@ def main():
 
     choice = int(input("Please select a device by number: "))
     if 1 <= choice <= len(devices):
-        selected_device = devices[choice-1]
-        print(f"You selected: {selected_device}")
-        
-        print(run_command(["parted", selected_device, "print"]))
+        selectedDevice = devices[choice-1]
+        print(f"You selected: {selectedDevice}")
+
+        print(runCommand(["parted", selectedDevice, "print"]))
+        return selectedDevice
     else:
         print("Invalid choice.")
+        return None
 
-if __name__ == "__main__":
-    main()
+selectedDevice = chooseDisk()
+if not selectedDevice:
+    print("No disk selected. Exiting script.")
+    exit()
 
 
 ###############
 # Wiping Disk #
 ###############
-run_command(["wipefs", "-a", selected_device])
+runCommand(["wipefs", "-a", selectedDevice])
 
 
 #######################
-# GPT Partition Tabel #
+# GPT Partition Table #
 #######################
-run_command(["parted", selected_device, "mklabel", "gpt"])
+runCommand(["parted", selectedDevice, "mklabel", "gpt"])
 
 
 ############################
 # Boot and Root Partitions #
 ############################
-run_command(["parted", selected_device, "mkpart", "boot", "fat32", "1MiB", "513MiB"])
+runCommand(["parted", selectedDevice, "mkpart", "boot", "fat32", "1MiB", "513MiB"])
 size = input("Enter desired root partition size (in GB): ")
 end_position = f"{size}GiB"
-run_command(["parted", selected_device, "mkpart", "nixos", "515MiB", end_position])
+runCommand(["parted", selectedDevice, "mkpart", "nixos", "515MiB", end_position])
 
 
 ##############
 # Formatting #
 ##############
-run_command(["parted", selected_device, "set", "1", "esp", "on"])
-run_command(["mkfs.vfat", "/dev/nvme0n1p1"])
-run_command(["mkfs.ext4", "/dev/nvme0n1p2"])
+runCommand(["parted", selectedDevice, "set", "1", "esp", "on"])
+runCommand(["mkfs.vfat", f"{selectedDevice}p1"])
+runCommand(["mkfs.ext4", f"{selectedDevice}p2"])
 
 
 ############################
 # Mounting Nixos Partition #
 ############################
-run_command(["mount", "/dev/nvme0n1p2", "/mnt"])
+runCommand(["mount", f"{selectedDevice}p2",  "/mnt"])
 
 
 ##########################
 # Mounting EFI Partition #
 ##########################
-run_command(["mkdir", "-p", "/mnt/boot"])
-run_command(["mount", "/dev/nvme0n1p1", "/mnt/boot"])
+runCommand(["mkdir", "-p", "/mnt/boot"])
+runCommand(["mount", f"{selectedDevice}p1", "/mnt/boot"])
 
 
 #############################
 # Cloning GitHub Repository #
 #############################
-run_command(["git", "clone", "https://github.com/Vonixxx/VonixOS.git", "/home/nixos/VonixOS"])
+runCommand(["git", "clone", "https://github.com/Vonixxx/VonixOS.git", "/home/nixos/VonixOS"])
 
 
 ##########################################
 # Generating Default NixOS Configuration #
 ##########################################
-run_command(["nixos-generate-config", "--root", "/mnt"])
+runCommand(["nixos-generate-config", "--root", "/mnt"])
 
 
 ########################################
 # Copying Personal NixOS Configuration #
 ########################################
-shutil.copytree("/home/nixos/VonixOS", "/mnt/etc/nixos", dirs_exist_ok=True)
+shutil.copytree("/home/nixos/VonixOS", "/mnt/home/vonix/VonixOS")
+
+############################################
+# Copying Generated Hardware Configuration #
+############################################
+host = input("Enter host (laptop/desktop) in the following format: <host> --> ")
+destination = f"/mnt/home/vonix/VonixOS/hosts/{host}"
+shutil.copy2("/mnt/etc/nixos/hardware-configuration.nix", destination)
 
 
 ###################################
 # Initialising NixOS Installation #
 ###################################
-run_command(["nixos-install"], cwd="/mnt/etc/nixos")
-
-
-###############################################
-# Copying Personal NixOS Configuration > Home #
-# + Initialising as Git Repository            #
-###############################################
-shutil.copytree("/home/nixos/VonixOS", "/mnt/home/vonix/VonixOS", dirs_exist_ok=True)
-run_command(["git", "config", "user.name", "'Vonixxx'"], cwd="/mnt/home/vonix/VonixOS")
-run_command(["git", "config", "user.email", "vonixxxwork@tuta.io"], cwd="/mnt/home/vonix/VonixOS")
+host = input("Enter the to-install flake host (laptop/desktop) in the following format: .#<host> --> ")
+runCommand(["nixos-install", "--flake", host], cwd="/mnt/etc/nixos")
 
 
 ############################################
@@ -132,10 +130,10 @@ run_command(["git", "config", "user.email", "vonixxxwork@tuta.io"], cwd="/mnt/ho
 ############################################
 content = '''{
     device = "/var/swap";
-    size = 8*1024;
+    size = 16*1024;
   }'''
-with open(filename, 'r') as file:
+with open(hardwareConfiguration, 'r') as file:
     contents = file.read()
 contents = contents.replace('swapDevices = [ ];', f'swapDevices = [ {content} ];')
-with open(filename, 'w') as file:
+with open(hardwareConfiguration, 'w') as file:
     file.write(contents)
