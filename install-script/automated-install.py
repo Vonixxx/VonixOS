@@ -121,8 +121,8 @@ shutil.copy2("/mnt/etc/nixos/hardware-configuration.nix", destination)
 ###################################
 # Initialising NixOS Installation #
 ###################################
-host = input("Enter the to-install flake host (laptop/desktop) in the following format: .#<host> --> ")
-runCommand(["nixos-install", "--flake", host], cwd="/mnt/etc/nixos")
+hostFlake = input("Enter the to-install flake host (laptop/desktop) in the following format: .#<host> --> ")
+runCommand(["nixos-install", "--flake", hostFlake], cwd="/mnt/home/vonix/VonixOS")
 
 
 ############################################

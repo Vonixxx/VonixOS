@@ -10,24 +10,28 @@
    programs.fuzzel = {
      enable = true;
      settings = {
+       border = {
+         width  = 3;
+         radius = 10;
+       };
        colors = {
-         border          = "#81A1C1DD";
-         background      = "#2E3440DD";
-         text            = "#3B4252DD";
-         match           = "#D08770DD";
-         selection       = "#434C5EDD";
-         selection-text  = "#4C566ADD";
-         selection-match = "#D08770DD";
+         border          = "#B48EADDD";
+         background      = "#4C566ADD";
+         text            = "#ECEFF4DD";
+         match           = "#BF616ADD";
+         selection       = "#2E3440DD";
+         selection-text  = "#ECEFF4DD";
+         selection-match = "#BF616ADD";
        };
        main = {
-         lines          = 8;
-         inner-pad      = 0;
-         horizontal-pad = 8;
-         vertical-pad   = 40;
+         inner-pad      = 3;
+         lines          = 10;
+         horizontal-pad = 12;
+         vertical-pad   = 12;
          fuzzy          = true;
-         icons-enabled  = true;
-         prompt         = "Launch >";
-         font           = "Cascadia Code:size=12";
+         icons-enabled  = false;
+         prompt         = "Launch > ";
+         font           = "Cascadia Code:size=8";
        };
      };
    };
