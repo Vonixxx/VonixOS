@@ -85,17 +85,17 @@
    };
  };
 
- i18n.defaultLocale = ${vars.defaultlocale};
+ i18n.defaultLocale = "${vars.defaultlocale}";
  i18n.extraLocaleSettings = {
-   LC_TIME           = ${vars.extralocale};
-   LC_NAME           = ${vars.extralocale};
-   LC_PAPER          = ${vars.extralocale};
-   LC_ADDRESS        = ${vars.extralocale};
-   LC_NUMERIC        = ${vars.extralocale};
-   LC_MONETARY       = ${vars.extralocale};
-   LC_TELEPHONE      = ${vars.extralocale};
-   LC_MEASUREMENT    = ${vars.extralocale};
-   LC_IDENTIFICATION = ${vars.extralocale};
+   LC_TIME           = "${vars.extralocale}";
+   LC_NAME           = "${vars.extralocale}";
+   LC_PAPER          = "${vars.extralocale}";
+   LC_ADDRESS        = "${vars.extralocale}";
+   LC_NUMERIC        = "${vars.extralocale}";
+   LC_MONETARY       = "${vars.extralocale}";
+   LC_TELEPHONE      = "${vars.extralocale}";
+   LC_MEASUREMENT    = "${vars.extralocale}";
+   LC_IDENTIFICATION = "${vars.extralocale}";
  };
 
  networking = {
@@ -117,7 +117,6 @@
  hardware.opengl.driSupport32Bit = true;
  
  nix = {
-   settings.auto-optimise-store = true;
    settings = {
      auto-optimise-store = true;
      experimental-features = [ "nix-command" "flakes" ];
@@ -130,7 +129,7 @@
  }; 
 
  programs.zsh.enable    = true;
- users.defaultUserShell = with pkgs; { zsh };
+ users.defaultUserShell = with pkgs; zsh;
  environment.shells     = with pkgs; [ zsh ];
 
  services.udev = {

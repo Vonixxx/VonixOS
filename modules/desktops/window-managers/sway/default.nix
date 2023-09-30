@@ -142,6 +142,7 @@ with lib;
            horizontal = 15;
          };
 
+
          window = { titlebar = false; };
 
 	       startup = [
@@ -149,12 +150,11 @@ with lib;
          ];
 
          colors = {
-           background      = "${vars.swaycolors.base}";
-           focused         = { childBorder = "${vars.swaycolors.white}"; border = "${vars.swaycolors.white}"; background = "${vars.swaycolors.base}"; text = "${vars.swaycolors.white}"; indicator = "${vars.swaycolors.white}"; };
-           unfocused       = { childBorder = "${vars.swaycolors.black}"; border = "${vars.swaycolors.black}"; background = "${vars.swaycolors.base}"; text = "${vars.swaycolors.white}"; indicator = "${vars.swaycolors.black}"; };
-           focusedInactive = { childBorder = "${vars.swaycolors.black}"; border = "${vars.swaycolors.black}"; background = "${vars.swaycolors.base}"; text = "${vars.swaycolors.white}"; indicator = "${vars.swaycolors.black}"; };
-           urgent          = { childBorder = "${vars.swaycolors.white}"; border = "${vars.swaycolors.white}"; background = "${vars.swaycolors.base}"; text = "${vars.swaycolors.white}"; indicator = "${vars.swaycolors.overlay}"; };
-           placeholder     = { childBorder = "${vars.swaycolors.overlay}"; border = "${vars.swaycolors.overlay}"; background = "${vars.swaycolors.base}"; text = "${vars.swaycolors.white}"; indicator = "${vars.swaycolors.overlay}"; };
+           background      = "${vars.swaycolors.text}";
+           urgent          = { childBorder = "${vars.swaycolors.urgent}"; border = "${vars.swaycolors.urgent}"; background = "${vars.swaycolors.text}"; text = "${vars.swaycolors.text}"; indicator = "${vars.swaycolors.urgent}"; };
+           focused         = { childBorder = "${vars.swaycolors.focusedborder}"; border = "${vars.swaycolors.focusedborder}"; background = "${vars.swaycolors.text}"; text = "${vars.swaycolors.text}"; indicator = "${vars.swaycolors.focusedborder}"; };
+           unfocused       = { childBorder = "${vars.swaycolors.unfocusedborder}"; border = "${vars.swaycolors.unfocusedborder}"; background = "${vars.swaycolors.text}"; text = "${vars.swaycolors.text}"; indicator = "${vars.swaycolors.unfocusedborder}"; };
+           focusedInactive = { childBorder = "${vars.swaycolors.unfocusedborder}"; border = "${vars.swaycolors.unfocusedborder}"; background = "${vars.swaycolors.text}"; text = "${vars.swaycolors.text}"; indicator = "${vars.swaycolors.unfocusedborder}"; };
          };
        };
      };

@@ -27,14 +27,14 @@
     user     = "vonix";
     terminal = "kitty";
     editor   = "spacevim";
-    swaycolors = {
-      white   = "#FFFFFF";
-      base    = "#0C090A";
-      black   = "#000000";
-      overlay = "#F88017";
-    };
     defaultlocale = "en_GB.UTF-8";
     extralocale   = "cs_CZ.UTF-8";
+    swaycolors = {
+      text             = "#FFFFFF";
+      urgent           = "#BF616A";
+      focusedborder    = "#B48EAD";
+      unfocusedborder  = "#000000";
+    };
   };
  in {
    nixosConfigurations = (
