@@ -30,6 +30,7 @@ with lib;
    laptop.enable = true;
 
    programs = {
+     light.enable = true;
      sway = {
        enable = true;
        extraPackages = with pkgs; [
@@ -49,17 +50,7 @@ with lib;
      };
    };
 
-   hardware.bluetooth = {
-     enable = true;
-     settings = {
-       General = {
-         Enable = "Source,Sink,Media,Socket";
-       };
-     };
-   };
-
    services = {
-     blueman.enable = true;
      tlp.settings = {
        enable              = true;
        auto-cpufreq.enable = true;
@@ -138,6 +129,8 @@ with lib;
            "${modifier}+Shift+4" = "move container to workspace number 4";
          };
 
+         bars = [ ];
+
          gaps = {
            top        = 15;
            left       = 15;
@@ -148,8 +141,6 @@ with lib;
            vertical   = 15;
            horizontal = 15;
          };
-
-         bars = [ ];
 
          window = { titlebar = false; };
 

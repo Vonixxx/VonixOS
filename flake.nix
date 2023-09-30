@@ -33,6 +33,8 @@
       black   = "#000000";
       overlay = "#F88017";
     };
+    defaultlocale = "en_GB.UTF-8";
+    extralocale   = "cs_CZ.UTF-8";
   };
  in {
    nixosConfigurations = (

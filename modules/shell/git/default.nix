@@ -11,7 +11,7 @@
      enable = true;
    };
    programs.git-credential-oauth = {
-       enable = true;
+     enable = true;
    };
  };
 }

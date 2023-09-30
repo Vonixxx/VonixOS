@@ -3,13 +3,23 @@
 ###################
 # Desktop Profile #
 ###################
-{ lib, pkgs, vars, ... }:
+{ pkgs, vars, ... }:
 
 {
  imports = [ ./hardware-configuration.nix ]
 
  kde.enable     = true;
  desktop.enable = true;
+
+ hardware = {
+   opengl = {
+     enable = true;
+     extraPackages = with pkgs; [
+       vaapiVdpau
+       libvdpau-va-gl
+     ];
+   };
+ };
 
  boot = {
    loader = {
@@ -25,16 +35,6 @@
        useOSProber        = true;
        devices            = [ "nodev" ];
      };
-   };
- };
-
- hardware = {
-   opengl = {
-     enable = true;
-     extraPackages = with pkgs; [
-       vaapiVdpau
-       libvdpau-va-gl
-     ];
    };
  };
 }

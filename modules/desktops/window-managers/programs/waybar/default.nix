@@ -40,8 +40,8 @@
         };
         "backlight" = {
           tooltip        = false;
-          on-scroll-up   = "exec light -A 1";
-          on-scroll-down = "exec light -U 1";
+          on-scroll-up   = "exec /run/current-system/sw/bin/light -A 1";
+          on-scroll-down = "exec /run/current-system/sw/bin/light -U 1";
           format         = " {percent}%";
         };
 	      "disk" = {
