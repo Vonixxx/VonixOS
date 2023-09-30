@@ -145,7 +145,7 @@
    (nerdfonts.override { fonts = [ "CascadiaCode" ]; })
  ];
  
- environment.etc."Stars.jpg".source = /home/${vars.user}/VonixOS/Stars.jpg;
+ environment.etc."Stars.jpg".source = ../Stars.jpg;
 
  users.users.${vars.user} = {
    isNormalUser   = true;
