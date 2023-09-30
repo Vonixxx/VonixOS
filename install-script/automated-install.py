@@ -6,12 +6,6 @@ import subprocess
 from pathlib import Path
 
 
-#############
-# Variables #
-#############
-hardwareConfiguration = "/mnt/home/vonix/VonixOS/hosts/desktop/hardware-configuration.nix"
-
-
 ###############
 # Definitions #
 ###############
@@ -44,7 +38,6 @@ def chooseDisk():
     else:
         print("Invalid choice.")
         return None
-
 selectedDevice = chooseDisk()
 if not selectedDevice:
     print("No disk selected. Exiting script.")
@@ -115,14 +108,8 @@ shutil.copytree("/home/nixos/VonixOS", "/mnt/home/vonix/VonixOS")
 ############################################
 host = input("Enter host (laptop/desktop) in the following format: <host> --> ")
 destination = f"/mnt/home/vonix/VonixOS/hosts/{host}"
+hardwareConfiguration = f"{destination}/hardware-configuration.nix" 
 shutil.copy2("/mnt/etc/nixos/hardware-configuration.nix", destination)
-
-
-###################################
-# Initialising NixOS Installation #
-###################################
-hostFlake = input("Enter the to-install flake host (laptop/desktop) in the following format: .#<host> --> ")
-runCommand(["nixos-install", "--flake", hostFlake], cwd="/mnt/home/vonix/VonixOS")
 
 
 ############################################
@@ -137,3 +124,10 @@ with open(hardwareConfiguration, 'r') as file:
 contents = contents.replace('swapDevices = [ ];', f'swapDevices = [ {content} ];')
 with open(hardwareConfiguration, 'w') as file:
     file.write(contents)
+
+
+###################################
+# Initialising NixOS Installation #
+###################################
+hostFlake = input("Enter the to-install flake host (laptop/desktop) in the following format: .#<host> --> ")
+runCommand(["nixos-install", "--flake", hostFlake], cwd="/mnt/home/vonix/VonixOS")
