@@ -24,11 +24,13 @@
  outputs = inputs @ { self, nixpkgs, home-manager, plasma-manager, ... }:
  let
   vars = {
-    user     = "vonix";
-    terminal = "kitty";
-    editor   = "spacevim";
+    user          = "vonix";
+    terminal      = "kitty";
+    githubuser    = "Vonixxx";
+    editor        = "spacevim";
     defaultlocale = "en_GB.UTF-8";
     extralocale   = "cs_CZ.UTF-8";
+    githubemail   = "vonixxxwork@tuta.io";
     swaycolors = {
       text             = "#FFFFFF";
       urgent           = "#BF616A";
