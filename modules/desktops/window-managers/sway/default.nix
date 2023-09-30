@@ -73,7 +73,6 @@ with lib;
      wayland.windowManager.sway = {
        enable   = true;
        xwayland = true;
-       systemd.enable = true;
        extraConfig = ''
           output "*" bg /home/vonix/VonixOS/Stars.jpg fill
        '';
@@ -129,8 +128,6 @@ with lib;
            "${modifier}+Shift+4" = "move container to workspace number 4";
          };
 
-         bars = [ ];
-
          gaps = {
            top        = 15;
            left       = 15;
@@ -142,8 +139,9 @@ with lib;
            horizontal = 15;
          };
 
-
          window = { titlebar = false; };
+
+         bars = [ {command = "waybar";} ];
 
 	       startup = [
            {command = "${pkgs.autotiling}/bin/autotiling"; always = true;}

@@ -8,14 +8,7 @@
 {
  home-manager.users.${vars.user} = {
    programs.waybar = {
-    ##########
-    # Enable #
-    ##########
     enable = true;
-    systemd = {
-      enable = true;
-      target = "sway-session.target";
-    };
     ############
     # Settings #
     ############
@@ -38,12 +31,6 @@
             "4" = "<big></big>";
           };
         };
-        "backlight" = {
-          tooltip        = false;
-          format         = " {percent}%";
-          on-scroll-up   = "exec /run/current-system/sw/bin/light -A 1";
-          on-scroll-down = "exec /run/current-system/sw/bin/light -U 1";
-        };
 	      "disk" = {
 	       interval = 60;
 	       path     = "/";
@@ -54,6 +41,12 @@
          interval = 30;
          tooltip  = false;
          format   = "{:  %d/%m/%y | %H:%M}";
+        };
+        "backlight" = {
+          tooltip        = false;
+          format         = " {percent}%";
+          on-scroll-up   = "exec light -A 1";
+          on-scroll-down = "exec light -U 1";
         };
         "custom/power" = {
           tooltip  = false;
@@ -71,19 +64,15 @@
           format   = "<span foreground=\"#EBCB8B\"></span>";
         };
         "pulseaudio" = {
-          scroll-step = 5;
+          scroll-step = 1;
           format-icons = {
             headphone = "";
             default   = ["" "" ""];
           };
           format = "<span font=\"Line-Awesome\">{icon}</span>  {volume}%";
-          on-click = "kitty zsh -c '/run/current-system/sw/bin/pulsemixer'";
+          on-click = "kitty zsh -c 'pulsemixer'";
         };
         "battery" = {
-          states = {
-            warning  = 30;
-            critical = 15;
-          };
           interval                   = 5;
           bat                        = "BAT0";
           format-icons               = ["" "" "" "" ""];
@@ -93,10 +82,10 @@
           format                     = "<span foreground=\"#A3BE8C\">{icon}</span>";
         };
 	      "network" = {
+          on-click                = "kitty zsh -c 'nmtui'";
           format-disconnected     = "<span foreground=\"#BF616A\"></span>";
 	        format-wifi             = "<span foreground=\"#A3bE8C\"></span>";
 	        format-ethernet         = "<span foreground=\"#A3BE8C\"></span>";
-          on-click                = "kitty zsh -c '/run/current-system/sw/bin/nmtui'";
           tooltip-format-ethernet = "  {ifname}\nIP: {ipaddr}\n<span font=\"Line-Awesome\"></span> {bandwidthUpBits} <span font=\"Line-Awesome\"></span> {bandwidthDownBits}";
           tooltip-format-wifi     = "  {ifname} @ {essid}\nIP: {ipaddr}\nStrength: {signalStrength}%\nFrequency: {frequency}MHz\n<span font=\"Line-Awesome\"></span> {bandwidthUpBits} <span font=\"Line-Awesome\"></span> {bandwidthDownBits}";
         };
@@ -108,7 +97,6 @@
         /* Colors */
         @define-color base     #2E3440;
         @define-color text     #ECEFF4;
-        @define-color warning  #D08770;
         
      
         /* Base */
@@ -180,18 +168,6 @@
         #custom-reboot {
          border-top-right-radius:    10px;
          border-bottom-right-radius: 10px;
-        }
-     
-     
-        /* Critical */
-        #battery.critical {
-         color: @red;
-        }
-     
-        
-        /* Warning */
-        #battery.warning {
-         color: @warning;
         }
      
      
