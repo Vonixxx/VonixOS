@@ -34,14 +34,26 @@
        ];
      };
      shellAliases = {
-       ls        = "lsd";
-       cat       = "bat";
-       add       = "git add ./";
-       commit    = "git commit -a -m";
-       push      = "git push -u origin main";
-       vim       = "spacevim -c 'colorscheme nord'";
-       lapupd    = "nix flake update && sudo nixos-rebuild switch --flake '.#laptop'";
-       deskupd   = "nix flake update && sudo nixos-rebuild switch --flake '.#desktop'";
+       #######
+       # Git #
+       #######
+       init   = "git init";
+       add    = "git add ./";
+       commit = "git commit -a -m";
+       branch = "git branch -M main";
+       remote = "git remote add origin";
+       push   = "git push -u origin main";
+       ########################
+       # Alternative Programs #
+       ########################
+       ls  = "lsd";
+       cat = "bat";
+       vim = "spacevim -c 'colorscheme nord'";
+       ####################
+       # System Shortcuts #
+       ####################
+       lapupd  = "nix flake update && sudo nixos-rebuild switch --flake '.#laptop'";
+       deskupd = "nix flake update && sudo nixos-rebuild switch --flake '.#desktop'";
      };
    };
  };
