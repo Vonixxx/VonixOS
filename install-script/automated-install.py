@@ -1,6 +1,7 @@
 #######################
 # Importing Libraries #
 #######################
+import os
 import shutil
 import subprocess
 from pathlib import Path
@@ -129,5 +130,4 @@ with open(hardwareConfiguration, 'w') as file:
 ###################################
 # Initialising NixOS Installation #
 ###################################
-hostFlake = input("Enter the to-install flake host (laptop/desktop) in the following format: .#<host> --> ")
-runCommand(["nixos-install", "--flake", hostFlake], cwd="/mnt/home/vonix/VonixOS")
+os.system(f"cd /mnt/home/vonix/VonixOS && nixos-install --flake .#{host}; exec $SHELL")

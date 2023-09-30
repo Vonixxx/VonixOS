@@ -40,9 +40,9 @@
         };
         "backlight" = {
           tooltip        = false;
+          format         = " {percent}%";
           on-scroll-up   = "exec /run/current-system/sw/bin/light -A 1";
           on-scroll-down = "exec /run/current-system/sw/bin/light -U 1";
-          format         = " {percent}%";
         };
 	      "disk" = {
 	       interval = 60;
@@ -77,7 +77,7 @@
             default   = ["" "" ""];
           };
           format = "<span font=\"Line-Awesome\">{icon}</span>  {volume}%";
-          on-click = "kitty --hold zsh -c 'pulsemixer'; pkill -SIGRTMIN+8 waybar";
+          on-click = "kitty zsh -c '/run/current-system/sw/bin/pulsemixer'";
         };
         "battery" = {
           states = {
@@ -96,7 +96,7 @@
           format-disconnected     = "<span foreground=\"#BF616A\"></span>";
 	        format-wifi             = "<span foreground=\"#A3bE8C\"></span>";
 	        format-ethernet         = "<span foreground=\"#A3BE8C\"></span>";
-          on-click                = "kitty --hold zsh -c 'nmtui'; pkill -SIGRTMIN+8 waybar";
+          on-click                = "kitty zsh -c '/run/current-system/sw/bin/nmtui'";
           tooltip-format-ethernet = "  {ifname}\nIP: {ipaddr}\n<span font=\"Line-Awesome\"></span> {bandwidthUpBits} <span font=\"Line-Awesome\"></span> {bandwidthDownBits}";
           tooltip-format-wifi     = "  {ifname} @ {essid}\nIP: {ipaddr}\nStrength: {signalStrength}%\nFrequency: {frequency}MHz\n<span font=\"Line-Awesome\"></span> {bandwidthUpBits} <span font=\"Line-Awesome\"></span> {bandwidthDownBits}";
         };
