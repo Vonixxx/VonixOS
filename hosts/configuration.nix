@@ -32,6 +32,7 @@
    killall
    pciutils
    python3Full
+   swaybg
    usbutils
    wget
    zsh

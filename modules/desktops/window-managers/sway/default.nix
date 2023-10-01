@@ -94,8 +94,8 @@ with lib;
          input  = { "*" = { xkb_variant = "us"; }; };
          output = { eDP-1 = { mode = "1920x1080@60Hz"; }; };
 	       startup = [
-           { command = "output '*' bg ../Stars.jpg fill"; always = true; }
            { command = "${pkgs.autotiling}/bin/autotiling"; always = true; }
+           { command = "swaybg -i /home/'${vars.user}'/VonixOS/modules/desktops/window-managers/wallpapers/Stars.jpg -m fill"; always = true; }
          ];
          keybindings = {
            ############
