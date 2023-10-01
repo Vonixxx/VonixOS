@@ -10,18 +10,13 @@
    nixpkgs = {
      url = "github:nixos/nixpkgs/nixos-unstable";
    };
-   plasma-manager = {
-     inputs.nixpkgs.follows      = "nixpkgs";
-     inputs.home-manager.follows = "nixpkgs";
-     url                         = "github:pjones/plasma-manager";
-   };
    home-manager = {
      inputs.nixpkgs.follows = "nixpkgs";
      url                    = "github:nix-community/home-manager/master";
    };
  };
 
- outputs = inputs @ { self, nixpkgs, home-manager, plasma-manager, ... }:
+ outputs = inputs @ { self, nixpkgs, home-manager, ... }:
  let
   vars = {
     user          = "vonix";
@@ -42,7 +37,7 @@
    nixosConfigurations = (
      import ./hosts {
       inherit (nixpkgs) lib;
-      inherit vars inputs nixpkgs home-manager plasma-manager;
+      inherit vars inputs nixpkgs home-manager;
      }
    );
  };

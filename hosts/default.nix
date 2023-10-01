@@ -3,7 +3,7 @@
 ####################
 # Default Profiles #
 ####################
-{ lib, vars, inputs, nixpkgs, home-manager, plasma-manager, ... }:
+{ lib, vars, inputs, nixpkgs, home-manager, ... }:
 
 let
  lib = nixpkgs.lib;
@@ -29,7 +29,7 @@ in
        hostName = "desktop";
        mainMonitor = "HDMI-A-1";
      };
-     inherit vars inputs system nixpkgs plasma-manager;
+     inherit vars inputs system nixpkgs;
    };
  };
 

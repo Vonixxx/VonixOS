@@ -7,7 +7,7 @@
 
 {
  imports = ( 
-   import ../modules/shell ++ 
+   import ../modules/terminal ++ 
    import ../modules/desktops  
  );
 
@@ -26,10 +26,13 @@
    ############
    # Terminal #
    ############
+   bat
    btop
    coreutils
    git
+   kitty
    killall
+   lsd
    pciutils
    python3Full
    swaybg
@@ -84,6 +87,10 @@
    enable          = true;
    driSupport      = true;
    driSupport32Bit = true;
+   extraPackages = with pkgs; [
+     vaapiVdpau
+     libvdpau-va-gl
+   ];
  };
 
  boot.kernelParams = [ "quiet"]; 
