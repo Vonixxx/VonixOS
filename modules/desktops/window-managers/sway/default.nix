@@ -73,18 +73,45 @@ with lib;
      wayland.windowManager.sway = {
        enable   = true;
        xwayland = true;
-       extraConfig = ''
-          output "*" bg /home/vonix/VonixOS/Stars.jpg fill
-       '';
        config = rec {
          up       = "k";
          down     = "j";
          left     = "l";
          right    = "h";
          modifier = "Mod4";
-         input    = { "*" = { xkb_variant = "us"; }; };
-         output   = { eDP-1 = { mode = "1920x1080@60Hz"; }; };
+         gaps = {
+           top        = 15;
+           left       = 15;
+           outer      = 15;
+           inner      = 15;
+           right      = 15;
+           bottom     = 15;
+           vertical   = 15;
+           horizontal = 15;
+         };
+         window = { titlebar = false; };
+         bars   = [{ command = "waybar"; }];
+         input  = { "*" = { xkb_variant = "us"; }; };
+         output = { eDP-1 = { mode = "1920x1080@60Hz"; }; };
+	       startup = [
+           { command = "output '*' bg ../Stars.jpg fill"; always = true; }
+           { command = "${pkgs.autotiling}/bin/autotiling"; always = true; }
+         ];
          keybindings = {
+           ############
+           # Commands #
+           ############
+           "${modifier}+c" = "kill";
+           "${modifier}+r" = "reload";
+           "${modifier}+f" = "fullscreen";
+           "${modifier}+s" = "mode resize";
+           ###################
+           # Switching Focus #
+           ###################
+           "${modifier}+k" = "focus up";
+           "${modifier}+h" = "focus left";
+           "${modifier}+j" = "focus down";
+           "${modifier}+l" = "focus right";
            ######################
            # Switching Position #
            ######################
@@ -92,27 +119,13 @@ with lib;
            "${modifier}+Shift+h" = "move left";
            "${modifier}+Shift+j" = "move down";
            "${modifier}+Shift+l" = "move right";
-           ############
-           # Commands #
-           ############
-           "${modifier}+c"       = "kill";
-           "${modifier}+r"       = "reload";
-           "${modifier}+f"       = "fullscreen";
-           "${modifier}+s"       = "mode resize";
-           ###################
-           # Switching Focus #
-           ###################
-           "${modifier}+k"       = "focus up";
-           "${modifier}+h"       = "focus left";
-           "${modifier}+j"       = "focus down";
-           "${modifier}+l"       = "focus right";
            ########################
            # Switching Workspaces #
            ########################
-           "${modifier}+1"       = "workspace number 1";
-           "${modifier}+2"       = "workspace number 2";
-           "${modifier}+3"       = "workspace number 3";
-           "${modifier}+4"       = "workspace number 4";
+           "${modifier}+1" = "workspace number 1";
+           "${modifier}+2" = "workspace number 2";
+           "${modifier}+3" = "workspace number 3";
+           "${modifier}+4" = "workspace number 4";
            #####################
            # Program Shortcuts #
            #####################
@@ -128,27 +141,7 @@ with lib;
            "${modifier}+Shift+4" = "move container to workspace number 4";
          };
 
-         gaps = {
-           top        = 15;
-           left       = 15;
-           outer      = 15;
-           inner      = 15;
-           right      = 15;
-           bottom     = 15;
-           vertical   = 15;
-           horizontal = 15;
-         };
-
-         window = { titlebar = false; };
-
-         bars = [ {command = "waybar";} ];
-
-	       startup = [
-           {command = "${pkgs.autotiling}/bin/autotiling"; always = true;}
-         ];
-
          colors = {
-           background      = "${vars.swaycolors.text}";
            urgent          = { childBorder = "${vars.swaycolors.urgent}"; border = "${vars.swaycolors.urgent}"; background = "${vars.swaycolors.text}"; text = "${vars.swaycolors.text}"; indicator = "${vars.swaycolors.urgent}"; };
            focused         = { childBorder = "${vars.swaycolors.focusedborder}"; border = "${vars.swaycolors.focusedborder}"; background = "${vars.swaycolors.text}"; text = "${vars.swaycolors.text}"; indicator = "${vars.swaycolors.focusedborder}"; };
            unfocused       = { childBorder = "${vars.swaycolors.unfocusedborder}"; border = "${vars.swaycolors.unfocusedborder}"; background = "${vars.swaycolors.text}"; text = "${vars.swaycolors.text}"; indicator = "${vars.swaycolors.unfocusedborder}"; };

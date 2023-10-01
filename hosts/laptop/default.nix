@@ -3,15 +3,15 @@
 ##################
 # Laptop Profile #
 ##################
-{ pkgs, vars, ... }:
+{ pkgs, ... }:
 
 {
  imports = [
    ./hardware-configuration.nix
  ];
 
- sway.enable           = true;
- laptop.enable         = true;
+ sway.enable   = true;
+ laptop.enable = true;
 
  boot = {
    loader = {

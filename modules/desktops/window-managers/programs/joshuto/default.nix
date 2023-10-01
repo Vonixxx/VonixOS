@@ -8,13 +8,7 @@
 {
  home-manager.users.${vars.user} = {
    programs.joshuto = {
-     ##########
-     # Enable #
-     ##########
      enable = true;
-     ####################
-     # General Settings #
-     ####################
      settings = {
        scroll_offset = 5;
        watch_files   = true;
@@ -23,10 +17,6 @@
        tab = {
          display_mode = "all";
          home_page    = "root";
-       };
-       preview = {
-         max_preview_size = 2097152;     
-         preview_script   = ./preview.sh;
        };
        display.sort = {
          directories_first = true;
@@ -45,6 +35,10 @@
          column_ratio      = [1 3 4];
          mode              = "default";
        };
+       preview = {
+         max_preview_size = 2097152;     
+         preview_script   = ./preview.sh;
+       };
        search = {
          fzf_case_sensitivity    = "smart";
          glob_case_sensitivity   = "smart";
@@ -52,9 +46,6 @@
          string_case_sensitivity = "smart";
        };
      };
-     ###############
-     # Keybindings #
-     ###############
      keymap = {
        ################
        # Default View #
@@ -140,9 +131,9 @@
            # Shell Commands #
            ##################
            { keys = ["e"]; command = "shell nvim -E %s"; }
-	   ##############
-	   # Navigation #
-	   ##############
+	         ##############
+	         # Navigation #
+	         ##############
            { keys = ["k"]; command = "cursor_move_up"; }
            { keys = ["j"]; command = "cursor_move_down"; }
            { keys = ["G" "G"]; command = "cursor_move_end"; }

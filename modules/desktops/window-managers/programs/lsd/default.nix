@@ -8,17 +8,8 @@
 {
  home-manager.users.${vars.user} = {
    programs.lsd = {
-     ##########
-     # Enable #
-     ##########
      enable = true;
-     ###########
-     # Styling #
-     ###########
      settings = {
-       indicators = true;
-       layout     = "tree";
-       size       = "short";
        color = {
          when = "never";
        };
@@ -30,6 +21,9 @@
          theme = "fancy";
          when  = "always";
        };
+       indicators = true;
+       layout     = "tree";
+       size       = "short";
        sorting = {
          column       = "name";
          dir-grouping = "first";

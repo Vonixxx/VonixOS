@@ -18,11 +18,13 @@ with lib;
 
  config = mkIf (config.kde.enable) {
    desktop.enable = true;
+
    home-manager.users.${vars.user} = {
      programs.plasma = {
        enable = true;
      };
    };
+
    services = {
      xserver = {
        enable          = true;

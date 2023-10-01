@@ -11,6 +11,16 @@
    import ../modules/desktops  
  );
 
+ system.stateVersion = "23.11"; 
+ home-manager.users.${vars.user} = {
+   home = {
+     stateVersion = "23.11";
+   };
+   programs = {
+     home-manager.enable = true;
+   };
+ };
+
  nixpkgs.config.allowUnfree = true;
  environment.systemPackages = with pkgs; [
    ############
@@ -64,26 +74,40 @@
    unrar
  ];
 
- services.pipewire = {
-   enable            = true;
-   alsa.enable       = true;
-   pulse.enable      = true;
-   alsa.support32Bit = true;
+ programs = {
+   zsh.enable   = true;
+   dconf.enable = true;
+ };
+
+ hardware.opengl = {
+   enable          = true;
+   driSupport      = true;
+   driSupport32Bit = true;
  };
 
  boot.kernelParams = [ "quiet"]; 
 
- services.automatic-timezoned = {
-   enable = true;
+ networking = {
+   firewall.enable       = true;
+   networkmanager.enable = true;
  };
 
  environment = {
+   shells = with pkgs; [ zsh ];
    variables = {
      EDITOR   = "${vars.editor}";
      VISUAL   = "${vars.editor}";
      TERMINAL = "${vars.terminal}";
    };
  };
+
+ security = {
+   rtkit.enable            = true;
+   polkit.enable           = true;
+   sudo.wheelNeedsPassword = false;
+ };
+
+ virtualisation.libvirtd.enable = true;
 
  i18n.defaultLocale = "${vars.defaultlocale}";
  i18n.extraLocaleSettings = {
@@ -98,44 +122,31 @@
    LC_IDENTIFICATION = "${vars.extralocale}";
  };
 
- networking = {
-   firewall.enable       = true;
-   networkmanager.enable = true;
- };
-
- security = {
-   rtkit.enable            = true;
-   polkit.enable           = true;
-   sudo.wheelNeedsPassword = false;
- };
-
- programs.dconf.enable          = true;
- virtualisation.libvirtd.enable = true;
-
- hardware.opengl.enable          = true;
- hardware.opengl.driSupport      = true;
- hardware.opengl.driSupport32Bit = true;
- 
- nix = {
-   settings = {
-     auto-optimise-store = true;
-     experimental-features = [ "nix-command" "flakes" ];
+ services = {
+   pipewire = {
+     enable            = true;
+     alsa.enable       = true;
+     pulse.enable      = true;
+     alsa.support32Bit = true;
    };
+   automatic-timezoned.enable = true;
+   udev = {
+     enable = true;
+     packages = with pkgs; [ android-udev-rules ];
+   };
+ };
+
+ nix = {
    gc = {
      automatic = true;
      dates     = "weekly";
      options   = "--delete-older-than 3d";
    };
+   settings = {
+     auto-optimise-store = true;
+     experimental-features = [ "nix-command" "flakes" ];
+   };
  }; 
-
- programs.zsh.enable    = true;
- users.defaultUserShell = with pkgs; zsh;
- environment.shells     = with pkgs; [ zsh ];
-
- services.udev = {
-   enable = true;
-   packages = with pkgs; [ android-udev-rules ];
- };
 
  fonts.packages = with pkgs; [
    line-awesome
@@ -144,23 +155,13 @@
    noto-fonts-emoji
    (nerdfonts.override { fonts = [ "CascadiaCode" ]; })
  ];
- 
- environment.etc."Stars.jpg".source = ../Stars.jpg;
 
- users.users.${vars.user} = {
-   isNormalUser   = true;
-   extraGroups    = [ "networkmanager" "libvirtd" "wheel" "users" "video" "audio" ];
-   hashedPassword = "$6$2apmrKDHbo.NXO.l$R8rgwCFVrbnU5rJDgtb2qMFcbPFqCAdDkm2Mn8sVU.gw9YMGu9oBXZTLdyiybKaiOXaKxdPDeGhQpzccwn93D1";
- };
-
- system.stateVersion = "23.11"; 
-
- home-manager.users.${vars.user} = {
-   home = {
-     stateVersion = "23.11";
-   };
-   programs = {
-     home-manager.enable = true;
+ users = {
+   defaultUserShell = with pkgs; zsh;
+   users.${vars.user} = {
+     isNormalUser   = true;
+     extraGroups    = [ "networkmanager" "libvirtd" "wheel" "users" "video" "audio" ];
+     hashedPassword = "$6$2apmrKDHbo.NXO.l$R8rgwCFVrbnU5rJDgtb2qMFcbPFqCAdDkm2Mn8sVU.gw9YMGu9oBXZTLdyiybKaiOXaKxdPDeGhQpzccwn93D1";
    };
  };
 }

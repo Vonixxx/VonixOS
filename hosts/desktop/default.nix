@@ -3,7 +3,7 @@
 ###################
 # Desktop Profile #
 ###################
-{ pkgs, vars, ... }:
+{ pkgs, ... }:
 
 {
  imports = [ ./hardware-configuration.nix ]

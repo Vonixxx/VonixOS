@@ -30,13 +30,13 @@
     editor        = "spacevim";
     defaultlocale = "en_GB.UTF-8";
     extralocale   = "cs_CZ.UTF-8";
-    githubemail   = "vonixxxwork@tuta.io";
     swaycolors = {
       text             = "#FFFFFF";
       urgent           = "#BF616A";
       focusedborder    = "#B48EAD";
       unfocusedborder  = "#000000";
     };
+    githubemail   = "vonixxxwork@tuta.io";
   };
  in {
    nixosConfigurations = (

@@ -6,15 +6,17 @@ import shutil
 import subprocess
 from pathlib import Path
 
-
-###############
-# Definitions #
-###############
+####################
+# Execute Commands #
+####################
 def runCommand(command, cwd=None):
     result = subprocess.run(command, cwd=cwd, capture_output=True, text=True)
     if result.returncode != 0:
         raise Exception(f"Command {command} failed: {result.stderr}")
     return result.stdout
+######################
+# Print Disk Devices #
+######################
 def getDiskDevices():
     output = runCommand(["parted", "--list"])
     devices = []
@@ -22,6 +24,9 @@ def getDiskDevices():
         if "Disk /dev/" in line:
             devices.append(line.split(":")[0].replace("Disk", "").strip())
     return devices
+#########################
+# Choose Disk from List #
+#########################
 def chooseDisk():
     devices = getDiskDevices()
 
@@ -44,27 +49,23 @@ if not selectedDevice:
     print("No disk selected. Exiting script.")
     exit()
 
-
 ###############
 # Wiping Disk #
 ###############
 runCommand(["wipefs", "-a", selectedDevice])
-
 
 #######################
 # GPT Partition Table #
 #######################
 runCommand(["parted", selectedDevice, "mklabel", "gpt"])
 
-
 ############################
 # Boot and Root Partitions #
 ############################
 runCommand(["parted", selectedDevice, "mkpart", "boot", "fat32", "1MiB", "513MiB"])
-size = input("Enter desired root partition size (in GB): ")
-end_position = f"{size}GiB"
-runCommand(["parted", selectedDevice, "mkpart", "nixos", "515MiB", end_position])
-
+size = input("Enter root partition size (in GiB): ")
+endPosition = f"{size}GiB"
+runCommand(["parted", selectedDevice, "mkpart", "nixos", "515MiB", endPosition])
 
 ##############
 # Formatting #
@@ -73,12 +74,10 @@ runCommand(["parted", selectedDevice, "set", "1", "esp", "on"])
 runCommand(["mkfs.vfat", f"{selectedDevice}p1"])
 runCommand(["mkfs.ext4", f"{selectedDevice}p2"])
 
-
-############################
-# Mounting Nixos Partition #
-############################
+###########################
+# Mounting Root Partition #
+###########################
 runCommand(["mount", f"{selectedDevice}p2",  "/mnt"])
-
 
 ##########################
 # Mounting EFI Partition #
@@ -86,36 +85,33 @@ runCommand(["mount", f"{selectedDevice}p2",  "/mnt"])
 runCommand(["mkdir", "-p", "/mnt/boot"])
 runCommand(["mount", f"{selectedDevice}p1", "/mnt/boot"])
 
-
 #############################
 # Cloning GitHub Repository #
 #############################
 runCommand(["git", "clone", "https://github.com/Vonixxx/VonixOS.git", "/home/nixos/VonixOS"])
-
 
 ##########################################
 # Generating Default NixOS Configuration #
 ##########################################
 runCommand(["nixos-generate-config", "--root", "/mnt"])
 
-
 ########################################
 # Copying Personal NixOS Configuration #
 ########################################
 shutil.copytree("/home/nixos/VonixOS", "/mnt/home/vonix/VonixOS")
 
-############################################
-# Copying Generated Hardware Configuration #
-############################################
+##################################################
+# Copying System-Specific Hardware Configuration #
+##################################################
 host = input("Enter host (laptop/desktop) in the following format: <host> --> ")
 destination = f"/mnt/home/vonix/VonixOS/hosts/{host}"
-hardwareConfiguration = f"{destination}/hardware-configuration.nix" 
 shutil.copy2("/mnt/etc/nixos/hardware-configuration.nix", destination)
 
 
 ############################################
 # Adding Swap > hardware-configuration.nix #
 ############################################
+hardwareConfiguration = f"{destination}/hardware-configuration.nix" 
 content = '''{
     device = "/var/swap";
     size = 16*1024;
@@ -126,8 +122,7 @@ contents = contents.replace('swapDevices = [ ];', f'swapDevices = [ {content} ];
 with open(hardwareConfiguration, 'w') as file:
     file.write(contents)
 
-
-###################################
-# Initialising NixOS Installation #
-###################################
+#########################################
+# Initialising Flake/NixOS Installation #
+#########################################
 os.system(f"cd /mnt/home/vonix/VonixOS && nixos-install --flake .#{host}; exec $SHELL")
