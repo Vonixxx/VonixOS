@@ -160,14 +160,6 @@
    };
  }; 
 
- fonts.packages = with pkgs; [
-   line-awesome
-   liberation_ttf
-   noto-fonts-cjk
-   noto-fonts-emoji
-   (nerdfonts.override { fonts = [ "CascadiaCode" ]; })
- ];
-
  users = {
    defaultUserShell = with pkgs; zsh;
    users.${vars.user} = {
