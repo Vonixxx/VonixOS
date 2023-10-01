@@ -48,6 +48,14 @@ selectedDevice = chooseDisk()
 if not selectedDevice:
     print("No disk selected. Exiting script.")
     exit()
+######################
+# Disk Naming Scheme #
+######################
+def getPartitionName(device, partition_number):
+    if "nvme" in device:
+        return f"{device}p{partition_number}"
+    else:
+        return f"{device}{partition_number}"
 
 ###############
 # Wiping Disk #
@@ -71,19 +79,19 @@ runCommand(["parted", selectedDevice, "mkpart", "nixos", "515MiB", endPosition])
 # Formatting #
 ##############
 runCommand(["parted", selectedDevice, "set", "1", "esp", "on"])
-runCommand(["mkfs.vfat", f"{selectedDevice}p1"])
-runCommand(["mkfs.ext4", f"{selectedDevice}p2"])
+runCommand(["mkfs.vfat", getPartitionName(selectedDevice, 1)])
+runCommand(["mkfs.ext4", getPartitionName(selectedDevice, 2)])
 
 ###########################
 # Mounting Root Partition #
 ###########################
-runCommand(["mount", f"{selectedDevice}p2",  "/mnt"])
+runCommand(["mount", getPartitionName(selectedDevice, 2),  "/mnt"])
 
 ##########################
 # Mounting EFI Partition #
 ##########################
 runCommand(["mkdir", "-p", "/mnt/boot"])
-runCommand(["mount", f"{selectedDevice}p1", "/mnt/boot"])
+runCommand(["mount", getPartitionName(selectedDevice, 1), "/mnt/boot"])
 
 #############################
 # Cloning GitHub Repository #

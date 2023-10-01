@@ -34,11 +34,15 @@
    killall
    lsd
    pciutils
-   python3Full
    swaybg
    usbutils
    wget
    zsh
+   #########
+   # Tools #
+   #########
+   efibootmgr
+   python3Full
    ###############
    # Audio/Video #
    ###############
