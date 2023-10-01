@@ -38,6 +38,7 @@
        # Git #
        #######
        init   = "git init";
+       pull   = "git pull";
        add    = "git add ./";
        commit = "git commit -a -m";
        branch = "git branch -M main";
