@@ -6,7 +6,9 @@
 { pkgs, ... }:
 
 {
- imports = [ ./hardware-configuration.nix ]
+ imports = [ 
+  ./hardware-configuration.nix 
+];
 
  kde.enable     = true;
  desktop.enable = true;
