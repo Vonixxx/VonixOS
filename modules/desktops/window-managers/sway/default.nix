@@ -31,13 +31,9 @@ with lib;
        enable = true;
        extraPackages = with pkgs; [
          autotiling      
-	       bat
 	       fuzzel
 	       greetd.greetd
 	       greetd.tuigreet
-	       joshuto
-	       kitty
-	       lsd
 	       light
 	       tlp
 	       wlsunset
@@ -64,6 +60,14 @@ with lib;
        };
      };
    };
+
+  fonts.packages = with pkgs; [
+    line-awesome
+    liberation_ttf
+    noto-fonts-cjk
+    noto-fonts-emoji
+    (nerdfonts.override { fonts = [ "CascadiaCode" ]; })
+  ];
 
    home-manager.users.${vars.user} = {
      wayland.windowManager.sway = {
