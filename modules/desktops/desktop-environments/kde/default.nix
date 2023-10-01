@@ -19,9 +19,6 @@ with lib;
  config = mkIf (config.kde.enable) {
    desktop.enable = true;
 
-   desktopManager.plasma5 = {
-     enable = true;
-   };
 
    home-manager.users.${vars.user} = {
      programs.plasma = {
