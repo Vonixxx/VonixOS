@@ -1,11 +1,5 @@
 import subprocess
 
-############
-# Username #
-############
-def get_username():
-    username = input("Desired Username: ")
-    return username
 ######################
 # Disk Naming Scheme #
 ######################
@@ -56,3 +50,36 @@ def runCommand(command, cwd=None):
     if result.returncode != 0:
         raise Exception(f"Command {command} failed: {result.stderr}")
     return result.stdout
+###################################
+# Prompt User to Modify Variables #
+###################################
+filePath = "/mnt/home/{user}/VonixOS/flake.nix"
+def getUsername():
+    username = input("Desired Username: ")
+    return username
+
+def promptFlakeValues():
+    variables = {
+        "user": input("User: "),
+        "githubuser": input("GitHub Username: "),
+        "githubemail": input("GitHub E-mail: "),
+        "defaultlocale": input("Default Locale: "),
+        "extralocale": input("Extra Locale: ")
+    }
+    return variables
+
+def inputUserValues(contents, key, value):
+    pattern = f'({key}\\s*=\\s*")([^"]*)(";)'
+    replacement = f'\\1{value}\\3'
+    return re.sub(pattern, replacement, contents)
+
+def updateFlakeFile(variables):
+    with open(filePath, 'r') as file:
+        contents = file.read()
+    contents = inputUserValues(contents, "user", variables["user"])
+    contents = inputUserValues(contents, "githubuser", variables["githubuser"])
+    contents = inputUserValues(contents, "githubemail", variables["githubemail"])
+    contents = inputUserValues(contents, "defaultlocale", variables["defaultlocale"])
+    contents = inputUserValues(contents, "extralocale", variables["extralocale"])
+    with open(filePath, 'w') as file:
+        file.write(contents)

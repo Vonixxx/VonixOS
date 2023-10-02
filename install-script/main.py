@@ -6,12 +6,12 @@
 import os
 import shutil
 import subprocess
+from functions import *
 from pathlib import Path
-from functions import runCommand, chooseDisk, getUsername, getDiskDevices, getPartitionName
 
-#####################################
-# Wiping Disk + GPT Partition Table #
-#####################################
+#####################
+# Disk Manipulation #
+#####################
 runCommand(["wipefs", "-a", selectedDevice])
 runCommand(["parted", selectedDevice, "mklabel", "gpt"])
 
@@ -37,20 +37,22 @@ runCommand(["mount", getPartitionName(selectedDevice, 2),  "/mnt"])
 runCommand(["mkdir", "-p", "/mnt/boot"])
 runCommand(["mount", getPartitionName(selectedDevice, 1), "/mnt/boot"])
 
-##########################################
-# Generating Default NixOS Configuration #
-##########################################
+###############################
+# Default NixOS Configuration #
+###############################
 runCommand(["nixos-generate-config", "--root", "/mnt"])
 
-##################################
-# Grabbing VonixOS Configuration #
-##################################
+#################################
+# Cloning VonixOS Configuration #
+#################################
 user = getUsername()
 runCommand(["git", "clone", "https://github.com/Vonixxx/VonixOS.git", f"/mnt/home/{user}/VonixOS"])
 
 ##################################################
 # Copying System-Specific Hardware Configuration #
 ##################################################
+variables = promptFlakeValues()
+updateFlakeFile(variables)
 host = input("Enter host (laptop/desktop) in the following format: <host> --> ")
 destination = f"/mnt/home/{user}/VonixOS/hosts/{host}"
 shutil.copy2("/mnt/etc/nixos/hardware-configuration.nix", destination)
