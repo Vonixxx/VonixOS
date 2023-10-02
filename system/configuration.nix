@@ -156,7 +156,7 @@
      options   = "--delete-older-than 3d";
    };
    settings = {
-     auto-optimise-store = true;
+     auto-optimise-store   = true;
      experimental-features = [ "nix-command" "flakes" ];
    };
  }; 
@@ -165,8 +165,8 @@
    defaultUserShell = with pkgs; zsh;
    users.${vars.user} = {
      isNormalUser   = true;
+     hashedPassword = "${vars.password}";
      extraGroups    = [ "networkmanager" "libvirtd" "wheel" "users" "video" "audio" ];
-     hashedPassword = "$6$2apmrKDHbo.NXO.l$R8rgwCFVrbnU5rJDgtb2qMFcbPFqCAdDkm2Mn8sVU.gw9YMGu9oBXZTLdyiybKaiOXaKxdPDeGhQpzccwn93D1";
    };
  };
 }

@@ -59,7 +59,7 @@ runCommand(["git", "clone", "https://github.com/Vonixxx/VonixOS.git", f"/mnt/hom
 ##################################################
 # Copying System-Specific Hardware Configuration #
 ##################################################
-printSectionTitle("Enter Desired Values for Personalised System: <string>")
+printSectionTitle("Enter Desired Values for Personalised System (password won't display as you type): <string>")
 promptFlakeValues()
 updateFlakeFile(variables, f"/mnt/home/{user}/VonixOS")
 printSectionTitle("Choose Host --> Laptop (Sway) or Desktop (KDE or Budgie): <string> (1st letter must be lowercase) -->")

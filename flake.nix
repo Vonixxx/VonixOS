@@ -6,6 +6,7 @@
 # flake.nix
 # └─./system
 #     └─default.nix
+#       ├─<host> # Laptop or Desktop
 #       └─configuration.nix
 #         └─./modules
 #             ├─./desktops
@@ -34,13 +35,14 @@
     editor        = "spacevim";
     defaultlocale = "en_GB.UTF-8";
     extralocale   = "cs_CZ.UTF-8";
+    githubemail   = "vonixxxwork@tuta.io";
+    password      = "$6$2apmrKDHbo.NXO.l$R8rgwCFVrbnU5rJDgtb2qMFcbPFqCAdDkm2Mn8sVU.gw9YMGu9oBXZTLdyiybKaiOXaKxdPDeGhQpzccwn93D1";
     swaycolors = {
       text             = "#FFFFFF";
       urgent           = "#BF616A";
       focusedborder    = "#B48EAD";
       unfocusedborder  = "#000000";
     };
-    githubemail   = "vonixxxwork@tuta.io";
   };
  in {
    nixosConfigurations = (

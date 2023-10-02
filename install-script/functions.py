@@ -4,6 +4,7 @@
 # Automated Installation Script (Functions) #
 #############################################
 import re
+import getpass
 import subprocess
 
 ##########
@@ -63,6 +64,11 @@ def runCommand(command, cwd=None):
 ###################################
 # Prompt User to Modify Variables #
 ###################################
+def getHashedPassword():
+    password = getpass.getpass(prompt="Password: ")
+    hashedPassword = runCommand(["mkpasswd", "-m", "sha-512", password])
+    return hashedPassword.strip()
+
 def getUsername():
     username = input("Enter: ")
     return username
@@ -70,6 +76,7 @@ def getUsername():
 def promptFlakeValues():
     variables = {
         "user": input("Username: "),
+        "password": getHashedPassword(),
         "githubuser": input("GitHub Username: "),
         "githubemail": input("GitHub E-mail: "),
         "defaultlocale": input("Default Locale: "),
@@ -86,6 +93,7 @@ def updateFlakeFile(variables, cwd=None):
     with open("flake.nix", 'r') as file:
         contents = file.read()
     contents = inputUserValues(contents, "user", variables["user"])
+    contents = inputUserValues(contents, "password", variables["password"])
     contents = inputUserValues(contents, "githubuser", variables["githubuser"])
     contents = inputUserValues(contents, "githubemail", variables["githubemail"])
     contents = inputUserValues(contents, "defaultlocale", variables["defaultlocale"])
