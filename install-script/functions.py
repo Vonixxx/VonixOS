@@ -1,4 +1,18 @@
+###########
+# VonixOS #
+#############################################
+# Automated Installation Script (Functions) #
+#############################################
+import re
 import subprocess
+
+##########
+# Titles #
+##########
+def printSectionTitle(title):
+    print("\n" + "#" * (len(title) + 3))
+    print(f"# {title} #")
+    print("#" * (len(title) + 3) + "\n")
 
 ######################
 # Disk Naming Scheme #
@@ -18,7 +32,7 @@ def chooseDisk():
     for idx, device in enumerate(devices, 1):
         print(f"{idx}. {device}")
 
-    choice = int(input("Please select a device by number: "))
+    choice = int(input("Select: "))
     if 1 <= choice <= len(devices):
         selectedDevice = devices[choice-1]
         print(f"You selected: {selectedDevice}")
@@ -28,10 +42,6 @@ def chooseDisk():
     else:
         print("Invalid choice.")
         return None
-selectedDevice = chooseDisk()
-if not selectedDevice:
-    print("No disk selected. Exiting script.")
-    exit()
 ######################
 # Print Disk Devices #
 ######################
@@ -53,14 +63,13 @@ def runCommand(command, cwd=None):
 ###################################
 # Prompt User to Modify Variables #
 ###################################
-filePath = "/mnt/home/{user}/VonixOS/flake.nix"
 def getUsername():
-    username = input("Desired Username: ")
+    username = input("Enter: ")
     return username
 
 def promptFlakeValues():
     variables = {
-        "user": input("User: "),
+        "user": input("Username: "),
         "githubuser": input("GitHub Username: "),
         "githubemail": input("GitHub E-mail: "),
         "defaultlocale": input("Default Locale: "),
@@ -73,13 +82,13 @@ def inputUserValues(contents, key, value):
     replacement = f'\\1{value}\\3'
     return re.sub(pattern, replacement, contents)
 
-def updateFlakeFile(variables):
-    with open(filePath, 'r') as file:
+def updateFlakeFile(variables, cwd=None):
+    with open("flake.nix", 'r') as file:
         contents = file.read()
     contents = inputUserValues(contents, "user", variables["user"])
     contents = inputUserValues(contents, "githubuser", variables["githubuser"])
     contents = inputUserValues(contents, "githubemail", variables["githubemail"])
     contents = inputUserValues(contents, "defaultlocale", variables["defaultlocale"])
     contents = inputUserValues(contents, "extralocale", variables["extralocale"])
-    with open(filePath, 'w') as file:
+    with open("flake.nix", 'w') as file:
         file.write(contents)

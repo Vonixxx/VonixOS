@@ -1,8 +1,8 @@
 ###########
 # VonixOS #
-#################################
-# Automated Installation Script #
-#################################
+########################################
+# Automated Installation Script (Main) #
+########################################
 import os
 import shutil
 import subprocess
@@ -12,20 +12,27 @@ from pathlib import Path
 #####################
 # Disk Manipulation #
 #####################
+printSectionTitle("Choose Disk from List: <integer>")
+selectedDevice = chooseDisk()
+if not selectedDevice:
+    print("No disk selected. Exiting script.")
+    exit()
 runCommand(["wipefs", "-a", selectedDevice])
 runCommand(["parted", selectedDevice, "mklabel", "gpt"])
 
 ##############
 # Partitions #
 ##############
+printSectionTitle("Root Partition Size (in GiB): <integer>")
 runCommand(["parted", selectedDevice, "mkpart", "boot", "fat32", "1MiB", "513MiB"])
-size = input("Root Partition Size (GiB): ")
+size = input("Enter: ")
 endPosition = f"{size}GiB"
 runCommand(["parted", selectedDevice, "mkpart", "nixos", "515MiB", endPosition])
 
 ##############
 # Formatting #
 ##############
+getPartitionName()
 runCommand(["parted", selectedDevice, "set", "1", "esp", "on"])
 runCommand(["mkfs.vfat", getPartitionName(selectedDevice, 1)])
 runCommand(["mkfs.ext4", getPartitionName(selectedDevice, 2)])
@@ -45,23 +52,27 @@ runCommand(["nixos-generate-config", "--root", "/mnt"])
 #################################
 # Cloning VonixOS Configuration #
 #################################
+printSectionTitle("Choose Username: <string>")
 user = getUsername()
 runCommand(["git", "clone", "https://github.com/Vonixxx/VonixOS.git", f"/mnt/home/{user}/VonixOS"])
 
 ##################################################
 # Copying System-Specific Hardware Configuration #
 ##################################################
-variables = promptFlakeValues()
-updateFlakeFile(variables)
-host = input("Enter host (laptop/desktop) in the following format: <host> --> ")
+printSectionTitle("Enter Desired Values for Personalised System: <string>")
+promptFlakeValues()
+updateFlakeFile(variables, f"/mnt/home/{user}/VonixOS")
+printSectionTitle("Choose Host --> Laptop (Sway) or Desktop (KDE or Budgie): <string> (1st letter must be lowercase) -->")
+host = input("<host> --> ")
 destination = f"/mnt/home/{user}/VonixOS/hosts/{host}"
 shutil.copy2("/mnt/etc/nixos/hardware-configuration.nix", destination)
 
 ##############################################
 # Adding Swap --> hardware-configuration.nix #
 ##############################################
+printSectionTitle("Swap File Size (16 for 16GB, 8 for 8GB, etc.): <integer>")
 hardwareConfiguration = f"{destination}/hardware-configuration.nix"
-swapMultiplier = int(input("Swap Multiplier (e.g. 16 for 16GB, 8 for 8GB): "))
+swapMultiplier = int(input("Enter: "))
 content = f'''{{
     device = "/var/swap";
     size   = {swapMultiplier}*1024;

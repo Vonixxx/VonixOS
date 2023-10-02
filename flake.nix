@@ -3,9 +3,15 @@
 #######################
 # Flake Configuration #
 #######################
-#  flake.nix
-#  └─./hosts
-#    └─default.nix
+# flake.nix
+# └─./system
+#     └─default.nix
+#       └─configuration.nix
+#         └─./modules
+#             ├─./desktops
+#             │   └─default.nix
+#             └─./terminal
+#                 └─default.nix
 {
  description = "NixOS + Flake Configuration for Laptop/Desktop";
 
@@ -38,7 +44,7 @@
   };
  in {
    nixosConfigurations = (
-     import ./hosts {
+     import ./system {
       inherit (nixpkgs) lib;
       inherit vars inputs nixpkgs home-manager;
      }
