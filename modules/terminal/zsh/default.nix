@@ -7,6 +7,11 @@
 
 {
  home-manager.users.${vars.user} = {
+   programs.oh-my-posh = {
+     enable               = true;
+     enableZshIntegration = true;
+     useTheme             = "tokyonight_storm"; 
+   };
    programs.zsh = {
      enable = true;
      initExtraFirst = ''
@@ -14,13 +19,11 @@
      '';
      prezto = {
        enable       = true;
-       prompt.theme = "adam2";
        editor       = { keymap = "vi"; };
        pmodules = [
          "environment"
          "syntax-highlighting"
          "git"
-         "prompt"
          "helper"
          "editor"
          "history"
