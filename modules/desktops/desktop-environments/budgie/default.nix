@@ -1,14 +1,14 @@
 ###########
 # VonixOS #
-############################
-# KDE Plasma Configuration #
-############################
+########################
+# Budgie Configuration #
+########################
 { lib, pkgs, vars, config, ... }:
 
 with lib;
 {
  options = {
-   kde = {
+   budgie = {
      enable = mkOption {
        default = false;
        type    = types.bool;
@@ -16,18 +16,17 @@ with lib;
    };
  };
 
- config = mkIf (config.kde.enable) {
+ config = mkIf (config.budgie.enable) {
    services = {
      xserver = {
        enable          = true;
        libinput.enable = true;
        layout          = "us";
-       desktopManager.plasma5 = {
+       desktopManager.budgie = {
          enable = true;
        };
-       displayManager = {
-         sddm.enable    = true;
-         defaultSession = "plasmawayland";
+       displayManager.lightdm = {
+         enable = true;
        };
      };
    };

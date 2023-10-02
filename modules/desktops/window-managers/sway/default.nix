@@ -23,8 +23,6 @@ with lib;
  };
 
  config = mkIf (config.sway.enable) {
-   laptop.enable = true;
-
    programs = {
      light.enable = true;
      sway = {
@@ -35,7 +33,6 @@ with lib;
 	       greetd.greetd
 	       greetd.tuigreet
 	       light
-	       tlp
 	       wlsunset
          wl-clipboard
        ];

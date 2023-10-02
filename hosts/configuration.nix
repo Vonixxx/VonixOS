@@ -43,6 +43,7 @@
    #########
    efibootmgr
    python3Full
+   tlp
    ###############
    # Audio/Video #
    ###############

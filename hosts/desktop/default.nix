@@ -10,8 +10,7 @@
   ./hardware-configuration.nix 
 ];
 
- kde.enable     = true;
- desktop.enable = true;
+ budgie.enable  = true;
 
  boot = {
    loader = {
