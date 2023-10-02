@@ -11,18 +11,19 @@ import subprocess
 # Titles #
 ##########
 def printSectionTitle(title):
-    print("\n" + "#" * (len(title) + 3))
+    lineLength = len(title) + 2
+    print("\n" + "#" * lineLength)
     print(f"# {title} #")
-    print("#" * (len(title) + 3) + "\n")
+    print("#" * lineLength + "\n")
 
 ######################
 # Disk Naming Scheme #
 ######################
-def getPartitionName(device, partition_number):
+def getPartitionName(device, partitionNumber):
     if "nvme" in device:
-        return f"{device}p{partition_number}"
+        return f"{device}p{partitionNumber}"
     else:
-        return f"{device}{partition_number}"
+        return f"{device}{partitionNumber}"
 #########################
 # Choose Disk from List #
 #########################
@@ -73,9 +74,9 @@ def getUsername():
     username = input("Enter: ")
     return username
 
-def promptFlakeValues():
+def promptFlakeValues(user):
     variables = {
-        "user": input("Username: "),
+        "user": user,
         "password": getHashedPassword(),
         "githubuser": input("GitHub Username: "),
         "githubemail": input("GitHub E-mail: "),
