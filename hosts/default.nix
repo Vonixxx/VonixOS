@@ -3,6 +3,12 @@
 ####################
 # Default Profiles #
 ####################
+#  flake.nix
+#  └─./hosts
+#      └─default.nix 
+#        ├─configuration.nix
+#        └─./<host>.nix
+#            └─default.nix
 { lib, vars, inputs, nixpkgs, home-manager, ... }:
 
 let

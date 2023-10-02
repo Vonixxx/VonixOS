@@ -3,6 +3,18 @@
 ###################
 # Desktop Profile #
 ###################
+# flake.nix
+# ├─ ./hosts
+# │   ├─ default.nix
+# │   └─ ./desktop
+# │        ├─ default.nix *
+# │        └─ hardware-configuration.nix
+# └─ ./modules
+#      └─ ./desktops
+#          ├─ hyprland.nix
+#          └─ ./virtualisation
+#              └─ default.nix
+#
 { pkgs, ... }:
 
 {

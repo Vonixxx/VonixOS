@@ -3,6 +3,9 @@
 #######################
 # Flake Configuration #
 #######################
+#  flake.nix
+#  └─./hosts
+#    └─default.nix
 {
  description = "NixOS + Flake Configuration for Laptop/Desktop";
 

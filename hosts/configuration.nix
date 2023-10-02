@@ -3,6 +3,15 @@
 #######################
 # NixOS Configuration #
 #######################
+#  flake.nix
+#  └─./hosts
+#      └─default.nix
+#        └─configuration.nix
+#          └─./modules
+#              ├─./desktops
+#              │   └─default.nix
+#              └─./terminal
+#                  └─default.nix
 { lib, pkgs, vars, config, inputs, ... }:
 
 {
