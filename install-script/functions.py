@@ -90,7 +90,7 @@ def inputUserValues(contents, key, value):
     return re.sub(pattern, replacement, contents)
 
 def updateFlakeFile(variables, cwd=None):
-    with open("flake.nix", 'r') as file:
+    with open("./flake.nix", 'r') as file:
         contents = file.read()
     contents = inputUserValues(contents, "user", variables["user"])
     contents = inputUserValues(contents, "password", variables["password"])
@@ -98,5 +98,5 @@ def updateFlakeFile(variables, cwd=None):
     contents = inputUserValues(contents, "githubemail", variables["githubemail"])
     contents = inputUserValues(contents, "defaultlocale", variables["defaultlocale"])
     contents = inputUserValues(contents, "extralocale", variables["extralocale"])
-    with open("flake.nix", 'w') as file:
+    with open("./flake.nix", 'w') as file:
         file.write(contents)

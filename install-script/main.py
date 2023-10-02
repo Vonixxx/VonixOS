@@ -7,7 +7,6 @@ import os
 import shutil
 import subprocess
 from functions import *
-from pathlib import Path
 
 #####################
 # Disk Manipulation #
