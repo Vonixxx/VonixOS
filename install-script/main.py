@@ -39,13 +39,13 @@ runCommand(["mkfs.ext4", getPartitionName(selectedDevice, 2)])
 # Mounting #
 ############
 runCommand(["mount", getPartitionName(selectedDevice, 2),  "/mnt"])
-runCommand("mkdir", "-p", "/mnt/boot")
+runCommand(["mkdir", "-p", "/mnt/boot"])
 runCommand(["mount", getPartitionName(selectedDevice, 1), "/mnt/boot"])
 
 ###############################
 # Default NixOS Configuration #
 ###############################
-runCommand("nixos-generate-config", "--root", "/mnt")
+runCommand(["nixos-generate-config", "--root", "/mnt"])
 
 #################################
 # Cloning VonixOS Configuration #
@@ -53,14 +53,14 @@ runCommand("nixos-generate-config", "--root", "/mnt")
 printSectionTitle("Choose Username: <string> and Password (will be hashed): <string>")
 user = getUsername()
 hashedPassword = getHashedPassword()
-runCommand("git", "clone", "https://github.com/Vonixxx/VonixOS.git", f"/mnt/home/{user}/VonixOS")
+runCommand(["git", "clone", "https://github.com/Vonixxx/VonixOS.git", f"/mnt/home/{user}/VonixOS"])
 
 ##################################################
 # Copying System-Specific Hardware Configuration #
 ##################################################
-printSectionTitle("Enter Desired Values for Personalised System (password won't display as you type): <string>")
+printSectionTitle("Enter Desired Values for Personalised System: <string>")
 variables = promptFlakeValues(user, hashedPassword)
-updateFlakeFile(variables, f"/mnt/home/{user}/VonixOS")
+updateFlakeFile(variables)
 printSectionTitle("Choose Host --> Laptop (Sway) or Desktop (KDE or Budgie): <string> (1st letter must be lowercase)")
 host = input("Enter: ")
 destination = f"/mnt/home/{user}/VonixOS/hosts/{host}"

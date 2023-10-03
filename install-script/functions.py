@@ -65,11 +65,11 @@ def getPartitionName(device, partitionNumber):
 # Prompt User to Modify Variables #
 ###################################
 def getUsername():
-    username = input("Enter: ")
+    username = input("User: ")
     return username
 
 def getHashedPassword():
-    password = getpass.getpass(prompt="Enter: ")
+    password = getpass.getpass(prompt="Password: ")
     hashedPassword = runCommand(["mkpasswd", "-m", "sha-512", password])
     return hashedPassword.strip()
 
@@ -89,8 +89,8 @@ def inputUserValues(contents, key, value):
     replacement = f'\\1{value}\\3'
     return re.sub(pattern, replacement, contents)
 
-def updateFlakeFile(variables, cwd=None):
-    with open('./flake.nix', 'r') as file:
+def updateFlakeFile(variables):
+    with open('/mnt/home/{user}/VonixOS/flake.nix', 'r') as file:
         contents = file.read()
     contents = inputUserValues(contents, "user", variables["user"])
     contents = inputUserValues(contents, "password", variables["password"])
@@ -98,5 +98,5 @@ def updateFlakeFile(variables, cwd=None):
     contents = inputUserValues(contents, "githubemail", variables["githubemail"])
     contents = inputUserValues(contents, "defaultlocale", variables["defaultlocale"])
     contents = inputUserValues(contents, "extralocale", variables["extralocale"])
-    with open('./flake.nix', 'w') as file:
+    with open('/mnt/home/{user}/VonixOS/flake.nix', 'w') as file:
         file.write(contents)
