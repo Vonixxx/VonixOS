@@ -7,8 +7,9 @@
 
 {
  imports = ( 
-   import ../modules/terminal ++ 
-   import ../modules/desktops  
+   import ../modules/desktops ++
+   import ../modules/programs ++
+   import ../modules/terminal
  );
 
  system.stateVersion = "23.11"; 
@@ -23,39 +24,22 @@
 
  nixpkgs.config.allowUnfree = true;
  environment.systemPackages = with pkgs; [
-   ############
-   # Terminal #
-   ############
-   bat
-   btop
+   ##################
+   # Terminal/Tools #
+   ##################
    coreutils
-   git
-   kitty
-   killall
-   lsd
-   pciutils
-   swaybg
-   usbutils
-   wget
-   zsh
-   #########
-   # Tools #
-   #########
    efibootmgr
+   killall
    parted
-   python3Full
-   tlp
-   ###############
-   # Audio/Video #
-   ###############
-   feh
-   mpv
-   pipewire
+   pciutils
    pulsemixer
+   python3Full
+   usbutils
+   virt-manager
+   wget
    ################
    # Applications #
    ################
-   librewolf
    libreoffice-fresh
    mkpasswd
    mediainfo
@@ -63,10 +47,6 @@
    pfetch
    spacevim
    teams-for-linux
-   ##################
-   # Virtualisation #
-   ##################
-   virt-manager
    ###################
    # File Management #
    ###################
@@ -80,7 +60,6 @@
    pandoc
    poppler_utils
    rar
-   transmission_4
    unzip
    unrar
  ];
@@ -138,6 +117,9 @@
  };
 
  services = {
+   transmission = {
+     enable = true;
+   };
    pipewire = {
      enable            = true;
      alsa.enable       = true;

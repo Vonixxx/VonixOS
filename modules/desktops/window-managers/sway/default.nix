@@ -33,6 +33,7 @@ with lib;
 	       greetd.greetd
 	       greetd.tuigreet
 	       light
+         swaybg
 	       wlsunset
          wl-clipboard
        ];
