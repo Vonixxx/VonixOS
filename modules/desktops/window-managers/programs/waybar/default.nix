@@ -146,7 +146,7 @@
         };
         "custom/hibernate" = {
           tooltip  = false;
-          on-click = "systemctl hibernate";
+          on-click = "systemctl suspend";
           format   = "<span foreground=\"#5E81AC\"></span>";
         };
         "custom/reboot" = {
