@@ -58,7 +58,7 @@ runCommand(["git", "clone", "https://github.com/Vonixxx/VonixOS.git", f"/mnt/hom
 ##################################################
 # Copying System-Specific Hardware Configuration #
 ##################################################
-printSectionTitle("Enter Desired Values for Personalised System: <string>")
+printSectionTitle("Locales and Github: <string>")
 variables = promptFlakeValues(user, hashedPassword)
 updateFlakeFile(variables, user)
 printSectionTitle("Choose Host --> Laptop (Sway) or Desktop (KDE or Budgie): <string> (1st letter must be lowercase)")
@@ -85,4 +85,5 @@ with open(hardwareConfiguration, 'w') as file:
 #########################################
 # Initialising Flake/NixOS Installation #
 #########################################
+printSectionTitle("System Installation")
 os.system(f"cd /mnt/home/{user}/VonixOS && nixos-install --flake .#{host}; exec $SHELL")
