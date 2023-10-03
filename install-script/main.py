@@ -51,8 +51,9 @@ runCommand(["nixos-generate-config", "--root", "/mnt"])
 #################################
 # Cloning VonixOS Configuration #
 #################################
-printSectionTitle("Choose Username: <string>")
+printSectionTitle("Choose Username: <string> and Password (will be hashed): <string>")
 user = getUsername()
+hashedPassword = getHashedPassword()
 runCommand(["git", "clone", "https://github.com/Vonixxx/VonixOS.git", f"/mnt/home/{user}/VonixOS"])
 
 ##################################################
@@ -60,7 +61,7 @@ runCommand(["git", "clone", "https://github.com/Vonixxx/VonixOS.git", f"/mnt/hom
 ##################################################
 printSectionTitle("Enter Desired Values for Personalised System (password won't display as you type): <string>")
 variables = promptFlakeValues(user)
-updateFlakeFile(variables, f"/mnt/home/{user}/VonixOS")
+updateFlakeFile([variables, f"/mnt/home/{user}/VonixOS"])
 printSectionTitle("Choose Host --> Laptop (Sway) or Desktop (KDE or Budgie): <string> (1st letter must be lowercase)")
 host = input("Enter: ")
 destination = f"/mnt/home/{user}/VonixOS/hosts/{host}"

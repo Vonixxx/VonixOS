@@ -11,28 +11,37 @@ import subprocess
 # Titles #
 ##########
 def printSectionTitle(title):
-    lineLength = len(title) + 2
+    lineLength = len(title) + 4
     print("\n" + "#" * lineLength)
     print(f"# {title} #")
     print("#" * lineLength + "\n")
-
+####################
+# Execute Commands #
+####################
+def runCommand(command, cwd=None):
+    result = subprocess.run(command, cwd=cwd, capture_output=True, text=True)
+    if result.returncode != 0:
+        raise Exception(f"Command {command} failed: {result.stderr}")
+    return result.stdout
 ######################
-# Disk Naming Scheme #
+# Print Disk Devices #
 ######################
-def getPartitionName(device, partitionNumber):
-    if "nvme" in device:
-        return f"{device}p{partitionNumber}"
-    else:
-        return f"{device}{partitionNumber}"
+def getDiskDevices():
+    output = runCommand(["parted", "--list"])
+    devices = []
+    for line in output.splitlines():
+        if "Disk /dev/" in line:
+            devices.append(line.split(":")[0].replace("Disk", "").strip())
+    return devices
 #########################
 # Choose Disk from List #
 #########################
 def chooseDisk():
     devices = getDiskDevices()
 
-    print("Available disk devices:")
-    for idx, device in enumerate(devices, 1):
-        print(f"{idx}. {device}")
+    print("Available Disks:")
+    for index, device in enumerate(devices, 1):
+        print(f"{index}. {device}")
 
     choice = int(input("Select: "))
     if 1 <= choice <= len(devices):
@@ -45,39 +54,29 @@ def chooseDisk():
         print("Invalid choice.")
         return None
 ######################
-# Print Disk Devices #
+# Disk Naming Scheme #
 ######################
-def getDiskDevices():
-    output = runCommand(["parted", "--list"])
-    devices = []
-    for line in output.splitlines():
-        if "Disk /dev/" in line:
-            devices.append(line.split(":")[0].replace("Disk", "").strip())
-    return devices
-####################
-# Execute Commands #
-####################
-def runCommand(command, cwd=None):
-    result = subprocess.run(command, cwd=cwd, capture_output=True, text=True)
-    if result.returncode != 0:
-        raise Exception(f"Command {command} failed: {result.stderr}")
-    return result.stdout
+def getPartitionName(device, partitionNumber):
+    if "nvme" in device:
+        return f"{device}p{partitionNumber}"
+    else:
+        return f"{device}{partitionNumber}"
 ###################################
 # Prompt User to Modify Variables #
 ###################################
-def getHashedPassword():
-    password = getpass.getpass(prompt="Password: ")
-    hashedPassword = runCommand(["mkpasswd", "-m", "sha-512", password])
-    return hashedPassword.strip()
-
 def getUsername():
     username = input("Enter: ")
     return username
 
-def promptFlakeValues(user):
+def getHashedPassword():
+    password = getpass.getpass(prompt="Enter: ")
+    hashedPassword = runCommand(["mkpasswd", "-m", "sha-512", password])
+    return hashedPassword.strip()
+
+def promptFlakeValues(user, hashedPassword):
     variables = {
         "user": user,
-        "password": getHashedPassword(),
+        "password": hashedPassword,
         "githubuser": input("GitHub Username: "),
         "githubemail": input("GitHub E-mail: "),
         "defaultlocale": input("Default Locale: "),
@@ -91,7 +90,7 @@ def inputUserValues(contents, key, value):
     return re.sub(pattern, replacement, contents)
 
 def updateFlakeFile(variables, cwd=None):
-    with open("./flake.nix", 'r') as file:
+    with open('./flake.nix', 'r') as file:
         contents = file.read()
     contents = inputUserValues(contents, "user", variables["user"])
     contents = inputUserValues(contents, "password", variables["password"])
@@ -99,5 +98,5 @@ def updateFlakeFile(variables, cwd=None):
     contents = inputUserValues(contents, "githubemail", variables["githubemail"])
     contents = inputUserValues(contents, "defaultlocale", variables["defaultlocale"])
     contents = inputUserValues(contents, "extralocale", variables["extralocale"])
-    with open("./flake.nix", 'w') as file:
+    with open('./flake.nix', 'w') as file:
         file.write(contents)

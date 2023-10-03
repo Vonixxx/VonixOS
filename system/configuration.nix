@@ -42,6 +42,7 @@
    # Tools #
    #########
    efibootmgr
+   parted
    python3Full
    tlp
    ###############
@@ -61,6 +62,7 @@
    nixos-generators
    pfetch
    spacevim
+   teams-for-linux
    ##################
    # Virtualisation #
    ##################
