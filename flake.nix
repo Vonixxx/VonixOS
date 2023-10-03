@@ -36,7 +36,7 @@
     defaultlocale = "en_GB.UTF-8";
     extralocale   = "cs_CZ.UTF-8";
     githubemail   = "vonixxxwork@tuta.io";
-    password      = "$6$brxBkP8uwPXsIDez$eSSgE.L5U1hwrsTg.p9cPGmnSj60x4U4bYmCLm4Ai.UhlO/XWiXYhFscLN018Vz04DPTiYhharqmOq3BOvTDa.";
+    password      = "$6$n8dHu9Dz.eHWToAW$wNpkqltlDKdjn5sLWWjMSoSxiaV86Foq/Fr.F4H0zg5R89QHLADFRbBXxWSRjIjrKSL2wDxZxr6z4Acupk0Qs1";
     swaycolors = {
       text             = "#FFFFFF";
       urgent           = "#BF616A";

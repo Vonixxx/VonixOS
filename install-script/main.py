@@ -60,10 +60,10 @@ runCommand(["git", "clone", "https://github.com/Vonixxx/VonixOS.git", f"/mnt/hom
 ##################################################
 printSectionTitle("Enter Desired Values for Personalised System: <string>")
 variables = promptFlakeValues(user, hashedPassword)
-updateFlakeFile(variables)
+updateFlakeFile(variables, user)
 printSectionTitle("Choose Host --> Laptop (Sway) or Desktop (KDE or Budgie): <string> (1st letter must be lowercase)")
 host = input("Enter: ")
-destination = f"/mnt/home/{user}/VonixOS/hosts/{host}"
+destination = f"/mnt/home/{user}/VonixOS/system/{host}"
 shutil.copy2("/mnt/etc/nixos/hardware-configuration.nix", destination)
 
 ##############################################

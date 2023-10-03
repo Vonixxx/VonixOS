@@ -89,7 +89,7 @@ def inputUserValues(contents, key, value):
     replacement = f'\\1{value}\\3'
     return re.sub(pattern, replacement, contents)
 
-def updateFlakeFile(variables):
+def updateFlakeFile(variables, user):
     with open('/mnt/home/{user}/VonixOS/flake.nix', 'r') as file:
         contents = file.read()
     contents = inputUserValues(contents, "user", variables["user"])
