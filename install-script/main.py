@@ -26,7 +26,7 @@ printSectionTitle("Root Partition Size (in GiB): <integer>")
 runCommand(["parted", selectedDevice, "mkpart", "boot", "fat32", "1MiB", "513MiB"])
 size = input("Enter: ")
 endPosition = f"{size}GiB"
-runCommand(["parted", selectedDevice, "mkpart", "nixos", "515MiB", endPosition])
+runCommand(["parted", selectedDevice, "mkpart", "nixos", "ext4", "515MiB", endPosition])
 
 ##############
 # Formatting #
