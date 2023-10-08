@@ -6,7 +6,7 @@
 { pkgs, vars, ... }:
 
 {
- programs.nixneovim = {
+  home-manager.users.${vars.user}.programs.nixneovim = {
    enable = true;
  };
 }
