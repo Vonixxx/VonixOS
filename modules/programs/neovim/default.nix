@@ -3,7 +3,7 @@
 ########################
 # Neovim Configuration #
 ########################
-{ pkgs, vars, nixneovim, ... }:
+{ pkgs, vars, ... }:
 
 {
  programs.nixneovim = {
