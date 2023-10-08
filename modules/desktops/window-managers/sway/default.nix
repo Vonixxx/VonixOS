@@ -30,9 +30,11 @@ with lib;
        extraPackages = with pkgs; [
          autotiling      
 	       fuzzel
+         grim
 	       greetd.greetd
 	       greetd.tuigreet
 	       light
+         slurp
          swaybg
 	       wlsunset
          wl-clipboard
@@ -67,7 +69,15 @@ with lib;
     (nerdfonts.override { fonts = [ "CascadiaCode" ]; })
   ];
 
-   home-manager.users.${vars.user} = {
+  home-manager.users.${vars.user} = {
+     home = {
+       pointerCursor = {
+         size       = 16;
+         gtk.enable = true;
+         name       = "Catppuccin-Mocha-Dark-Cursors";
+         package    = pkgs.catppuccin-cursors.mochaDark;
+       };
+     };
      wayland.windowManager.sway = {
        enable   = true;
        xwayland = true;
@@ -137,6 +147,14 @@ with lib;
            "${modifier}+Shift+2" = "move container to workspace number 2";
            "${modifier}+Shift+3" = "move container to workspace number 3";
            "${modifier}+Shift+4" = "move container to workspace number 4";
+           #######################
+           # Utilities Shortcuts #
+           #######################
+           "F5"    = "exec ${pkgs.light}/bin/light -U 5";
+           "F6"    = "exec ${pkgs.light}/bin/light -A 5";
+           "F2"    = "exec ${pkgs.pulsemixer}/bin/pulsemixer --change-volume -5";
+           "F3"    = "exec ${pkgs.pulsemixer}/bin/pulsemixer --change-volume +5";
+           "Print" = "exec ${pkgs.grim}/bin/grim ~/Pictures/screenshot.png | ${pkgs.slurp}/bin/slurp";
          };
 
          colors = {

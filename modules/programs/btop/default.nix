@@ -1,7 +1,7 @@
 ###########
 # VonixOS #
 ###########################
-# Librewolf Configuration #
+# BTop Configuration #
 ###########################
 { pkgs, vars, ... }:
 
