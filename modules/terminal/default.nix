@@ -9,4 +9,5 @@
  ./lsd/default.nix
  ./zsh/default.nix
  ./kitty/default.nix
+ ./neovim/default.nix
 ]

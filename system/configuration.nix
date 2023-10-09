@@ -41,7 +41,6 @@
    mediainfo
    nixos-generators
    pfetch
-   spacevim
    teams-for-linux
    ###################
    # File Management #

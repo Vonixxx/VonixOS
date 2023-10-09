@@ -28,10 +28,10 @@
  outputs = inputs @ { self, nixpkgs, nixneovim, home-manager, ... }:
  let
   vars = {
+    editor        = "nvim";
     user          = "vonix";
     terminal      = "kitty";
     githubuser    = "Vonixxx";
-    editor        = "spacevim";
     defaultlocale = "en_GB.UTF-8";
     extralocale   = "cs_CZ.UTF-8";
     swaycolors = {
