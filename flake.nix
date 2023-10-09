@@ -21,7 +21,7 @@
    nixpkgs.url   = "github:nixos/nixpkgs/nixos-unstable";
    home-manager = {
      inputs.nixpkgs.follows = "nixpkgs";
-     url                    = "github:nix-community/home-manager/master";
+     url                    = "github:nix-community/home-manager";
    };
  };
 
@@ -40,8 +40,8 @@
       focusedborder    = "#B48EAD";
       unfocusedborder  = "#000000";
     };
-    githubemail   = "vonixxxwork@tuta.io";
-    password      = "$6$vheawoZJxxe9N7Ml$sGnV.OE9HFDY0MQzDLUuSX38f8GPPus.cD45ptYi.Whyx1aJ5xEuHUYoz0LT/CcDP5dFbw7AdOeG7hahoeA170";
+    githubemail = "vonixxxwork@tuta.io";
+    password    = "$6$vheawoZJxxe9N7Ml$sGnV.OE9HFDY0MQzDLUuSX38f8GPPus.cD45ptYi.Whyx1aJ5xEuHUYoz0LT/CcDP5dFbw7AdOeG7hahoeA170";
   };
  in {
    nixosConfigurations = (

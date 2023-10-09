@@ -11,6 +11,7 @@ let
  pkgs = import nixpkgs {
    inherit system;
    config.allowUnfree = true;
+   overlays = [ nixneovim.overlays.default ];
  };
 in
 
@@ -23,12 +24,10 @@ in
        mainMonitor = "HDMI-A-1";
      };
      inherit pkgs vars inputs system;
-     overlays = [ nixneovim.overlays.default ];
    };
    modules = [
      ./desktop
      ./configuration.nix
-     nixneovim.nixosModules.default
      home-manager.nixosModules.home-manager {
       home-manager.useGlobalPkgs   = true;
       home-manager.useUserPackages = true;
@@ -43,13 +42,11 @@ in
        hostName = "laptop";
        mainMonitor = "eDP-1";
      };
-     inherit pkgs vars inputs system;
-     overlays = [ nixneovim.overlays.default ];
+     inherit pkgs vars inputs system nixneovim;
    };
    modules = [
      ./laptop
      ./configuration.nix
-     nixneovim.nixosModules.default
      home-manager.nixosModules.home-manager {
       home-manager.useGlobalPkgs   = true;
       home-manager.useUserPackages = true;

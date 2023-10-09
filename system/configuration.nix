@@ -3,7 +3,7 @@
 #######################
 # NixOS Configuration #
 #######################
-{ lib, pkgs, vars, config, inputs, ... }:
+{ lib, pkgs, vars, config, inputs, nixneovim, home-manager, ... }:
 
 {
  imports = ( 
@@ -14,12 +14,9 @@
 
  system.stateVersion = "23.11"; 
  home-manager.users.${vars.user} = {
-   home = {
-     stateVersion = "23.11";
-   };
-   programs = {
-     home-manager.enable = true;
-   };
+   programs.home-manager.enable = true;
+   home.stateVersion            = "23.11";
+   imports = [ nixneovim.nixosModules.default ];
  };
 
  environment.systemPackages = with pkgs; [
