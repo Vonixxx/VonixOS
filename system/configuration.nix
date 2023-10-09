@@ -25,6 +25,8 @@
    ##################
    coreutils
    efibootmgr
+   ghc
+   haskell-language-server
    killall
    parted
    pciutils

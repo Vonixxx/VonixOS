@@ -103,7 +103,7 @@ with lib;
          output = { eDP-1 = { mode = "1920x1080@60Hz"; }; };
 	       startup = [
            { command = "${pkgs.autotiling}/bin/autotiling"; always = true; }
-           { command = "swaybg -i /home/'${vars.user}'/VonixOS/modules/desktops/window-managers/wallpapers/Stars.jpg -m fill"; always = true; }
+           { command = "swaybg -i /home/'${vars.user}'/GitHub/VonixOS/modules/desktops/window-managers/wallpapers/Stars.jpg -m fill"; always = true; }
          ];
          keybindings = {
            ############
@@ -152,6 +152,7 @@ with lib;
            #######################
            "F5"    = "exec ${pkgs.light}/bin/light -U 5";
            "F6"    = "exec ${pkgs.light}/bin/light -A 5";
+           "F1"    = "exec ${pkgs.pulsemixer}/bin/pulsemixer --mute";
            "F2"    = "exec ${pkgs.pulsemixer}/bin/pulsemixer --change-volume -5";
            "F3"    = "exec ${pkgs.pulsemixer}/bin/pulsemixer --change-volume +5";
            "Print" = "exec ${pkgs.grim}/bin/grim ~/Pictures/screenshot.png | ${pkgs.slurp}/bin/slurp";

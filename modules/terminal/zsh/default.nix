@@ -18,8 +18,8 @@
         pfetch
      '';
      prezto = {
-       enable       = true;
-       editor       = { keymap = "vi"; };
+       enable = true;
+       editor = { keymap = "vi"; };
        pmodules = [
          "environment"
          "syntax-highlighting"
@@ -52,7 +52,7 @@
        ########################
        ls  = "lsd";
        cat = "bat";
-       vim = "spacevim -c 'colorscheme nord'";
+       vim = "nvim";
        ####################
        # System Shortcuts #
        ####################
