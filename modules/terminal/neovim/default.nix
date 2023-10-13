@@ -41,7 +41,6 @@
        };
        mini = {
          enable            = true;
-	 map.enable        = true;
 	 basics.enable     = true;
 	 animate.enable    = true;
 	 surround.enable   = true;
@@ -62,6 +61,7 @@
        nvim-toggleterm-lua
      ];
      extraConfigLua = "
+       require('mini.map').setup()
        require('toggleterm').setup{}
      ";
    };

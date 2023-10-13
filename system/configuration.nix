@@ -38,6 +38,7 @@
    ################
    # Applications #
    ################
+   freetube
    libreoffice-fresh
    mkpasswd
    mediainfo

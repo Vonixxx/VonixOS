@@ -119,25 +119,25 @@
             "1" = "<big></big>";
             "2" = "<big></big>";
             "3" = "<big></big>";
-            "4" = "<big></big>";
+            "4" = "<big></big>";
           };
         };
-	      "disk" = {
-	       interval = 60;
-	       path     = "/";
-         tooltip  = false;
-	       format   = "  {percentage_used}%";
-	      };
-        "clock" = {
-         interval = 30;
-         tooltip  = false;
-         format   = "{:  %d/%m/%y | %H:%M}";
-        };
+	"disk" = {
+	  interval = 60;
+	  path     = "/";
+          tooltip  = false;
+	  format   = "  {percentage_used}%";
+	};
         "backlight" = {
           tooltip        = false;
           format         = " {percent}%";
           on-scroll-up   = "exec light -A 1";
           on-scroll-down = "exec light -U 1";
+        };
+        "clock" = {
+          interval = 30;
+          tooltip  = false;
+          format   = "{:  %d/%m/%y | %H:%M}";
         };
         "custom/power" = {
           tooltip  = false;
@@ -160,8 +160,8 @@
             headphone = "";
             default   = ["" "" ""];
           };
-          format = "<span font=\"Line-Awesome\">{icon}</span>  {volume}%";
           on-click = "kitty zsh -c 'pulsemixer'";
+          format = "<span font=\"Line-Awesome\">{icon}</span>  {volume}%";
         };
         "battery" = {
           interval                   = 5;
