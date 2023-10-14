@@ -25,16 +25,13 @@ with lib;
 
  config = mkIf (config.sway.enable) {
    programs = {
-     light.enable = true;
      sway = {
        enable = true;
        extraPackages = with pkgs; [
          autotiling      
-	 fuzzel
          grim
 	 greetd.greetd
 	 greetd.tuigreet
-	 light
          slurp
          swaybg
 	 wlsunset
@@ -44,10 +41,6 @@ with lib;
    };
 
    services = {
-     tlp.settings = {
-       enable              = true;
-       auto-cpufreq.enable = true;
-     };
      greetd = {
        enable = true;
        settings = {
@@ -101,7 +94,7 @@ with lib;
          window = { titlebar = false; };
          bars   = [{ command = "waybar"; }];
          input  = { "*" = { xkb_variant = "us"; }; };
-         output = { eDP-1 = { mode = "1920x1080@60Hz"; }; };
+         output = { ${vars.output} = { mode = "${vars.outputConfig}"; }; };
          keybindings = {
            ############
            # Commands #
@@ -148,23 +141,23 @@ with lib;
            #######################
            # Utilities Shortcuts #
            #######################
-           "F5"             = "exec ${pkgs.light}/bin/light -U 5";
-           "F6"             = "exec ${pkgs.light}/bin/light -A 5";
-           "F1"             = "exec ${pkgs.pulsemixer}/bin/pulsemixer --mute";
-           "${modifier}+F1" = "exec ${pkgs.pulsemixer}/bin/pulsemixer --unmute";
-           "F2"             = "exec ${pkgs.pulsemixer}/bin/pulsemixer --change-volume -5";
-           "F3"             = "exec ${pkgs.pulsemixer}/bin/pulsemixer --change-volume +5";
-           "Print"          = "exec ${pkgs.grim}/bin/grim ~/Pictures/screenshot.png | ${pkgs.slurp}/bin/slurp";
+           "1"      = "exec ${pkgs.light}/bin/light -U 5";
+           "Ctrl+1" = "exec ${pkgs.light}/bin/light -A 5";
+           "2"      = "exec ${pkgs.pulsemixer}/bin/pulsemixer --mute";
+           "Ctrl+2" = "exec ${pkgs.pulsemixer}/bin/pulsemixer --unmute";
+           "3"      = "exec ${pkgs.pulsemixer}/bin/pulsemixer --change-volume -5";
+           "Ctrl+3" = "exec ${pkgs.pulsemixer}/bin/pulsemixer --change-volume +5";
+           "Ctrl+4" = "exec ${pkgs.grim}/bin/grim ~/Pictures/screenshot.png | ${pkgs.slurp}/bin/slurp";
          };
 	 startup = [
            { command = "${pkgs.autotiling}/bin/autotiling"; always = true; }
            { command = "swaybg -i /home/'${vars.user}'/GitHub/VonixOS/modules/desktops/window-managers/wallpapers/Stars.jpg -m fill"; always = true; }
          ];
          colors = {
-           urgent          = { childBorder = "${vars.swaycolors.urgent}"; border = "${vars.swaycolors.urgent}"; background = "${vars.swaycolors.text}"; text = "${vars.swaycolors.text}"; indicator = "${vars.swaycolors.urgent}"; };
-           focused         = { childBorder = "${vars.swaycolors.focusedborder}"; border = "${vars.swaycolors.focusedborder}"; background = "${vars.swaycolors.text}"; text = "${vars.swaycolors.text}"; indicator = "${vars.swaycolors.focusedborder}"; };
-           unfocused       = { childBorder = "${vars.swaycolors.unfocusedborder}"; border = "${vars.swaycolors.unfocusedborder}"; background = "${vars.swaycolors.text}"; text = "${vars.swaycolors.text}"; indicator = "${vars.swaycolors.unfocusedborder}"; };
-           focusedInactive = { childBorder = "${vars.swaycolors.unfocusedborder}"; border = "${vars.swaycolors.unfocusedborder}"; background = "${vars.swaycolors.text}"; text = "${vars.swaycolors.text}"; indicator = "${vars.swaycolors.unfocusedborder}"; };
+           urgent          = { childBorder = "${vars.swayColors.urgent}";          border = "${vars.swayColors.urgent}";          background = "${vars.swayColors.text}"; text = "${vars.swayColors.text}"; indicator = "${vars.swayColors.urgent}"; };
+           focused         = { childBorder = "${vars.swayColors.focusedborder}";   border = "${vars.swayColors.focusedborder}";   background = "${vars.swayColors.text}"; text = "${vars.swayColors.text}"; indicator = "${vars.swayColors.focusedborder}"; };
+           unfocused       = { childBorder = "${vars.swayColors.unfocusedborder}"; border = "${vars.swayColors.unfocusedborder}"; background = "${vars.swayColors.text}"; text = "${vars.swayColors.text}"; indicator = "${vars.swayColors.unfocusedborder}"; };
+           focusedInactive = { childBorder = "${vars.swayColors.unfocusedborder}"; border = "${vars.swayColors.unfocusedborder}"; background = "${vars.swayColors.text}"; text = "${vars.swayColors.text}"; indicator = "${vars.swayColors.unfocusedborder}"; };
          };
        };
      };

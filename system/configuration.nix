@@ -13,10 +13,11 @@
  );
 
  system.stateVersion = "23.11"; 
+
  home-manager.users.${vars.user} = {
    programs.home-manager.enable = true;
    home.stateVersion            = "23.11";
-   imports = [ nixneovim.nixosModules.default ];
+   imports                      = [ nixneovim.nixosModules.default ];
  };
 
  environment.systemPackages = with pkgs; [
@@ -101,17 +102,19 @@
 
  virtualisation.libvirtd.enable = true;
 
- i18n.defaultLocale = "${vars.defaultlocale}";
- i18n.extraLocaleSettings = {
-   LC_TIME           = "${vars.extralocale}";
-   LC_NAME           = "${vars.extralocale}";
-   LC_PAPER          = "${vars.extralocale}";
-   LC_ADDRESS        = "${vars.extralocale}";
-   LC_NUMERIC        = "${vars.extralocale}";
-   LC_MONETARY       = "${vars.extralocale}";
-   LC_TELEPHONE      = "${vars.extralocale}";
-   LC_MEASUREMENT    = "${vars.extralocale}";
-   LC_IDENTIFICATION = "${vars.extralocale}";
+ i18n = {
+  defaultLocale = "${vars.defaultLocale}";
+  extraLocaleSettings = {
+     LC_TIME           = "${vars.extraLocale}";
+     LC_NAME           = "${vars.extraLocale}";
+     LC_PAPER          = "${vars.extraLocale}";
+     LC_ADDRESS        = "${vars.extraLocale}";
+     LC_NUMERIC        = "${vars.extraLocale}";
+     LC_MONETARY       = "${vars.extraLocale}";
+     LC_TELEPHONE      = "${vars.extraLocale}";
+     LC_MEASUREMENT    = "${vars.extraLocale}";
+     LC_IDENTIFICATION = "${vars.extraLocale}";
+   };
  };
 
  services = {
@@ -150,7 +153,7 @@
    users.${vars.user} = {
      isNormalUser   = true;
      hashedPassword = "${vars.password}";
-     extraGroups    = [ "networkmanager" "libvirtd" "wheel" "users" "video" "audio" ];
+     extraGroups    = [ "audio" "users" "video" "wheel" "libvirtd" "networkmanager" ];
    };
  };
 }

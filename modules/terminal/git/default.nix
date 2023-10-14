@@ -12,17 +12,8 @@
    };
    programs.git = {
      enable    = true;
-     userName  = "${vars.githubuser}";
-     userEmail = "${vars.githubemail}";
-     delta = {
-       enable = true;
-       options = {
-         delta = {
-           side-by-side = true;
-           line-numbers = true;
-         };
-       };
-     };
+     userName  = "${vars.githubUser}";
+     userEmail = "${vars.githubMail}";
    };
  };
 }

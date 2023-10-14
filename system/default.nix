@@ -21,9 +21,8 @@ in
    specialArgs = {
      host = {
        hostName = "desktop";
-       mainMonitor = "HDMI-A-1";
      };
-     inherit pkgs vars inputs system;
+     inherit pkgs vars inputs system nixneovim;
    };
    modules = [
      ./desktop
@@ -40,7 +39,6 @@ in
    specialArgs = {
      host = {
        hostName = "laptop";
-       mainMonitor = "eDP-1";
      };
      inherit pkgs vars inputs system nixneovim;
    };

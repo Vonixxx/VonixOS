@@ -3,24 +3,24 @@
 ###################
 # Desktop Profile #
 ###################
-{ pkgs, ... }:
+{ pkgs, vars, ... }:
 
 {
  imports = [ 
   ./hardware-configuration.nix 
 ];
 
- kde.enable  = true;
+ ${vars.userInterface}.enable = true;
 
  boot = {
    loader = {
-     timeout = 3;
+     timeout = 10;
      efi = {
        canTouchEfiVariables = true;
        efiSysMountPoint     = "/boot";
      };
      grub = {
-       configurationLimit = 3;
+       configurationLimit = 5;
        enable             = true;
        efiSupport         = true;
        useOSProber        = true;
