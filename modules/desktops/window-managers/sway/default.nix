@@ -124,13 +124,6 @@ with lib;
            "${modifier}+2" = "workspace number 2";
            "${modifier}+3" = "workspace number 3";
            "${modifier}+4" = "workspace number 4";
-           #####################
-           # Program Shortcuts #
-           #####################
-           "${modifier}+t" = "exec ${pkgs.kitty}/bin/kitty";
-           "${modifier}+d" = "exec ${pkgs.fuzzel}/bin/fuzzel";
-           "${modifier}+y" = "exec ${pkgs.freetube}/bin/freetube";
-           "${modifier}+b" = "exec ${pkgs.librewolf}/bin/librewolf";
            ######################################
            # Switching Containers -> Workspaces #
            ######################################
@@ -141,13 +134,20 @@ with lib;
            #######################
            # Utilities Shortcuts #
            #######################
-           "1"      = "exec ${pkgs.light}/bin/light -U 5";
-           "Ctrl+1" = "exec ${pkgs.light}/bin/light -A 5";
-           "2"      = "exec ${pkgs.pulsemixer}/bin/pulsemixer --mute";
-           "Ctrl+2" = "exec ${pkgs.pulsemixer}/bin/pulsemixer --unmute";
-           "3"      = "exec ${pkgs.pulsemixer}/bin/pulsemixer --change-volume -5";
-           "Ctrl+3" = "exec ${pkgs.pulsemixer}/bin/pulsemixer --change-volume +5";
-           "Ctrl+4" = "exec ${pkgs.grim}/bin/grim ~/Pictures/screenshot.png | ${pkgs.slurp}/bin/slurp";
+           "Up+l"   ="exec ${pkgs.light}/bin/light -A 5";  
+           "Down+l" ="exec ${pkgs.light}/bin/light -U 5";  
+           "Up+m"   = "exec ${pkgs.pulsemixer}/bin/pulsemixer --mute";
+           "Down+m" = "exec ${pkgs.pulsemixer}/bin/pulsemixer --unmute";
+           "Up+v"   = "exec ${pkgs.pulsemixer}/bin/pulsemixer --change-volume +5";
+           "Down+v" = "exec ${pkgs.pulsemixer}/bin/pulsemixer --change-volume -5";
+           #####################
+           # Program Shortcuts #
+           #####################
+           "${modifier}+t" = "exec ${pkgs.kitty}/bin/kitty";
+           "${modifier}+d" = "exec ${pkgs.fuzzel}/bin/fuzzel";
+           "${modifier}+y" = "exec ${pkgs.freetube}/bin/freetube";
+           "${modifier}+b" = "exec ${pkgs.librewolf}/bin/librewolf";
+           "${modifier}+p" = "exec ${pkgs.grim}/bin/grim ~/Pictures/screenshot.png | ${pkgs.slurp}/bin/slurp";
          };
 	 startup = [
            { command = "${pkgs.autotiling}/bin/autotiling"; always = true; }

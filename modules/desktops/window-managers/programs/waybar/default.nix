@@ -47,29 +47,22 @@
         background:    @base;
         padding:       10px 12px;
        }
-       #clock {
+
+       #disk,
+       #clock, 
+       #backlight,
+       #pulseaudio {
         margin-left:   5px;
         border-radius: 10px;
        }
-       #disk {
-        border-radius: 10px;
-       }
+
        #network,
        #battery {
         margin-left:   5px;
         border-radius: 10px;
         padding-right: 20px;
        }
-       #pulseaudio {
-        margin-left:   5px;
-        border-radius: 10px;
-       }
-       #custom-power,
-       #custom-reboot,
-       #custom-hibernate {
-        padding-right: 15px;
-       }
-       #backlight,
+ 
        #custom-power {
         border-top-left-radius:    10px;
         border-bottom-left-radius: 10px;
@@ -77,6 +70,7 @@
        #custom-reboot {
         border-top-right-radius:    10px;
         border-bottom-right-radius: 10px;
+	padding-right:              17.5px;
        }
     
        /* Workspaces */

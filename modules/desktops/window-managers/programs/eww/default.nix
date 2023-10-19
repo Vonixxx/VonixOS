@@ -10,6 +10,7 @@
    programs.eww = {
      enable    = true;
      configDir = ./bar;
+     package   = pkgs.eww-wayland;
    };
  };
 }

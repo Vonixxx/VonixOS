@@ -31,10 +31,12 @@
    killall
    parted
    pciutils
+   pfetch-rs
    pulsemixer
    python3Full
    usbutils
    virt-manager
+   wev
    wget
    ################
    # Applications #
@@ -44,8 +46,6 @@
    mkpasswd
    mediainfo
    nixos-generators
-   pfetch
-   teams-for-linux
    ###################
    # File Management #
    ###################

@@ -10,7 +10,10 @@
    programs.nixneovim = {
      enable = true;
      colorschemes.nord = {
-       enable = true;
+       enable   = true;
+       italic   = true;
+       borders  = true;
+       contrast = true;
      };
      mappings = {
        normal = {
@@ -21,6 +24,10 @@
          "<leader>q" = {
            silent = true;
 	   action = "'<cmd>:q<cr>'";
+         };
+         "<leader>f" = {
+           silent = true;
+	   action = "'<cmd>:Telescope find_files<cr>'";
          };
          "<leader>t" = {
            silent = true;
@@ -39,10 +46,13 @@
          enable = true;
          theme  = "nord";
        };
+       barbar = {
+	 enable    = true;
+	 clickable = true;
+       };
        mini = {
          enable            = true;
 	 basics.enable     = true;
-	 animate.enable    = true;
 	 surround.enable   = true;
 	 cursorword.enable = true;
        };
@@ -59,10 +69,18 @@
        haskell-tools-nvim
        nvim-cmp
        nvim-toggleterm-lua
+       ##########
+       # Barbar #
+       ##########
+       nvim-web-devicons
+       ##########
+       # Useful #
+       ##########
+       auto-session
      ];
      extraConfigLua = "
-       require('mini.map').setup()
        require('toggleterm').setup{}
+       require('auto-session').setup{}
      ";
    };
  };
