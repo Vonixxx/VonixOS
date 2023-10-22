@@ -16,7 +16,6 @@
 
  home-manager.users.${vars.user} = {
    imports = [ 
-     nur.nixosModules.nur 
      nixneovim.nixosModules.default 
    ];
    programs.home-manager.enable = true;
@@ -24,6 +23,7 @@
  };
 
  environment.systemPackages = with pkgs; [
+   nur.repos.mic92.hello-nur
    ##################
    # Terminal/Tools #
    ##################

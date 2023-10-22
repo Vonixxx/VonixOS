@@ -22,11 +22,12 @@ in
      host = {
        hostName = "desktop";
      };
-     inherit nur pkgs vars inputs system nixneovim;
+     inherit pkgs vars inputs system nixneovim;
    };
    modules = [
      ./desktop
      ./configuration.nix
+     nur.nixosModules.nur
      home-manager.nixosModules.home-manager {
       home-manager.useGlobalPkgs   = true;
       home-manager.useUserPackages = true;
@@ -40,11 +41,12 @@ in
      host = {
        hostName = "laptop";
      };
-     inherit nur pkgs vars inputs system nixneovim;
+     inherit pkgs vars inputs system nixneovim;
    };
    modules = [
      ./laptop
      ./configuration.nix
+     nur.nixosModules.nur
      home-manager.nixosModules.home-manager {
       home-manager.useGlobalPkgs   = true;
       home-manager.useUserPackages = true;
