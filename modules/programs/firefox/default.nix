@@ -14,12 +14,12 @@
        isDefault      = true;
        name           = "default";
        search.default = "DuckDuckGo";
-       # extensions = with pkgs.nur.repos.rycee.firefox-addons; [
-       #   bitwarden
-       # ];
+       extensions = with pkgs.nur.repos.rycee.firefox-addons; [
+         bitwarden
+	 ublock-origin
+       ];
        bookmarks = [
          {
-	  toolbar = true;
 	  name    = "Linux";
 	  bookmarks = [
      	    {

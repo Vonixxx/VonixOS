@@ -11,7 +11,10 @@ let
  pkgs = import nixpkgs {
    inherit system;
    config.allowUnfree = true;
-   overlays = [ nixneovim.overlays.default ];
+   overlays = [ 
+     nur.overlay
+     nixneovim.overlays.default 
+   ];
  };
 in
 
@@ -22,12 +25,11 @@ in
      host = {
        hostName = "desktop";
      };
-     inherit pkgs vars inputs system nixneovim;
+     inherit nur pkgs vars inputs system nixneovim;
    };
    modules = [
      ./desktop
      ./configuration.nix
-     nur.nixosModules.nur
      home-manager.nixosModules.home-manager {
       home-manager.useGlobalPkgs   = true;
       home-manager.useUserPackages = true;
@@ -41,12 +43,11 @@ in
      host = {
        hostName = "laptop";
      };
-     inherit pkgs vars inputs system nixneovim;
+     inherit nur pkgs vars inputs system nixneovim;
    };
    modules = [
      ./laptop
      ./configuration.nix
-     nur.nixosModules.nur
      home-manager.nixosModules.home-manager {
       home-manager.useGlobalPkgs   = true;
       home-manager.useUserPackages = true;
