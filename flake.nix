@@ -17,6 +17,7 @@
  description = "Flake Configuration for User-Specific Host: Laptop/Desktop";
 
  inputs = {
+   nur.url       = "github:nix-community/NUR";
    nixneovim.url = "github:nixneovim/nixneovim";
    nixpkgs.url   = "github:nixos/nixpkgs/nixos-unstable";
    home-manager = {
@@ -25,7 +26,7 @@
    };
  };
 
- outputs = inputs @ { self, nixpkgs, nixneovim, home-manager, ... }:
+ outputs = inputs @ { nur, self, nixpkgs, nixneovim, home-manager, ... }:
  let
   vars = {
     editor        = "nvim";
@@ -50,7 +51,7 @@
    nixosConfigurations = (
      import ./system {
       inherit (nixpkgs) lib;
-      inherit vars inputs nixpkgs nixneovim home-manager;
+      inherit nur vars inputs nixpkgs nixneovim home-manager;
      }
    );
  };

@@ -3,7 +3,7 @@
 ####################
 # Default Profiles #
 ####################
-{ lib, vars, inputs, nixpkgs, nixneovim, home-manager, ... }:
+{ lib, nur, vars, inputs, nixpkgs, nixneovim, home-manager, ... }:
 
 let
  lib    = nixpkgs.lib;
@@ -22,7 +22,7 @@ in
      host = {
        hostName = "desktop";
      };
-     inherit pkgs vars inputs system nixneovim;
+     inherit nur pkgs vars inputs system nixneovim;
    };
    modules = [
      ./desktop
@@ -40,7 +40,7 @@ in
      host = {
        hostName = "laptop";
      };
-     inherit pkgs vars inputs system nixneovim;
+     inherit nur pkgs vars inputs system nixneovim;
    };
    modules = [
      ./laptop
