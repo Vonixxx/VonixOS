@@ -8,5 +8,4 @@
  ./mpv/default.nix
  ./btop/default.nix
  ./firefox/default.nix
- ./librewolf/default.nix
 ]

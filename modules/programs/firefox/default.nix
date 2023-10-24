@@ -16,7 +16,64 @@
        search.default = "DuckDuckGo";
        extensions = with pkgs.nur.repos.rycee.firefox-addons; [
          bitwarden
+	 darkreader
 	 ublock-origin
+       ];
+       bookmarks = [
+         {
+	  toolbar = true;
+	  name    = "Work";
+	  bookmarks = [
+     	    {
+	     name = "Tutanota";
+	     url  = "https://mail.tutanota.com/";
+	    }
+	  ];
+	 }
+         {
+	  toolbar = true;
+	  name    = "DevOps";
+	  bookmarks = [
+     	    {
+	     name = "GitHub";
+	     url  = "https://github.com/";
+	    }
+     	    {
+	     name = "ChatGPT";
+	     url  = "https://chat.openai.com/";
+	    }
+     	    {
+	     name = "Roadmap";
+	     url  = "https://roadmap.sh/devops/";
+	    }
+     	    {
+	     name = "Certificates";
+	     url  = "https://devopscube.com/best-devops-certifications/";
+	    }
+	  ];
+	 }
+         {
+	  toolbar = true;
+	  name    = "Linux";
+	  bookmarks = [
+     	    {
+	     name = "Nix User Repository";
+	     url  = "https://nur.nix-community.org/";
+	    }
+     	    {
+	     name = "NixOS";
+	     url  = "https://search.nixos.org/packages/";
+	    }
+     	    {
+	     name = "NixNeovim";
+	     url  = "https://nixneovim.github.io/nixneovim-option-search/";
+	    }
+     	    {
+	     name = "Home-Manager";
+	     url  = "https://mipmip.github.io/home-manager-option-search/";
+	    }
+	  ];
+	 }
        ];
        settings = {
          #########################
@@ -188,6 +245,10 @@
          "security.ssl.treat_unsafe_negotiation_as_broken"           = true;
          "security.tls.enable_0rtt_data"                             = false;
          "dom.security.https_only_mode_send_http_background_request" = false;
+         #########
+	 # Theme #
+         #########
+         "lightweightThemes.selectedThemeID" = "firefox-compact-dark@mozilla.org";
          ###########
 	 # Startup #
          ###########
@@ -212,22 +273,6 @@
          "intl.accept_languages"    = "en_GB, en";
          "geo.provider.network.url" = "https://location.services.mozilla.com/v1/geolocate?key=%MOZILLA_API_KEY%";
        };
-       bookmarks = [
-         {
-	  toolbar = true;
-	  name    = "Linux";
-	  bookmarks = [
-     	    {
-	     name = "NixOS";
-	     url  = "https://search.nixos.org/packages/";
-	    }
-     	    {
-	     name = "Home-Manager";
-	     url  = "https://mipmip.github.io/home-manager-option-search/";
-	    }
-	  ];
-	 }
-       ];
      };
    };
  };
