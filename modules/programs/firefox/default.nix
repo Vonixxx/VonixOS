@@ -22,7 +22,7 @@
        bookmarks = [
          {
 	  toolbar = true;
-	  name    = "Work";
+	  name    = "Work Sites";
 	  bookmarks = [
      	    {
 	     name = "Tutanota";
@@ -32,7 +32,7 @@
 	 }
          {
 	  toolbar = true;
-	  name    = "DevOps";
+	  name    = "DevOps Sites";
 	  bookmarks = [
      	    {
 	     name = "GitHub";
@@ -54,7 +54,7 @@
 	 }
          {
 	  toolbar = true;
-	  name    = "Linux";
+	  name    = "Linux Sites";
 	  bookmarks = [
      	    {
 	     name = "Nix User Repository";
@@ -248,6 +248,10 @@
          #########
 	 # Theme #
          #########
+	 "font.name.monospace.x-western"     = "Liberation Mono";
+	 "font.name.sans-serif.x-western"    = "Liberation Sans";
+	 "font.default.x-western"            = "Liberation Serif";
+	 "font.name.serif.x-western"         = "Liberation Serif";
          "lightweightThemes.selectedThemeID" = "firefox-compact-dark@mozilla.org";
          ###########
 	 # Startup #

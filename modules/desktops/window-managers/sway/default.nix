@@ -145,8 +145,8 @@ with lib;
            #####################
            "${modifier}+t" = "exec ${pkgs.kitty}/bin/kitty";
            "${modifier}+d" = "exec ${pkgs.fuzzel}/bin/fuzzel";
+           "${modifier}+b" = "exec ${pkgs.firefox}/bin/firefox";
            "${modifier}+y" = "exec ${pkgs.freetube}/bin/freetube";
-           "${modifier}+b" = "exec ${pkgs.librewolf}/bin/librewolf";
            "${modifier}+p" = "exec ${pkgs.grim}/bin/grim ~/Pictures/screenshot.png | ${pkgs.slurp}/bin/slurp";
          };
 	 startup = [
