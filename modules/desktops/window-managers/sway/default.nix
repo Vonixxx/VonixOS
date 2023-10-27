@@ -29,11 +29,8 @@ with lib;
        extraPackages = with pkgs; [
          autotiling      
          grim
-	 greetd.greetd
-	 greetd.tuigreet
          slurp
          swaybg
-	 wlsunset
          wl-clipboard
        ];
      };
