@@ -47,7 +47,6 @@ with lib;
    };
 
   fonts.packages = with pkgs; [
-    line-awesome
     liberation_ttf
     (nerdfonts.override { fonts = [ "${vars.font}" ]; })
   ];
@@ -71,14 +70,14 @@ with lib;
          right    = "h";
          modifier = "Mod4";
          gaps = {
-           top        = 15;
-           left       = 15;
-           outer      = 15;
-           inner      = 15;
-           right      = 15;
-           bottom     = 15;
-           vertical   = 15;
-           horizontal = 15;
+           top        = 10;
+           left       = 10;
+           outer      = 10;
+           inner      = 10;
+           right      = 10;
+           bottom     = 10;
+           vertical   = 10;
+           horizontal = 10;
          };
          window = { titlebar = false; };
          bars   = [{ command = "waybar"; }];
