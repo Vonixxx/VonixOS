@@ -20,59 +20,41 @@
 	 ublock-origin
        ];
        bookmarks = [
-         {
-	  toolbar = true;
-	  name    = "Work Sites";
-	  bookmarks = [
-     	    {
-	     name = "Tutanota";
-	     url  = "https://mail.tutanota.com/";
-	    }
-	  ];
+     	 {
+	  name = "GitHub";
+	  url  = "https://github.com/";
+	 }
+     	 {
+	  name = "ChatGPT";
+	  url  = "https://chat.openai.com/";
+	 }
+     	 {
+	  name = "Roadmap";
+	  url  = "https://roadmap.sh/devops/";
 	 }
          {
-	  toolbar = true;
-	  name    = "DevOps Sites";
-	  bookmarks = [
-     	    {
-	     name = "GitHub";
-	     url  = "https://github.com/";
-	    }
-     	    {
-	     name = "ChatGPT";
-	     url  = "https://chat.openai.com/";
-	    }
-     	    {
-	     name = "Roadmap";
-	     url  = "https://roadmap.sh/devops/";
-	    }
-     	    {
-	     name = "Certificates";
-	     url  = "https://devopscube.com/best-devops-certifications/";
-	    }
-	  ];
+	  name = "Tutanota";
+	  url  = "https://mail.tutanota.com/";
 	 }
-         {
-	  toolbar = true;
-	  name    = "Linux Sites";
-	  bookmarks = [
-     	    {
-	     name = "Nix User Repository";
-	     url  = "https://nur.nix-community.org/";
-	    }
-     	    {
-	     name = "NixOS";
-	     url  = "https://search.nixos.org/packages/";
-	    }
-     	    {
-	     name = "NixNeovim";
-	     url  = "https://nixneovim.github.io/nixneovim-option-search/";
-	    }
-     	    {
-	     name = "Home-Manager";
-	     url  = "https://mipmip.github.io/home-manager-option-search/";
-	    }
-	  ];
+     	 {
+	  name = "Nix User Repository";
+	  url  = "https://nur.nix-community.org/";
+	 }
+     	 {
+	  name = "NixOS";
+	  url  = "https://search.nixos.org/packages/";
+	 }
+     	 {
+	  name = "Certificates";
+	  url  = "https://devopscube.com/best-devops-certifications/";
+	 }
+     	 {
+	  name = "NixNeovim";
+	  url  = "https://nixneovim.github.io/nixneovim-option-search/";
+	 }
+     	 {
+	  name = "Home-Manager";
+	  url  = "https://mipmip.github.io/home-manager-option-search/";
 	 }
        ];
        settings = {
@@ -103,9 +85,9 @@
          "privacy.clearOnShutdown.sessions"     = true;
          "privacy.clearOnShutdown.downloads"    = true;
          "privacy.clearOnShutdown.offlineApps"  = true;
-         "privacy.sanitize.sanitizeOnShutdown"  = true;
          "privacy.clearOnShutdown.cache"        = false;
          "privacy.clearOnShutdown.history"      = false;
+         "privacy.sanitize.sanitizeOnShutdown"  = false;
          "privacy.clearOnShutdown.siteSettings" = false;
          #########
 	 # Other #
@@ -173,8 +155,8 @@
          #########################
          "browser.link.open_newwindow"                        = 3;
          "browser.link.open_newwindow.restriction"            = 0;
-         "privacy.window.maxInnerHeight"                      = 900;
-         "privacy.window.maxInnerWidth"                       = 1600;
+         "privacy.window.maxInnerWidth"                       = 1900;
+         "privacy.window.maxInnerHeight"                      = 1000;
          "privacy.resistFingerprinting"                       = true;
          "widget.non-native-theme.enabled"                    = true;
          "privacy.resistFingerprinting.letterboxing"          = true;
@@ -245,6 +227,31 @@
          "security.ssl.treat_unsafe_negotiation_as_broken"           = true;
          "security.tls.enable_0rtt_data"                             = false;
          "dom.security.https_only_mode_send_http_background_request" = false;
+         #######################################
+	 # Personal Preferences (Non-ArkenFox) #
+         #######################################
+         "general.autoScroll"                                          = true;
+         "accessibility.typeaheadfind"                                 = true;
+         "browser.urlbar.suggest.bookmark"                             = true;
+         "media.hardwaremediakeys.enabled"                             = true;
+         "browser.ctrlTab.recentlyUsedOrder"                           = true;
+         "signon.management.page.breach-alerts.enabled"                = true;
+         "media.videocontrols.picture-in-picture.enabled"              = true;
+         "general.smoothScroll"                                        = false;
+         "signon.rememberSignons"                                      = false;
+         "browser.tabs.warnOnClose"                                    = false;
+         "browser.newtabpage.enabled"                                  = false;
+         "signon.generation.available"                                 = false;
+         "accessibility.browsewithcaret"                               = false;
+         "browser.tabs.loadInBackground"                               = false;
+         "browser.urlbar.suggest.history"                              = false;
+         "browser.urlbar.suggest.openpage"                             = false;
+         "widget.wayland.overlay-scrollbars"                           = false;
+         "browser.newtabpage.activity-stream.showSearch"               = false;
+         "browser.newtabpage.activity-stream.feeds.snippets"           = false;
+         "browser.newtabpage.activity-stream.feeds.topsites"           = false;
+         "browser.newtabpage.activity-stream.feeds.section.topstories" = false;
+         "intl.locale.requested"                                       = "en-GB";
          #########
 	 # Theme #
          #########

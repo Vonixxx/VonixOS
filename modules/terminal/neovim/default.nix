@@ -73,14 +73,9 @@
        # Barbar #
        ##########
        nvim-web-devicons
-       ##########
-       # Useful #
-       ##########
-       auto-session
      ];
      extraConfigLua = "
        require('toggleterm').setup{}
-       require('auto-session').setup{}
      ";
    };
  };
