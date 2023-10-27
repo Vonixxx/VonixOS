@@ -56,8 +56,6 @@ with lib;
   fonts.packages = with pkgs; [
     line-awesome
     liberation_ttf
-    noto-fonts-cjk
-    noto-fonts-emoji
     (nerdfonts.override { fonts = [ "CascadiaCode" ]; })
   ];
 

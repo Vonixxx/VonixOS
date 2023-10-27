@@ -10,11 +10,16 @@ let
  system = "x86_64-linux";
  pkgs = import nixpkgs {
    inherit system;
-   config.allowUnfree = true;
    overlays = [ 
      nur.overlay
      nixneovim.overlays.default 
    ];
+   config = {
+     allowUnfree = true;
+     permittedInsecurePackages = [
+       "electron-22.3.27"
+     ];
+   };
  };
 in
 

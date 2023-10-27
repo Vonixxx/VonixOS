@@ -23,10 +23,6 @@
    home.stateVersion            = "23.11";
  };
 
- nixpkgs.config.permittedInsecurePackages = [ 
-   "electron-22.3.27" 
- ];
-
  environment.systemPackages = with pkgs; [
    ##################
    # Terminal/Tools #
