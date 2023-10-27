@@ -8,7 +8,6 @@
 with lib;
 {
  imports = [
-   ../programs/eww/default.nix
    ../programs/fuzzel/default.nix
    ../programs/waybar/default.nix
    ../programs/wlsunset/default.nix
@@ -26,7 +25,6 @@ with lib;
  config = mkIf (config.sway.enable) {
    programs = {
      sway = {
-       enable = true;
        extraPackages = with pkgs; [
          autotiling      
          grim

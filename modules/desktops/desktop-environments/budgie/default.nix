@@ -30,5 +30,15 @@ with lib;
        };
      };
    };
+
+   environment = { 
+     systemPackages = with pkgs; [
+      steam
+      steamtinkerlaunch
+     ];
+     budgie.excludePackages = with pkgs; [
+       mate-terminal
+     ];
+   };
  };
 }

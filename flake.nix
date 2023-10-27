@@ -30,14 +30,13 @@
  let
   vars = {
     editor        = "nvim";
-    userInterface = "sway";
     user          = "vonix";
     terminal      = "kitty";
+    output        = "eDP-1";
     githubUser    = "Vonixxx";
-    output        = "HDMI-A-1";
     defaultLocale = "en_GB.UTF-8";
     extraLocale   = "cs_CZ.UTF-8";
-    outputConfig  = "2560x1440@75Hz";
+    outputConfig  = "1920x1080@60Hz";
     swayColors = {
       text             = "#FFFFFF";
       urgent           = "#BF616A";
@@ -45,7 +44,7 @@
       unfocusedborder  = "#000000";
     };
     githubMail = "vonixxxwork@tuta.io";
-    password    = "$6$vheawoZJxxe9N7Ml$sGnV.OE9HFDY0MQzDLUuSX38f8GPPus.cD45ptYi.Whyx1aJ5xEuHUYoz0LT/CcDP5dFbw7AdOeG7hahoeA170";
+    password   = "$6$vheawoZJxxe9N7Ml$sGnV.OE9HFDY0MQzDLUuSX38f8GPPus.cD45ptYi.Whyx1aJ5xEuHUYoz0LT/CcDP5dFbw7AdOeG7hahoeA170";
   };
  in {
    nixosConfigurations = (

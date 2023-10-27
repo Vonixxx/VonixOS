@@ -10,6 +10,8 @@
    ./hardware-configuration.nix
  ];
 
+ sway.enable = true;
+
  programs.light.enable = true;
 
  services = {
@@ -31,6 +33,4 @@
      };
    };
  };
-
- ${vars.userInterface}.enable = true;
 }

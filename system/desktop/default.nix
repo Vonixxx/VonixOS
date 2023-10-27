@@ -8,9 +8,9 @@
 {
  imports = [ 
   ./hardware-configuration.nix 
-];
+ ];
 
- ${vars.userInterface}.enable = true;
+ budgie.enable = true;
 
  boot = {
    loader = {
