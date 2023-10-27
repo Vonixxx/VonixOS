@@ -24,6 +24,7 @@ with lib;
 
  config = mkIf (config.sway.enable) {
    programs = {
+     sway.enable = true;
      sway = {
        extraPackages = with pkgs; [
          autotiling      
