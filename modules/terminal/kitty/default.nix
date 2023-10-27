@@ -8,12 +8,10 @@
 {
  home-manager.users.${vars.user} = {
    programs.kitty = {
-     enable = true;
-     theme = "Nord";
-     font = {
-       name = "Cascadia Code";
-     };
+     enable                                = true;
      shellIntegration.enableZshIntegration = true;
+     theme                                 = "Nord";
+     font.name                             = "${vars.font}";
    };
  };
 }

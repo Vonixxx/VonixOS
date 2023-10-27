@@ -36,6 +36,7 @@
     githubUser    = "Vonixxx";
     defaultLocale = "en_GB.UTF-8";
     extraLocale   = "cs_CZ.UTF-8";
+    font          = "CascadiaCode";
     outputConfig  = "1920x1080@60Hz";
     swayColors = {
       text             = "#FFFFFF";

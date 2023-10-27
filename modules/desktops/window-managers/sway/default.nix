@@ -8,9 +8,9 @@
 with lib;
 {
  imports = [
-   ../programs/fuzzel/default.nix
-   ../programs/waybar/default.nix
-   ../programs/wlsunset/default.nix
+   ../modules/programs/fuzzel/default.nix
+   ../modules/programs/waybar/default.nix
+   ../modules/programs/wlsunset/default.nix
  ];
 
  options = {
@@ -23,18 +23,13 @@ with lib;
  };
 
  config = mkIf (config.sway.enable) {
-   programs = {
-     sway.enable = true;
-     sway = {
-       extraPackages = with pkgs; [
-         autotiling      
-         grim
-         slurp
-         swaybg
-         wl-clipboard
-       ];
-     };
-   };
+   environment.systemPackages = with pkgs; [
+     autotiling      
+     grim
+     slurp
+     swaybg
+     wl-clipboard
+   ];
 
    services = {
      greetd = {
@@ -54,7 +49,7 @@ with lib;
   fonts.packages = with pkgs; [
     line-awesome
     liberation_ttf
-    (nerdfonts.override { fonts = [ "CascadiaCode" ]; })
+    (nerdfonts.override { fonts = [ "${vars.font}" ]; })
   ];
 
   home-manager.users.${vars.user} = {
@@ -145,7 +140,7 @@ with lib;
          };
 	 startup = [
            { command = "${pkgs.autotiling}/bin/autotiling"; always = true; }
-           { command = "swaybg -i /home/'${vars.user}'/GitHub/VonixOS/modules/desktops/window-managers/wallpapers/Stars.jpg -m fill"; always = true; }
+           { command = "swaybg -i /home/'${vars.user}'/GitHub/VonixOS/modules/desktops/window-managers/modules/wallpapers/Stars.jpg -m fill"; always = true; }
          ];
          colors = {
            urgent          = { childBorder = "${vars.swayColors.urgent}";          border = "${vars.swayColors.urgent}";          background = "${vars.swayColors.text}"; text = "${vars.swayColors.text}"; indicator = "${vars.swayColors.urgent}"; };
