@@ -33,7 +33,9 @@ with lib;
      systemPackages = with pkgs; [
       steam
       steamtinkerlaunch
-     ];
+     ]) ++ (with pkgs.gnomeExtensions; [
+        dash-to-panel
+     ]);
      gnome.excludePackages = (with pkgs; [
        gnome-tour
        gnome-photos
@@ -50,9 +52,7 @@ with lib;
         iagno
         tali
         totem
-     ]) ++ (with pkgs.gnomeExtensions; [
-        dash-to-panel
-     ]);
+     ]); 
    };
  };
 }
