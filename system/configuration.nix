@@ -105,20 +105,7 @@
 
  virtualisation.libvirtd.enable = true;
 
- i18n = {
-  defaultLocale = "${vars.defaultLocale}";
-  extraLocaleSettings = {
-     LC_TIME           = "${vars.extraLocale}";
-     LC_NAME           = "${vars.extraLocale}";
-     LC_PAPER          = "${vars.extraLocale}";
-     LC_ADDRESS        = "${vars.extraLocale}";
-     LC_NUMERIC        = "${vars.extraLocale}";
-     LC_MONETARY       = "${vars.extraLocale}";
-     LC_TELEPHONE      = "${vars.extraLocale}";
-     LC_MEASUREMENT    = "${vars.extraLocale}";
-     LC_IDENTIFICATION = "${vars.extraLocale}";
-   };
- };
+ i18n.defaultLocale = "${vars.defaultLocale}";
 
  services = {
    transmission = {
@@ -136,6 +123,11 @@
      packages = with pkgs; [ android-udev-rules ];
    };
  };
+
+ fonts.packages = with pkgs; [
+   liberation_ttf
+   (nerdfonts.override { fonts = [ "${vars.font}" ]; })
+ ];
 
  nix = {
    gc = {

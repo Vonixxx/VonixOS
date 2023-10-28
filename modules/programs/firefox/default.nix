@@ -22,39 +22,39 @@
        bookmarks = [
      	 {
 	  name = "GitHub";
-	  url  = "https://github.com/";
+	  url  = "https://github.com";
 	 }
      	 {
 	  name = "ChatGPT";
-	  url  = "https://chat.openai.com/";
+	  url  = "https://chat.openai.com";
 	 }
      	 {
 	  name = "Roadmap";
-	  url  = "https://roadmap.sh/devops/";
+	  url  = "https://roadmap.sh/devops";
 	 }
          {
 	  name = "Tutanota";
-	  url  = "https://mail.tutanota.com/";
+	  url  = "https://mail.tutanota.com";
 	 }
      	 {
 	  name = "Nix User Repository";
-	  url  = "https://nur.nix-community.org/";
+	  url  = "https://nur.nix-community.org";
 	 }
      	 {
 	  name = "NixOS";
-	  url  = "https://search.nixos.org/packages/";
+	  url  = "https://search.nixos.org/packages";
 	 }
      	 {
 	  name = "Certificates";
-	  url  = "https://devopscube.com/best-devops-certifications/";
+	  url  = "https://devopscube.com/best-devops-certifications";
 	 }
      	 {
 	  name = "NixNeovim";
-	  url  = "https://nixneovim.github.io/nixneovim-option-search/";
+	  url  = "https://nixneovim.github.io/nixneovim-option-search";
 	 }
      	 {
 	  name = "Home-Manager";
-	  url  = "https://mipmip.github.io/home-manager-option-search/";
+	  url  = "https://mipmip.github.io/home-manager-option-search";
 	 }
        ];
        settings = {

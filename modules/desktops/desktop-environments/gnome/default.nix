@@ -50,6 +50,8 @@ with lib;
         iagno
         tali
         totem
+     ]) ++ (with pkgs.gnomeExtensions; [
+        dash-to-panel
      ]);
    };
  };
