@@ -17,6 +17,8 @@ with lib;
  };
 
  config = mkIf (config.gnome.enable) {
+   hardware.pulseaudio.enable = false;
+
    services = {
      xserver = {
        enable                      = true;
