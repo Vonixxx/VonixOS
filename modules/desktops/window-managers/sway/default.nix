@@ -8,6 +8,8 @@
 with lib;
 {
  imports = [
+   ../modules/programs/feh/default.nix
+   ../modules/programs/btop/default.nix
    ../modules/programs/fuzzel/default.nix
    ../modules/programs/waybar/default.nix
    ../modules/programs/wlsunset/default.nix

@@ -39,19 +39,29 @@ with lib;
      gnome.excludePackages = (with pkgs; [
        gnome-tour
        gnome-photos
+       gnome-connections
+       gnome-text-editor
+       mpv
+       mupdf
+       xterm
      ]) ++ (with pkgs.gnome; [
         atomix
         cheese
+	contacts
         epiphany
         geary
         gedit 
+        gnome-maps
         gnome-music
         gnome-terminal
         gnome-characters
         hitori
         iagno
+	libgnome-keyring
+	simple-scan
         tali
         totem
+	yelp
      ]); 
    };
  };
