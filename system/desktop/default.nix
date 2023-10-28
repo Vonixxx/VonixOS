@@ -10,7 +10,7 @@
   ./hardware-configuration.nix 
  ];
 
- budgie.enable = true;
+ gnome.enable = true;
 
  boot = {
    loader = {
