@@ -30,9 +30,9 @@ with lib;
    };
 
    environment = { 
-     systemPackages = with pkgs; [
-      steam
-      steamtinkerlaunch
+     systemPackages = (with pkgs; [
+       steam
+       steamtinkerlaunch
      ]) ++ (with pkgs.gnomeExtensions; [
         dash-to-panel
      ]);
