@@ -32,6 +32,8 @@ with lib;
 
    environment = { 
      systemPackages = (with pkgs; [
+       gnome.gnome-tweaks
+       orchis-theme
        steam
        steamtinkerlaunch
      ]) ++ (with pkgs.gnomeExtensions; [
