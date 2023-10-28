@@ -56,8 +56,8 @@
        ####################
        # System Shortcuts #
        ####################
-       lapupd  = "sudo rm /home/vonix/.mozilla/firefox/default/search.json.mozlz4 && nix flake update && sudo nixos-rebuild switch --flake '.#laptop'";
-       deskupd = "sudo rm /home/vonix/.mozilla/firefox/default/search.json.mozlz4 && nix flake update && sudo nixos-rebuild switch --flake '.#desktop'";
+       lapupd  = "nix flake update && sudo nixos-rebuild switch --flake '.#laptop'";
+       deskupd = "nix flake update && sudo nixos-rebuild switch --flake '.#desktop'";
      };
    };
  };

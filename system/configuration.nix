@@ -49,21 +49,6 @@
    mkpasswd
    mediainfo
    nixos-generators
-   ###################
-   # File Management #
-   ###################
-   catdoc
-   gnutar
-   mupdf
-   odt2txt
-   pigz
-   p7zip
-   pbzip2
-   pandoc
-   poppler_utils
-   rar
-   unzip
-   unrar
  ];
 
  programs = {

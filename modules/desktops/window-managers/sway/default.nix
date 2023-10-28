@@ -27,11 +27,32 @@ with lib;
 
  config = mkIf (config.sway.enable) {
    environment.systemPackages = with pkgs; [
+     ##############
+     # Ergonomics #
+     ##############
      autotiling      
+     #######################
+     # Screen/Text Capture #
+     #######################
      grim
      slurp
      swaybg
      wl-clipboard
+     ###################
+     # File Management #
+     ###################
+     catdoc
+     gnutar
+     mupdf
+     odt2txt
+     pigz
+     p7zip
+     pbzip2
+     pandoc
+     poppler_utils
+     rar
+     unzip
+     unrar
    ];
 
    services = {

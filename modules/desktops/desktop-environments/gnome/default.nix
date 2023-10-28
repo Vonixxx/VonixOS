@@ -1,7 +1,7 @@
 ###########
 # VonixOS #
 ########################
-# Budgie Configuration #
+# Gnome Configuration #
 ########################
 { lib, pkgs, vars, config, ... }:
 
@@ -26,6 +26,7 @@ with lib;
        desktopManager.gnome.enable = true;
        displayManager.gdm.enable   = true;
        layout                      = "us";
+       excludePackages             = [ pkgs.xterm ];
      };
    };
 
@@ -41,13 +42,10 @@ with lib;
        gnome-photos
        gnome-connections
        gnome-text-editor
-       mpv
-       mupdf
-       xterm
+       gnome.gnome-contacts
      ]) ++ (with pkgs.gnome; [
         atomix
         cheese
-	contacts
         epiphany
         geary
         gedit 
@@ -58,9 +56,9 @@ with lib;
         hitori
         iagno
 	libgnome-keyring
+	seahorse
 	simple-scan
         tali
-        totem
 	yelp
      ]); 
    };
