@@ -36,10 +36,10 @@
        #mode,
        #disk,
        #clock,
-       #network,
        #battery,
+       #network,
        #backlight,
-       #pulseaudio, 
+       #pulseaudio,
        #custom-power,
        #custom-reboot,
        #custom-hibernate {
@@ -136,7 +136,7 @@
             headphone = "󰋋";
             default   = ["󰕿" "󰖀" "󰕾"];
           };
-          format = "{icon} {volume}%";
+          format = "{icon}  {volume}%";
           on-click = "kitty zsh -c 'pulsemixer'";
         };
 	"network" = {

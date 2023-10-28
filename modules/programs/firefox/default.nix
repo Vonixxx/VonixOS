@@ -159,10 +159,10 @@
          "privacy.window.maxInnerHeight"                      = 1000;
          "privacy.resistFingerprinting"                       = true;
          "widget.non-native-theme.enabled"                    = true;
-         "privacy.resistFingerprinting.letterboxing"          = true;
          "privacy.resistFingerprinting.block_mozAddonManager" = true;
          "webgl.disabled"                                     = false;
          "browser.display.use_system_colors"                  = false;
+         "privacy.resistFingerprinting.letterboxing"          = false;
          #############
 	 # Quiet Fox #
          #############
