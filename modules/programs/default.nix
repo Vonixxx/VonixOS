@@ -4,8 +4,5 @@
 # Default Programs #
 ####################
 [
- ./feh/default.nix
- ./mpv/default.nix
- ./btop/default.nix
  ./firefox/default.nix
 ]
