@@ -31,6 +31,7 @@ with lib;
      # Ergonomics #
      ##############
      autotiling      
+     pulsemixer
      #######################
      # Screen/Text Capture #
      #######################

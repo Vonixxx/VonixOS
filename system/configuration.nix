@@ -35,7 +35,6 @@
    parted
    pciutils
    pfetch-rs
-   pulsemixer
    python3Full
    usbutils
    virt-manager
@@ -74,12 +73,12 @@
  };
 
  environment = {
-   shells = with pkgs; [ zsh ];
    variables = {
-     EDITOR   = "${vars.editor}";
-     VISUAL   = "${vars.editor}";
-     TERMINAL = "${vars.terminal}";
+     VISUAL   = "nvim";
+     TERMINAL = "nvim";
+     EDITOR   = "kitty";
    };
+   shells = with pkgs; [ zsh ];
  };
 
  security = {
@@ -88,14 +87,11 @@
    sudo.wheelNeedsPassword = false;
  };
 
+ i18n.defaultLocale = "en_GB.UTF-8";
+
  virtualisation.libvirtd.enable = true;
 
- i18n.defaultLocale = "${vars.defaultLocale}";
-
  services = {
-   transmission = {
-     enable = true;
-   };
    pipewire = {
      enable            = true;
      alsa.enable       = true;

@@ -16,9 +16,7 @@ let
    ];
    config = {
      allowUnfree = true;
-     permittedInsecurePackages = [
-       "electron-22.3.27"
-     ];
+     permittedInsecurePackages = [ "electron-22.3.27" ];
    };
  };
 in
@@ -26,12 +24,6 @@ in
 {
  desktop = lib.nixosSystem {
    inherit system;
-   specialArgs = {
-     host = {
-       hostName = "desktop";
-     };
-     inherit nur pkgs vars inputs system nixneovim;
-   };
    modules = [
      ./desktop
      ./configuration.nix
@@ -40,16 +32,16 @@ in
       home-manager.useUserPackages = true;
      }
    ];
+   specialArgs = {
+     host = {
+       hostName = "desktop";
+     };
+     inherit nur pkgs vars inputs system nixneovim;
+   };
  };
 
  laptop = lib.nixosSystem {
    inherit system;
-   specialArgs = {
-     host = {
-       hostName = "laptop";
-     };
-     inherit nur pkgs vars inputs system nixneovim;
-   };
    modules = [
      ./laptop
      ./configuration.nix
@@ -58,5 +50,11 @@ in
       home-manager.useUserPackages = true;
      }
    ];
+   specialArgs = {
+     host = {
+       hostName = "laptop";
+     };
+     inherit nur pkgs vars inputs system nixneovim;
+   };
  };
 }

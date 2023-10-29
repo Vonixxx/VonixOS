@@ -11,6 +11,8 @@
 #         └─./modules
 #             ├─./desktops
 #             │   └─default.nix
+#             ├─./programs
+#             │   └─default.nix
 #             └─./terminal
 #                 └─default.nix
 {
@@ -29,22 +31,31 @@
  outputs = inputs @ { nur, self, nixpkgs, nixneovim, home-manager, ... }:
  let
   vars = {
-    editor        = "nvim";
-    user          = "vonix";
-    terminal      = "kitty";
-    output        = "eDP-1";
-    githubUser    = "Vonixxx";
-    defaultLocale = "en_GB.UTF-8";
-    font          = "CascadiaCode";
-    outputConfig  = "1920x1080@60Hz";
+    #####################
+    # System Appearance #
+    #####################
+    font = "CascadiaCode";
     swayColors = {
-      text             = "#FFFFFF";
-      urgent           = "#BF616A";
-      focusedborder    = "#B48EAD";
-      unfocusedborder  = "#000000";
+      text            = "#FFFFFF";
+      urgent          = "#BF616A";
+      focusedborder   = "#B48EAD";
+      unfocusedborder = "#000000";
     };
+    ###################
+    # Screen Settings #
+    ###################
+    output       = "eDP-1";
+    outputConfig = "1920x1080@60Hz";
+    ########################
+    # GitHub Login Details #
+    ########################
+    githubUser = "Vonixxx";
     githubMail = "vonixxxwork@tuta.io";
-    password   = "$6$vheawoZJxxe9N7Ml$sGnV.OE9HFDY0MQzDLUuSX38f8GPPus.cD45ptYi.Whyx1aJ5xEuHUYoz0LT/CcDP5dFbw7AdOeG7hahoeA170";
+    #############################
+    # System User Login Details #
+    #############################
+    user     = "vonix";
+    password = "$6$vheawoZJxxe9N7Ml$sGnV.OE9HFDY0MQzDLUuSX38f8GPPus.cD45ptYi.Whyx1aJ5xEuHUYoz0LT/CcDP5dFbw7AdOeG7hahoeA170";
   };
  in {
    nixosConfigurations = (

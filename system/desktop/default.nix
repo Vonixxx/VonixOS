@@ -27,6 +27,6 @@
        devices            = [ "nodev" ];
      };
    };
-   kernelPackages = pkgs.linuxPackages_latest;
+   kernelPackages = with pkgs; linuxPackages_latest;
  };
 }
