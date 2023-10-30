@@ -32,6 +32,12 @@
        ];
      };
      shellAliases = {
+       ########################
+       # Alternative Programs #
+       ########################
+       ls  = "lsd";
+       cat = "bat";
+       vim = "nvim";
        #######
        # Git #
        #######
@@ -42,17 +48,11 @@
        branch = "git branch -M main";
        remote = "git remote add origin";
        push   = "git push -u origin main";
-       ########################
-       # Alternative Programs #
-       ########################
-       ls  = "lsd";
-       cat = "bat";
-       vim = "nvim";
        ####################
        # System Shortcuts #
        ####################
-       lapupd  = "nix flake update && sudo nixos-rebuild switch --flake '.#laptop' --impure";
-       deskupd = "nix flake update && sudo nixos-rebuild switch --flake '.#desktop' --impure";
+       lupd  = "nix flake update && sudo nixos-rebuild switch --flake '.#laptop' --impure";
+       dupd  = "nix flake update && sudo nixos-rebuild switch --flake '.#desktop' --impure";
      };
    };
    programs.oh-my-posh = {

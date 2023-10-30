@@ -6,26 +6,26 @@
 { pkgs, vars, ... }:
 
 {
+ imports = [ ./colors.yaml ]; 
  home-manager.users.${vars.user} = {
    programs.lsd = {
      enable = true;
      settings = {
        color = {
-         when = "never";
+         when  = "always";
+         theme = "custom";
        };
        recursion = {
          depth   = 2;
          enabled = true;
        };
        icons = {
-         theme = "fancy";
          when  = "always";
        };
        indicators = true;
        layout     = "tree";
        size       = "short";
        sorting = {
-         column       = "name";
          dir-grouping = "first";
        };
      };

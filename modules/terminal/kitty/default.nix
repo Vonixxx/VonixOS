@@ -10,8 +10,8 @@
    programs.kitty = {
      enable                                = true;
      shellIntegration.enableZshIntegration = true;
-     theme                                 = "Nord";
      font.name                             = "${vars.font}";
+     theme                                 = "${vars.theme}";
    };
  };
 }

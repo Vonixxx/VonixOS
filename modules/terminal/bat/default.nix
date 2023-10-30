@@ -10,7 +10,7 @@
    programs.bat = {
      enable = true;
      config = {
-       theme = "Nord";
+       theme = "${vars.theme}";
      };
    };
  };

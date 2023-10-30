@@ -34,7 +34,8 @@
     #####################
     # System Appearance #
     #####################
-    font = "CascadiaCode";
+    theme = "Nord";
+    font  = "CascadiaCode";
     swayColors = {
       text            = "#FFFFFF";
       urgent          = "#BF616A";
