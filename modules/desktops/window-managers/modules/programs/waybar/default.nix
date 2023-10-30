@@ -11,9 +11,10 @@
     enable = true;
     style = ''
        /* Colors */
-       @define-color base   #2E3440;
-       @define-color text   #ECEFF4;
-       @define-color urgent #D08770;
+       @define-color base      #2E3440;
+       @define-color text      #ECEFF4;
+       @define-color urgent-bg #E5E9F0;
+       @define-color urgent-fg #BF616A;
        
        /* Base */
        * {
@@ -68,14 +69,14 @@
 	padding-right: 20px;
         color:         @text;
        }
-       #workspaces button.urgent {
-        opacity:    0.8;
-        background: @base;
-        color:      @urgent;
-       }
        #workspaces button.focused {
         opacity:    1;
         background: @base;
+       }
+       #workspaces button.urgent {
+        opacity:    0.8;
+        background: @urgent-bg;
+        color:      @urgent-fg;
        }
     '';
     settings = [{

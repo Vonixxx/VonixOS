@@ -5,7 +5,7 @@
     "alignment": "left",
     "segments": [
       {
-        "leading_diamond": " ",
+        "leading_diamond": "",
         "type":            "os",
         "style":           "diamond",
         "background":      "#2E3440",

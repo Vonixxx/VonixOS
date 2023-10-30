@@ -21,7 +21,10 @@ with lib;
 
    environment = { 
      systemPackages = (with pkgs; [
+       dolphin-emu
        gnome.gnome-tweaks
+       pcsx2
+       rpcs3
        steam
        steamtinkerlaunch
      ]) ++ (with pkgs.gnomeExtensions; [
