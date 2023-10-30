@@ -14,15 +14,6 @@
          width  = 3;
          radius = 10;
        };
-       colors = {
-         border          = "#B48EADDD";
-         background      = "#4C566ADD";
-         text            = "#ECEFF4DD";
-         match           = "#BF616ADD";
-         selection       = "#2E3440DD";
-         selection-text  = "#ECEFF4DD";
-         selection-match = "#BF616ADD";
-       };
        main = {
          inner-pad      = 3;
          lines          = 10;
@@ -31,7 +22,16 @@
          fuzzy          = true;
          icons-enabled  = false;
          prompt         = "Launch > ";
-         font           = "Cascadia Code:size=8";
+         font           = "CascadiaCode:size=8";
+       };
+       colors = {
+         match           = "${vars.fuzzel.match}";
+         border          = "${vars.fuzzel.border}";
+         selection       = "${vars.fuzzel.selection}";
+         background      = "${vars.fuzzel.background}";
+         foreground      = "${vars.fuzzel.foreground}";
+         selection-match = "${vars.fuzzel.selectionMatch}";
+         selection-text  = "${vars.fuzzel.selectionForeground}";
        };
      };
    };

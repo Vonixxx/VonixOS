@@ -34,13 +34,41 @@
     #####################
     # System Appearance #
     #####################
-    theme = "Nord";
     font  = "CascadiaCode";
-    swayColors = {
-      text            = "#FFFFFF";
-      urgent          = "#BF616A";
-      focusedborder   = "#B48EAD";
-      unfocusedborder = "#000000";
+    theme = "Catppuccin-Mocha"; # For Kitty and BAT
+    sway = {
+      urgent          = "#F38BA8";
+      foreground      = "#CDD6F4";
+      focusedBorder   = "#CBA6F7";
+      unfocusedBorder = "#000000";
+    };
+    waybar = {
+      foreground       = "#CDD6F4";
+      background       = "#11111B";
+      urgentBackground = "#1E1E2E";
+      urgentForeground = "#F38BA8";
+      power            = "#F38BA8";
+      sleep            = "#89B4FA";
+      reboot           = "#F9E2AF";
+      battery          = "#A6E3A1";
+      network          = "#A6E3A1";
+    };
+    oh-my-posh = {
+      backgroundGit     = "#A6E3A1";
+      backgroundIcon    = "#11111B";
+      backgroundPath    = "#CBA6F7";
+      backgroundCode    = "#F38BA8";
+      foregroundIcon    = "#CDD6F4";
+      foregroundDefault = "#11111B";
+    };
+    fuzzel = {
+      border              = "#CBA6F7DD";
+      foreground          = "#CDD6F4DD";
+      background          = "#585B70DD";
+      match               = "#F38bA8DD";
+      selection           = "#313244DD";
+      selectionMatch      = "#F38BA8DD";
+      selectionForeground = "#CDD6F4DD";
     };
     ###################
     # Screen Settings #

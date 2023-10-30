@@ -1,84 +1,96 @@
 ###########
 # VonixOS #
-#####################
-# Bar Configuration #
-#####################
+########################
+# Waybar Configuration #
+########################
 { config, pkgs, vars, ... }:
 
 {
  home-manager.users.${vars.user} = {
    programs.waybar = {
     enable = true;
-    style = ''
-       /* Colors */
-       @define-color base      #2E3440;
-       @define-color text      #ECEFF4;
-       @define-color urgent-bg #E5E9F0;
-       @define-color urgent-fg #BF616A;
-       
-       /* Base */
-       * {
-	min-height:    0px;
-	border-radius: 10px;
-	border:        none;
-        margin:        1px 2px 2px 2px;
-       }
+    style = " 
+      /* Base */
+      * {
+       min-height:    0px;
+       border-radius: 10px;
+       border:        none;
+       margin:        1px 2px 2px 2px;
+      }
     
-       /* Whole Bar */
-       #waybar {
-        font-size:   20px;
-        font-weight: bold;
-        background:  rgba(0,0,0,0);
-        font-family: '${vars.font}';
-       }
+      /* Whole Bar */
+      #waybar {
+       font-size:   20px;
+       font-weight: bold;
+       background:  rgba(0,0,0,0);
+       font-family: '${vars.font}';
+      }
     
-       /* Modules */
-       #cpu,
-       #mode,
-       #disk,
-       #clock,
-       #battery,
-       #network,
-       #backlight,
-       #pulseaudio,
-       #custom-power,
-       #custom-reboot,
-       #custom-hibernate {
-        color:      @text;
-        background: @base;
-	padding:    2px 12px;
-       }
+      /* Modules */
+      #cpu,
+      #mode,
+      #disk,
+      #clock,
+      #battery,
+      #network,
+      #backlight,
+      #pulseaudio,
+      #custom-sleep,
+      #custom-power,
+      #custom-reboot {
+       padding:    2px 12px;
+       color:      '${vars.waybar.foreground}';
+       background: '${vars.waybar.background}';
+      }
 
-       #custom-hibernate {
-	padding-right: 15px;
-       }
+      /* Icon Color */
+      #custom-sleep {
+       color: '${vars.waybar.sleep}';
+      }
+      #custom-power {
+       color: '${vars.waybar.power}';
+      }
+      #custom-reboot {
+       color: '${vars.waybar.reboot}';
+      }
+      #battery {
+       color: '${vars.waybar.battery}';
+      }
+      #network {
+       color: '${vars.waybar.network}';
+      }
 
-       #network { 
-	padding-right: 20px;
-       }
+      /* Icon Position Fix */
+      #custom-sleep {
+       padding-right: 15px;
+      }
+      #network { 
+       padding-right: 20px;
+      }
+      #workspaces button {
+       padding-right: 20px;
+      }
+      #custom-power,
+      #custom-reboot {
+       padding-right: 12.5px;
+      }
 
-       #custom-power,
-       #custom-reboot {
-	padding-right: 12.5px;
-       }
-
-       /* Workspaces */
-       #workspaces button {
-        opacity:       0.5;
-        background:    none;
-	padding-right: 20px;
-        color:         @text;
-       }
-       #workspaces button.focused {
-        opacity:    1;
-        background: @base;
-       }
-       #workspaces button.urgent {
-        opacity:    0.8;
-        background: @urgent-bg;
-        color:      @urgent-fg;
-       }
-    '';
+      /* Workspaces */
+      #workspaces button {
+       opacity:    0.5;
+       background: none;
+       color:      '${vars.waybar.foreground}';
+      }
+      #workspaces button.focused {
+       opacity:    1;
+       background: '${vars.waybar.foreground}';
+      }
+      #workspaces button.urgent {
+       opacity:    0.8;
+       background: '${vars.waybar.urgentBackground}';
+       color:      '${vars.waybar.urgentForeground}';
+      }
+    ";
     settings = [{
         height   = 55;
         layer    = "top";
@@ -86,7 +98,7 @@
 
         modules-center = [ "sway/workspaces" ];
         modules-right  = [ "pulseaudio" "backlight" "disk" "clock" ];
-        modules-left   = [ "custom/power" "custom/reboot" "custom/hibernate" "battery" "network" "sway/mode" ];
+        modules-left   = [ "custom/power" "custom/reboot" "custom/sleep" "battery" "network" "sway/mode" ];
 
         "sway/workspaces" = {
           all-outputs  = true;
@@ -97,6 +109,21 @@
             "3" = "<big>󰭣</big>";
             "4" = "<big>󰯜</big>";
           };
+        };
+        "custom/reboot" = {
+          tooltip  = false;
+          format   = "<big>󰜉</big>";
+          on-click = "systemctl reboot";
+        };
+        "custom/sleep" = {
+          tooltip  = false;
+          format   = "<big>󰜗</big>";
+          on-click = "systemctl suspend";
+        };
+        "custom/power" = {
+          tooltip  = false;
+          format   = "<big>>󰐥</big>";
+          on-click = "systemctl poweroff";
         };
 	"disk" = {
 	  interval = 60;
@@ -115,21 +142,6 @@
           tooltip  = false;
           format   = "{:󰃭 %d/%m/%y | %H:%M}";
         };
-        "custom/power" = {
-          tooltip  = false;
-          on-click = "exec poweroff";
-          format   = "<big><span foreground=\"#BF616A\">󰐥</span></big>";
-        };
-        "custom/hibernate" = {
-          tooltip  = false;
-          on-click = "systemctl suspend";
-          format   = "<big><span foreground=\"#5E81AC\">󰜗</span></big>";
-        };
-        "custom/reboot" = {
-          tooltip  = false;
-          on-click = "exec reboot";
-          format   = "<big><span foreground=\"#EBCB8B\">󰜉</span></big>";
-        };
         "pulseaudio" = {
           scroll-step = 1;
           tooltip     = false;
@@ -142,19 +154,19 @@
         };
 	"network" = {
           tooltip             = false;
+	  format-ethernet     = "<big>󰈀</big>";
+	  format-wifi         = "<big>󰤨</big>";
+          format-disconnected = "<big>󰤭</big>";
           on-click            = "kitty zsh -c 'nmtui'";
-          format-disconnected = "<big><span foreground=\"#BF616A\">󰤭</span></big>";
-	  format-wifi         = "<big><span foreground=\"#A3bE8C\">󰤨</span></big>";
-	  format-ethernet     = "<big><span foreground=\"#A3BE8C\">󰈀</span></big>";
         };
         "battery" = {
           interval                   = 5;
           bat                        = "BAT0";
+          format-charging            = "<big>󰂄</big>";
+          format                     = "<big>{icon}</big>";
           format-icons               = ["󰁻" "󰁽" "󰁿" "󰂁" "󰁹"];
           tooltip-format-charging    = "Full Charge Duration: {time}";
           tooltip-format-discharging = "Discharging Duration: {time}";
-          format-charging            = "<big><span foreground=\"#EBCB8B\">󰂄</span></big>";
-          format                     = "<big><span foreground=\"#A3BE8C\">{icon}</span></big>";
         };
      }];
    };

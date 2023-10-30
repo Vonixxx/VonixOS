@@ -9,12 +9,7 @@
  home-manager.users.${vars.user} = {
    programs.nixneovim = {
      enable = true;
-     colorschemes.nord = {
-       enable   = true;
-       italic   = true;
-       borders  = true;
-       contrast = true;
-     };
+     colorscheme = "Catppuccin-Mocha";
      mappings = {
        normal = {
          "<leader>s" = {
@@ -68,14 +63,16 @@
        cmp-nvim-lsp
        haskell-tools-nvim
        nvim-cmp
-       nvim-toggleterm-lua
        ##########
        # Barbar #
        ##########
        nvim-web-devicons
      ];
      extraConfigLua = "
-       require('toggleterm').setup{}
+       require('lualine').setup {
+        options = {
+        theme = 'catppuccin'
+       }
      ";
    };
  };

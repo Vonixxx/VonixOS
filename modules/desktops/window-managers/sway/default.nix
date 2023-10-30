@@ -162,10 +162,10 @@ with lib;
            { command = "swaybg -i /home/'${vars.user}'/GitHub/VonixOS/modules/desktops/window-managers/modules/wallpapers/Stars.jpg -m fill"; always = true; }
          ];
          colors = {
-           urgent          = { childBorder = "${vars.swayColors.urgent}";          border = "${vars.swayColors.urgent}";          background = "${vars.swayColors.text}"; text = "${vars.swayColors.text}"; indicator = "${vars.swayColors.urgent}"; };
-           focused         = { childBorder = "${vars.swayColors.focusedborder}";   border = "${vars.swayColors.focusedborder}";   background = "${vars.swayColors.text}"; text = "${vars.swayColors.text}"; indicator = "${vars.swayColors.focusedborder}"; };
-           unfocused       = { childBorder = "${vars.swayColors.unfocusedborder}"; border = "${vars.swayColors.unfocusedborder}"; background = "${vars.swayColors.text}"; text = "${vars.swayColors.text}"; indicator = "${vars.swayColors.unfocusedborder}"; };
-           focusedInactive = { childBorder = "${vars.swayColors.unfocusedborder}"; border = "${vars.swayColors.unfocusedborder}"; background = "${vars.swayColors.text}"; text = "${vars.swayColors.text}"; indicator = "${vars.swayColors.unfocusedborder}"; };
+           urgent          = { childBorder = "${vars.sway.urgent}";          border = "${vars.sway.urgent}";          background = "${vars.sway.foreground}"; text = "${vars.sway.foreground}"; indicator = "${vars.sway.urgent}"; };
+           focused         = { childBorder = "${vars.sway.focusedBorder}";   border = "${vars.sway.focusedBorder}";   background = "${vars.sway.foreground}"; text = "${vars.sway.foreground}"; indicator = "${vars.sway.focusedBorder}"; };
+           unfocused       = { childBorder = "${vars.sway.unfocusedBorder}"; border = "${vars.sway.unfocusedBorder}"; background = "${vars.sway.foreground}"; text = "${vars.sway.foreground}"; indicator = "${vars.sway.unfocusedBorder}"; };
+           focusedInactive = { childBorder = "${vars.sway.unfocusedBorder}"; border = "${vars.sway.unfocusedBorder}"; background = "${vars.sway.foreground}"; text = "${vars.sway.foreground}"; indicator = "${vars.sway.unfocusedBorder}"; };
          };
        };
      };

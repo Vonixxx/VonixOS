@@ -8,14 +8,14 @@
         "leading_diamond": "",
         "type":            "os",
         "style":           "diamond",
-        "background":      "#2E3440",
-        "foreground":      "#ECEFF4",
+        "background":      "#11111B",
+        "foreground":      "#CDD6F4",
         "template":        " {{ if .WSL }}WSL at {{ end }}{{.Icon}} "
       },
       {
         "powerline_symbol": "\ue0b0",
-        "background":       "#B48EAD",
-        "foreground":       "#000000",
+        "background":       "#CBA6F7",
+        "foreground":       "#11111B",
         "properties": {
           "folder_icon":           "\uf115",
           "home_icon":             "\ueb06",
@@ -29,16 +29,16 @@
       {
         "type":             "git",
         "powerline_symbol": "\ue0b0",
-        "background":       "#A3BE8C",
-        "foreground":       "#000000",
+        "background":       "#A6E3A1",
+        "foreground":       "#11111B",
         "style":            "powerline",
         "template":         " {{ .HEAD }} "
       },
       {
         "type":             "status",
         "powerline_symbol": "\ue0b0",
-        "background":       "#BF616A",
-        "foreground":       "#000000",
+        "background":       "#F38BA8",
+        "foreground":       "#11111B",
         "style":            "powerline",
         "template":         " {{ reason .Code }} "
       }
