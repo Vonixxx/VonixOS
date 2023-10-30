@@ -7,11 +7,6 @@
 
 {
  home-manager.users.${vars.user} = {
-   programs.oh-my-posh = {
-     enable               = true;
-     enableZshIntegration = true;
-     useTheme             = "agnoster"; 
-   };
    programs.zsh = {
      enable = true;
      initExtraFirst = ''
@@ -59,6 +54,11 @@
        lapupd  = "nix flake update && sudo nixos-rebuild switch --flake '.#laptop'";
        deskupd = "nix flake update && sudo nixos-rebuild switch --flake '.#desktop'";
      };
+   };
+   programs.oh-my-posh = {
+     enable               = true;
+     enableZshIntegration = true;
+     settings             = builtins.fromJSON (builtins.unsafeDiscardStringContext (builtins.readFile "/home/${vars.user}/GitHub/VonixOS/modules/terminal/zsh/theme/custom.omp.json")); 
    };
  };
 }
