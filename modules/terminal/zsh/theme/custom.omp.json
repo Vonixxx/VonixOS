@@ -5,14 +5,6 @@
     "alignment": "left",
     "segments": [
       {
-        "type":             "root",
-        "powerline_symbol": "\ue0b0",
-        "background":       "#2E3440",
-        "foreground":       "#ECEFF4",
-        "template":         " \uf0e7 ",
-        "style":            "powerline"
-      },
-      {
         "leading_diamond": " ",
         "type":            "os",
         "style":           "diamond",

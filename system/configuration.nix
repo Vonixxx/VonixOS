@@ -72,15 +72,6 @@
    networkmanager.enable = true;
  };
 
- environment = {
-   variables = {
-     VISUAL   = "nvim";
-     TERMINAL = "nvim";
-     EDITOR   = "kitty";
-   };
-   shells = with pkgs; [ zsh ];
- };
-
  security = {
    rtkit.enable            = true;
    polkit.enable           = true;
@@ -121,6 +112,17 @@
      experimental-features = [ "nix-command" "flakes" ];
    };
  }; 
+
+ environment = {
+   shells = with pkgs; [ zsh ];
+   variables = {
+     VISUAL   = "nvim";
+     TERMINAL = "nvim";
+     EDITOR   = "kitty";
+     BROWSER  = "firefox";
+     PF_INFO  = "ascii title uptime pkgs kernel memory os host";
+   };
+ };
 
  users = {
    defaultUserShell = with pkgs; zsh;

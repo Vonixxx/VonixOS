@@ -79,7 +79,7 @@
        }
     '';
     settings = [{
-        height   = 60;
+        height   = 55;
         layer    = "top";
         position = "top";
 
