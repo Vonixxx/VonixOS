@@ -233,6 +233,7 @@
          #######################################
 	 # Personal Preferences (Non-ArkenFox) #
          #######################################
+	 "extensions.webextensions.restrictedDomains"                  = "";
          "general.autoScroll"                                          = true;
          "accessibility.typeaheadfind"                                 = true;
          "browser.urlbar.suggest.bookmark"                             = true;

@@ -71,11 +71,6 @@ with lib;
      };
    };
 
-  fonts.packages = with pkgs; [
-    liberation_ttf
-    (nerdfonts.override { fonts = [ "${vars.font}" ]; })
-  ];
-
   home-manager.users.${vars.user} = {
      home = {
        pointerCursor = {

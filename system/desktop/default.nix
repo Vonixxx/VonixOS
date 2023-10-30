@@ -14,17 +14,13 @@
 
  boot = {
    loader = {
-     timeout = 10;
-     efi = {
-       canTouchEfiVariables = true;
-       efiSysMountPoint     = "/boot";
-     };
-     grub = {
+     timeout = 5;
+     systemd-boot = {
        configurationLimit = 5;
        enable             = true;
-       efiSupport         = true;
-       useOSProber        = true;
-       devices            = [ "nodev" ];
+     };
+     efi = {
+       canTouchEfiVariables = true;
      };
    };
    kernelPackages = with pkgs; linuxPackages_latest;
