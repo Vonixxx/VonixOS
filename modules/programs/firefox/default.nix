@@ -12,8 +12,11 @@
      profiles.default = {
        id             = 0;
        isDefault      = true;
+       search = { 
+	 force   = true;
+	 default = "DuckDuckGo";
+       };
        name           = "default";
-       search.default = "DuckDuckGo";
        extensions = with pkgs.nur.repos.rycee.firefox-addons; [
          bitwarden
 	 darkreader
