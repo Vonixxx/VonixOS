@@ -56,20 +56,19 @@ with lib;
      unrar
    ];
 
-   services = {
-     greetd = {
-       enable = true;
-       settings = {
-         default_session.command = "
-           ${pkgs.greetd.tuigreet}/bin/tuigreet \
-           --time      \
-           --cmd sway  \
-           --asterisks \
-           --user-menu \
-         ";
-       };
-     };
-   };
+   services.greetd = {
+    enable = true;
+    settings = {
+     default_session.command = "
+        ${pkgs.greetd.tuigreet}/bin/tuigreet \
+        --time \
+        --asterisks \
+        --user-menu \
+        --cmd sway
+      ";
+    };
+  };
+  environment.etc."greetd/environments".text = "sway";
 
   home-manager.users.${vars.user} = {
      home = {
@@ -77,7 +76,7 @@ with lib;
          size       = 16;
          gtk.enable = true;
          name       = "${vars.cursor}";
-         package    = pkgs.catppuccin-cursors.mochaDark;
+         package    = pkgs.catppuccin-cursors.mochaLight;
        };
      };
      wayland.windowManager.sway = {
@@ -159,7 +158,7 @@ with lib;
          };
 	 startup = [
            { command = "${pkgs.autotiling}/bin/autotiling"; always = true; }
-           { command = "swaybg -i /home/'${vars.user}'/GitHub/VonixOS/modules/desktops/window-managers/modules/wallpapers/Stars.jpg -m fill"; always = true; }
+           { command = "swaybg -i /home/'${vars.user}'/GitHub/VonixOS/modules/desktops/window-managers/modules/wallpapers/Forest.jpg -m fill"; always = true; }
          ];
          colors = {
            urgent          = { childBorder = "${vars.sway.urgent}";          border = "${vars.sway.urgent}";          background = "${vars.sway.foreground}"; text = "${vars.sway.foreground}"; indicator = "${vars.sway.urgent}"; };

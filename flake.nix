@@ -36,8 +36,8 @@
     #####################
     font          = "CascadiaCode";
     theme         = "Catppuccin-Mocha";              # For BAT, Kitty and Neovim
-    cursor        = "Catppuccin-Mocha-Dark-Cursors";
-    cursorPackage = "pkgs.catppuccin-cursors.mochaDark";
+    cursor        = "Catppuccin-Mocha-Light-Cursors";
+    cursorPackage = "pkgs.catppuccin-cursors.mochaLight";
     sway = {
       urgent          = "#F38BA8";
       foreground      = "#CDD6F4";
