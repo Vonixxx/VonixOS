@@ -233,6 +233,7 @@
          #######################################
 	 # Personal Preferences (Non-ArkenFox) #
          #######################################
+	 "ui.systemUsesDarkTheme"                                      = 1;
 	 "extensions.webextensions.restrictedDomains"                  = "";
          "general.autoScroll"                                          = true;
          "accessibility.typeaheadfind"                                 = true;

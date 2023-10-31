@@ -34,8 +34,10 @@
     #####################
     # System Appearance #
     #####################
-    font  = "CascadiaCode";
-    theme = "Catppuccin-Mocha"; # For Kitty and BAT
+    font          = "CascadiaCode";
+    theme         = "Catppuccin-Mocha";              # For BAT, Kitty and Neovim
+    cursor        = "Catppuccin-Mocha-Dark-Cursors";
+    cursorPackage = "pkgs.catppuccin-cursors.mochaDark";
     sway = {
       urgent          = "#F38BA8";
       foreground      = "#CDD6F4";
@@ -62,11 +64,11 @@
       foregroundDefault = "#11111B";
     };
     fuzzel = {
+      match               = "#F38bA8DD";
       border              = "#CBA6F7DD";
       foreground          = "#CDD6F4DD";
-      background          = "#585B70DD";
-      match               = "#F38bA8DD";
-      selection           = "#313244DD";
+      background          = "#313244DD";
+      selection           = "#11111BDD";
       selectionMatch      = "#F38BA8DD";
       selectionForeground = "#CDD6F4DD";
     };

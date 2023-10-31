@@ -60,13 +60,13 @@ with lib;
      greetd = {
        enable = true;
        settings = {
-         default_session.command = ''
-            ${pkgs.greetd.tuigreet}/bin/tuigreet \
-            --time \
-            --cmd sway \
-            --asterisks \
-            --user-menu \
-         '';
+         default_session.command = "
+           ${pkgs.greetd.tuigreet}/bin/tuigreet \
+           --time      \
+           --cmd sway  \
+           --asterisks \
+           --user-menu \
+         ";
        };
      };
    };
@@ -76,7 +76,7 @@ with lib;
        pointerCursor = {
          size       = 16;
          gtk.enable = true;
-         name       = "Catppuccin-Mocha-Dark-Cursors";
+         name       = "${vars.cursor}";
          package    = pkgs.catppuccin-cursors.mochaDark;
        };
      };

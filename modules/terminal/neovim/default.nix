@@ -9,7 +9,6 @@
  home-manager.users.${vars.user} = {
    programs.nixneovim = {
      enable = true;
-     colorscheme = "Catppuccin-Mocha";
      mappings = {
        normal = {
          "<leader>s" = {
@@ -39,7 +38,7 @@
        };
        lualine = {
          enable = true;
-         theme  = "nord";
+	 theme  = "catppuccin";
        };
        barbar = {
 	 enable    = true;
@@ -57,22 +56,28 @@
        };
      };
      extraPlugins = with pkgs.vimExtraPlugins; [ 
+       #########
+       # Theme #
+       #########
+       catppuccin
+       ##########
+       # Barbar #
+       ##########
+       nvim-web-devicons
        #################
        # Haskell-Tools #
        #################
        cmp-nvim-lsp
        haskell-tools-nvim
        nvim-cmp
-       ##########
-       # Barbar #
-       ##########
-       nvim-web-devicons
      ];
      extraConfigLua = "
-       require('lualine').setup {
-        options = {
-        theme = 'catppuccin'
-       }
+       require('catppuccin').setup({
+         integrations = {
+          treesitter = true,
+         }
+       })
+       vim.cmd.colorscheme 'catppuccin-mocha'
      ";
    };
  };

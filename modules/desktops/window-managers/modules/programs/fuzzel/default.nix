@@ -28,8 +28,8 @@
          match           = "${vars.fuzzel.match}";
          border          = "${vars.fuzzel.border}";
          selection       = "${vars.fuzzel.selection}";
+         text            = "${vars.fuzzel.foreground}";
          background      = "${vars.fuzzel.background}";
-         foreground      = "${vars.fuzzel.foreground}";
          selection-match = "${vars.fuzzel.selectionMatch}";
          selection-text  = "${vars.fuzzel.selectionForeground}";
        };

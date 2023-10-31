@@ -3,13 +3,13 @@
 ########################
 # Waybar Configuration #
 ########################
-{ config, pkgs, vars, ... }:
+{ pkgs, vars, ... }:
 
 {
  home-manager.users.${vars.user} = {
    programs.waybar = {
     enable = true;
-    style = " 
+    style = '' 
       /* Base */
       * {
        min-height:    0px;
@@ -39,36 +39,36 @@
       #custom-power,
       #custom-reboot {
        padding:    2px 12px;
-       color:      '${vars.waybar.foreground}';
-       background: '${vars.waybar.background}';
+       color:      ${vars.waybar.foreground};
+       background: ${vars.waybar.background};
       }
 
       /* Icon Color */
       #custom-sleep {
-       color: '${vars.waybar.sleep}';
+       color: ${vars.waybar.sleep};
       }
       #custom-power {
-       color: '${vars.waybar.power}';
+       color: ${vars.waybar.power};
       }
       #custom-reboot {
-       color: '${vars.waybar.reboot}';
+       color: ${vars.waybar.reboot};
       }
       #battery {
-       color: '${vars.waybar.battery}';
+       color: ${vars.waybar.battery};
       }
       #network {
-       color: '${vars.waybar.network}';
+       color: ${vars.waybar.network};
       }
 
       /* Icon Position Fix */
-      #custom-sleep {
-       padding-right: 15px;
-      }
       #network { 
        padding-right: 20px;
       }
       #workspaces button {
        padding-right: 20px;
+      }
+      #custom-sleep {
+       padding-right: 15px;
       }
       #custom-power,
       #custom-reboot {
@@ -79,18 +79,18 @@
       #workspaces button {
        opacity:    0.5;
        background: none;
-       color:      '${vars.waybar.foreground}';
+       color:      ${vars.waybar.foreground};
       }
       #workspaces button.focused {
        opacity:    1;
-       background: '${vars.waybar.foreground}';
+       background: ${vars.waybar.background};
       }
       #workspaces button.urgent {
        opacity:    0.8;
-       background: '${vars.waybar.urgentBackground}';
-       color:      '${vars.waybar.urgentForeground}';
+       background: ${vars.waybar.urgentBackground};
+       color:      ${vars.waybar.urgentForeground};
       }
-    ";
+    '';
     settings = [{
         height   = 55;
         layer    = "top";
@@ -122,7 +122,7 @@
         };
         "custom/power" = {
           tooltip  = false;
-          format   = "<big>>󰐥</big>";
+          format   = "<big>󰐥</big>";
           on-click = "systemctl poweroff";
         };
 	"disk" = {
