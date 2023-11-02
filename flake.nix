@@ -19,25 +19,39 @@
  description = "Flake Configuration for User-Specific Host: Laptop/Desktop";
 
  inputs = {
-   nur.url       = "github:nix-community/NUR";
-   nixneovim.url = "github:nixneovim/nixneovim";
-   nixpkgs.url   = "github:nixos/nixpkgs/nixos-unstable";
-   home-manager = {
-     inputs.nixpkgs.follows = "nixpkgs";
-     url                    = "github:nix-community/home-manager";
-   };
+   ##########################
+   # Synchronizing Packages #
+   ##########################
+   home-manager.inputs.nixpkgs.follows = "nixpkgs";
+   #####################
+   # Repositories URLs #
+   #####################
+   nur.url          = "github:nix-community/NUR";
+   nixneovim.url    = "github:nixneovim/nixneovim";
+   home-manager.url = "github:nix-community/home-manager"; 
+   nixpkgs.url      = "github:nixos/nixpkgs/nixos-unstable";
  };
 
  outputs = inputs @ { nur, self, nixpkgs, nixneovim, home-manager, ... }:
  let
   vars = {
+    ########################
+    # Screen Settings Sway #
+    ########################
+    output       = "eDP-1";
+    outputConfig = "1920x1080@60Hz";
+    ########################
+    # GitHub Login Details #
+    ########################
+    githubUser = "Vonixxx";
+    githubMail = "vonixxxwork@tuta.io";
     #####################
     # System Appearance #
     #####################
-    font          = "CascadiaCode";
-    theme         = "Catppuccin-Mocha";              # For BAT, Kitty and Neovim
-    cursor        = "Catppuccin-Mocha-Light-Cursors";
-    cursorPackage = "pkgs.catppuccin-cursors.mochaLight";
+    wallpaper = "Rain.jpg";
+    font      = "CascadiaCode";                   # For Kitty and Waybar
+    theme     = "Catppuccin-Mocha";               # For BAT, Kitty and Neovim
+    cursor    = "Catppuccin-Mocha-Light-Cursors"; # Also, Change Manually in Sway Configuration -> pointerCursor.package = ... 
     sway = {
       urgent          = "#F38BA8";
       foreground      = "#CDD6F4";
@@ -72,16 +86,6 @@
       selectionMatch      = "#F38BA8DD";
       selectionForeground = "#CDD6F4DD";
     };
-    ###################
-    # Screen Settings #
-    ###################
-    output       = "eDP-1";
-    outputConfig = "1920x1080@60Hz";
-    ########################
-    # GitHub Login Details #
-    ########################
-    githubUser = "Vonixxx";
-    githubMail = "vonixxxwork@tuta.io";
     #############################
     # System User Login Details #
     #############################

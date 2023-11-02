@@ -36,6 +36,7 @@
    pciutils
    pfetch-rs
    python3Full
+   tldr
    usbutils
    virt-manager
    wev

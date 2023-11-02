@@ -10,7 +10,6 @@ with lib;
  imports = [
    ../modules/programs/feh/default.nix
    ../modules/programs/mpv/default.nix
-   ../modules/programs/btop/default.nix
    ../modules/programs/fuzzel/default.nix
    ../modules/programs/waybar/default.nix
    ../modules/programs/wlsunset/default.nix
@@ -26,8 +25,6 @@ with lib;
  };
 
  config = mkIf (config.sway.enable) {
-   services.getty.autologinUser = "${vars.user}";
-
    environment = {
     systemPackages = with pkgs; [
       ##############
@@ -58,22 +55,20 @@ with lib;
       unzip
       unrar
     ];
-    loginShellInit = "
-      if [ '$(tty)' = '/dev/tty1' ]; then
-        exec sway
-      fi
-    ";
   };
+
+  services.getty.autologinUser = "${vars.user}";
 
   home-manager.users.${vars.user} = {
      home = {
        pointerCursor = {
-         size       = 32;
+         size       = 64;
          gtk.enable = true;
          name       = "${vars.cursor}";
-         package    = pkgs.catppuccin-cursors.mochaLight;
+         package    = pkgs.catppuccin-cursors.mochaLight
        };
      };
+
      wayland.windowManager.sway = {
        enable   = true;
        xwayland = true;
@@ -153,7 +148,7 @@ with lib;
          };
 	 startup = [
            { command = "${pkgs.autotiling}/bin/autotiling"; always = true; }
-           { command = "swaybg -i /home/'${vars.user}'/GitHub/VonixOS/modules/desktops/window-managers/modules/wallpapers/Rain.jpg -m fill"; always = true; }
+           { command = "swaybg -i /home/'${vars.user}'/GitHub/VonixOS/modules/desktops/window-managers/modules/wallpapers/'${vars.wallpaper}' -m fill"; always = true; }
          ];
          colors = {
            urgent          = { childBorder = "${vars.sway.urgent}";          border = "${vars.sway.urgent}";          background = "${vars.sway.foreground}"; text = "${vars.sway.foreground}"; indicator = "${vars.sway.urgent}"; };
