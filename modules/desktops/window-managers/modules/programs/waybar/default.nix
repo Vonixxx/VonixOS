@@ -97,7 +97,7 @@
         position = "top";
 
         modules-center = [ "sway/workspaces" ];
-        modules-right  = [ "pulseaudio" "backlight" "disk" "clock" ];
+        modules-right  = [ "backlight" "pulseaudio" "disk" "clock" ];
         modules-left   = [ "custom/power" "custom/reboot" "custom/sleep" "battery" "network" "sway/mode" ];
 
         "sway/workspaces" = {
@@ -149,7 +149,7 @@
             headphone = "󰋋";
             default   = ["󰕿" "󰖀" "󰕾"];
           };
-          format = "{icon}  {volume}%";
+          format = "{icon} {volume}%";
           on-click = "kitty zsh -c 'pulsemixer'";
         };
 	"network" = {

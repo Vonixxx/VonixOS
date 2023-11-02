@@ -26,54 +26,49 @@ with lib;
  };
 
  config = mkIf (config.sway.enable) {
-   environment.systemPackages = with pkgs; [
-     ##############
-     # Ergonomics #
-     ##############
-     autotiling      
-     pulsemixer
-     #######################
-     # Screen/Text Capture #
-     #######################
-     grim
-     slurp
-     swaybg
-     wl-clipboard
-     ###################
-     # File Management #
-     ###################
-     catdoc
-     gnutar
-     mupdf
-     odt2txt
-     pigz
-     p7zip
-     pbzip2
-     pandoc
-     poppler_utils
-     rar
-     unzip
-     unrar
-   ];
+   services.getty.autologinUser = "${vars.user}";
 
-   services.greetd = {
-    enable = true;
-    settings = {
-     default_session.command = "
-        ${pkgs.greetd.tuigreet}/bin/tuigreet \
-        --time \
-        --asterisks \
-        --user-menu \
-        --cmd sway
-      ";
-    };
+   environment = {
+    systemPackages = with pkgs; [
+      ##############
+      # Ergonomics #
+      ##############
+      autotiling      
+      pulsemixer
+      #######################
+      # Screen/Text Capture #
+      #######################
+      grim
+      slurp
+      swaybg
+      wl-clipboard
+      ###################
+      # File Management #
+      ###################
+      catdoc
+      gnutar
+      mupdf
+      odt2txt
+      pigz
+      p7zip
+      pbzip2
+      pandoc
+      poppler_utils
+      rar
+      unzip
+      unrar
+    ];
+    loginShellInit = "
+      if [ '$(tty)' = '/dev/tty1' ]; then
+        exec sway
+      fi
+    ";
   };
-  environment.etc."greetd/environments".text = "sway";
 
   home-manager.users.${vars.user} = {
      home = {
        pointerCursor = {
-         size       = 16;
+         size       = 32;
          gtk.enable = true;
          name       = "${vars.cursor}";
          package    = pkgs.catppuccin-cursors.mochaLight;
@@ -158,7 +153,7 @@ with lib;
          };
 	 startup = [
            { command = "${pkgs.autotiling}/bin/autotiling"; always = true; }
-           { command = "swaybg -i /home/'${vars.user}'/GitHub/VonixOS/modules/desktops/window-managers/modules/wallpapers/Forest.jpg -m fill"; always = true; }
+           { command = "swaybg -i /home/'${vars.user}'/GitHub/VonixOS/modules/desktops/window-managers/modules/wallpapers/Rain.jpg -m fill"; always = true; }
          ];
          colors = {
            urgent          = { childBorder = "${vars.sway.urgent}";          border = "${vars.sway.urgent}";          background = "${vars.sway.foreground}"; text = "${vars.sway.foreground}"; indicator = "${vars.sway.urgent}"; };
