@@ -65,7 +65,7 @@ with lib;
          size       = 64;
          gtk.enable = true;
          name       = "${vars.cursor}";
-         package    = pkgs.catppuccin-cursors.mochaLight
+         package    = pkgs.catppuccin-cursors.mochaLight;
        };
      };
 
