@@ -48,10 +48,10 @@
     #####################
     # System Appearance #
     #####################
-    wallpaper = "Rain.jpg";
+    wallpaper = "Rain.jpg";                       # For Sway
     font      = "CascadiaCode";                   # For Kitty and Waybar
     theme     = "Catppuccin-Mocha";               # For BAT, Kitty and Neovim
-    cursor    = "Catppuccin-Mocha-Light-Cursors"; # Also, Change Manually in Sway Configuration -> pointerCursor.package = ... 
+    cursor    = "Catppuccin-Mocha-Light-Cursors"; # For Sway - Also, Change Manually in Sway Configuration -> pointerCursor.package = ... 
     sway = {
       urgent          = "#F38BA8";
       foreground      = "#CDD6F4";

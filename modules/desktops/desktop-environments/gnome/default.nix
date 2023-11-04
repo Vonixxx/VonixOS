@@ -17,18 +17,24 @@ with lib;
  };
 
  config = mkIf (config.gnome.enable) {
-   hardware.pulseaudio.enable = false;
+   hardware = { 
+     pulseaudio.enable = false;
+     openrazer = {
+       enable = true;
+       users  = [ "vonix" ];
+     };
+   };
 
    environment = { 
      systemPackages = (with pkgs; [
        gnome.gnome-tweaks
+       polychromatic
        steam
        steamtinkerlaunch
      ]) ++ (with pkgs.gnomeExtensions; [
         arcmenu
 	burn-my-windows
         dash-to-panel
-	forge
 	gnome-40-ui-improvements
 	space-bar
 	transparent-window-moving

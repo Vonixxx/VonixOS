@@ -32,6 +32,5 @@
        canTouchEfiVariables = true;
      };
    };
-   kernelPackages = with pkgs; linuxPackages_latest;
  };
 }
