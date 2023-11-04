@@ -133,7 +133,7 @@
 	};
         "backlight" = {
           tooltip        = false;
-          format         = "󰃠 {percent}%";
+          format         = "󰃠  {percent}%";
           on-scroll-up   = "exec light -A 1";
           on-scroll-down = "exec light -U 1";
         };
