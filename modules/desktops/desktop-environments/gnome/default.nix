@@ -25,6 +25,28 @@ with lib;
      };
    };
 
+   dconf.settings = {
+     "org/gnome/desktop/privacy" = { 
+       remove-old-temp-files  = true
+       remove-old-trash-files = true 
+     };
+     "org/gnome/desktop/interface" = { 
+       enable-hot-corners = false
+       color-scheme       = "prefer-dark" 
+     };
+     "org/gnome/mutter" = { 
+       edge-tiling                = true 
+       workspaces-only-on-primary = true
+       dynamic-workspaces         = false
+     };
+     "org/gnome/desktop/session"               = { idle-delay = false };
+     "org/gnome/desktop/wm/preferences"        = { num-workspaces = 4 };
+     "org/gnome/desktop/screensaver"           = { lock-enabled = false };
+     "org/gnome/desktop/notifications"         = { show-in-lock-screen = false };
+     "org/gnome/shell/app-switcher"            = { current-workspace-only = false };
+     "org/gnome/settings-daemon/plugins/power" = { power-button-action = "interactive" };
+   };
+
    environment = { 
      systemPackages = (with pkgs; [
        gnome.gnome-tweaks
