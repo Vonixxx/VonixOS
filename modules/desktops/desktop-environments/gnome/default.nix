@@ -27,17 +27,17 @@ with lib;
 
    dconf.settings = {
      "org/gnome/desktop/privacy" = { 
-       remove-old-temp-files  = true
-       remove-old-trash-files = true 
+       remove-old-temp-files  = true;
+       remove-old-trash-files = true; 
      };
      "org/gnome/desktop/interface" = { 
-       enable-hot-corners = false
-       color-scheme       = "prefer-dark" 
+       enable-hot-corners = false;
+       color-scheme       = "prefer-dark"; 
      };
      "org/gnome/mutter" = { 
-       edge-tiling                = true 
-       workspaces-only-on-primary = true
-       dynamic-workspaces         = false
+       edge-tiling                = true;
+       workspaces-only-on-primary = true;
+       dynamic-workspaces         = false;
      };
      "org/gnome/desktop/session"               = { idle-delay = false };
      "org/gnome/desktop/wm/preferences"        = { num-workspaces = 4 };
