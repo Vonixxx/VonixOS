@@ -39,12 +39,12 @@ with lib;
        workspaces-only-on-primary = true;
        dynamic-workspaces         = false;
      };
-     "org/gnome/desktop/session"               = { idle-delay = false };
-     "org/gnome/desktop/wm/preferences"        = { num-workspaces = 4 };
-     "org/gnome/desktop/screensaver"           = { lock-enabled = false };
-     "org/gnome/desktop/notifications"         = { show-in-lock-screen = false };
-     "org/gnome/shell/app-switcher"            = { current-workspace-only = false };
-     "org/gnome/settings-daemon/plugins/power" = { power-button-action = "interactive" };
+     "org/gnome/desktop/session"               = { idle-delay = false; };
+     "org/gnome/desktop/wm/preferences"        = { num-workspaces = 4; };
+     "org/gnome/desktop/screensaver"           = { lock-enabled = false; };
+     "org/gnome/desktop/notifications"         = { show-in-lock-screen = false; };
+     "org/gnome/shell/app-switcher"            = { current-workspace-only = false; };
+     "org/gnome/settings-daemon/plugins/power" = { power-button-action = "interactive"; };
    };
 
    environment = { 
