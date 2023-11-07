@@ -52,7 +52,9 @@ with lib;
    environment = { 
      systemPackages = (with pkgs; [
        gnome.gnome-tweaks
+       pcsx2
        polychromatic
+       rpcs3
        steam
        steamtinkerlaunch
      ]) ++ (with pkgs.gnomeExtensions; [

@@ -37,6 +37,7 @@
    pfetch-rs
    python3Full
    tldr
+   tutanota-desktop
    usbutils
    virt-manager
    wev
