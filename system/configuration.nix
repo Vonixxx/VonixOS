@@ -3,7 +3,7 @@
 #######################
 # NixOS Configuration #
 #######################
-{ lib, nur, pkgs, vars, config, inputs, nixneovim, home-manager, ... }:
+{ lib, nur, pkgs, vars, config, inputs, home-manager, ... }:
 
 {
  imports = ( 
@@ -15,10 +15,7 @@
  system.stateVersion = "23.11"; 
 
  home-manager.users.${vars.user} = {
-   imports = [   
-     nur.nixosModules.nur 
-     nixneovim.nixosModules.default 
-   ];
+   imports = [ nur.nixosModules.nur ];
    programs.home-manager.enable = true;
    home.stateVersion            = "23.11";
  };
@@ -29,6 +26,7 @@
    ##################
    coreutils
    efibootmgr
+   fd
    ghc
    haskell-language-server
    killall
@@ -36,6 +34,7 @@
    pciutils
    pfetch-rs
    python3Full
+   ripgrep
    tldr
    tutanota-desktop
    usbutils

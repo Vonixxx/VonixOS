@@ -27,12 +27,11 @@
    # Repositories URLs #
    #####################
    nur.url          = "github:nix-community/NUR";
-   nixneovim.url    = "github:nixneovim/nixneovim";
    home-manager.url = "github:nix-community/home-manager"; 
    nixpkgs.url      = "github:nixos/nixpkgs/nixos-unstable";
  };
 
- outputs = inputs @ { nur, self, nixpkgs, nixneovim, home-manager, ... }:
+ outputs = inputs @ { nur, self, nixpkgs, home-manager, ... }:
  let
   vars = {
     ########################
@@ -50,7 +49,7 @@
     #####################
     wallpaper = "Rain.jpg";                       # For Sway
     font      = "CascadiaCode";                   # For Kitty and Waybar
-    theme     = "Catppuccin-Mocha";               # For BAT, Kitty and Neovim
+    theme     = "Catppuccin-Mocha";               # For BAT and Kitty
     cursor    = "Catppuccin-Mocha-Light-Cursors"; # For Sway - Also, Change Manually in Sway Configuration -> pointerCursor.package = ... 
     sway = {
       urgent          = "#F38BA8";
@@ -96,7 +95,7 @@
    nixosConfigurations = (
      import ./system {
       inherit (nixpkgs) lib;
-      inherit nur vars inputs nixpkgs nixneovim home-manager;
+      inherit nur vars inputs nixpkgs home-manager;
      }
    );
  };

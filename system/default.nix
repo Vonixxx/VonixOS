@@ -3,17 +3,14 @@
 ####################
 # Default Profiles #
 ####################
-{ lib, nur, vars, inputs, nixpkgs, nixneovim, home-manager, ... }:
+{ lib, nur, vars, inputs, nixpkgs, home-manager, ... }:
 
 let
  lib    = nixpkgs.lib;
  system = "x86_64-linux";
  pkgs = import nixpkgs {
    inherit system;
-   overlays = [ 
-     nur.overlay
-     nixneovim.overlays.default 
-   ];
+   overlays = [ nur.overlay ];
    config = {
      allowUnfree = true;
      permittedInsecurePackages = [ "electron-22.3.27" ];
@@ -36,7 +33,7 @@ in
      host = {
        hostName = "desktop";
      };
-     inherit nur pkgs vars inputs system nixneovim;
+     inherit nur pkgs vars inputs system;
    };
  };
 
@@ -54,7 +51,7 @@ in
      host = {
        hostName = "laptop";
      };
-     inherit nur pkgs vars inputs system nixneovim;
+     inherit nur pkgs vars inputs system;
    };
  };
 }

@@ -7,77 +7,28 @@
 
 {
  home-manager.users.${vars.user} = {
-   programs.nixneovim = {
+   programs.neovim = {
      enable = true;
-     mappings = {
-       normal = {
-         "<leader>s" = {
-           silent = true;
-	   action = "'<cmd>:x<cr>'";
-         };
-         "<leader>q" = {
-           silent = true;
-	   action = "'<cmd>:q<cr>'";
-         };
-         "<leader>f" = {
-           silent = true;
-	   action = "'<cmd>:Telescope find_files<cr>'";
-         };
-         "<leader>t" = {
-           silent = true;
-	   action = "'<cmd>:ToggleTerm direction=float<cr>'";
-         };
-       };
-     };
-     plugins = {
-       telescope = {
-         enable = true;
-       };
-       plenary = {
-         enable = true;
-       };
-       lualine = {
-         enable = true;
-	 theme  = "catppuccin";
-       };
-       barbar = {
-	 enable    = true;
-	 clickable = true;
-       };
-       mini = {
-         enable            = true;
-	 basics.enable     = true;
-	 surround.enable   = true;
-	 cursorword.enable = true;
-       };
-       treesitter = {
-         enable             = true;
-         installAllGrammars = true;
-       };
-     };
-     extraPlugins = with pkgs.vimExtraPlugins; [ 
-       #########
-       # Theme #
-       #########
-       catppuccin
-       ##########
-       # Barbar #
-       ##########
-       nvim-web-devicons
-       #################
-       # Haskell-Tools #
-       #################
-       cmp-nvim-lsp
-       haskell-tools-nvim
-       nvim-cmp
+     plugins = with pkgs.vimPlugins; [ 
+       lazy-nvim
      ];
-     extraConfigLua = "
-       require('catppuccin').setup({
-         integrations = {
-          treesitter = true,
-         }
+     extraLuaConfig = "
+       local lazypath = vim.fn.stdpath('data') .. '/lazy/lazy.nvim'
+       if not vim.loop.fs_stat(lazypath) then
+         vim.fn.system({
+           'git',
+           'clone',
+           '--filter=blob:none',
+           'https://github.com/folke/lazy.nvim.git',
+           '--branch=stable', -- latest stable release
+           lazypath,
+         })
+       end
+       vim.opt.rtp:prepend(lazypath)
+
+       require('lazy').setup({
+         'doctorfree/nvim-lazyman',
        })
-       vim.cmd.colorscheme 'catppuccin-mocha'
      ";
    };
  };

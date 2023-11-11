@@ -7,6 +7,9 @@
 
 {
  home-manager.users.${vars.user} = {
+   programs.lazygit = {
+     enable = true;
+   };
    programs.git-credential-oauth = {
      enable = true;
    };
