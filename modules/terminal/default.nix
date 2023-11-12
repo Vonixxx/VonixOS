@@ -8,6 +8,6 @@
  ./git/default.nix
  ./lsd/default.nix
  ./zsh/default.nix
+ ./helix/default.nix
  ./kitty/default.nix
- ./neovim/default.nix
 ]

@@ -117,8 +117,8 @@
  environment = {
    shells = with pkgs; [ zsh ];
    variables = {
-     VISUAL   = "nvim";
-     TERMINAL = "nvim";
+     VISUAL   = "helix";
+     TERMINAL = "helix";
      EDITOR   = "kitty";
      BROWSER  = "firefox";
      PF_INFO  = "ascii title uptime pkgs kernel memory os host";
