@@ -1,14 +1,12 @@
 ###########
 # VonixOS #
-##################
-# Laptop Profile #
-##################
+#########################
+# Machine Configuration #
+#########################
 { pkgs, vars, ... }:
 
 {
- imports = [
-   ./hardware-configuration.nix
- ];
+ imports = [ ./hardware-configuration.nix ];
 
  sway.enable = true;
 
@@ -28,9 +26,7 @@
        configurationLimit = 5;
        enable             = true;
      };
-     efi = {
-       canTouchEfiVariables = true;
-     };
+     efi = { canTouchEfiVariables = true; };
    };
  };
 }

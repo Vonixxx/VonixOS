@@ -6,7 +6,7 @@
 # flake.nix
 # └─./system
 #     └─default.nix
-#       ├─<host>
+#       ├─./machine
 #       └─configuration.nix
 #         └─./modules
 #             ├─./desktops
@@ -16,7 +16,7 @@
 #             └─./terminal
 #                 └─default.nix
 {
- description = "Flake Configuration for User-Specific Host: Laptop/Desktop";
+ description = "Flake Configuration - Sway";
 
  inputs = {
    ##########################

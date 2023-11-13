@@ -5,5 +5,4 @@
 #################
 [
  ./window-managers/sway/default.nix
- ./desktop-environments/gnome/default.nix
 ]

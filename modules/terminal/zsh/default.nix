@@ -51,8 +51,7 @@
        ####################
        # System Shortcuts #
        ####################
-       lupd  = "nix flake update && sudo nixos-rebuild switch --flake '.#laptop' --impure";
-       dupd  = "nix flake update && sudo nixos-rebuild switch --flake '.#desktop' --impure";
+       update = "nix flake update && sudo nixos-rebuild switch --flake '.#machine' --impure";
      };
    };
    programs.oh-my-posh = {
