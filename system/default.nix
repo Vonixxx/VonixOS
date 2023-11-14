@@ -17,9 +17,7 @@ in {
  window-manager = lib.nixosSystem {
    inherit system;
    specialArgs = {
-     host = {
-       hostName = "machine";
-     };
+     host = { hostName = "vonixos"; };
      inherit nur pkgs vars inputs system;
    };
    modules = [

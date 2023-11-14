@@ -51,7 +51,7 @@
        ####################
        # System Shortcuts #
        ####################
-       update = "nix flake update && sudo nixos-rebuild switch --flake '.#machine' --impure";
+       update = "nix flake update && sudo nixos-rebuild switch --flake '.#window-manager' --impure";
      };
    };
    programs.oh-my-posh = {

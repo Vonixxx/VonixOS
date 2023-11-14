@@ -7,7 +7,7 @@
 
 {
  imports = ( 
-   import ../modules/machine  ++
+   import ../modules/desktops ++
    import ../modules/programs ++
    import ../modules/terminal
  );
