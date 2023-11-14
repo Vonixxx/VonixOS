@@ -8,7 +8,6 @@
  ./git/default.nix
  ./lsd/default.nix
  ./zsh/default.nix
- ./when/default.nix
  ./helix/default.nix
  ./kitty/default.nix
 ]
