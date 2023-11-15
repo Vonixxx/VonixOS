@@ -1,8 +1,8 @@
 ###########
 # VonixOS #
-####################
-# Default Profiles #
-####################
+###################
+# Default Profile #
+###################
 { lib, nur, vars, inputs, nixpkgs, home-manager, ... }:
 
 let
@@ -16,10 +16,6 @@ let
 in { 
  window-manager = lib.nixosSystem {
    inherit system;
-   specialArgs = {
-     host = { hostName = "vonixos"; };
-     inherit nur pkgs vars inputs system;
-   };
    modules = [
      ./machine
      ./configuration.nix
@@ -28,5 +24,6 @@ in {
       home-manager.useUserPackages = true;
      }
    ];
+   specialArgs = { inherit nur pkgs vars inputs system; };
  };
 }
