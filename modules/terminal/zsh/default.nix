@@ -43,6 +43,7 @@
        #######
        init   = "git init";
        pull   = "git pull";
+       status = "git status";
        add    = "git add ./";
        commit = "git commit -a -m";
        branch = "git branch -M main";
