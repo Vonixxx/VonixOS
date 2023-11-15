@@ -3,11 +3,11 @@ This configuration was designed with minimalism in mind.
 
 ## Contents
 - WM       - Sway
-- Bar      - Waybar
 - Editor   - Helix
-- Browser  - Firefox (ArkenFox)
 - Terminal - Kitty
+- Bar      - Waybar
 - Launcher - Fuzzel
+- Browser  - Firefox (ArkenFox)
 
 ## Look & Feel
-(https://raw.githubusercontent.com/Vonixxx/VonixOS/master/preview.png)
+![preview](preview.png)
