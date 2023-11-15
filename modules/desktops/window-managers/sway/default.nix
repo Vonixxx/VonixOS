@@ -146,10 +146,9 @@ with lib;
            "${modifier}+y" = "exec ${pkgs.freetube}/bin/freetube";
            "${modifier}+p" = "exec ${pkgs.grim}/bin/grim ~/Pictures/screenshot.png | ${pkgs.slurp}/bin/slurp";
          };
-	 startup = [
+	       startup = [
            { command = "${pkgs.autotiling}/bin/autotiling"; always = true; }
-           # { command = "swaybg -i /home/'${vars.user}'/GitHub/VonixOS/modules/desktops/window-managers/modules/wallpapers/'${vars.wallpaper}' -m fill"; always = true; }
-           { command = "swaybg -i ../modules/wallpapers/'${vars.wallpaper}' -m fill"; always = true; }
+           { command = "swaybg -i /home/'${vars.user}'/GitHub/VonixOS/modules/desktops/window-managers/modules/wallpapers/'${vars.wallpaper}' -m fill"; always = true; }
          ];
          colors = {
            urgent          = { childBorder = "${vars.sway.urgent}";          border = "${vars.sway.urgent}";          background = "${vars.sway.foreground}"; text = "${vars.sway.foreground}"; indicator = "${vars.sway.urgent}"; };
