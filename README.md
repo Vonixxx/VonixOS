@@ -2,12 +2,12 @@
 This configuration was designed with minimalism in mind.
 
 ## Contents
-- WM       - Sway
-- Editor   - Helix
-- Terminal - Kitty
-- Bar      - Waybar
-- Launcher - Fuzzel
-- Browser  - Firefox (ArkenFox)
+- **Bar**      - Waybar
+- **WM**       - Sway
+- **Editor**   - Helix
+- **Terminal** - Kitty
+- **Launcher** - Fuzzel
+- **Browser**  - Firefox (ArkenFox)
 
 ## Look & Feel
 ![preview](preview.png)
