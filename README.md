@@ -2,8 +2,8 @@
 This configuration was designed with minimalism in mind.
 
 ## Contents
-- **Bar**      - Waybar
 - **WM**       - Sway
+- **Bar**      - Waybar
 - **Editor**   - Helix
 - **Terminal** - Kitty
 - **Launcher** - Fuzzel
