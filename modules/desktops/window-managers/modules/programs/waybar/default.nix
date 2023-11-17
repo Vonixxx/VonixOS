@@ -98,7 +98,7 @@
 
         modules-center = [ "sway/workspaces" ];
         modules-right  = [ "backlight" "pulseaudio" "disk" "clock" ];
-        modules-left   = [ "custom/power" "custom/reboot" "custom/sleep" "battery" "network" "sway/mode" ];
+        modules-left   = [ "custom/power" "custom/reboot" "custom/sleep" "network" "battery" "sway/mode" ];
 
         "sway/workspaces" = {
           all-outputs  = true;
