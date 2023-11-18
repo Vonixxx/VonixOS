@@ -11,8 +11,8 @@ This configuration was designed with minimalism in mind.
 | *Terminal*       | Kitty            |
 | *Launcher*       | Fuzzel           |
 | *Bar*            | Waybar           |
-| *DM*             | TTY1 Login       |
 | *Theme*          | Catppuccin       |
+| *Login Manager*  | TTY1 Login       |
 
 * Look & Feel
-[[file:Header.png]]
+[[file:preview.png]]
