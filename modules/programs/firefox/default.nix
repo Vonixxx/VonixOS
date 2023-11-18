@@ -10,78 +10,74 @@
    programs.firefox = {
      enable = true;
      profiles.default = {
-       id             = 0;
-       isDefault      = true;
+       id        = 0;
+       isDefault = true;
        search = { 
-	 force   = true;
-	 default = "DuckDuckGo";
-       };
-       name           = "default";
-       extensions = with pkgs.nur.repos.rycee.firefox-addons; [
-         bitwarden
-	 darkreader
-	 ublock-origin
-       ];
-       bookmarks = [
-     	 {
-	  name = "GitHub";
-	  url  = "https://github.com";
-	 }
-     	 {
-	  name = "ChatGPT";
-	  url  = "https://chat.openai.com";
-	 }
-     	 {
-	  name = "Roadmap";
-	  url  = "https://roadmap.sh/devops";
-	 }
-         {
-	  name = "Tutanota";
-	  url  = "https://mail.tutanota.com";
-	 }
-     	 {
-	  name = "Nix User Repository";
-	  url  = "https://nur.nix-community.org";
-	 }
-     	 {
-	  name = "NixOS";
-	  url  = "https://search.nixos.org/packages";
-	 }
-     	 {
-	  name = "Certificates";
-	  url  = "https://devopscube.com/best-devops-certifications";
-	 }
-     	 {
-	  name = "NixNeovim";
-	  url  = "https://nixneovim.github.io/nixneovim-option-search";
-	 }
-     	 {
-	  name = "Home-Manager";
-	  url  = "https://mipmip.github.io/home-manager-option-search";
-	 }
-       ];
-       settings = {
+	     force   = true;
+	     default = "DuckDuckGo";
+     };
+     name           = "default";
+     extensions = with pkgs.nur.repos.rycee.firefox-addons; [
+       bitwarden
+	     darkreader
+	     ublock-origin
+     ];
+     bookmarks = [
+       {
+  	    name = "GitHub";
+  	    url  = "https://github.com";
+  	   }
+       {
+  	    name = "ChatGPT";
+  	    url  = "https://chat.openai.com";
+  	   }
+       {
+  	    name = "Roadmap";
+  	    url  = "https://roadmap.sh/devops";
+  	   }
+       {
+  	    name = "Tutanota";
+  	    url  = "https://mail.tutanota.com";
+  	   }
+       {
+  	    name = "Nix User Repository";
+  	    url  = "https://nur.nix-community.org";
+  	   }
+       {
+  	    name = "NixOS";
+  	    url  = "https://search.nixos.org/packages";
+  	   }
+       {
+  	    name = "Certificates";
+  	    url  = "https://devopscube.com/best-devops-certifications";
+  	   }
+       {
+  	    name = "Home-Manager";
+  	    url  = "https://mipmip.github.io/home-manager-option-search";
+  	   }
+     ];
+     settings = {
          #########################
-	 # Document Object Model #
+  	     # Document Object Model #
          #########################
          "dom.disable_window_move_resize" = true;
          ##############
-	 # Containers #
+         # Containers #
          ##############
          "privacy.userContext.enabled"    = true;
          "privacy.userContext.ui.enabled" = true;
          ###########
-	 # Studies #
+  	     # Studies #
          ###########
          "app.normandy.api_url"             = "";
          "app.shield.optoutstudies.enabled" = false;
          "app.normandy.enabled"             = false;
          ################################
-	 # Enhanced Tracking Protection #
+  	     # Enhanced Tracking Protection #
          ################################
          "browser.contentblocking.category" = "strict";
          ###########################
-	 # Shutdown and Sanitizing #
+  	     # Shutdown and Sanitizing #
          ###########################
          "privacy.clearOnShutdown.cookies"      = true;
          "privacy.clearOnShutdown.formdata"     = true;
@@ -93,13 +89,13 @@
          "privacy.sanitize.sanitizeOnShutdown"  = false;
          "privacy.clearOnShutdown.siteSettings" = false;
          #########
-	 # Other #
+  	     # Other #
          #########
          "captivedetect.canonicalURL"             = "";
          "network.captive-portal-service.enabled" = false;
          "network.connectivity-service.enabled"   = false;
          ###########################
-	 # Essential: Leave As Is! #
+  	     # Essential: Leave As Is! #
          ###########################
          "security.dialog_enable_delay"           = 1000;
          "extensions.blocklist.enabled"           = true;
@@ -110,22 +106,22 @@
          "extensions.webcompat-reporter.enabled"  = false;
          "security.tls.version.enable-deprecated" = false;
          #################
-	 # Safe Browsing #
+  	     # Safe Browsing #
          #################
          "browser.safebrowsing.malware.enabled"   = false;
          "browser.safebrowsing.phishing.enabled"  = false;
          "browser.safebrowsing.downloads.enabled" = false;
          ############
-	 # Referers #
+  	     # Referers #
          ############
          "network.http.referer.XOriginTrimmingPolicy" = 2;
          #############
-	 # Passwords #
+  	     # Passwords #
          #############
          "network.auth.subresource-http-auth-allow" = 1;
          "signon.autofillForms"                     = false;
          ##################
-	 # Disk Avoidance #
+  	     # Disk Avoidance #
          ##################
          "browser.sessionstore.privacy_level"            = 2;
          "browser.cache.disk.enable"                     = true;
@@ -133,7 +129,7 @@
          "browser.shell.shortcutFavicons"                = false;
          "media.memory_cache_max_size"                   = 65536;
          ##########################################################
-	 # Location & Search Bars, Suggestions, History and Forms #
+  	     # Location & Search Bars, Suggestions, History and Forms #
          ##########################################################
          "browser.formfill.enable"                          = false;
          "browser.search.suggest.enabled"                   = false;
@@ -148,13 +144,13 @@
          "browser.urlbar.suggest.quicksuggest.sponsored"    = false;
          "browser.urlbar.suggest.quicksuggest.nonsponsored" = false;
          #################
-	 # Crash Reports #
+  	     # Crash Reports #
          #################
          "breakpad.reportURL"                                 = "";
          "browser.tabs.crashReporting.sendReport"             = false;
          "browser.crashReports.unsubmittedCheck.autoSubmit2"  = false;
          #########################
-	 # Resist Fingerprinting #
+  	     # Resist Fingerprinting #
          #########################
          "browser.link.open_newwindow"                        = 3;
          "browser.link.open_newwindow.restriction"            = 0;
@@ -167,19 +163,19 @@
          "browser.display.use_system_colors"                  = false;
          "privacy.resistFingerprinting.letterboxing"          = false;
          #############
-	 # Quiet Fox #
+  	     # Quiet Fox #
          #############
          "browser.discovery.enabled"                          = false;
          "extensions.getAddons.showPane"                      = false;
          "browser.shopping.experience2023.enabled"            = false;
          "extensions.htmlaboutaddons.recommendations.enabled" = false;
          #############################
-	 # Plugins, Media and WebRTC #
+      	 # Plugins, Media and WebRTC #
          #############################
          "media.peerconnection.ice.default_address_only"       = true;
          "media.peerconnection.ice.proxy_only_if_behind_proxy" = true;
          #################
-	 # Miscellaneous #
+  	     # Miscellaneous #
          #################
          "extensions.enabledScopes"                              = 5;
          "extensions.autoDisableScopes"                          = 15;
@@ -198,7 +194,7 @@
          "browser.download.manager.addToRecentDocs"              = false;
          "browser.download.always_ask_before_handling_new_types" = false;
          #############
-	 # Telemetry #
+      	 # Telemetry #
          #############
          "toolkit.coverage.endpoint.base"                     = "";
          "toolkit.telemetry.coverage.opt-out"                 = true;
@@ -217,7 +213,7 @@
          "browser.newtabpage.activity-stream.telemetry"       = false;
          "toolkit.telemetry.server"                           = "data:,";
          #########
-	 # HTTPS #
+         # HTTPS #
          #########
          "security.OCSP.enabled"                                     = 1;
          "security.cert_pinning.enforcement_level"                   = 2;
@@ -231,10 +227,10 @@
          "security.tls.enable_0rtt_data"                             = false;
          "dom.security.https_only_mode_send_http_background_request" = false;
          #######################################
-	 # Personal Preferences (Non-ArkenFox) #
+      	 # Personal Preferences (Non-ArkenFox) #
          #######################################
-	 "ui.systemUsesDarkTheme"                                      = 1;
-	 "extensions.webextensions.restrictedDomains"                  = "";
+      	 "ui.systemUsesDarkTheme"                                      = 1;
+      	 "extensions.webextensions.restrictedDomains"                  = "";
          "general.autoScroll"                                          = true;
          "accessibility.typeaheadfind"                                 = true;
          "browser.urlbar.suggest.bookmark"                             = true;
@@ -258,15 +254,15 @@
          "browser.newtabpage.activity-stream.feeds.section.topstories" = false;
          "intl.locale.requested"                                       = "en-GB";
          #########
-	 # Theme #
+      	 # Theme #
          #########
-	 "font.name.monospace.x-western"     = "Liberation Mono";
-	 "font.name.sans-serif.x-western"    = "Liberation Sans";
-	 "font.default.x-western"            = "Liberation Serif";
-	 "font.name.serif.x-western"         = "Liberation Serif";
+      	 "font.name.monospace.x-western"     = "Liberation Mono";
+      	 "font.name.sans-serif.x-western"    = "Liberation Sans";
+      	 "font.default.x-western"            = "Liberation Serif";
+      	 "font.name.serif.x-western"         = "Liberation Serif";
          "lightweightThemes.selectedThemeID" = "firefox-compact-dark@mozilla.org";
          ###########
-	 # Startup #
+  	     # Startup #
          ###########
          "browser.startup.page"                                     = 3;
          "browser.newtabpage.activity-stream.default.sites"         = "";
@@ -275,7 +271,7 @@
          "browser.newtabpage.activity-stream.showSponsoredTopSites" = false;
          "browser.startup.homepage"                                 = "about:blank";
          ############
-	 # Optional #
+      	 # Optional #
          ############
          "browser.urlbar.showSearchTerms.enabled"                             = false;
          "browser.messaging-system.whatsNewPanel.enabled"                     = false;
@@ -283,7 +279,7 @@
          "browser.newtabpage.activity-stream.asrouter.userprefs.cfr.features" = false;
          "browser.startup.homepage_override.mstone"                           = "ignore";
          #################################
-	 # Geolocation, Language, Locale #
+       	 # Geolocation, Language, Locale #
          #################################
          "geo.provider.use_geoclue" = false;
          "intl.accept_languages"    = "en_GB, en";

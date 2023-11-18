@@ -9,9 +9,9 @@
  home-manager.users.${vars.user} = {
    programs.zsh = {
      enable = true;
-     initExtraFirst = ''
-        pfetch
-     '';
+     initExtraFirst = "
+       pfetch
+     ";
      prezto = {
        enable = true;
        editor = { keymap = "vi"; };
@@ -37,17 +37,14 @@
        ########################
        ls  = "lsd";
        cat = "bat";
-       vim = "nvim";
        #######
        # Git #
        #######
        init   = "git init";
        pull   = "git pull";
        status = "git status";
-       add    = "git add ./";
+       add    = "git add ./.";
        commit = "git commit -a -m";
-       branch = "git branch -M main";
-       remote = "git remote add origin";
        push   = "git push -u origin main";
        ####################
        # System Shortcuts #

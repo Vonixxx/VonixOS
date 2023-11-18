@@ -1,0 +1,18 @@
+* VonixOS | System Configuration
+This configuration was designed with minimalism in mind.
+
+* System Components
+|                  | * VonixOS (Sway) * |
+|------------------+--------------------|
+| *Shell*          | ZSH                |
+| *Window Manager* | Sway               |
+| *Notifications*  | Mako               |
+| *Editor*         | Helix              |
+| *Terminal*       | Kitty              |
+| *Launcher*       | Fuzzel             |
+| *Bar*            | Waybar             |
+| *DM*             | TTY1 Login         |
+| *Theme*          | Catppuccin         |
+
+* Look & Feel
+[[file:Header.png]]
