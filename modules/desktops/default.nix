@@ -4,5 +4,5 @@
 # Default WM/DE #
 #################
 [
- ./window-managers/sway/default.nix
+ ./sway/default.nix
 ]
