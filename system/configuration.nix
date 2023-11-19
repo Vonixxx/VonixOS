@@ -26,14 +26,11 @@
    ##################
    coreutils
    efibootmgr
-   fd
    ghc
-   haskell-language-server
    killall
    parted
    pciutils
    pfetch-rs
-   python3Full
    ripgrep
    tldr
    tutanota-desktop

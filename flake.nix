@@ -23,9 +23,9 @@
    # Synchronizing Packages #
    ##########################
    home-manager.inputs.nixpkgs.follows = "nixpkgs";
-   #####################
-   # Repositories URLs #
-   #####################
+   ###################
+   # Repository URLs #
+   ###################
    nur.url          = "github:nix-community/NUR";
    home-manager.url = "github:nix-community/home-manager"; 
    nixpkgs.url      = "github:nixos/nixpkgs/nixos-unstable";

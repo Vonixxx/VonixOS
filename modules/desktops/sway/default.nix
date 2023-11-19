@@ -8,11 +8,9 @@
 with lib;
 {
  imports = [
-   ../modules/programs/feh/default.nix
-   ../modules/programs/mpv/default.nix
-   ../modules/programs/fuzzel/default.nix
-   ../modules/programs/waybar/default.nix
-   ../modules/programs/wlsunset/default.nix
+   ./modules/programs/fuzzel/default.nix
+   ./modules/programs/waybar/default.nix
+   ./modules/programs/wlsunset/default.nix
  ];
 
  options = {
@@ -38,6 +36,7 @@ with lib;
       grim
       slurp
       swaybg
+      swayimg
       wl-clipboard
       ###################
       # File Management #
@@ -148,7 +147,7 @@ with lib;
          };
 	       startup = [
            { command = "${pkgs.autotiling}/bin/autotiling"; always = true; }
-           { command = "swaybg -i /home/'${vars.user}'/GitHub/VonixOS/modules/desktops/window-managers/modules/wallpapers/'${vars.wallpaper}' -m fill"; always = true; }
+           { command = "swaybg -i /home/'${vars.user}'/GitHub/VonixOS/modules/desktops/sway/modules/wallpapers/'${vars.wallpaper}' -m fill"; always = true; }
          ];
          colors = {
            urgent          = { childBorder = "${vars.sway.urgent}";          border = "${vars.sway.urgent}";          background = "${vars.sway.foreground}"; text = "${vars.sway.foreground}"; indicator = "${vars.sway.urgent}"; };
