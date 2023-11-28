@@ -152,10 +152,10 @@
           format = "{icon} {volume}%";
           on-click = "kitty zsh -c 'pulsemixer'";
         };
-	"network" = {
+	      "network" = {
           tooltip             = false;
-	  format-ethernet     = "<big>󰈀</big>";
-	  format-wifi         = "<big>󰤨</big>";
+      	  format-ethernet     = "<big>󰤪</big>";
+      	  format-wifi         = "<big>󰤨</big>";
           format-disconnected = "<big>󰤭</big>";
           on-click            = "kitty zsh -c 'nmtui'";
         };

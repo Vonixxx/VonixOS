@@ -59,7 +59,7 @@
     };
     waybar = {
       foreground       = "#CDD6F4";
-      background       = "#11111B";
+      background       = "#1E1E2E";
       urgentBackground = "#1E1E2E";
       urgentForeground = "#F38BA8";
       power            = "#F38BA8";
