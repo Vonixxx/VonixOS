@@ -29,7 +29,7 @@ with lib;
       # Ergonomics #
       ##############
       autotiling      
-      pulsemixer
+      alsa-utils
       #######################
       # Screen/Text Capture #
       #######################
@@ -50,9 +50,7 @@ with lib;
       pbzip2
       pandoc
       poppler_utils
-      rar
       unzip
-      unrar
     ];
   };
 
@@ -127,15 +125,6 @@ with lib;
            "${modifier}+Shift+2" = "move container to workspace number 2";
            "${modifier}+Shift+3" = "move container to workspace number 3";
            "${modifier}+Shift+4" = "move container to workspace number 4";
-           #######################
-           # Utilities Shortcuts #
-           #######################
-           "Up+l"   ="exec ${pkgs.light}/bin/light -A 5";  
-           "Down+l" ="exec ${pkgs.light}/bin/light -U 5";  
-           "Up+m"   = "exec ${pkgs.pulsemixer}/bin/pulsemixer --mute";
-           "Down+m" = "exec ${pkgs.pulsemixer}/bin/pulsemixer --unmute";
-           "Up+v"   = "exec ${pkgs.pulsemixer}/bin/pulsemixer --change-volume +5";
-           "Down+v" = "exec ${pkgs.pulsemixer}/bin/pulsemixer --change-volume -5";
            #####################
            # Program Shortcuts #
            #####################

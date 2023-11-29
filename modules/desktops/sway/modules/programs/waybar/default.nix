@@ -27,12 +27,12 @@
       }
     
       /* Modules */
-      #cpu,
       #mode,
       #disk,
       #clock,
-      #battery,
+      #memory,
       #network,
+      #battery,
       #backlight,
       #pulseaudio,
       #custom-sleep,
@@ -40,28 +40,44 @@
       #custom-reboot {
        padding:    2px 12px;
        color:      ${vars.waybar.foreground};
-       background: ${vars.waybar.background};
+       background: ${vars.waybar.background1};
       }
 
       /* Icon Color */
-      #custom-sleep {
-       color: ${vars.waybar.sleep};
-      }
-      #custom-power {
-       color: ${vars.waybar.power};
-      }
-      #custom-reboot {
-       color: ${vars.waybar.reboot};
-      }
       #battery {
-       color: ${vars.waybar.battery};
+       color:      ${vars.waybar.battery};
+       background: ${vars.waybar.background1};
       }
       #network {
-       color: ${vars.waybar.network};
+       color:      ${vars.waybar.network};
+       background: ${vars.waybar.background1};
+      }
+      #backlight {
+       color:      ${vars.waybar.backlight};
+       background: ${vars.waybar.background1};
+      }
+      #pulseaudio {
+       color:      ${vars.waybar.pulseaudio};
+       background: ${vars.waybar.background1};
+      }
+      #custom-sleep {
+       color:      ${vars.waybar.sleep};
+       background: ${vars.waybar.background3};
+      }
+      #custom-power {
+       color:      ${vars.waybar.power};
+       background: ${vars.waybar.background3};
+      }
+      #custom-reboot {
+       color:      ${vars.waybar.reboot};
+       background: ${vars.waybar.background3};
       }
 
       /* Icon Position Fix */
       #network { 
+       padding-right: 20px;
+      }
+      #backlight {
        padding-right: 20px;
       }
       #workspaces button {
@@ -69,6 +85,9 @@
       }
       #custom-sleep {
        padding-right: 15px;
+      }
+      #pulseaudio { 
+       padding-right: 17.5px;
       }
       #custom-power,
       #custom-reboot {
@@ -83,7 +102,7 @@
       }
       #workspaces button.focused {
        opacity:    1;
-       background: ${vars.waybar.background};
+       background: ${vars.waybar.background2};
       }
       #workspaces button.urgent {
        opacity:    0.8;
@@ -97,8 +116,8 @@
         position = "top";
 
         modules-center = [ "sway/workspaces" ];
-        modules-right  = [ "backlight" "pulseaudio" "disk" "clock" ];
-        modules-left   = [ "custom/power" "custom/reboot" "custom/sleep" "network" "battery" "sway/mode" ];
+        modules-right  = [ "disk" "memory" "clock" ];
+        modules-left   = [ "custom/power" "custom/reboot" "custom/sleep" "backlight" "pulseaudio" "network" "battery" "sway/mode" ];
 
         "sway/workspaces" = {
           all-outputs  = true;
@@ -125,32 +144,28 @@
           format   = "<big>󰐥</big>";
           on-click = "systemctl poweroff";
         };
-	"disk" = {
-	  interval = 60;
-	  path     = "/";
+      	"disk" = {
+      	  interval = 60;
+      	  path     = "/";
           tooltip  = false;
-	  format   = "󰋊 {percentage_used}%";
-	};
+      	  format   = "󰋊 {percentage_used}%";
+      	};
         "backlight" = {
           tooltip        = false;
-          format         = "󰃠  {percent}%";
           on-scroll-up   = "exec light -A 1";
           on-scroll-down = "exec light -U 1";
+          format         = "<big>{icon}</big>";
+          format-icons   = ["󱩏" "󱩑" "󱩓" "󱩕" "󰛨"];
         };
         "clock" = {
           interval = 30;
           tooltip  = false;
           format   = "{:󰃭 %d/%m/%y | %H:%M}";
         };
-        "pulseaudio" = {
-          scroll-step = 1;
-          tooltip     = false;
-          format-icons = {
-            headphone = "󰋋";
-            default   = ["󰕿" "󰖀" "󰕾"];
-          };
-          format = "{icon} {volume}%";
-          on-click = "kitty zsh -c 'pulsemixer'";
+        "memory" = {
+          interval = 30;
+          tooltip  = false;
+          format   = "󱉟 {used:0.1f}/{total:0.1f}G";
         };
 	      "network" = {
           tooltip             = false;
@@ -158,6 +173,17 @@
       	  format-wifi         = "<big>󰤨</big>";
           format-disconnected = "<big>󰤭</big>";
           on-click            = "kitty zsh -c 'nmtui'";
+        };
+        "pulseaudio" = {
+          tooltip     = false;
+          format-icons = {
+            headphone = "󰋋";
+            default   = ["󰕿" "󰖀" "󰕾"];
+          };
+          format         = "<big>{icon}</big>";
+          on-click       = "kitty zsh -c 'pulsemixer'";
+          on-scroll-up   = "exec amixer -q sset Master 1%+";
+          on-scroll-down = "exec amixer -q sset Master 1%-";
         };
         "battery" = {
           interval                   = 5;

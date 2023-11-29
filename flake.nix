@@ -59,7 +59,9 @@
     };
     waybar = {
       foreground       = "#CDD6F4";
-      background       = "#1E1E2E";
+      background1      = "#1E1E2E";
+      background2      = "#181825";
+      background3      = "#11111B";
       urgentBackground = "#1E1E2E";
       urgentForeground = "#F38BA8";
       power            = "#F38BA8";
@@ -67,6 +69,8 @@
       reboot           = "#F9E2AF";
       battery          = "#A6E3A1";
       network          = "#A6E3A1";
+      backlight        = "#F5E0DC";
+      pulseaudio       = "#F5E0DC";
     };
     oh-my-posh = {
       backgroundGit     = "#A6E3A1";

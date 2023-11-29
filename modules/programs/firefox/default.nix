@@ -120,6 +120,12 @@
          #############
          "network.auth.subresource-http-auth-allow" = 1;
          "signon.autofillForms"                     = false;
+         #########################
+      	 # Hardware Acceleration #
+         #########################
+         "media.rdd-ffmpeg.enabled"                     = true;
+         "media.ffmpeg.vaapi.enabled"                   = true;
+         "media.navigator.mediadatadecoder_vpx_enabled" = true;
          ##################
   	     # Disk Avoidance #
          ##################

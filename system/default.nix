@@ -11,7 +11,7 @@ let
  pkgs = import nixpkgs {
    inherit system;
    overlays = [ nur.overlay ];
-   config   = { allowUnfree = true; }; 
+   config   = { allowUnfree = false; }; 
  };
 in { 
  default = lib.nixosSystem {

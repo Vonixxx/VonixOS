@@ -31,9 +31,7 @@
    parted
    pciutils
    pfetch-rs
-   ripgrep
    tldr
-   tutanota-desktop
    usbutils
    virt-manager
    wev
