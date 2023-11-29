@@ -128,7 +128,7 @@ with lib;
            #####################
            # Program Shortcuts #
            #####################
-           "${modifier}+t" = "exec ${pkgs.kitty}/bin/kitty";
+           "${modifier}+t" = "exec ${pkgs.foot}/bin/foot";
            "${modifier}+d" = "exec ${pkgs.fuzzel}/bin/fuzzel";
            "${modifier}+b" = "exec ${pkgs.firefox}/bin/firefox";
            "${modifier}+y" = "exec ${pkgs.freetube}/bin/freetube";
