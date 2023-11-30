@@ -4,5 +4,5 @@
 # Default Programs #
 ####################
 [
- ./regreet/default.nix
+ ./tuigreet/default.nix
 ]
