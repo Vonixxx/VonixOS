@@ -9,7 +9,8 @@
  imports = ( 
    import ../modules/desktops ++
    import ../modules/programs ++
-   import ../modules/terminal
+   import ../modules/terminal ++
+   import ../modules/login-managers
  );
 
  system.stateVersion = "23.11"; 
@@ -36,6 +37,7 @@
    virt-manager
    wev
    wget
+   xdg-utils
    ################
    # Applications #
    ################

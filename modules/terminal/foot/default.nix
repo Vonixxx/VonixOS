@@ -8,8 +8,13 @@
 {
  home-manager.users.${vars.user} = {
    programs.foot = {
-     enable = true;
+     enable        = true;
+     server.enable = true;
      settings = {
+       cursor = {
+         blink = true;
+         style = "block";
+       };
        scrollback = {
          multiplier = 3;
          lines      = 300;
@@ -17,33 +22,29 @@
        csd = {
          font = "CascadiaCode";
        };
-       cursor = {
-         blink = true;
-         style = "block";
-       };
        main = {
          font = "monospace:size=12";
        };
        colors = {
          alpha      = 1.0;
-         foreground = "D9E0EE";
-         background = "1E1D2F";
-         bright0    = "988BA2"; 
-         bright1    = "F28FAD"; 
-         bright2    = "ABE9B3"; 
-         bright3    = "FAE3B0"; 
-         bright4    = "96CDFB"; 
-         bright5    = "F5C2E7"; 
-         bright6    = "89DCEB"; 
-         bright7    = "D9E0EE";  
-         regular0   = "6E6C7E"; 
-         regular1   = "F28FAD"; 
-         regular2   = "ABE9B3"; 
-         regular3   = "FAE3B0"; 
-         regular4   = "96CDFB"; 
-         regular5   = "F5C2E7"; 
-         regular6   = "89DCEB"; 
-         regular7   = "D9E0EE"; 
+         bright0    = "${vars.foot.bright0}"; 
+         bright1    = "${vars.foot.bright1}"; 
+         bright2    = "${vars.foot.bright2}"; 
+         bright3    = "${vars.foot.bright3}"; 
+         bright4    = "${vars.foot.bright4}"; 
+         bright5    = "${vars.foot.bright5}"; 
+         bright6    = "${vars.foot.bright6}"; 
+         bright7    = "${vars.foot.bright7}";  
+         regular0   = "${vars.foot.regular0}"; 
+         regular1   = "${vars.foot.regular1}"; 
+         regular2   = "${vars.foot.regular2}"; 
+         regular3   = "${vars.foot.regular3}"; 
+         regular4   = "${vars.foot.regular4}"; 
+         regular5   = "${vars.foot.regular5}"; 
+         regular6   = "${vars.foot.regular6}"; 
+         regular7   = "${vars.foot.regular7}"; 
+         foreground = "${vars.foot.foreground}";
+         background = "${vars.foot.background}";
        };
      };
    };
