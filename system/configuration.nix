@@ -9,8 +9,7 @@
  imports = ( 
    import ../modules/desktops ++
    import ../modules/programs ++
-   import ../modules/terminal ++
-   import ../modules/login-managers
+   import ../modules/terminal 
  );
 
  system.stateVersion = "23.11"; 

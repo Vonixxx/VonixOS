@@ -34,6 +34,7 @@ with lib;
       # Screen/Text Capture #
       #######################
       grim
+      mpvpaper
       slurp
       swaybg
       swayimg
@@ -132,9 +133,9 @@ with lib;
            "${modifier}+y" = "exec ${pkgs.freetube}/bin/freetube";
            "${modifier}+p" = "exec ${pkgs.grim}/bin/grim ~/Pictures/screenshot.png | ${pkgs.slurp}/bin/slurp";
          };
-	       startup = [
-           { command = "${pkgs.autotiling}/bin/autotiling"; always = true; }
-           { command = "swaybg -i /home/'${vars.user}'/GitHub/VonixOS/modules/wallpapers/'${vars.wallpaper}' -m fill"; always = true; }
+	       startup = [ 
+           { command = "${pkgs.autotiling}/bin/autotiling"; always = true; } 
+           { command = "mpvpaper '*' /home/'${vars.user}'/GitHub/VonixOS/modules/wallpapers/'${vars.wallpaper}'"; always = true; }
          ];
          colors = {
            urgent          = { childBorder = "${vars.sway.urgent}";          border = "${vars.sway.urgent}";          background = "${vars.sway.foreground}"; text = "${vars.sway.foreground}"; indicator = "${vars.sway.urgent}"; };
