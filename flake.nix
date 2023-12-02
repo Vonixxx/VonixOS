@@ -47,10 +47,11 @@
     #####################
     # System Appearance #
     #####################
-    wallpaper = "Aurora.mp4";                     # For Sway
-    font      = "CascadiaCode";                   # For Kitty and Waybar
-    theme     = "Catppuccin-Mocha";               # For BAT and Kitty
-    cursor    = "Catppuccin-Mocha-Light-Cursors"; # For Sway - Also, Change Manually in Sway Configuration -> pointerCursor.package = ... 
+    liveWallpaper   = "Aurora.mp4";                     # For Sway
+    staticWallpaper = "Samurai.jpg";                    # For Sway
+    font            = "CascadiaCode";                   # For Kitty and Waybar
+    theme           = "Catppuccin-Mocha";               # For BAT and Kitty
+    cursor          = "Catppuccin-Mocha-Light-Cursors"; # For Sway - Also, Change Manually in Sway Configuration -> pointerCursor.package = ... 
     sway = {
       urgent          = "#F38BA8";
       foreground      = "#CDD6F4";

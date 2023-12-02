@@ -135,7 +135,8 @@ with lib;
          };
 	       startup = [ 
            { command = "${pkgs.autotiling}/bin/autotiling"; always = true; } 
-           { command = "mpvpaper '*' /home/'${vars.user}'/GitHub/VonixOS/modules/wallpapers/'${vars.wallpaper}'"; always = true; }
+           { command = "swaybg -i /home/'${vars.user}'/GitHub/VonixOS/modules/wallpapers/'${vars.staticWallpaper}' -m fill"; always = true; }
+           # { command = "mpvpaper -o 'no-audio --loop-playlist' '*' /home/'${vars.user}'/GitHub/VonixOS/modules/wallpapers/'${vars.liveWallpaper}'"; always = true; }
          ];
          colors = {
            urgent          = { childBorder = "${vars.sway.urgent}";          border = "${vars.sway.urgent}";          background = "${vars.sway.foreground}"; text = "${vars.sway.foreground}"; indicator = "${vars.sway.urgent}"; };
