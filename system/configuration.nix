@@ -45,6 +45,8 @@
    mkpasswd
    mediainfo
    nixos-generators
+   youtube-tui
+   pipe-viewer
  ];
 
  programs = {

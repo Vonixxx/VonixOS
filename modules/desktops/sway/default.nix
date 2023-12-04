@@ -53,6 +53,11 @@ with lib;
       poppler_utils
       unzip
     ];
+    loginShellInit = ''
+       if [ "$(tty)" = "/dev/tty1" ]; then
+         exec sway
+       fi
+    '';
   };
 
   home-manager.users.${vars.user} = {
