@@ -10,7 +10,7 @@
    bat = {
      enable = true;
 
-     config.theme = { "Catppuccin-Mocha"; };
+     config.theme = "Catppuccin-Mocha";
 
      themes.Catppuccin-Mocha = {
        file = "Catppuccin-mocha.tmTheme";

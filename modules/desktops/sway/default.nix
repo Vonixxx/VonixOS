@@ -9,18 +9,18 @@ with lib;
 {
  options = {
    sway.enable = mkOption {
-     type.types = bool;
-     default    = false;
+     default = false;
+     type    = types.bool;
    };
  };
 
- config = mkIf (config.sway.enable) {
-   imports = [
-     ./programs/fuzzel/default.nix
-     ./programs/waybar/default.nix
-     ./programs/wlsunset/default.nix
-   ];
+ imports = [
+   ./programs/fuzzel/default.nix
+   ./programs/waybar/default.nix
+   ./programs/wlsunset/default.nix
+ ];
 
+ config = mkIf (config.sway.enable) {
    environment = {
     systemPackages = with pkgs; [
       ##############
@@ -60,10 +60,10 @@ with lib;
 
   home-manager.users.${vars.user} = {
      home.pointerCursor = {
-       size         = 64;
-       gtk.enable   = true;
-       package.pkgs = catppuccin-cursors.mochaLight;
-       name         = "Catppuccin-Mocha-Light-Cursors";
+       size       = 64;
+       gtk.enable = true;
+       name       = "Catppuccin-Mocha-Light-Cursors";
+       package    = pkgs.catppuccin-cursors.mochaLight;
      };
 
      wayland.windowManager.sway = {

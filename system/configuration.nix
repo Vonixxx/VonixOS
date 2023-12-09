@@ -98,7 +98,7 @@
 
  fonts.packages = with pkgs; [
    liberation_ttf
-   (nerdfonts.override { fonts = [ "${vars.font}" ]; })
+   (nerdfonts.override { fonts = [ "CascadiaCode" ]; })
  ];
 
  nix = {

@@ -22,8 +22,8 @@
          lines      = 300;
        };
 
-       csd.font = { "CascadiaCode"; };
-       main.font = { "monospace:size=12"; };
+       csd.font = "CascadiaCode";
+       main.font = "monospace:size=12";
 
        colors = {
          alpha      = 0.8;

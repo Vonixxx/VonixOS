@@ -54,7 +54,7 @@
      };
    };
 
-   programs.oh-my-posh = {
+   oh-my-posh = {
      enable               = true;
      enableZshIntegration = true;
      settings             = builtins.fromJSON (builtins.unsafeDiscardStringContext (builtins.readFile "/home/${vars.user}/GitHub/VonixOS/modules/terminal/zsh/theme/custom.omp.json"));
