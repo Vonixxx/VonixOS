@@ -47,11 +47,8 @@
     #####################
     # System Appearance #
     #####################
-    liveWallpaper   = "Aurora.mp4";                     # For Sway
-    staticWallpaper = "Mystical.png";                   # For Sway
-    font            = "CascadiaCode";                   # For Kitty and Waybar
-    theme           = "Catppuccin-Mocha";               # For BAT and Kitty
-    cursor          = "Catppuccin-Mocha-Light-Cursors"; # For Sway - Also, Change Manually in Sway Configuration -> pointerCursor.package = ... 
+    liveWallpaper   = "Aurora.mp4";   # For Sway
+    staticWallpaper = "Mystical.jpg"; # For Sway
     sway = {
       urgent          = "#F38BA8";
       foreground      = "#CDD6F4";
@@ -81,9 +78,9 @@
     };
     waybar = {
       foreground       = "#CDD6F4";
-      background1      = "#1E1E2E";
+      background3      = "#1E1E2E";
       background2      = "#181825";
-      background3      = "#11111B";
+      background1      = "#11111B";
       urgentBackground = "#1E1E2E";
       urgentForeground = "#F38BA8";
       power            = "#F38BA8";

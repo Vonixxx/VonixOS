@@ -6,27 +6,27 @@
 { pkgs, vars, ... }:
 
 {
- home-manager.users.${vars.user} = {
-   programs.foot = {
+ home-manager.users.${vars.user}.programs = {
+   foot = {
      enable        = true;
      server.enable = true;
+
      settings = {
        cursor = {
          blink = true;
          style = "block";
        };
+
        scrollback = {
          multiplier = 3;
          lines      = 300;
        };
-       csd = {
-         font = "CascadiaCode";
-       };
-       main = {
-         font = "monospace:size=12";
-       };
+
+       csd.font = { "CascadiaCode"; };
+       main.font = { "monospace:size=12"; };
+
        colors = {
-         alpha      = 1.0;
+         alpha      = 0.8;
          bright0    = "${vars.foot.bright0}"; 
          bright1    = "${vars.foot.bright1}"; 
          bright2    = "${vars.foot.bright2}"; 

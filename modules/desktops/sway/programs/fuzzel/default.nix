@@ -6,24 +6,23 @@
 { pkgs, vars, ... }:
 
 {
- home-manager.users.${vars.user} = {
-   programs.fuzzel = {
+ home-manager.users.${vars.user}.programs = {
+   fuzzel = {
      enable = true;
+
      settings = {
-       border = {
-         width  = 3;
-         radius = 10;
-       };
+       border.width  = 3;
+
        main = {
          inner-pad      = 3;
          lines          = 10;
          horizontal-pad = 12;
          vertical-pad   = 12;
-         fuzzy          = true;
          icons-enabled  = false;
-         prompt         = "Launch > ";
-         font           = "CascadiaCode:size=8";
+         prompt         = "Launch --> ";
+         font           = "Cascadia Code:size=8";
        };
+
        colors = {
          match           = "${vars.fuzzel.match}";
          border          = "${vars.fuzzel.border}";

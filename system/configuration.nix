@@ -15,9 +15,9 @@
  system.stateVersion = "23.11"; 
 
  home-manager.users.${vars.user} = {
-   imports = [ nur.nixosModules.nur ];
    programs.home-manager.enable = true;
    home.stateVersion            = "23.11";
+   imports                      = [ nur.nixosModules.nur ];
  };
 
  environment.systemPackages = with pkgs; [
@@ -27,8 +27,6 @@
    coreutils
    efibootmgr
    ghc
-   killall
-   parted
    pciutils
    pfetch-rs
    tldr
@@ -45,8 +43,8 @@
    mkpasswd
    mediainfo
    nixos-generators
+   youtube-dl
    youtube-tui
-   pipe-viewer
  ];
 
  programs = {
@@ -58,6 +56,7 @@
    enable          = true;
    driSupport      = true;
    driSupport32Bit = true;
+
    extraPackages = with pkgs; [
      vaapiVdpau
      libvdpau-va-gl
@@ -88,7 +87,9 @@
      pulse.enable      = true;
      alsa.support32Bit = true;
    };
+
    automatic-timezoned.enable = true;
+
    udev = {
      enable = true;
      packages = with pkgs; [ android-udev-rules ];
@@ -106,6 +107,7 @@
      dates     = "weekly";
      options   = "--delete-older-than 3d";
    };
+
    settings = {
      auto-optimise-store   = true;
      experimental-features = [ "nix-command" "flakes" ];
@@ -114,6 +116,7 @@
 
  environment = {
    shells = with pkgs; [ zsh ];
+
    variables = {
      VISUAL   = "hx";
      TERMINAL = "hx";
@@ -125,6 +128,7 @@
 
  users = {
    defaultUserShell = with pkgs; zsh;
+
    users.${vars.user} = {
      isNormalUser   = true;
      hashedPassword = "${vars.password}";

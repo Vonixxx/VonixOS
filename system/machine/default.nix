@@ -12,21 +12,19 @@
 
  programs.light.enable = true;
 
- services = {
-   tlp.settings = {
-     enable              = true;
-     auto-cpufreq.enable = true;
-   };
+ services.tlp.settings = {
+   enable              = true;
+   auto-cpufreq.enable = true;
  };
 
- boot = {
-   loader = {
-     timeout = 5;
-     systemd-boot = {
-       configurationLimit = 5;
-       enable             = true;
-     };
-     efi = { canTouchEfiVariables = true; };
+ boot.loader = {
+   timeout = 5;
+
+   systemd-boot = {
+     configurationLimit = 5;
+     enable             = true;
    };
+
+   efi = { canTouchEfiVariables = true; };
  };
 }

@@ -3,26 +3,24 @@
 ######################
 # Sway Configuration #
 ######################
-{ lib, host, pkgs, vars, config, ... }:
+{ lib, pkgs, vars, config, ... }:
 
 with lib;
 {
- imports = [
-   ./modules/programs/fuzzel/default.nix
-   ./modules/programs/waybar/default.nix
-   ./modules/programs/wlsunset/default.nix
- ];
-
  options = {
-   sway = {
-     enable = mkOption {
-       default = false;
-       type    = types.bool;
-     };
+   sway.enable = mkOption {
+     type.types = bool;
+     default    = false;
    };
  };
 
  config = mkIf (config.sway.enable) {
+   imports = [
+     ./programs/fuzzel/default.nix
+     ./programs/waybar/default.nix
+     ./programs/wlsunset/default.nix
+   ];
+
    environment = {
     systemPackages = with pkgs; [
       ##############
@@ -38,7 +36,6 @@ with lib;
       slurp
       swaybg
       swayimg
-      wl-clipboard
       ###################
       # File Management #
       ###################
@@ -53,6 +50,7 @@ with lib;
       poppler_utils
       unzip
     ];
+
     loginShellInit = ''
        if [ "$(tty)" = "/dev/tty1" ]; then
          exec sway
@@ -61,24 +59,24 @@ with lib;
   };
 
   home-manager.users.${vars.user} = {
-     home = {
-       pointerCursor = {
-         size       = 64;
-         gtk.enable = true;
-         name       = "${vars.cursor}";
-         package    = pkgs.catppuccin-cursors.mochaLight;
-       };
+     home.pointerCursor = {
+       size         = 64;
+       gtk.enable   = true;
+       package.pkgs = catppuccin-cursors.mochaLight;
+       name         = "Catppuccin-Mocha-Light-Cursors";
      };
 
      wayland.windowManager.sway = {
        enable   = true;
-       xwayland = true;
+       xwayland = false;
+
        config = rec {
          up       = "k";
          down     = "j";
          left     = "l";
          right    = "h";
          modifier = "Mod4";
+
          gaps = {
            top        = 10;
            left       = 10;
@@ -89,10 +87,12 @@ with lib;
            vertical   = 10;
            horizontal = 10;
          };
+
          window = { titlebar = false; };
-         bars   = [{ command = "waybar"; }];
+         bars   = [ { command = "waybar"; } ];
          input  = { "*" = { xkb_variant = "us"; }; };
          output = { ${vars.output} = { mode = "${vars.outputConfig}"; }; };
+
          keybindings = {
            ############
            # Commands #
@@ -136,13 +136,15 @@ with lib;
            "${modifier}+d" = "exec ${pkgs.fuzzel}/bin/fuzzel";
            "${modifier}+b" = "exec ${pkgs.firefox}/bin/firefox";
            "${modifier}+y" = "exec ${pkgs.freetube}/bin/freetube";
-           "${modifier}+p" = "exec ${pkgs.grim}/bin/grim ~/Pictures/screenshot.png | ${pkgs.slurp}/bin/slurp";
+           "${modifier}+p" = "exec ${pkgs.grim}/bin/grim ~/Pictures/screenshot.png -g ${pkgs.slurp}/bin/slurp";
          };
+
 	       startup = [ 
            { command = "${pkgs.autotiling}/bin/autotiling"; always = true; } 
            { command = "swaybg -i /home/'${vars.user}'/GitHub/VonixOS/modules/wallpapers/'${vars.staticWallpaper}' -m fill"; always = true; }
            # { command = "mpvpaper -o 'no-audio --loop-playlist' '*' /home/'${vars.user}'/GitHub/VonixOS/modules/wallpapers/'${vars.liveWallpaper}'"; always = true; }
          ];
+
          colors = {
            urgent          = { childBorder = "${vars.sway.urgent}";          border = "${vars.sway.urgent}";          background = "${vars.sway.foreground}"; text = "${vars.sway.foreground}"; indicator = "${vars.sway.urgent}"; };
            focused         = { childBorder = "${vars.sway.focusedBorder}";   border = "${vars.sway.focusedBorder}";   background = "${vars.sway.foreground}"; text = "${vars.sway.foreground}"; indicator = "${vars.sway.focusedBorder}"; };

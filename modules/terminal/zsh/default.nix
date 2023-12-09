@@ -6,15 +6,15 @@
 { pkgs, vars, ... }:
 
 {
- home-manager.users.${vars.user} = {
-   programs.zsh = {
-     enable = true;
-     initExtraFirst = "
-       pfetch
-     ";
+ home-manager.users.${vars.user}.programs = {
+   zsh = {
+     enable         = true;
+     initExtraFirst = "pfetch";
+
      prezto = {
        enable = true;
        editor = { keymap = "vi"; };
+
        pmodules = [
          "environment"
          "syntax-highlighting"
@@ -31,6 +31,7 @@
          "autosuggestions"
        ];
      };
+
      shellAliases = {
        ########################
        # Alternative Programs #
@@ -52,6 +53,7 @@
        update = "nix flake update && sudo nixos-rebuild switch --flake '.#default' --impure";
      };
    };
+
    programs.oh-my-posh = {
      enable               = true;
      enableZshIntegration = true;

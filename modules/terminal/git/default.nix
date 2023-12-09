@@ -6,17 +6,13 @@
 { pkgs, vars, ... }:
 
 {
- home-manager.users.${vars.user} = {
-   programs.lazygit = {
-     enable = true;
-   };
-   programs.git-credential-oauth = {
-     enable = true;
-   };
-   programs.git = {
+ home-manager.users.${vars.user}.programs = {
+   git = {
      enable    = true;
      userName  = "${vars.githubUser}";
      userEmail = "${vars.githubMail}";
    };
+
+   git-credential-oauth.enable = true;
  };
 }

@@ -6,8 +6,8 @@
 { pkgs, vars, ... }:
 
 {
- home-manager.users.${vars.user} = {
-   programs.mpv = {
+ home-manager.users.${vars.user}.programs = {
+   mpv = {
      enable = true;
    };
  };
