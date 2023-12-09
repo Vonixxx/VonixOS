@@ -28,10 +28,11 @@
    ###################
    nur.url          = "github:nix-community/NUR";
    home-manager.url = "github:nix-community/home-manager"; 
+   arkenfox.url     = "github:dwarfmaster/arkenfox-nixos";
    nixpkgs.url      = "github:nixos/nixpkgs/nixos-unstable";
  };
 
- outputs = inputs @ { nur, self, nixpkgs, home-manager, ... }:
+ outputs = inputs @ { nur, self, nixpkgs, arkenfox, home-manager, ... }:
  let
   vars = {
     ########################
@@ -39,16 +40,16 @@
     ########################
     output       = "eDP-1";
     outputConfig = "1920x1080@60Hz";
+    #####################
+    # System Appearance #
+    #####################
+    liveWallpaper   = "Aurora.mp4";  
+    staticWallpaper = "Mystical.jpg";
     ########################
     # GitHub Login Details #
     ########################
     githubUser = "Vonixxx";
     githubMail = "vonixxxwork@tuta.io";
-    #####################
-    # System Appearance #
-    #####################
-    liveWallpaper   = "Aurora.mp4";   # For Sway
-    staticWallpaper = "Mystical.jpg"; # For Sway
     sway = {
       urgent          = "#F38BA8";
       foreground      = "#CDD6F4";
@@ -118,7 +119,7 @@
    nixosConfigurations = (
      import ./system {
       inherit (nixpkgs) lib;
-      inherit nur vars inputs nixpkgs home-manager;
+      inherit nur vars inputs nixpkgs arkenfox home-manager;
      }
    );
  };

@@ -6,11 +6,14 @@
 { pkgs, vars, ... }:
 
 {
- imports = [ ./arkenfox.nix ];
-
  home-manager.users.${vars.user}.programs = {
      firefox = {
        enable = true;
+
+       arkenfox = {
+         enable = true;
+         version = "119.0";
+       };
   
        profiles.default = {
          id = 0;
