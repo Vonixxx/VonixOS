@@ -7,12 +7,12 @@
 
 {
  home-manager.users.${vars.user}.programs = {
+   git-credential-oauth.enable = true;
+
    git = {
      enable    = true;
-     userName  = "${vars.githubUser}";
-     userEmail = "${vars.githubMail}";
+     userName  = "Vonixxx";
+     userEmail = "vonixxxwork@tuta.io";
    };
-
-   git-credential-oauth.enable = true;
  };
 }

@@ -23,7 +23,7 @@
        };
 
        csd.font = "CascadiaCode";
-       main.font = "monospace:size=12";
+       main.font = "monospace:size=14";
 
        colors = {
          alpha      = 0.8;

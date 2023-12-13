@@ -68,7 +68,7 @@ with lib;
 
      wayland.windowManager.sway = {
        enable   = true;
-       xwayland = false;
+       xwayland = true;
 
        config = rec {
          up       = "k";
@@ -136,7 +136,7 @@ with lib;
            "${modifier}+d" = "exec ${pkgs.fuzzel}/bin/fuzzel";
            "${modifier}+b" = "exec ${pkgs.firefox}/bin/firefox";
            "${modifier}+y" = "exec ${pkgs.freetube}/bin/freetube";
-           "${modifier}+p" = "exec ${pkgs.grim}/bin/grim ~/Pictures/screenshot.png -g ${pkgs.slurp}/bin/slurp";
+           "${modifier}+p" = "exec ${pkgs.grim}/bin/grim -g '$(slurp)'";
          };
 
 	       startup = [ 

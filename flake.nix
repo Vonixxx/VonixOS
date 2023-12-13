@@ -45,17 +45,6 @@
     #####################
     liveWallpaper   = "Aurora.mp4";  
     staticWallpaper = "Mystical.jpg";
-    ########################
-    # GitHub Login Details #
-    ########################
-    githubUser = "Vonixxx";
-    githubMail = "vonixxxwork@tuta.io";
-    sway = {
-      urgent          = "#F38BA8";
-      foreground      = "#CDD6F4";
-      focusedBorder   = "#CBA6F7";
-      unfocusedBorder = "#000000";
-    };
     foot = {
       alpha      = 1.0;
       bright0    = "988BA2"; 
@@ -76,6 +65,12 @@
       regular7   = "D9E0EE"; 
       foreground = "D9E0EE";
       background = "1E1D2F";
+    };
+    sway = {
+      urgent          = "#F38BA8";
+      foreground      = "#CDD6F4";
+      focusedBorder   = "#CBA6F7";
+      unfocusedBorder = "#000000";
     };
     waybar = {
       foreground       = "#CDD6F4";
