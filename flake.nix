@@ -66,11 +66,15 @@
       foreground = "D9E0EE";
       background = "1E1D2F";
     };
+    mako = {
+      border     = "#CBA6F7";
+      background = "#1E1E2E";
     sway = {
       urgent          = "#F38BA8";
       foreground      = "#CDD6F4";
       focusedBorder   = "#CBA6F7";
       unfocusedBorder = "#000000";
+    };
     };
     waybar = {
       foreground       = "#CDD6F4";
