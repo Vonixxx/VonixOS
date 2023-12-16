@@ -133,10 +133,10 @@ with lib;
            # Program Shortcuts #
            #####################
            "${modifier}+t" = "exec ${pkgs.foot}/bin/foot";
+           "${modifier}+p" = "exec ${pkgs.grim}/bin/grim";
            "${modifier}+d" = "exec ${pkgs.fuzzel}/bin/fuzzel";
            "${modifier}+b" = "exec ${pkgs.firefox}/bin/firefox";
            "${modifier}+y" = "exec ${pkgs.freetube}/bin/freetube";
-           "${modifier}+p" = "exec ${pkgs.grim}/bin/grim -g '$(slurp)'";
          };
 
 	       startup = [ 
