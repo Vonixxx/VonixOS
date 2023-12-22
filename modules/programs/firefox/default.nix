@@ -60,14 +60,10 @@
              enable = true;
              "4501" = {
                "privacy.resistFingerprinting".value        = false;        
-      
                "privacy.resistFingerprinting.pbmode".value = false;        
-      
              };
-             "4504"."privacy.resistFingerprinting.letterboxing".value = fal
-se;
-             "4520"."webgl.disabled".value                            = fal
-se;
+             "4504"."privacy.resistFingerprinting.letterboxing".value = false; 
+             "4520"."webgl.disabled".value                            = false;
            };
 
            "5000".enable = false;
