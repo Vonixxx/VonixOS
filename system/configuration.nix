@@ -3,7 +3,7 @@
 #######################
 # NixOS Configuration #
 #######################
-{ lib, nur, pkgs, vars, config, inputs, arkenfox, home-manager, ... }:
+{ lib, nur, pkgs, sops, vars, config, inputs, arkenfox, home-manager, ... }:
 
 {
  imports = ( 
@@ -18,6 +18,7 @@
    imports = [ 
      nur.nixosModules.nur 
      arkenfox.hmModules.arkenfox 
+     sops.homeManagerModules.sops 
    ];
    programs.home-manager.enable = true;
    home.stateVersion            = "23.11";
@@ -69,8 +70,15 @@
  boot.kernelParams = [ "quiet"]; 
 
  networking = {
-   firewall.enable       = true;
-   networkmanager.enable = true;
+   firewall.enable = true;
+   wireless = {
+     enable = true; 
+     networks = {
+       O2-Internet-704-5GHz = {
+         psk = "54tCXJSj"; 
+       }; 
+     };
+   };
  };
 
  security = {
