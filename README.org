@@ -13,6 +13,7 @@ This configuration was designed with minimalism in mind.
 | *Bar*            | Waybar           |
 | *Theme*          | Catppuccin       |
 | *Login Manager*  | TTY1 Login       |
+| *Browser*        | (Arken)Firefox   |
 
 * Look & Feel
 [[file:desktop.png]]

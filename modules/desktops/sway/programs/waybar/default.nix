@@ -158,14 +158,6 @@
       	  format   = "󰋊 {percentage_used}%";
       	};
 
-        "backlight" = {
-          tooltip        = false;
-          on-scroll-up   = "exec light -A 1";
-          on-scroll-down = "exec light -U 1";
-          format         = "<big>{icon}</big>";
-          format-icons   = ["󱩏" "󱩑" "󱩓" "󱩕" "󰛨"];
-        };
-
         "clock" = {
           interval = 30;
           tooltip  = false;
@@ -178,22 +170,29 @@
           format   = "󱉟 {used:0.1f}/{total:0.1f}G";
         };
 
+        "backlight" = {
+          tooltip        = false;
+          on-scroll-up   = "exec light -A 1";
+          on-scroll-down = "exec light -U 1";
+          format         = "<big>{icon}</big>";
+          format-icons   = [ "󱩏" "󱩑" "󱩓" "󱩕" "󰛨" ];
+        };
+
 	      "network" = {
           tooltip             = false;
       	  format-ethernet     = "<big>󰤪</big>";
       	  format-wifi         = "<big>󰤨</big>";
           format-disconnected = "<big>󰤭</big>";
-          on-click            = "kitty zsh -c 'nmtui'";
+          on-click            = "kitty zsh -c nmtui";
         };
 
         "pulseaudio" = {
           tooltip     = false;
           format-icons = {
             headphone = "󰋋";
-            default   = ["󰕿" "󰖀" "󰕾"];
+            default   = [ "󰖁" "󰕿" "󰖀" "󰕾" ];
           };
           format         = "<big>{icon}</big>";
-          on-click       = "kitty zsh -c 'pulsemixer'";
           on-scroll-up   = "exec amixer -q sset Master 1%+";
           on-scroll-down = "exec amixer -q sset Master 1%-";
         };
@@ -203,7 +202,7 @@
           bat                        = "BAT0";
           format-charging            = "<big>󰂄</big>";
           format                     = "<big>{icon}</big>";
-          format-icons               = ["󰁻" "󰁽" "󰁿" "󰂁" "󰁹"];
+          format-icons               = [ "󰁻" "󰁽" "󰁿" "󰂁" "󰁹" ];
           tooltip-format-charging    = "Full Charge Duration: {time}";
           tooltip-format-discharging = "Discharging Duration: {time}";
         };

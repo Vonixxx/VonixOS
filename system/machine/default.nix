@@ -17,6 +17,8 @@
    auto-cpufreq.enable = true;
  };
 
+ hardware.cpu.amd.updateMicrocode = true;
+
  boot.loader = {
    timeout = 5;
 

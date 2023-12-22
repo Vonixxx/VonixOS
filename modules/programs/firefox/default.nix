@@ -17,7 +17,7 @@
   
        profiles.default = {
          id = 0;
-  
+   
          arkenfox = {
            enable = true;
            "0000".enable = true;
@@ -46,10 +46,10 @@
              enable = true;
              "2810"."privacy.sanitize.sanitizeOnShutdown".value = true;
              "2811" = {
-               "privacy.clearOnShutdown.formdata".value     = true;
+               "privacy.clearOnShutdown.cache".value        = true;
                "privacy.clearOnShutdown.downloads".value    = true;
-               "privacy.clearOnShutdown.cache".value        = false;
                "privacy.clearOnShutdown.history".value      = false;
+               "privacy.clearOnShutdown.formdata".value     = false;
                "privacy.clearOnShutdown.sessions".value     = false;
                "privacy.clearOnShutdown.siteSettings".value = false;
              };
@@ -59,20 +59,25 @@
            "4500" = {
              enable = true;
              "4501" = {
-               "privacy.resistFingerprinting".value        = false;              
-               "privacy.resistFingerprinting.pbmode".value = false;              
+               "privacy.resistFingerprinting".value        = false;        
+      
+               "privacy.resistFingerprinting.pbmode".value = false;        
+      
              };
-             "4504"."privacy.resistFingerprinting.letterboxing".value = false;
+             "4504"."privacy.resistFingerprinting.letterboxing".value = fal
+se;
+             "4520"."webgl.disabled".value                            = fal
+se;
            };
 
-           "5000".enable = true;
-           "5500".enable = true;
+           "5000".enable = false;
+           "5500".enable = false;
 
-           "6000".enable = true;
+           "6000".enable = false;
 
-           "7000".enable = true;
+           "7000".enable = false;
 
-           "8000".enable = true;
+           "8000".enable = false;
 
            "9000".enable = true;
          };
