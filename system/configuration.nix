@@ -42,6 +42,7 @@
    ################
    # Applications #
    ################
+   when
    freetube
    libreoffice-fresh
    mkpasswd
