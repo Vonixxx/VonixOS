@@ -3,7 +3,7 @@
 #######################
 # NixOS Configuration #
 #######################
-{ lib, nur, pkgs, vars, config, inputs, secrets, arkenfox, home-manager, ... }:
+{ lib, nur, pkgs, vars, config, inputs, arkenfox, home-manager, ... }:
 
 {
  imports = ( 
@@ -84,7 +84,7 @@
          psk = "54tCXJSj"; 
        }; 
        O2-Internet-704-5GHz = {
-         psk = "${secrets.libor}"; 
+         psk = ""; 
        }; 
      };
    };

@@ -121,7 +121,7 @@
    nixosConfigurations = (
      import ./system {
       inherit (nixpkgs) lib;
-      inherit nur vars inputs nixpkgs secrets arkenfox home-manager;
+      inherit nur vars inputs nixpkgs arkenfox home-manager;
      }
    );
  };
