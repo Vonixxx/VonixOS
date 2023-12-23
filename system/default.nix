@@ -3,7 +3,7 @@
 ###################
 # Default Profile #
 ###################
-{ lib, nur, vars, agenix, inputs, nixpkgs, arkenfox, home-manager, ... }:
+{ lib, nur, vars, inputs, nixpkgs, arkenfox, home-manager, ... }:
 
 let
  lib    = nixpkgs.lib;
@@ -20,13 +20,12 @@ in {
    modules = [
      ./machine
      ./configuration.nix
-     { environment.systemPackages = [ agenix.packages.${system}.default ]; }
      home-manager.nixosModules.home-manager {
       home-manager.useGlobalPkgs   = true;
       home-manager.useUserPackages = true;
      }
    ];
 
-   specialArgs = { inherit nur pkgs vars agenix inputs system arkenfox; };
+   specialArgs = { inherit nur pkgs vars inputs system arkenfox; };
  };
 }

@@ -3,7 +3,7 @@
 #######################
 # NixOS Configuration #
 #######################
-{ lib, nur, pkgs, vars, agenix, config, inputs, arkenfox, home-manager, ... }:
+{ lib, nur, pkgs, vars, config, inputs, arkenfox, home-manager, ... }:
 
 {
  imports = ( 
@@ -18,7 +18,6 @@
    imports = [ 
      nur.nixosModules.nur 
      arkenfox.hmModules.arkenfox 
-     agenix.homeManagerModules.default
    ];
 
    programs.home-manager.enable = true;
@@ -75,8 +74,6 @@
 
  boot.kernelParams = [ "quiet"]; 
 
- age.secrets.network.file = ../secrets/network.age;
-
  networking = {
    firewall.enable = true;
 
@@ -85,7 +82,7 @@
 
      networks = {
        O2-Internet-704-5GHz = {
-         psk = config.age.secrets.network.path; 
+         psk = "54tCXJSj"; 
        }; 
      };
    };
