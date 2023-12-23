@@ -17,9 +17,10 @@
  home-manager.users.${vars.user} = {
    imports = [ 
      nur.nixosModules.nur 
-     agenix.nixosModules.default
      arkenfox.hmModules.arkenfox 
+     agenix.homeManagerModules.default
    ];
+
    programs.home-manager.enable = true;
    home.stateVersion            = "23.11";
  };
@@ -74,13 +75,17 @@
 
  boot.kernelParams = [ "quiet"]; 
 
+ age.secrets.network.file = ../secrets/network.age;
+
  networking = {
    firewall.enable = true;
+
    wireless = {
      enable = true; 
+
      networks = {
        O2-Internet-704-5GHz = {
-         psk = "54tCXJSj"; 
+         psk = config.age.secrets.network.path; 
        }; 
      };
    };
@@ -135,8 +140,8 @@
 
    variables = {
      VISUAL   = "hx";
-     TERMINAL = "hx";
-     EDITOR   = "kitty";
+     EDITOR   = "hx";
+     TERMINAL = "kitty";
      BROWSER  = "firefox";
      PF_INFO  = "ascii title uptime pkgs kernel memory os host";
    };

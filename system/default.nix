@@ -20,6 +20,7 @@ in {
    modules = [
      ./machine
      ./configuration.nix
+     { environment.systemPackages = [ agenix.packages.${system}.default ]; }
      home-manager.nixosModules.home-manager {
       home-manager.useGlobalPkgs   = true;
       home-manager.useUserPackages = true;
