@@ -3,7 +3,7 @@
 #######################
 # NixOS Configuration #
 #######################
-{ lib, nur, pkgs, vars, config, inputs, arkenfox, home-manager, ... }:
+{ lib, nur, pkgs, vars, config, inputs, secrets, arkenfox, home-manager, ... }:
 
 {
  imports = ( 
@@ -47,7 +47,6 @@
    # Applications #
    ################
    freetube
-   libreoffice-fresh
    mkpasswd
    mediainfo
    nixos-generators
@@ -81,8 +80,11 @@
      enable = true; 
 
      networks = {
-       O2-Internet-704-5GHz = {
+       O2-Internet-704 = {
          psk = "54tCXJSj"; 
+       }; 
+       O2-Internet-704-5GHz = {
+         psk = "${secrets.libor}"; 
        }; 
      };
    };

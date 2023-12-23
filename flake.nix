@@ -33,7 +33,10 @@
  };
 
  outputs = inputs @ { nur, self, nixpkgs, arkenfox, home-manager, ... }:
+
  let
+  secrets = import ./secrets.nix;
+
   vars = {
     ########################
     # Screen Settings Sway #
@@ -118,7 +121,7 @@
    nixosConfigurations = (
      import ./system {
       inherit (nixpkgs) lib;
-      inherit nur vars inputs nixpkgs arkenfox home-manager;
+      inherit nur vars inputs nixpkgs secrets arkenfox home-manager;
      }
    );
  };

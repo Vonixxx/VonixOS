@@ -89,8 +89,19 @@
          "0600".enable = true;
          "0700".enable = true;
          "0800".enable = true;
-         "0900".enable = true;
-         "1000".enable = true;
+
+         "0900" = { 
+           enable = true;
+
+           "0904"."signon.formlessCapture.enabled".value = true;
+         };
+
+         "1000" = {
+           enable = true;
+
+           "1001"."browser.cache.disk.enable".value = true;
+         };
+
          "1200".enable = true;
          "1600".enable = true;
          "1700".enable = true;
@@ -116,6 +127,7 @@
 
          "4500" = {
            enable = true;
+
            "4504"."privacy.resistFingerprinting.letterboxing".value = false;
            "4520"."webgl.disabled".value                            = false;
          };
