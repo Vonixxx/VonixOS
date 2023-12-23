@@ -3,7 +3,7 @@
 #######################
 # NixOS Configuration #
 #######################
-{ lib, nur, pkgs, sops, vars, config, inputs, arkenfox, home-manager, ... }:
+{ lib, nur, pkgs, vars, agenix, config, inputs, arkenfox, home-manager, ... }:
 
 {
  imports = ( 
@@ -17,39 +17,43 @@
  home-manager.users.${vars.user} = {
    imports = [ 
      nur.nixosModules.nur 
+     agenix.nixosModules.default
      arkenfox.hmModules.arkenfox 
-     sops.homeManagerModules.sops 
    ];
    programs.home-manager.enable = true;
    home.stateVersion            = "23.11";
  };
 
  environment.systemPackages = with pkgs; [
-   ##################
-   # Terminal/Tools #
-   ##################
+   ############
+   # Standard #
+   ############
    coreutils
    efibootmgr
-   ghc
    pciutils
+   usbutils
+   xdg-utils
+   ###############
+   # Programming #
+   ###############
+   ghc
+   ######################
+   # Terminal Utilities #
+   ######################
    pfetch-rs
    tldr
-   usbutils
-   virt-manager
-   wev
    wget
-   xdg-utils
    ################
    # Applications #
    ################
-   when
    freetube
    libreoffice-fresh
    mkpasswd
    mediainfo
    nixos-generators
    youtube-dl
-   youtube-tui
+   virt-manager
+   when
  ];
 
  programs = {

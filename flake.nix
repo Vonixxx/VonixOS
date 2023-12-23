@@ -22,19 +22,19 @@
    ##########################
    # Synchronizing Packages #
    ##########################
-   sops.inputs.nixpkgs.follows         = "nixpkgs";
+   agenix.inputs.nixpkgs.follows       = "nixpkgs";
    home-manager.inputs.nixpkgs.follows = "nixpkgs";
    ###################
    # Repository URLs #
    ###################
-   sops.url         = "github:Mic92/sops-nix";
+   agenix.url       = "github:ryantm/agenix";
    nur.url          = "github:nix-community/NUR";
    home-manager.url = "github:nix-community/home-manager"; 
    arkenfox.url     = "github:dwarfmaster/arkenfox-nixos";
    nixpkgs.url      = "github:nixos/nixpkgs/nixos-unstable";
  };
 
- outputs = inputs @ { nur, self, sops, nixpkgs, arkenfox, home-manager, ... }:
+ outputs = inputs @ { nur, self, agenix, nixpkgs, arkenfox, home-manager, ... }:
  let
   vars = {
     ########################
@@ -120,7 +120,7 @@
    nixosConfigurations = (
      import ./system {
       inherit (nixpkgs) lib;
-      inherit nur sops vars inputs nixpkgs arkenfox home-manager;
+      inherit nur vars agenix inputs nixpkgs arkenfox home-manager;
      }
    );
  };
