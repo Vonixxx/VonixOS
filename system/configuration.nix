@@ -37,6 +37,7 @@
    # Programming #
    ###############
    ghc
+   jdk17
    ######################
    # Terminal Utilities #
    ######################
@@ -46,11 +47,11 @@
    ################
    # Applications #
    ################
+   appimage-run
    freetube
    mkpasswd
    mediainfo
    nixos-generators
-   prismlauncher
    youtube-dl
    virt-manager
    when
