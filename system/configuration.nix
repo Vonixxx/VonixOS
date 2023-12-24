@@ -50,6 +50,7 @@
    mkpasswd
    mediainfo
    nixos-generators
+   prismlauncher
    youtube-dl
    virt-manager
    when
@@ -80,11 +81,8 @@
      enable = true; 
 
      networks = {
-       O2-Internet-704 = {
-         psk = "54tCXJSj"; 
-       }; 
        O2-Internet-704-5GHz = {
-         psk = ""; 
+         psk = "54tCXJSj"; 
        }; 
      };
    };

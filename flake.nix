@@ -35,8 +35,6 @@
  outputs = inputs @ { nur, self, nixpkgs, arkenfox, home-manager, ... }:
 
  let
-  secrets = import ./secrets.nix;
-
   vars = {
     ########################
     # Screen Settings Sway #
