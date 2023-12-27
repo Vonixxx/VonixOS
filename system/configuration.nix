@@ -3,7 +3,7 @@
 #######################
 # NixOS Configuration #
 #######################
-{ lib, nur, pkgs, vars, config, inputs, arkenfox, home-manager, ... }:
+{ lib, nur, pkgs, vars, variables, config, inputs, arkenfox, home-manager, ... }:
 
 {
  imports = ( 
@@ -14,7 +14,7 @@
 
  system.stateVersion = "23.11"; 
 
- home-manager.users.${vars.user} = {
+ home-manager.users.${variables.user} = {
    imports = [ 
      nur.nixosModules.nur 
      arkenfox.hmModules.arkenfox 
