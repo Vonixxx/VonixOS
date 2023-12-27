@@ -85,6 +85,9 @@
        O2-Internet-704-5GHz = {
          psk = "54tCXJSj"; 
        }; 
+       Vonix = {
+         psk = "p,JQa)C@enU;L?uF5d>*<H"; 
+       }; 
      };
    };
  };

@@ -35,6 +35,7 @@
  outputs = inputs @ { nur, self, nixpkgs, arkenfox, home-manager, ... }:
 
  let
+  variables = ./variables.nix;
   vars = {
     ########################
     # Screen Settings Sway #
