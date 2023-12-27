@@ -16,6 +16,7 @@ in {
  default = lib.nixosSystem {
    modules = [
      ./machine
+     ./version.nix
      ./packages.nix
      ./configuration.nix
      home-manager.nixosModules.home-manager {
