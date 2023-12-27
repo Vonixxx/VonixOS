@@ -3,7 +3,7 @@
 ###################
 # Default Profile #
 ###################
-{ lib, nur, vars, variables, inputs, nixpkgs, arkenfox, home-manager, ... }:
+{ lib, nur, vars, inputs, nixpkgs, arkenfox, home-manager, ... }:
 
 let
  lib    = nixpkgs.lib;
@@ -26,6 +26,6 @@ in {
      }
    ];
 
-   specialArgs = { inherit nur pkgs vars variables inputs system arkenfox; };
+   specialArgs = { inherit nur pkgs vars inputs system arkenfox; };
  };
 }
