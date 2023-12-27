@@ -41,6 +41,7 @@
    ######################
    # Terminal Utilities #
    ######################
+   git-crypt
    pfetch-rs
    tldr
    wget
@@ -95,6 +96,11 @@
        Vonix = {
          psk = "${unknown-vars.wifi.vonix}"; 
        }; 
+
+       O2-Internet-704 = {
+         psk = "${unknown-vars.wifi.libor}"; 
+       }; 
+
        O2-Internet-704-5GHz = {
          psk = "${unknown-vars.wifi.libor}"; 
        }; 
