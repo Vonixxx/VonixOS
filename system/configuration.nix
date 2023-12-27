@@ -3,7 +3,7 @@
 #######################
 # NixOS Configuration #
 #######################
-{ lib, nur, pkgs, vars, config, inputs, arkenfox, home-manager, ... }:
+{ lib, nur, pkgs, vars, config, inputs, arkenfox, home-manager, unknown-vars, ... }:
 
 {
  imports = ( 
@@ -75,23 +75,6 @@
 
  boot.kernelParams = [ "quiet"]; 
 
- networking = {
-   firewall.enable = true;
-
-   wireless = {
-     enable = true; 
-
-     networks = {
-       O2-Internet-704-5GHz = {
-         psk = "54tCXJSj"; 
-       }; 
-       Vonix = {
-         psk = "p,JQa)C@enU;L?uF5d>*<H"; 
-       }; 
-     };
-   };
- };
-
  security = {
    rtkit.enable            = true;
    polkit.enable           = true;
@@ -101,6 +84,23 @@
  i18n.defaultLocale = "en_GB.UTF-8";
 
  virtualisation.libvirtd.enable = true;
+
+ networking = {
+   firewall.enable = true;
+
+   wireless = {
+     enable = true; 
+
+     networks = {
+       Vonix = {
+         psk = "${unknown-vars.wifi.vonix}"; 
+       }; 
+       O2-Internet-704-5GHz = {
+         psk = "${unknown-vars.wifi.libor}"; 
+       }; 
+     };
+   };
+ };
 
  services = {
    pipewire = {

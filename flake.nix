@@ -35,12 +35,13 @@
  outputs = inputs @ { nur, self, nixpkgs, arkenfox, home-manager, ... }:
 
  let
-  vars = import ./variables/known.nix;
+  vars         = import ./variables/known.nix;
+  unknown-vars = import ./variables/unknown.nix;
  in {
    nixosConfigurations = (
      import ./system {
       inherit (nixpkgs) lib;
-      inherit nur vars inputs nixpkgs arkenfox home-manager;
+      inherit nur vars inputs nixpkgs arkenfox home-manager unknown-vars;
      }
    );
  };
