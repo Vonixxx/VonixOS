@@ -3,7 +3,7 @@
 #####################
 # Git Configuration #
 #####################
-{ pkgs, vars, ... }:
+{ vars, ... }:
 
 {
  home-manager.users.${vars.user}.programs = {

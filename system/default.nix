@@ -6,19 +6,17 @@
 { lib, nur, vars, inputs, nixpkgs, arkenfox, home-manager, unknown-vars, ... }:
 
 let
- lib    = nixpkgs.lib;
- system = "x86_64-linux";
+ lib = nixpkgs.lib;
 
  pkgs = import nixpkgs {
-   inherit system;
    overlays = [ nur.overlay ];
    config   = { allowUnfree = false; }; 
  };
 in { 
  default = lib.nixosSystem {
-   inherit system;
    modules = [
      ./machine
+     ./packages.nix
      ./configuration.nix
      home-manager.nixosModules.home-manager {
       home-manager.useGlobalPkgs   = true;
@@ -26,6 +24,6 @@ in {
      }
    ];
 
-   specialArgs = { inherit nur pkgs vars inputs system arkenfox unknown-vars; };
+   specialArgs = { inherit nur pkgs vars inputs arkenfox unknown-vars; };
  };
 }

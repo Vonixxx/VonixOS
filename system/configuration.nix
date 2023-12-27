@@ -15,48 +15,10 @@
  system.stateVersion = "23.11"; 
 
  home-manager.users.${vars.user} = {
-   imports = [ 
-     nur.nixosModules.nur 
-     arkenfox.hmModules.arkenfox 
-   ];
-
    programs.home-manager.enable = true;
    home.stateVersion            = "23.11";
+   imports                      = [ arkenfox.hmModules.arkenfox ];
  };
-
- environment.systemPackages = with pkgs; [
-   ############
-   # Standard #
-   ############
-   coreutils
-   efibootmgr
-   pciutils
-   usbutils
-   xdg-utils
-   ###############
-   # Programming #
-   ###############
-   ghc
-   jdk17
-   ######################
-   # Terminal Utilities #
-   ######################
-   git-crypt
-   pfetch-rs
-   tldr
-   wget
-   ################
-   # Applications #
-   ################
-   appimage-run
-   freetube
-   mkpasswd
-   mediainfo
-   nixos-generators
-   youtube-dl
-   virt-manager
-   when
- ];
 
  programs = {
    zsh.enable   = true;
@@ -74,8 +36,6 @@
    ];
  };
 
- boot.kernelParams = [ "quiet"]; 
-
  security = {
    rtkit.enable            = true;
    polkit.enable           = true;
@@ -84,29 +44,21 @@
 
  i18n.defaultLocale = "en_GB.UTF-8";
 
- virtualisation.libvirtd.enable = true;
+ boot = { 
+   kernelParams = [ "quiet"]; 
 
- networking = {
-   firewall.enable = true;
-
-   wireless = {
-     enable = true; 
-
-     networks = {
-       Vonix = {
-         psk = "${unknown-vars.wifi.vonix}"; 
-       }; 
-
-       O2-Internet-704 = {
-         psk = "${unknown-vars.wifi.libor}"; 
-       }; 
-
-       O2-Internet-704-5GHz = {
-         psk = "${unknown-vars.wifi.libor}"; 
-       }; 
+   loader = {
+     systemd-boot = {
+       configurationLimit = 5;
+       enable             = true;
      };
+ 
+     timeout                  = 5;
+     efi.canTouchEfiVariables = true;
    };
  };
+
+ virtualisation.libvirtd.enable = true;
 
  services = {
    pipewire = {
@@ -119,7 +71,7 @@
    automatic-timezoned.enable = true;
 
    udev = {
-     enable = true;
+     enable   = true;
      packages = with pkgs; [ android-udev-rules ];
    };
  };
@@ -141,6 +93,20 @@
      experimental-features = [ "nix-command" "flakes" ];
    };
  }; 
+
+ networking = {
+   firewall.enable = true;
+
+   wireless = {
+     enable = true; 
+
+     networks = {
+       Vonix.psk                = "${unknown-vars.wifi.vonix}"; 
+       O2-Internet-704.psk      = "${unknown-vars.wifi.libor}"; 
+       O2-Internet-704-5GHz.psk = "${unknown-vars.wifi.libor}"; 
+     };
+   };
+ };
 
  environment = {
    shells = with pkgs; [ zsh ];
