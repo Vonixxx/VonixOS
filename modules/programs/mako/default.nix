@@ -3,7 +3,7 @@
 ######################
 # Mako Configuration #
 ######################
-{ pkgs, vars, ... }:
+{ vars, ... }:
 
 {
  home-manager.users.${vars.user}.services = {

@@ -3,13 +3,13 @@
 #######################
 # NixOS Configuration #
 #######################
-{ lib, nur, pkgs, vars, config, inputs, arkenfox, home-manager, unknown-vars, ... }:
+{ pkgs, vars, unknown-vars, ... }:
 
 {
  imports = ( 
-   import ../modules/desktops ++
-   import ../modules/programs ++
-   import ../modules/terminal 
+   import ../../modules/programs ++
+   import ../../modules/terminal ++
+   import ../../modules/programs-wm
  );
 
  programs = {

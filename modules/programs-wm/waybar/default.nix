@@ -3,9 +3,11 @@
 ########################
 # Waybar Configuration #
 ########################
-{ pkgs, vars, ... }:
+{ vars, ... }:
 
 {
+ programs.light.enable = true;
+
  home-manager.users.${vars.user}.programs = {
    waybar = {
     enable = true;
@@ -187,11 +189,12 @@
         };
 
         "pulseaudio" = {
-          tooltip     = false;
           format-icons = {
             headphone = "󰋋";
             default   = [ "󰖁" "󰕿" "󰖀" "󰕾" ];
           };
+
+          tooltip        = false;
           format         = "<big>{icon}</big>";
           on-scroll-up   = "exec amixer -q sset Master 1%+";
           on-scroll-down = "exec amixer -q sset Master 1%-";

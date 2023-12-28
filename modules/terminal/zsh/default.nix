@@ -3,7 +3,7 @@
 #####################
 # ZSH Configuration #
 #####################
-{ pkgs, vars, ... }:
+{ vars, ... }:
 
 {
  home-manager.users.${vars.user}.programs = {
@@ -50,7 +50,7 @@
        ####################
        # System Shortcuts #
        ####################
-       update = "nix flake update && sudo nixos-rebuild switch --flake '.#default' --impure";
+       update = "nix flake update && sudo nixos-rebuild switch --flake '.#${vars.system}' --impure";
      };
    };
 

@@ -1,5 +1,9 @@
 rec {
   ########################
+  # System Configuration #
+  ########################
+  system = "vonixos-sway";
+  ########################
   # Screen Settings Sway #
   ########################
   output       = "eDP-1";
@@ -7,8 +11,8 @@ rec {
   #####################
   # System Appearance #
   #####################
-  liveWallpaper   = "Aurora.mp4";  
   staticWallpaper = "Mystical.jpg";
+
   foot = {
     alpha      = 1.0;
     bright0    = "988BA2"; 

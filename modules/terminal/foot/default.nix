@@ -3,7 +3,7 @@
 ######################
 # Foot Configuration #
 ######################
-{ pkgs, vars, ... }:
+{ vars, ... }:
 
 {
  home-manager.users.${vars.user}.programs = {
@@ -12,19 +12,17 @@
      server.enable = true;
 
      settings = {
+       csd.font = "CascadiaCode";
+       main.font = "monospace:size=14";
+
        cursor = {
          blink = true;
          style = "block";
        };
-
        scrollback = {
          multiplier = 3;
          lines      = 300;
        };
-
-       csd.font = "CascadiaCode";
-       main.font = "monospace:size=14";
-
        colors = {
          alpha      = 0.8;
          bright0    = "${vars.foot.bright0}"; 

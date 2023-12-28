@@ -1,0 +1,4 @@
+[
+ ./version.nix 
+ ./packages.nix 
+]

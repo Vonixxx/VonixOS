@@ -1,23 +1,27 @@
 { pkgs, ... }:
 
 {
+ environment.loginShellInit = ''
+    if [ "$(tty)" = "/dev/tty1" ]; then
+      exec sway
+    fi
+ '';
+ 
  environment.systemPackages = with pkgs; [
    ############
    # Standard #
    ############
    coreutils
    efibootmgr
-   pciutils
-   usbutils
    xdg-utils
    ###############
    # Programming #
    ###############
    ghc
-   jdk17
    ######################
    # Terminal Utilities #
    ######################
+   alsa-utils
    git-crypt
    pfetch-rs
    tldr
@@ -25,13 +29,20 @@
    ################
    # Applications #
    ################
-   appimage-run
    freetube
    mkpasswd
    mediainfo
    nixos-generators
    youtube-dl
    virt-manager
-   when  
+   ##############
+   # Ergonomics #
+   ##############
+   autotiling      
+   #######################
+   # Screen/Text Capture #
+   #######################
+   swaybg
+   swayimg
  ];
 }

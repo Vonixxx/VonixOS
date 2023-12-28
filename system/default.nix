@@ -3,7 +3,7 @@
 ###################
 # Default Profile #
 ###################
-{ lib, nur, vars, inputs, nixpkgs, arkenfox, home-manager, unknown-vars, ... }:
+{ nur, vars, nixpkgs, arkenfox, home-manager, unknown-vars, ... }:
 
 let
  lib = nixpkgs.lib;
@@ -13,18 +13,33 @@ let
    config   = { allowUnfree = false; }; 
  };
 in { 
- default = lib.nixosSystem {
+ vonixos-sway = lib.nixosSystem {
    modules = [
-     ./machine
-     ./version.nix
-     ./packages.nix
-     ./configuration.nix
+     ./hosts/vonixos-sway/machine
+     ./hosts/vonixos-sway/version.nix
+     ./hosts/vonixos-sway/packages.nix
+     ./hosts/vonixos-sway/configuration.nix
      home-manager.nixosModules.home-manager {
       home-manager.useGlobalPkgs   = true;
       home-manager.useUserPackages = true;
      }
    ];
 
-   specialArgs = { inherit nur pkgs vars inputs arkenfox unknown-vars; };
+   specialArgs = { inherit pkgs vars arkenfox unknown-vars; };
+ };
+
+ vanillaos-gnome = lib.nixosSystem {
+   modules = [
+     ./hosts/vanillaos-gnome/machine
+     ./hosts/vanillaos-gnome/version.nix
+     ./hosts/vanillaos-gnome/packages.nix
+     ./hosts/vanillaos-gnome/configuration.nix
+     home-manager.nixosModules.home-manager {
+      home-manager.useGlobalPkgs   = true;
+      home-manager.useUserPackages = true;
+     }
+   ];
+
+   specialArgs = { inherit pkgs vars arkenfox unknown-vars; };
  };
 }

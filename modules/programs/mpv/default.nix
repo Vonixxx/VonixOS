@@ -3,12 +3,10 @@
 #####################
 # MPV Configuration #
 #####################
-{ pkgs, vars, ... }:
+{ vars, ... }:
 
 {
  home-manager.users.${vars.user}.programs = {
-   mpv = {
-     enable = true;
-   };
+   mpv.enable = true;
  };
 }

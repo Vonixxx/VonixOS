@@ -8,8 +8,7 @@
 {
  home-manager.users.${vars.user}.programs = {
    bat = {
-     enable = true;
-
+     enable       = true;
      config.theme = "Catppuccin-Mocha";
 
      themes.Catppuccin-Mocha = {

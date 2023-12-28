@@ -3,7 +3,7 @@
 #####################
 # LSD Configuration #
 #####################
-{ pkgs, vars, ... }:
+{ vars, ... }:
 
 {
  home-manager.users.${vars.user}.programs = {
@@ -16,21 +16,12 @@
          enabled = true;
        };
 
-       color = {
-         when  = "never";
-       };
-
-       icons = {
-         when  = "always";
-       };
-
-       indicators = true;
-       layout     = "tree";
-       size       = "short";
-
-       sorting = {
-         dir-grouping = "first";
-       };
+       indicators           = true;
+       layout               = "tree";
+       size                 = "short";
+       color.when           = "never";
+       sorting.dir-grouping = "first";
+       icons.when           = "always";
      };
    };
  };
