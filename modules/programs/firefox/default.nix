@@ -6,10 +6,10 @@
 { pkgs, vars, arkenfox, ... }:
 
 {
- home-manager.users.${vars.user}.programs = {
+ home-manager.users.${vars.user} = {
    imports = [ arkenfox.hmModules.arkenfox ];
 
-   firefox = {
+   programs.firefox = {
      enable = true;
 
      arkenfox = {
