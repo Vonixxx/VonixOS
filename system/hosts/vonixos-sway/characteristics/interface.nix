@@ -6,12 +6,6 @@
 { pkgs, vars, ... }:
 
 {
- imports = [
-   ../../../../modules/programs-wm/fuzzel/default.nix
-   ../../../../modules/programs-wm/waybar/default.nix
-   ../../../../modules/programs-wm/wlsunset/default.nix
- ];
-
  home-manager.users.${vars.user} = {
    home.pointerCursor = {
      gtk.enable = true;
