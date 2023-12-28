@@ -1,5 +1,5 @@
-###########
-# VonixOS #
+#############
+# VanillaOS #
 #######################
 # NixOS Configuration #
 #######################
@@ -7,16 +7,11 @@
 
 {
  imports = ( 
-   import ./characteristics         ++
-   import ../../../modules/programs ++
-   import ../../../modules/terminal ++
-   import ../../../modules/programs-wm
+   import ./characteristics      ++
+   import ../../../modules/programs 
  );
 
- programs = {
-   zsh.enable   = true;
-   dconf.enable = true;
- };
+ programs.dconf.enable = true;
 
  hardware.opengl = {
    enable          = true;
@@ -32,26 +27,10 @@
  security = {
    rtkit.enable            = true;
    polkit.enable           = true;
-   sudo.wheelNeedsPassword = false;
+   sudo.wheelNeedsPassword = true;
  };
 
  i18n.defaultLocale = "en_GB.UTF-8";
-
- boot = { 
-   kernelParams = [ "quiet"]; 
-
-   loader = {
-     systemd-boot = {
-       configurationLimit = 5;
-       enable             = true;
-     };
- 
-     timeout                  = 5;
-     efi.canTouchEfiVariables = true;
-   };
- };
-
- virtualisation.libvirtd.enable = true;
 
  services = {
    pipewire = {
@@ -62,17 +41,22 @@
    };
 
    automatic-timezoned.enable = true;
-
-   udev = {
-     enable   = true;
-     packages = with pkgs; [ android-udev-rules ];
-   };
  };
 
- fonts.packages = with pkgs; [
-   liberation_ttf
-   (nerdfonts.override { fonts = [ "CascadiaCode" ]; })
- ];
+ boot = {
+   kernelParams = [ "quiet"]; 
+
+   loader = {
+     timeout = 5;
+
+     systemd-boot = {
+       configurationLimit = 5;
+       enable             = true;
+     };
+
+     efi = { canTouchEfiVariables = true; };
+   };
+ };
 
  nix = {
    gc = {
@@ -101,25 +85,11 @@
    };
  };
 
- environment = {
-   shells = with pkgs; [ zsh ];
-
-   variables = {
-     VISUAL   = "hx";
-     EDITOR   = "hx";
-     TERMINAL = "kitty";
-     BROWSER  = "firefox";
-     PF_INFO  = "ascii title uptime pkgs kernel memory os host";
-   };
- };
-
  users = {
-   defaultUserShell = with pkgs; zsh;
-
    users.${vars.user} = {
      isNormalUser   = true;
      hashedPassword = "${vars.password}";
-     extraGroups    = [ "audio" "users" "video" "wheel" "libvirtd" "networkmanager" ];
+     extraGroups    = [ "audio" "users" "video" "wheel" "networkmanager" ];
    };
  };
 }
