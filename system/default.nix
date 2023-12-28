@@ -16,8 +16,6 @@ in {
  vonixos-sway = lib.nixosSystem {
    modules = [
      ./hosts/vonixos-sway/machine
-     ./hosts/vonixos-sway/version.nix
-     ./hosts/vonixos-sway/packages.nix
      ./hosts/vonixos-sway/configuration.nix
      home-manager.nixosModules.home-manager {
       home-manager.useGlobalPkgs   = true;
@@ -31,8 +29,6 @@ in {
  vanillaos-gnome = lib.nixosSystem {
    modules = [
      ./hosts/vanillaos-gnome/machine
-     ./hosts/vanillaos-gnome/version.nix
-     ./hosts/vanillaos-gnome/packages.nix
      ./hosts/vanillaos-gnome/configuration.nix
      home-manager.nixosModules.home-manager {
       home-manager.useGlobalPkgs   = true;
