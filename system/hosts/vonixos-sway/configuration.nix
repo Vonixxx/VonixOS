@@ -18,6 +18,11 @@
    dconf.enable = true;
  };
 
+ fonts.fontconfig = {
+   subpixel.rgba = "rgb";
+   hinting.style = "full";
+ };
+
  hardware.opengl = {
    enable          = true;
    driSupport      = true;
@@ -69,11 +74,6 @@
    };
  };
 
- fonts.packages = with pkgs; [
-   liberation_ttf
-   (nerdfonts.override { fonts = [ "CascadiaCode" ]; })
- ];
-
  nix = {
    gc = {
      automatic = true;
@@ -103,6 +103,12 @@
 
  environment = {
    shells = with pkgs; [ zsh ];
+
+   loginShellInit = ''
+      if [ "$(tty)" = "/dev/tty1" ]; then
+        exec sway
+      fi
+   '';
 
    variables = {
      VISUAL   = "hx";

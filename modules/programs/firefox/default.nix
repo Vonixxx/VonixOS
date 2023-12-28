@@ -127,10 +127,21 @@
            };
   
            "2812"."privacy.clearOnShutdown.openWindows".value = false;
+
+           "2815" = {
+             "privacy.clearOnShutdown.cookies".value     = false;
+             "privacy.clearOnShutdown.offlineApps".value = false;
+           };
          };
   
          "4500" = {
-           enable                                                   = true;
+           enable = true;
+
+           "4501" = {
+             "privacy.resistFingerprinting".value        = false;
+             "privacy.resistFingerprinting.pbmode".value = false;
+           };
+
            "4504"."privacy.resistFingerprinting.letterboxing".value = false;
            "4520"."webgl.disabled".value                            = false;
          };

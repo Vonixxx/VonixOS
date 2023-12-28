@@ -1,8 +1,14 @@
 { pkgs, ... }:
 
 {
+ hardware.opengl.extraPackages = with pkgs; [
+   vaapiVdpau 
+   libvdpau-va-gl
+ ];
+
  fonts.packages = with pkgs; [
    liberation-ttf 
+   obs-studio
  ];
 
  environment.systemPackages = (with pkgs; [

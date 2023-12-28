@@ -1,9 +1,5 @@
 rec {
   ########################
-  # System Configuration #
-  ########################
-  system = "vonixos-sway";
-  ########################
   # Screen Settings Sway #
   ########################
   output       = "eDP-1";

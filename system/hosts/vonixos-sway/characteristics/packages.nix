@@ -1,12 +1,11 @@
 { pkgs, ... }:
 
 {
- environment.loginShellInit = ''
-    if [ "$(tty)" = "/dev/tty1" ]; then
-      exec sway
-    fi
- '';
- 
+ fonts.packages = with pkgs; [
+   liberation_ttf
+   (nerdfonts.override { fonts = [ "CascadiaCode" ]; })
+ ];
+
  environment.systemPackages = with pkgs; [
    ############
    # Standard #

@@ -17,11 +17,6 @@
    enable          = true;
    driSupport      = true;
    driSupport32Bit = true;
-
-   extraPackages = with pkgs; [
-     vaapiVdpau
-     libvdpau-va-gl
-   ];
  };
 
  security = {
@@ -92,4 +87,6 @@
      extraGroups    = [ "audio" "users" "video" "wheel" "networkmanager" ];
    };
  };
+
+ programs.bash.shellAliases = { update = "sudo nix flake update 'github:Vonixxx/VonixOS' && sudo nixos-rebuild switch --no-write-lock-file --flake 'github:Vonixxx/VonixOS#vanillaos-gnome'"; };
 }
