@@ -53,6 +53,14 @@
    };
  };
 
+ users = {
+   users.${vars.user} = {
+     isNormalUser = true;
+     password     = "${unknown-vars.password}";
+     extraGroups  = [ "audio" "users" "video" "wheel" ];
+   };
+ };
+
  nix = {
    gc = {
      automatic = true;
@@ -65,14 +73,6 @@
      experimental-features = [ "nix-command" "flakes" ];
    };
  }; 
-
- users = {
-   users.${vars.user} = {
-     isNormalUser   = true;
-     hashedPassword = "${vars.password}";
-     extraGroups    = [ "audio" "users" "video" "wheel" ];
-   };
- };
 
  networking = {
    firewall.enable = true;
