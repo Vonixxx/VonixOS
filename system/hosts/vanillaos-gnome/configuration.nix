@@ -3,7 +3,7 @@
 #######################
 # NixOS Configuration #
 #######################
-{ pkgs, vars, unknown-vars, ... }:
+{ vars, unknown-vars, ... }:
 
 {
  imports = ( 
@@ -11,13 +11,13 @@
    import ../../../modules/programs 
  );
 
- programs.dconf.enable = true;
-
  hardware.opengl = {
    enable          = true;
    driSupport      = true;
    driSupport32Bit = true;
  };
+
+ programs.dconf.enable = true;
 
  security = {
    rtkit.enable            = true;
@@ -66,6 +66,14 @@
    };
  }; 
 
+ users = {
+   users.${vars.user} = {
+     isNormalUser   = true;
+     hashedPassword = "${vars.password}";
+     extraGroups    = [ "audio" "users" "video" "wheel" ];
+   };
+ };
+
  networking = {
    firewall.enable = true;
 
@@ -80,13 +88,5 @@
    };
  };
 
- users = {
-   users.${vars.user} = {
-     isNormalUser   = true;
-     hashedPassword = "${vars.password}";
-     extraGroups    = [ "audio" "users" "video" "wheel" "networkmanager" ];
-   };
- };
-
- programs.bash.shellAliases = { update = "sudo nix flake update 'github:Vonixxx/VonixOS' && sudo nixos-rebuild switch --no-write-lock-file --flake 'github:Vonixxx/VonixOS#vanillaos-gnome'"; };
+ programs.bash.shellAliases.update = "sudo nix flake update 'github:Vonixxx/VonixOS' && sudo nixos-rebuild switch --no-write-lock-file --flake 'github:Vonixxx/VonixOS#vanillaos-gnome'";
 }

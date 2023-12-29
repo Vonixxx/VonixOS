@@ -7,7 +7,7 @@ rec {
   #####################
   # System Appearance #
   #####################
-  staticWallpaper = "Mystical.jpg";
+  staticWallpaper = "Futuristic.jpg";
 
   foot = {
     alpha      = 1.0;
@@ -72,9 +72,17 @@ rec {
    selectionMatch      = "#F38BA8DD";
    selectionForeground = "#CDD6F4DD";
  };
+ #########
+ # Flake #
+ #########
+ lib  = nixpkgs.lib;
+ pkgs = import nixpkgs {
+   overlays = [ nur.overlay ];
+   config   = { allowUnfree = false; };
+ };
  #############################
  # System User Login Details #
  #############################
- user     = "vonix";
+ user     = "voyager";
  password = "$6$vheawoZJxxe9N7Ml$sGnV.OE9HFDY0MQzDLUuSX38f8GPPus.cD45ptYi.Whyx1aJ5xEuHUYoz0LT/CcDP5dFbw7AdOeG7hahoeA170";
 }

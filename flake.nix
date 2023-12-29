@@ -4,17 +4,18 @@
 # Flake Configuration #
 #######################
 # flake.nix
-# └─./system
-#     └─default.nix
-#       ├─./machine
-#       └─configuration.nix
-#         └─./modules
-#             ├─./desktops
-#             │   └─default.nix
-#             ├─./programs
-#             │   └─default.nix
-#             └─./terminal
-#                 └─default.nix
+# ├─/variables
+# └─/system
+#    └─default.nix
+#      └─/hosts/<chosen host>
+#         └─configuration.nix
+#           └─/modules
+#              ├─/programs
+#              │   └─default.nix
+#              ├─/programs-wm
+#              │   └─default.nix
+#              └─/terminal
+#                  └─default.nix
 {
  description = "Flake Configuration - Sway";
 

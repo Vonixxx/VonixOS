@@ -27,11 +27,6 @@
    enable          = true;
    driSupport      = true;
    driSupport32Bit = true;
-
-   extraPackages = with pkgs; [
-     vaapiVdpau
-     libvdpau-va-gl
-   ];
  };
 
  security = {
@@ -66,12 +61,8 @@
      alsa.support32Bit = true;
    };
 
+   udev.enable                = true;
    automatic-timezoned.enable = true;
-
-   udev = {
-     enable   = true;
-     packages = with pkgs; [ android-udev-rules ];
-   };
  };
 
  nix = {
@@ -91,8 +82,7 @@
    firewall.enable = true;
 
    wireless = {
-     enable = true; 
-
+     enable   = true; 
      networks = {
        Vonix.psk                = "${unknown-vars.wifi.vonix}"; 
        O2-Internet-704.psk      = "${unknown-vars.wifi.libor}"; 

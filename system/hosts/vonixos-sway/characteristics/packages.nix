@@ -1,11 +1,11 @@
+###########
+# VonixOS #
+#########################
+# Package Configuration #
+#########################
 { pkgs, ... }:
 
 {
- fonts.packages = with pkgs; [
-   liberation_ttf
-   (nerdfonts.override { fonts = [ "CascadiaCode" ]; })
- ];
-
  environment.systemPackages = with pkgs; [
    ############
    # Standard #
@@ -43,5 +43,26 @@
    #######################
    swaybg
    swayimg
+ ];
+
+ #######################################
+ # Hardware Accelerated Video Playback #
+ #######################################
+ hardware.opengl.extraPackages = with pkgs; [
+   vaapiVdpau
+   libvdpau-va-gl
+ ];
+
+ #########################################
+ # Useful if Customising Android Devices #
+ #########################################
+ udev.packages = with pkgs; [ android-udev-rules ];
+
+ ############################################################
+ # Liberation for Firefox, CascadiaCode for everything else #
+ ############################################################
+ fonts.packages = with pkgs; [
+   liberation_ttf
+   (nerdfonts.override { fonts = [ "CascadiaCode" ]; })
  ];
 }
