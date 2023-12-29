@@ -11,7 +11,7 @@ rec {
   #####################
   # System Appearance #
   #####################
-  staticWallpaper = "Futuristic.jpg";
+  staticWallpaper = "Whispers.png";
 
   foot = {
     alpha      = 1.0;

@@ -24,7 +24,7 @@ in {
    specialArgs = { inherit pkgs vars arkenfox unknown-vars; };
  };
 
- vanillaos-gnome = "${vars.lib}".nixosSystem {
+ vanillaos-gnome = nixpkgs.lib.nixosSystem {
    modules = [
      ./hosts/vanillaos-gnome/machine
      ./hosts/vanillaos-gnome/configuration.nix
