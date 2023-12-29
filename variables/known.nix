@@ -1,4 +1,8 @@
 rec {
+  #########
+  # Flake #
+  #########
+  lib  = nixpkgs.lib;
   ########################
   # Screen Settings Sway #
   ########################
@@ -71,14 +75,6 @@ rec {
    selection           = "#11111BDD";
    selectionMatch      = "#F38BA8DD";
    selectionForeground = "#CDD6F4DD";
- };
- #########
- # Flake #
- #########
- lib  = nixpkgs.lib;
- pkgs = import nixpkgs {
-   overlays = [ nur.overlay ];
-   config   = { allowUnfree = false; };
  };
  #############################
  # System User Login Details #

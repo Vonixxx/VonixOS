@@ -5,8 +5,13 @@
 ###################
 { nur, vars, nixpkgs, arkenfox, home-manager, unknown-vars, ... }:
 
-{ 
- vonixos-sway = lib.nixosSystem {
+let 
+  pkgs = import nixpkgs {
+    overlays = [ nur.overlay ];
+    config   = { allowUnfree = false; };
+  };
+in { 
+ vonixos-sway = "${vars.lib}".nixosSystem {
    modules = [
      ./hosts/vonixos-sway/machine
      ./hosts/vonixos-sway/configuration.nix
@@ -19,7 +24,7 @@
    specialArgs = { inherit pkgs vars arkenfox unknown-vars; };
  };
 
- vanillaos-gnome = lib.nixosSystem {
+ vanillaos-gnome = "${vars.lib}".nixosSystem {
    modules = [
      ./hosts/vanillaos-gnome/machine
      ./hosts/vanillaos-gnome/configuration.nix
