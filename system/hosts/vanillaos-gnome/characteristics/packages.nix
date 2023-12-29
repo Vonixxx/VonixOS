@@ -7,7 +7,7 @@
  ];
 
  fonts.packages = with pkgs; [
-   liberation-ttf 
+   liberation_ttf 
    obs-studio
  ];
 

@@ -19,6 +19,11 @@
 
  programs.dconf.enable = true;
 
+ networking = {
+   firewall.enable       = true;
+   networkmanager.enable = true;
+ };
+
  security = {
    rtkit.enable            = true;
    polkit.enable           = true;
@@ -73,20 +78,6 @@
      experimental-features = [ "nix-command" "flakes" ];
    };
  }; 
-
- networking = {
-   firewall.enable = true;
-
-   wireless = {
-     enable = true; 
-
-     networks = {
-       Vonix.psk                = "${unknown-vars.wifi.vonix}"; 
-       O2-Internet-704.psk      = "${unknown-vars.wifi.libor}"; 
-       O2-Internet-704-5GHz.psk = "${unknown-vars.wifi.libor}"; 
-     };
-   };
- };
 
  programs.bash.shellAliases.update = "sudo nix flake update 'github:Vonixxx/VonixOS' && sudo nixos-rebuild switch --no-write-lock-file --flake 'github:Vonixxx/VonixOS#vanillaos-gnome'";
 }
