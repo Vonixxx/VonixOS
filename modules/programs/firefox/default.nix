@@ -58,16 +58,16 @@
    	    url  = "https://nur.nix-community.org";
    	   }
        {
-   	    name = "NixOS Packages";
-   	    url  = "https://search.nixos.org/packages";
+   	    name = "Certificates";
+   	    url  = "https://devopscube.com/best-devops-certifications";
    	   }
        {
    	    name = "NixOS Options";
-   	    url  = "https://search.nixos.org/options?";
+   	    url  = "https://search.nixos.org/options?channel=unstable&";
    	   }
        {
-   	    name = "Certificates";
-   	    url  = "https://devopscube.com/best-devops-certifications";
+   	    name = "NixOS Packages";
+   	    url  = "https://search.nixos.org/packages?channel=unstable&";
    	   }
        {
    	    name = "Home-Manager";
