@@ -135,6 +135,12 @@
           };
         };
 
+        "memory" = {
+          interval = 10;
+          tooltip  = false;
+          format   = "󱉟 {percentage}%";
+        };
+
         "custom/reboot" = {
           tooltip  = false;
           format   = "<big>󰜉</big>";
@@ -164,12 +170,6 @@
           interval = 30;
           tooltip  = false;
           format   = "{:󰃭 %d/%m/%y | %H:%M}";
-        };
-
-        "memory" = {
-          interval = 30;
-          tooltip  = false;
-          format   = "󱉟 {used:0.1f}/{total:0.1f}G";
         };
 
         "backlight" = {
