@@ -114,7 +114,7 @@
 
    users.${vars.user} = {
      isNormalUser = true;
-     password     = "${vars.password}";
+     password     = "${unknown-vars.password}";
      extraGroups  = [ "audio" "users" "video" "wheel" "libvirtd" "networkmanager" ];
    };
  };
