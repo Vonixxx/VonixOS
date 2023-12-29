@@ -1,8 +1,8 @@
 rec {
-  #########
-  # Flake #
-  #########
-  lib  = nixpkgs.lib;
+  #############################
+  # System User Login Details #
+  #############################
+  user     = "vonix";
   ########################
   # Screen Settings Sway #
   ########################
@@ -76,9 +76,4 @@ rec {
    selectionMatch      = "#F38BA8DD";
    selectionForeground = "#CDD6F4DD";
  };
- #############################
- # System User Login Details #
- #############################
- user     = "voyager";
- password = "$6$vheawoZJxxe9N7Ml$sGnV.OE9HFDY0MQzDLUuSX38f8GPPus.cD45ptYi.Whyx1aJ5xEuHUYoz0LT/CcDP5dFbw7AdOeG7hahoeA170";
 }

@@ -11,7 +11,7 @@ let
     config   = { allowUnfree = false; };
   };
 in { 
- vonixos-sway = "${vars.lib}".nixosSystem {
+ vonixos-sway = nixpkgs.lib.nixosSystem {
    modules = [
      ./hosts/vonixos-sway/machine
      ./hosts/vonixos-sway/configuration.nix

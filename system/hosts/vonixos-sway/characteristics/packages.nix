@@ -53,11 +53,6 @@
    libvdpau-va-gl
  ];
 
- #########################################
- # Useful if Customising Android Devices #
- #########################################
- udev.packages = with pkgs; [ android-udev-rules ];
-
  ############################################################
  # Liberation for Firefox, CascadiaCode for everything else #
  ############################################################
@@ -65,4 +60,9 @@
    liberation_ttf
    (nerdfonts.override { fonts = [ "CascadiaCode" ]; })
  ];
+
+ #########################################
+ # Useful if Customising Android Devices #
+ #########################################
+ services.udev.packages = with pkgs; [ android-udev-rules ];
 }

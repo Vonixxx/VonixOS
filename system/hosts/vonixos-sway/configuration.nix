@@ -113,9 +113,9 @@
    defaultUserShell = with pkgs; zsh;
 
    users.${vars.user} = {
-     isNormalUser   = true;
-     hashedPassword = "${vars.password}";
-     extraGroups    = [ "audio" "users" "video" "wheel" "libvirtd" "networkmanager" ];
+     isNormalUser = true;
+     password     = "${vars.password}";
+     extraGroups  = [ "audio" "users" "video" "wheel" "libvirtd" "networkmanager" ];
    };
  };
 }
