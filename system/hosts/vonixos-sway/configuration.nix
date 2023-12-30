@@ -55,14 +55,13 @@
 
  services = {
    pipewire = {
-     enable            = true;
-     alsa.enable       = true;
-     pulse.enable      = true;
-     alsa.support32Bit = true;
+     enable       = true;
+     audio.enable = true;
    };
 
    udev.enable                = true;
    automatic-timezoned.enable = true;
+   getty.autologinUser        = "vonix";
  };
 
  nix = {
@@ -78,16 +77,12 @@
    };
  }; 
 
- networking = {
-   firewall.enable = true;
-
-   wireless = {
-     enable   = true; 
-     networks = {
-       Vonix.psk                = "${unknown-vars.wifi.vonix}"; 
-       O2-Internet-704.psk      = "${unknown-vars.wifi.libor}"; 
-       O2-Internet-704-5GHz.psk = "${unknown-vars.wifi.libor}"; 
-     };
+ networking.wireless = {
+   enable   = true; 
+   networks = {
+     Vonix.psk                = "${unknown-vars.wifi.vonix}"; 
+     O2-Internet-704.psk      = "${unknown-vars.wifi.libor}"; 
+     O2-Internet-704-5GHz.psk = "${unknown-vars.wifi.libor}"; 
    };
  };
 
@@ -110,14 +105,16 @@
  };
 
  users = {
+   mutableUsers     = false;
    defaultUserShell = with pkgs; zsh;
 
    users.${vars.user} = {
-     uid          = 1000;
-     isNormalUser = true;
-     home         = "/home/vonix";
-     password     = "${unknown-vars.password}";
-     extraGroups  = [ "audio" "video" "wheel" "libvirtd" ];
+     uid             = 1000;
+     createHome      = true;
+     useDefaultShell = true; 
+     home            = "/home/vonix";
+     password        = "${unknown-vars.password}";
+     extraGroups     = [ "audio" "users" "video" "wheel" "libvirtd" ];
    };
  };
 }
