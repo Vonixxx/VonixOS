@@ -3,7 +3,7 @@
 #######################
 # NixOS Configuration #
 #######################
-{ pkgs, vars, unknown-vars, ... }:
+{ pkgs, unknown-vars, ... }:
 
 {
  imports = ( 
@@ -12,11 +12,6 @@
    import ../../../modules/terminal ++
    import ../../../modules/programs-wm
  );
-
- programs = {
-   zsh.enable   = true;
-   dconf.enable = true;
- };
 
  fonts.fontconfig = {
    subpixel.rgba = "rgb";
@@ -28,6 +23,8 @@
    driSupport      = true;
    driSupport32Bit = true;
  };
+
+ programs.dconf.enable = true;
 
  security = {
    rtkit.enable            = true;
@@ -87,8 +84,6 @@
  };
 
  environment = {
-   shells = with pkgs; [ zsh ];
-
    loginShellInit = ''
       if [ "$(tty)" = "/dev/tty1" ]; then
         exec sway
