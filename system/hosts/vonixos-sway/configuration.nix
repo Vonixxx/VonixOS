@@ -103,18 +103,4 @@
      PF_INFO  = "ascii title uptime pkgs kernel memory os host";
    };
  };
-
- users = {
-   mutableUsers     = false;
-   defaultUserShell = with pkgs; zsh;
-
-   users.${vars.user} = {
-     uid             = 1000;
-     createHome      = true;
-     useDefaultShell = true; 
-     home            = "/home/vonix";
-     password        = "${unknown-vars.password}";
-     extraGroups     = [ "audio" "users" "video" "wheel" "libvirtd" ];
-   };
- };
 }
