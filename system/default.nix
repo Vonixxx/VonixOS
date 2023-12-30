@@ -11,7 +11,7 @@ let
     config   = { allowUnfree = false; };
   };
 in { 
- vonixos-sway = nixpkgs.lib.nixosSystem {
+ sway = nixpkgs.lib.nixosSystem {
    specialArgs = { inherit pkgs vars arkenfox unknown-vars; };
 
    modules = [
@@ -22,7 +22,7 @@ in {
    ];
  };
 
- vanillaos-gnome = nixpkgs.lib.nixosSystem {
+ gnome = nixpkgs.lib.nixosSystem {
    specialArgs = { inherit pkgs vars arkenfox unknown-vars; };
 
    modules = [
