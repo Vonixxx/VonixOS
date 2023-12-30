@@ -37,6 +37,8 @@
  };
 
  boot = { 
+   kernelParams = [ "quiet" ]; 
+
    loader = {
      systemd-boot = {
        configurationLimit = 5;
@@ -47,7 +49,6 @@
  
      timeout                  = 5;
      efi.canTouchEfiVariables = true;
-     kernelParams             = [ "quiet" ]; 
    };
  };
 
