@@ -24,8 +24,6 @@
    driSupport32Bit = true;
  };
 
- programs.dconf.enable = true;
-
  security = {
    rtkit.enable            = true;
    polkit.enable           = true;
@@ -41,6 +39,8 @@
      systemd-boot = {
        configurationLimit = 5;
        enable             = true;
+       memtest86.enable   = true;
+       editor             = false;
      };
  
      timeout                  = 5;
