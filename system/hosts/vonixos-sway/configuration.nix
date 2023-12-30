@@ -1,9 +1,9 @@
 ###########
 # VonixOS #
-#######################
-# NixOS Configuration #
-#######################
-{ pkgs, unknown-vars, ... }:
+#######################################
+# NixOS System-Specific Configuration #
+#######################################
+{ unknown-vars, ... }:
 
 {
  imports = ( 
@@ -13,66 +13,12 @@
    import ../../../modules/programs-wm
  );
 
- fonts.fontconfig = {
-   subpixel.rgba = "rgb";
-   hinting.style = "full";
- };
-
- hardware.opengl = {
-   enable          = true;
-   driSupport      = true;
-   driSupport32Bit = true;
- };
-
- security = {
-   rtkit.enable            = true;
-   polkit.enable           = true;
-   sudo.wheelNeedsPassword = false;
- };
-
- i18n.defaultLocale = "en_GB.UTF-8";
-
- boot = { 
-   kernelParams = [ "quiet"]; 
-
-   loader = {
-     systemd-boot = {
-       configurationLimit = 5;
-       enable             = true;
-       memtest86.enable   = true;
-       editor             = false;
-     };
- 
-     timeout                  = 5;
-     efi.canTouchEfiVariables = true;
-   };
+ services = {
+   udev.enable         = true;
+   getty.autologinUser = "vonix";
  };
 
  virtualisation.libvirtd.enable = true;
-
- services = {
-   pipewire = {
-     enable       = true;
-     audio.enable = true;
-   };
-
-   udev.enable                = true;
-   automatic-timezoned.enable = true;
-   getty.autologinUser        = "vonix";
- };
-
- nix = {
-   gc = {
-     automatic = true;
-     dates     = "weekly";
-     options   = "--delete-older-than 3d";
-   };
-
-   settings = {
-     auto-optimise-store   = true;
-     experimental-features = [ "nix-command" "flakes" ];
-   };
- }; 
 
  networking.wireless = {
    enable   = true; 
