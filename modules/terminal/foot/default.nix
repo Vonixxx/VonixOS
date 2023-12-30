@@ -19,10 +19,12 @@
          blink = true;
          style = "block";
        };
+
        scrollback = {
          multiplier = 3;
          lines      = 300;
        };
+
        colors = {
          alpha      = 0.8;
          bright0    = "${vars.foot.bright0}"; 
