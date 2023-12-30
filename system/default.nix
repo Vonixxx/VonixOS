@@ -15,9 +15,9 @@ in {
    specialArgs = { inherit pkgs vars arkenfox unknown-vars; };
 
    modules = [
+     ./hosts/sway/machine
      ./general-configuration.nix
-     ./hosts/vonixos-sway/machine
-     ./hosts/vonixos-sway/configuration.nix
+     ./hosts/sway/configuration.nix
      home-manager.nixosModules.home-manager { home-manager.useGlobalPkgs = true; }
    ];
  };
@@ -26,9 +26,9 @@ in {
    specialArgs = { inherit pkgs vars arkenfox unknown-vars; };
 
    modules = [
+     ./hosts/gnome/machine
      ./general-configuration.nix
-     ./hosts/vanillaos-gnome/machine
-     ./hosts/vanillaos-gnome/configuration.nix
+     ./hosts/gnome/configuration.nix
      home-manager.nixosModules.home-manager { home-manager.useGlobalPkgs = true; }
    ];
  };
