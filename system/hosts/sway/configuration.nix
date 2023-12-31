@@ -20,12 +20,16 @@
 
  virtualisation.libvirtd.enable = true;
 
- networking.wireless = {
-   enable   = true; 
-   networks = {
-     Vonix.psk                = "${unknown-vars.wifi.vonix}"; 
-     O2-Internet-704.psk      = "${unknown-vars.wifi.libor}"; 
-     O2-Internet-704-5GHz.psk = "${unknown-vars.wifi.libor}"; 
+ networking = {
+   useDHCP = true;
+
+   wireless = {
+     enable   = true; 
+     networks = {
+       Vonix.psk                = "${unknown-vars.wifi.vonix}"; 
+       O2-Internet-704.psk      = "${unknown-vars.wifi.libor}"; 
+       O2-Internet-704-5GHz.psk = "${unknown-vars.wifi.libor}"; 
+     };
    };
  };
 

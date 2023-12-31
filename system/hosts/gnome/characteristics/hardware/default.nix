@@ -35,6 +35,6 @@
 
  boot = { 
    kernelModules        = [ "kvm-intel" ];
-   initrd.KernelModules = [ "vmd" "ahci" "ext4" "nvme" "sd_mod" "xhci_pci" "usb_storage" ];
+   initrd.kernelModules = [ "vmd" "ahci" "ext4" "nvme" "sd_mod" "xhci_pci" "usb_storage" ];
  };
 }

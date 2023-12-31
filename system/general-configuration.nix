@@ -6,7 +6,6 @@
 { pkgs, ... }:
 
 {
- networking.useDHCP     = true;
  hardware.opengl.enable = true;
  services.fstrim.enable = true;
  i18n.defaultLocale     = "en_GB.UTF-8";
