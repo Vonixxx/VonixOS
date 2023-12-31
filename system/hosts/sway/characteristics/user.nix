@@ -11,6 +11,6 @@
    isNormalUser = true;
    home         = "/home/vonix";
    password     = "${unknown-vars.password}";
-   extraGroups  = [ "audio" "video" "wheel" "libvirtd" ];
+   extraGroups  = [ "audio" "video" "wheel" "libvirtd" "networkmanager" ];
  };
 }
