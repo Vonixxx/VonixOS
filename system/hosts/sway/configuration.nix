@@ -15,7 +15,7 @@
 
  services = {
    udev.enable         = true;
-   # getty.autologinUser = "vonix";
+   getty.autologinUser = "vonix";
  };
 
  virtualisation.libvirtd.enable = true;
