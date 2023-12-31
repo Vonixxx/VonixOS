@@ -10,7 +10,8 @@
    import ./characteristics         ++
    import ../../../modules/programs ++
    import ../../../modules/terminal ++
-   import ../../../modules/programs-wm
+   import ../../../modules/programs-wm ++
+   import ../../../modules/programs-optional
  );
 
  services = {
