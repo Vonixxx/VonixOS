@@ -3,10 +3,12 @@
 ##############################
 # Transmission Configuration #
 ##############################
-{ ... }:
+{ pkgs, ... }:
 
 {
  services = {
-   transmission.enable = true;
+   transmission = { 
+     enable = true;
+   };
  };
 }
