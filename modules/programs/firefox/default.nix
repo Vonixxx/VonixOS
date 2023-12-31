@@ -25,12 +25,12 @@
          default = "DuckDuckGo";
        };
   
-#       extensions = with pkgs.nur.repos.rycee.firefox-addons; [
-#         bitwarden
-#    	   darkreader
-#         firefox-color
-#         ublock-origin
-#       ];
+       extensions = with pkgs.nur.repos.rycee.firefox-addons; [
+         bitwarden
+    	   darkreader
+         firefox-color
+         ublock-origin
+       ];
   
        bookmarks = [
        {

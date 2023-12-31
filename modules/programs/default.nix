@@ -5,6 +5,6 @@
 #################
 [
  ./mpv/default.nix
- # ./firefox/default.nix
+ ./firefox/default.nix
  ./transmission/default.nix
 ]
