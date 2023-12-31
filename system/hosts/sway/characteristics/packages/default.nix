@@ -47,8 +47,8 @@
  #######################################
  hardware.opengl.extraPackages = with pkgs; [
    amdvlk
-   vaapiVdpau
    libvdpau-va-gl
+   vaapiVdpau
  ];
 
  ############################################################

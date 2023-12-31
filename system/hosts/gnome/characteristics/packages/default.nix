@@ -2,6 +2,7 @@
 
 {
  hardware.opengl.extraPackages = with pkgs; [
+   intel-ocl
    intel-media-driver
    libvdpau-va-gl
    vaapiVdpau 
