@@ -3,18 +3,16 @@
 ###############################
 # NixOS General Configuration #
 ###############################
-{ ... }:
+{ pkgs, ... }:
 
 {
+ hardware.opengl.enable = true;
+ i18n.defaultLocale     = "en_GB.UTF-8";
+
  fonts.fontconfig = {
+   allowBitmaps  = false;
    subpixel.rgba = "rgb";
    hinting.style = "full";
- };
-
- hardware.opengl = {
-   enable          = true;
-   driSupport      = true;
-   driSupport32Bit = true;
  };
 
  security = {
@@ -22,8 +20,6 @@
    polkit.enable           = true;
    sudo.wheelNeedsPassword = false;
  };
-
- i18n.defaultLocale = "en_GB.UTF-8";
 
  services = {
    pipewire = {
@@ -37,8 +33,6 @@
  };
 
  boot = { 
-   kernelParams = [ "quiet" ]; 
-
    loader = {
      systemd-boot = {
        configurationLimit = 5;
@@ -50,6 +44,9 @@
      timeout                  = 5;
      efi.canTouchEfiVariables = true;
    };
+
+   kernelParams   = [ "quiet" ]; 
+   kernelPackages = pkgs.linuxPackages_latest;
  };
 
  nix = {

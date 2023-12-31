@@ -23,6 +23,8 @@
    alsa-utils
    git-crypt
    pfetch-rs
+   swaybg
+   swayimg
    tldr
    wget
    ################
@@ -38,17 +40,13 @@
    # Ergonomics #
    ##############
    autotiling      
-   #######################
-   # Screen/Text Capture #
-   #######################
-   swaybg
-   swayimg
  ];
 
  #######################################
  # Hardware Accelerated Video Playback #
  #######################################
  hardware.opengl.extraPackages = with pkgs; [
+   amdvlk
    vaapiVdpau
    libvdpau-va-gl
  ];
