@@ -6,7 +6,6 @@
 { pkgs, ... }:
 
 {
- hardware.opengl.enable = true;
  services.fstrim.enable = true;
  i18n.defaultLocale     = "en_GB.UTF-8";
 
@@ -14,6 +13,12 @@
    allowBitmaps  = false;
    subpixel.rgba = "rgb";
    hinting.style = "full";
+ };
+
+ hardware.opengl = {
+   enable          = true;
+   driSupport      = true;
+   driSupport32Bit = true;
  };
 
  security = {

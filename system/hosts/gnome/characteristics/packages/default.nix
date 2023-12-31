@@ -2,8 +2,9 @@
 
 {
  hardware.opengl.extraPackages = with pkgs; [
-   vaapiVdpau 
+   intel-media-driver
    libvdpau-va-gl
+   vaapiVdpau 
  ];
 
  fonts.packages = with pkgs; [ liberation_ttf ];
