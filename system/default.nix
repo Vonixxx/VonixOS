@@ -8,7 +8,7 @@
 let 
   pkgs = import nixpkgs {
     overlays = [ nur.overlay ];
-    config   = { allowUnfree = false; };
+    config   = { allowUnfree = true; };
   };
 in { 
  sway = nixpkgs.lib.nixosSystem {
