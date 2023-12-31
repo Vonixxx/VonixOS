@@ -9,7 +9,7 @@
  users.users.${vars.user} = {
    uid          = 1000;
    isNormalUser = true;
-   home         = "/home/vonixos";
+   home         = "/home/bubinka";
    password     = "${unknown-vars.password}";
    extraGroups  = [ "audio" "video" "wheel" "networkmanager" ];
  };

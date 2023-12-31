@@ -2,7 +2,7 @@ rec {
   #############################
   # System User Login Details #
   #############################
-  user     = "vonix";
+  user = "vonix";
   ########################
   # Screen Settings Sway #
   ########################

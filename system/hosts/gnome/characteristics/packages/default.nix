@@ -6,10 +6,7 @@
    libvdpau-va-gl
  ];
 
- fonts.packages = with pkgs; [
-   liberation_ttf 
-   obs-studio
- ];
+ fonts.packages = with pkgs; [ liberation_ttf ];
 
  environment.systemPackages = (with pkgs; [
    coreutils 

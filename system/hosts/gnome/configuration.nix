@@ -7,8 +7,9 @@
 
 {
  imports = ( 
-   import ./characteristics      ++
-   import ../../../modules/programs 
+   import ./characteristics               ++
+   import ../../../modules/programs       ++
+   import ../../../modules/programs-optional 
  );
 
  hardware.pulseaudio.enable = false;
