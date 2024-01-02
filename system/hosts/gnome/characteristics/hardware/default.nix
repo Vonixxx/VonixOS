@@ -34,7 +34,7 @@
  swapDevices = [ { device = "/dev/disk/by-uuid/cb0fdf3d-d42e-4750-94a5-ced94489b4ef"; } ];
 
  boot = { 
-   kernelModules        = [ "kvm-intel" ];
+   kernelModules        = [ "i915" "kvm-intel" ];
    initrd.kernelModules = [ "vmd" "ahci" "ext4" "nvme" "sd_mod" "xhci_pci" "usb_storage" ];
  };
 }

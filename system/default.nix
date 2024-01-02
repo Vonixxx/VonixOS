@@ -30,4 +30,14 @@ in {
      home-manager.nixosModules.home-manager { home-manager.useGlobalPkgs = true; }
    ];
  };
+
+ hyprland = nixpkgs.lib.nixosSystem {
+   specialArgs = { inherit pkgs vars arkenfox unknown-vars; };
+
+   modules = [
+     ./general-configuration.nix
+     ./hosts/hyprland/configuration.nix
+     home-manager.nixosModules.home-manager { home-manager.useGlobalPkgs = true; }
+   ];
+ };
 }

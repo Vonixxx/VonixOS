@@ -7,8 +7,10 @@
 # ├─/variables
 # └─/system
 #    └─default.nix
+#      ├─general-configuration.nix      
 #      └─/hosts/<chosen host>
 #         └─configuration.nix
+#           ├─/characteristics          
 #           └─/modules
 #              ├─/programs
 #              │   └─default.nix

@@ -34,6 +34,7 @@
    mkpasswd
    mediainfo
    nixos-generators
+   pulsemixer
    youtube-dl
    virt-manager
    ##############

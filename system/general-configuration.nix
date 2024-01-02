@@ -51,8 +51,9 @@
      efi.canTouchEfiVariables = true;
    };
 
-   kernelParams   = [ "quiet" ]; 
-   kernelPackages = pkgs.linuxPackages_latest;
+   kernelParams         = [ "quiet" ]; 
+   supportedFilesystems = [ "ntfs" ];
+   kernelPackages       = pkgs.linuxPackages_latest;
  };
 
  nix = {
