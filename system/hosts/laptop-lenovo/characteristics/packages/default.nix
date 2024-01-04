@@ -3,10 +3,10 @@
 #########################
 # Package Configuration #
 #########################
-{ pkgs, ... }:
+{ unstable, ... }:
 
 {
- environment.systemPackages = with pkgs; [
+ environment.systemPackages = with unstable; [
    ############
    # Standard #
    ############
@@ -46,7 +46,7 @@
  #######################################
  # Hardware Accelerated Video Playback #
  #######################################
- hardware.opengl.extraPackages = with pkgs; [
+ hardware.opengl.extraPackages = with unstable; [
    amdvlk
    libvdpau-va-gl
    vaapiVdpau
@@ -55,7 +55,7 @@
  ############################################################
  # Liberation for Firefox, CascadiaCode for everything else #
  ############################################################
- fonts.packages = with pkgs; [
+ fonts.packages = with unstable; [
    liberation_ttf
    (nerdfonts.override { fonts = [ "CascadiaCode" ]; })
  ];
@@ -63,5 +63,5 @@
  #########################################
  # Useful if Customising Android Devices #
  #########################################
- services.udev.packages = with pkgs; [ android-udev-rules ];
+ services.udev.packages = with unstable; [ android-udev-rules ];
 }

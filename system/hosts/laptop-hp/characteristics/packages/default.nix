@@ -1,16 +1,16 @@
-{ pkgs, ... }:
+{ stable, ... }:
 
 {
- hardware.opengl.extraPackages = with pkgs; [
+ hardware.opengl.extraPackages = with stable; [
    intel-media-driver
    intel-vaapi-driver
    libvdpau-va-gl
    vaapiVdpau 
  ];
 
- fonts.packages = with pkgs; [ liberation_ttf ];
+ fonts.packages = with stable; [ liberation_ttf ];
 
- environment.systemPackages = (with pkgs; [
+ environment.systemPackages = (with stable; [
    coreutils 
    freetube
    libreoffice-fresh
@@ -22,7 +22,7 @@
     user-themes
  ]) ++ (with pkgs.gnome; [ gnome-tweaks ]);
 
- environment.gnome.excludePackages = with pkgs.gnome; [
+ environment.gnome.excludePackages = with stable.gnome; [
    atomix
    epiphany
    gnome-shell-extensions

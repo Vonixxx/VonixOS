@@ -29,13 +29,14 @@
    ###################
    # Repository URLs #
    ###################
-   nur.url          = "github:nix-community/NUR";
-   home-manager.url = "github:nix-community/home-manager"; 
-   arkenfox.url     = "github:dwarfmaster/arkenfox-nixos";
-   nixpkgs.url      = "github:nixos/nixpkgs/nixos-unstable";
+   nur.url              = "github:nix-community/NUR";
+   nixpkgs-stable.url   = "github:nixos/nixpkgs/nixos-23.11";
+   home-manager.url     = "github:nix-community/home-manager"; 
+   arkenfox.url         = "github:dwarfmaster/arkenfox-nixos";
+   nixpkgs-unstable.url = "github:nixos/nixpkgs/nixos-unstable";
  };
 
- outputs = inputs @ { nur, self, nixpkgs, arkenfox, home-manager, ... }:
+ outputs = inputs @ { nur, self, arkenfox, home-manager, nixpkgs-stable, nixpkgs-unstable, ... }:
 
  let
   vars         = import ./variables/known.nix;
@@ -44,7 +45,7 @@
    nixosConfigurations = (
      import ./system {
       inherit (nixpkgs) lib;
-      inherit nur vars inputs nixpkgs arkenfox home-manager unknown-vars;
+      inherit nur vars inputs arkenfox home-manager unknown-vars nixpkgs-stable nixpkgs-unstable;
      }
    );
  };

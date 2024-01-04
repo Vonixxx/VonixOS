@@ -8,5 +8,4 @@
  ./version/default.nix
  ./hardware/default.nix
  ./packages/default.nix
- ./interface/default.nix
 ]
