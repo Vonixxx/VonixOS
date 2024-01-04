@@ -27,6 +27,7 @@
      enable   = true; 
      networks = {
        Vonix.psk                = "${unknown-vars.wifi.vonix}"; 
+       Pixel.psk                = "${unknown-vars.wifi.pixel}"; 
        O2-Internet-704.psk      = "${unknown-vars.wifi.libor}"; 
        O2-Internet-704-5GHz.psk = "${unknown-vars.wifi.libor}"; 
      };

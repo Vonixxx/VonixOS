@@ -50,6 +50,7 @@
        ####################
        # System Shortcuts #
        ####################
+       test   = "nix flake update && sudo nixos-rebuild test --flake '.#sway' --impure";
        update = "nix flake update && sudo nixos-rebuild switch --flake '.#sway' --impure";
      };
    };
