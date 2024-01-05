@@ -50,8 +50,8 @@
        ####################
        # System Shortcuts #
        ####################
-       test   = "nix flake update && sudo nixos-rebuild test --flake '.#sway' --impure";
-       update = "nix flake update && sudo nixos-rebuild switch --flake '.#sway' --impure";
+       test   = "nix flake update && sudo nixos-rebuild test --flake '.#laptop-lenovo' --impure";
+       update = "nix flake update && sudo nixos-rebuild switch --flake '.#laptop-lenovo' --impure";
      };
    };
 

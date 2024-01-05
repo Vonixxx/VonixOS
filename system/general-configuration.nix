@@ -8,6 +8,7 @@
 {
  services.fstrim.enable = true;
  i18n.defaultLocale     = "en_GB.UTF-8";
+ nixpkgs.hostPlatform   = "x86_64-linux";
 
  fonts.fontconfig = {
    allowBitmaps  = false;
@@ -51,8 +52,8 @@
      efi.canTouchEfiVariables = true;
    };
 
-   kernelParams         = [ "quiet" ]; 
    supportedFilesystems = [ "ntfs" ];
+   kernelParams         = [ "quiet" ]; 
    kernelPackages       = pkgs.linuxPackages_latest;
  };
 

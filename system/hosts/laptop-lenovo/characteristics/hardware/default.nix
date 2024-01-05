@@ -10,7 +10,6 @@
 
  hardware.cpu.amd.updateMicrocode = true;
  powerManagement.cpuFreqGovernor  = "powersave";
- nixpkgs.hostPlatform             = "x86_64-linux";
 
  services.tlp.settings = {
    enable              = true;
