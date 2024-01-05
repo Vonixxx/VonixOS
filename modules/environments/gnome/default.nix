@@ -7,7 +7,7 @@
 
 {
  services = {
-   logind.lidSwitch = "poweroff";
+   hardware.pulseaudio.enable = false;
 
    xserver = {
      displayManager = {

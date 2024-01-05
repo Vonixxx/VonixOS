@@ -3,7 +3,7 @@
 ######################
 # Sway Configuration #
 ######################
-{ pkgs, vars, ... }:
+{ lib, pkgs, vars, config, ... }: with lib;
 
 {
  options.sway.enable = mkOption {

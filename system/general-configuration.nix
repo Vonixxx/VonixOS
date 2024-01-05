@@ -3,12 +3,14 @@
 ###############################
 # NixOS General Configuration #
 ###############################
-{ pkgs, ... }:
+{ lib, pkgs, ... }: with lib;
 
 {
  services.fstrim.enable = true;
+ logind.lidSwitch       = "poweroff";
  i18n.defaultLocale     = "en_GB.UTF-8";
  nixpkgs.hostPlatform   = "x86_64-linux";
+ networking.useDHCP     = mkDefault true;
 
  fonts.fontconfig = {
    allowBitmaps  = false;
