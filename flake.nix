@@ -25,7 +25,7 @@
    ##########################
    # Synchronizing Packages #
    ##########################
-   home-manager.inputs.nixpkgs.follows = "nixpkgs";
+   home-manager.inputs.nixpkgs.follows = "nixpkgs-unstable";
    ##########################
    # Community Repositories #
    ##########################

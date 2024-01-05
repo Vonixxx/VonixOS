@@ -3,7 +3,7 @@
 #########################
 # FireFox Configuration #
 #########################
-{ pkgs, vars, arkenfox, ... }:
+{ vars, arkenfox, unstable, ... }:
 
 {
  home-manager.users.${vars.user} = {
@@ -25,7 +25,7 @@
          default = "DuckDuckGo";
        };
   
-       extensions = with pkgs.nur.repos.rycee.firefox-addons; [
+       extensions = with unstable.nur.repos.rycee.firefox-addons; [
          bitwarden
     	   darkreader
          firefox-color

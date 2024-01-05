@@ -7,10 +7,11 @@
 
 {
  imports = ( 
-   import ./characteristics         ++
-   import ../../../modules/programs ++
-   import ../../../modules/terminal ++
-   import ../../../modules/programs-wm
+   import ./characteristics            ++
+   import ../../../modules/programs    ++
+   import ../../../modules/terminal    ++
+   import ../../../modules/programs-wm ++
+   import ../../../modules/environments
  );
 
  services = {
