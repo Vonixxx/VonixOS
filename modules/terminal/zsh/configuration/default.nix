@@ -13,7 +13,11 @@
 
      prezto = {
        enable = true;
-       editor = { keymap = "vi"; };
+
+       editor = { 
+         keymap       = "vi"; 
+         dotExpansion = true;
+       };
 
        pmodules = [
          "environment"
