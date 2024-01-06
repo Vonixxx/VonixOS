@@ -3,7 +3,7 @@
 ######################
 # Sway Configuration #
 ######################
-{ lib, pkgs, vars, config, ... }: with lib;
+{ lib, vars, config, unstable, ... }: with lib;
 
 {
  options.sway.enable = mkOption {
@@ -12,14 +12,8 @@
  };
 
  config = mkIf (config.sway.enable) {
-   home-manager.users.${vars.user} = {
-     home.pointerCursor = {
-       gtk.enable = true;
-       name       = "Catppuccin-Mocha-Light-Cursors";
-       package    = pkgs.catppuccin-cursors.mochaLight;
-     };
-  
-     wayland.windowManager.sway = {
+   home-manager.users.${vars.user}.wayland.windowManager = {
+     sway = {
        enable   = true;
        xwayland = true;
   

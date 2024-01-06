@@ -4,5 +4,6 @@
 # Programs List #
 #################
 [
- ./obs/default.nix
+ ./generic/firefox/default.nix
+ ./generic/transmission/default.nix
 ]

@@ -4,7 +4,5 @@
 # Programs List #
 #################
 [
- ./mpv/default.nix
- ./firefox/default.nix
- ./transmission/default.nix
+ ./recording/obs/default.nix
 ]
