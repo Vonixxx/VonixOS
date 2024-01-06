@@ -7,8 +7,6 @@
 
 {
  services = {
-   hardware.pulseaudio.enable = false;
-
    xserver = {
      displayManager = {
        gdm.enable     = true; 

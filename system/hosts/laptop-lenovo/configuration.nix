@@ -14,12 +14,13 @@
    import ../../../modules/environments
  );
 
+ sway.enable                    = true;
+ virtualisation.libvirtd.enable = true;
+
  services = {
    udev.enable         = true;
    getty.autologinUser = "vonix";
  };
-
- virtualisation.libvirtd.enable = true;
 
  networking.wireless = {
    enable   = true; 
