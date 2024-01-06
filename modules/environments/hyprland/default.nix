@@ -1,8 +1,8 @@
 ###########
 # VonixOS #
-######################
-# Sway Configuration #
-######################
+##########################
+# Hyprland Configuration #
+##########################
 { lib, vars, config, ... }: with lib;
 
 {

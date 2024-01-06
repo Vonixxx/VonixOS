@@ -13,8 +13,7 @@
    import ../../../modules/programs-wm
  );
 
- networking.useDHCP             = true;
- virtualisation.libvirtd.enable = true;
+ hyprland.enable = true;
 
  services = {
    udev.enable         = true;

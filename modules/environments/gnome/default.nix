@@ -1,21 +1,28 @@
-#############
-# VanillaOS #
+###########
+# VonixOS #
 #######################
 # Gnome Configuration #
 #######################
-{ pkgs, config, ... }:
+{ lib, config, ... }: with lib;
 
 {
- services = {
-   xserver = {
-     displayManager = {
-       gdm.enable     = true; 
-       defaultSession = "gnome";
-     };
+ options.gnome.enable = mkOption {
+   default = false;
+   type    = types.bool;
+ };
 
-     layout                      = "cz";
-     enable                      = true;
-     desktopManager.gnome.enable = true;
+ config = mkIf (config.gnome.enable) {
+   services = {
+     xserver = {
+       displayManager = {
+         gdm.enable     = true; 
+         defaultSession = "gnome";
+       };
+  
+       layout                      = "cz";
+       enable                      = true;
+       desktopManager.gnome.enable = true;
+     };
    };
  };
 }
