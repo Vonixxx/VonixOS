@@ -71,10 +71,10 @@
            #####################
            # Program Shortcuts #
            #####################
-           "${modifier}+t" = "exec ${pkgs.foot}/bin/foot";
-           "${modifier}+d" = "exec ${pkgs.fuzzel}/bin/fuzzel";
-           "${modifier}+b" = "exec ${pkgs.firefox}/bin/firefox";
-           "${modifier}+y" = "exec ${pkgs.freetube}/bin/freetube";
+           "${modifier}+t" = "exec ${unstable.foot}/bin/foot";
+           "${modifier}+d" = "exec ${unstable.fuzzel}/bin/fuzzel";
+           "${modifier}+b" = "exec ${unstable.firefox}/bin/firefox";
+           "${modifier}+y" = "exec ${unstable.freetube}/bin/freetube";
            ######################################
            # Switching Containers -> Workspaces #
            ######################################
@@ -85,7 +85,7 @@
          };
   
          startup = [ 
-           { command = "${pkgs.autotiling}/bin/autotiling"; always = true; } 
+           { command = "${unstable.autotiling}/bin/autotiling"; always = true; } 
            { command = "swaybg -i /home/'${vars.user}'/GitHub/VonixOS/modules/wallpapers/'${vars.staticWallpaper}' -m fill"; always = true; }
          ];
   
