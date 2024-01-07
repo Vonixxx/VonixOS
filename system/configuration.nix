@@ -3,7 +3,7 @@
 ###############################
 # NixOS General Configuration #
 ###############################
-{ lib, pkgs, ... }: with lib;
+{ lib, pkgs, home-manager, ... }: with lib;
 
 {
  services.fstrim.enable     = true;
