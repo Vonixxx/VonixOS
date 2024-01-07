@@ -3,5 +3,6 @@
  ./version/default.nix
  ./packages/default.nix
  ./hardware/default.nix
- ./interface/default.nix
+ ./bookmarks/default.nix
+ ./configuration/default.nix
 ]

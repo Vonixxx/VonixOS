@@ -20,7 +20,7 @@ in {
    specialArgs = { inherit vars arkenfox unstable unknown-vars; };
 
    modules = [
-     ./general-configuration.nix
+     ./configuration.nix
      ./hosts/laptop-lenovo/imports.nix
      home-manager.nixosModules.home-manager { home-manager.useGlobalPkgs = true; }
    ];
@@ -30,7 +30,7 @@ in {
    specialArgs = { inherit vars stable arkenfox unknown-vars; };
 
    modules = [
-     ./general-configuration.nix
+     ./configuration.nix
      ./hosts/laptop-hp/imports.nix
      home-manager.nixosModules.home-manager { home-manager.useGlobalPkgs = true; }
    ];
@@ -40,7 +40,7 @@ in {
    specialArgs = { inherit vars arkenfox unstable unknown-vars; };
 
    modules = [
-     ./general-configuration.nix
+     ./configuration.nix
      ./hosts/desktop/imports.nix
      home-manager.nixosModules.home-manager { home-manager.useGlobalPkgs = true; }
    ];
