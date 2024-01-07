@@ -21,7 +21,7 @@ in {
 
    modules = [
      ./general-configuration.nix
-     ./hosts/laptop-lenovo/configuration.nix
+     ./hosts/laptop-lenovo/imports.nix
      home-manager.nixosModules.home-manager { home-manager.useGlobalPkgs = true; }
    ];
  };
@@ -31,7 +31,7 @@ in {
 
    modules = [
      ./general-configuration.nix
-     ./hosts/laptop-hp/configuration.nix
+     ./hosts/laptop-hp/imports.nix
      home-manager.nixosModules.home-manager { home-manager.useGlobalPkgs = true; }
    ];
  };
@@ -41,7 +41,7 @@ in {
 
    modules = [
      ./general-configuration.nix
-     ./hosts/desktop/configuration.nix
+     ./hosts/desktop/imports.nix
      home-manager.nixosModules.home-manager { home-manager.useGlobalPkgs = true; }
    ];
  };
