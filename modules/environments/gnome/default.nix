@@ -12,17 +12,6 @@
  };
 
  config = mkIf (config.gnome.enable) {
-   services = {
-     xserver = {
-       displayManager = {
-         gdm.enable     = true; 
-         defaultSession = "gnome";
-       };
-  
-       layout                      = "cz";
-       enable                      = true;
-       desktopManager.gnome.enable = true;
-     };
-   };
+   services.xserver.desktopManager.gnome.enable = true;
  };
 }

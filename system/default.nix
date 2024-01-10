@@ -22,7 +22,7 @@ in {
    modules = [
      ./configuration.nix
      ./hosts/laptop-lenovo/imports.nix
-     home-manager.nixosModules.home-manager { home-manager.useGlobalPkgs = true; } 
+     home-manager.nixosModules.home-manager { home-manager.useGlobalPkgs = true; }
    ];
  };
 

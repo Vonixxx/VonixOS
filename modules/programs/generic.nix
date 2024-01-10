@@ -5,5 +5,4 @@
 #################
 [
  ./generic/firefox/default.nix
- ./generic/transmission/default.nix
 ]

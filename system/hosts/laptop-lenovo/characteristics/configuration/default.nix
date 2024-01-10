@@ -14,6 +14,11 @@
    getty.autologinUser = "vonix";
  };
 
+ home-manager.users.${vars.user}.programs.git = {
+   userName  = "Vonixxx";
+   userEmail = "vonixxxwork@tuta.io";
+ };
+
  networking.wireless = {
    enable   = true; 
    networks = {

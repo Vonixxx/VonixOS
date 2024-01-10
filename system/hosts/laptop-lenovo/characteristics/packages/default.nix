@@ -1,8 +1,8 @@
 ###########
 # VonixOS #
-#########################
-# Package Configuration #
-#########################
+#########################################
+# System-Specific Package Configuration #
+#########################################
 { unstable, ... }:
 
 {
@@ -37,6 +37,7 @@
    pulsemixer
    youtube-dl
    virt-manager
+   zathura
    ##############
    # Ergonomics #
    ##############

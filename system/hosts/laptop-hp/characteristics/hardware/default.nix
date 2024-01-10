@@ -10,7 +10,6 @@
 
  hardware.cpu.intel.updateMicrocode = true;
  powerManagement.cpuFreqGovernor    = "powersave";
- nixpkgs.hostPlatform               = "x86_64-linux";
 
  services = { 
    tlp.enable                   = true; 

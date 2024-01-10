@@ -12,7 +12,7 @@
      server.enable = true;
 
      settings = {
-       csd.font = "CascadiaCode";
+       csd.font  = "CascadiaCode";
        main.font = "monospace:size=14";
 
        cursor = {
@@ -22,7 +22,7 @@
 
        scrollback = {
          multiplier = 3;
-         lines      = 300;
+         lines      = 1000;
        };
 
        colors = {

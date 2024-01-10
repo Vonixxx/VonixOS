@@ -3,7 +3,7 @@
 ###############################
 # NixOS General Configuration #
 ###############################
-{ lib, pkgs, home-manager, ... }: with lib;
+{ lib, unstable, ... }: with lib;
 
 {
  services.fstrim.enable     = true;
@@ -58,7 +58,7 @@
 
    supportedFilesystems = [ "ntfs" ];
    kernelParams         = [ "quiet" ]; 
-   kernelPackages       = pkgs.linuxPackages_latest;
+   kernelPackages       = unstable.linuxPackages_latest;
  };
 
  nix = {
@@ -73,6 +73,4 @@
      experimental-features = [ "nix-command" "flakes" ];
    };
  }; 
-
- modules = [ home-manager.nixosModules.home-manager { home-manager.useGlobalPkgs = true; } ];
 }
