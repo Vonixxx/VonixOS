@@ -3,7 +3,7 @@
 #######################################
 # NixOS System-Specific Configuration #
 #######################################
-{ unknown-vars, ... }:
+{ vars, unknown-vars, ... }:
 
 {
  sway.enable                    = true;
