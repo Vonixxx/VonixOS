@@ -54,6 +54,12 @@
          menu-layout                  = "Budgie";
        };
 
+       "org/gnome/settings-daemon/plugins/color" = {
+         night-light-enabled            = true;
+         night-light-schedule-automatic = true;
+         night-light-temperature        = 1700;
+       };
+
        "org/gnome/settings-daemon/plugins/power" = {
          sleep-inactive-battery-type = "nothing";
          sleep-inactive-ac-type      = "nothing";
@@ -79,12 +85,20 @@
            "arcmenu@arcmenu.com" 
            "dash-to-panel@jderose9.github.com"
            "burn-my-windows@schneegans.github.com"
-           "user-theme@gnome-shell-extensions.gcapax.github.com"
+           "user-theme@gnome-shell-extensions.gcampax.github.com"
          ];
        };
 
        "org/gnome/shell/extensions/dash-to-panel" = {
-         panel-positions = "{\"0\":\"BOTTOM\"}";
+         appicon-margin      = 4;
+         appicon-padding     = 6;
+         dot-position        = "TOP";
+         dot-style-focused   = "METRO";
+         dot-style-unfocused = "DASHES";
+         panel-sizes         = "{\"0\":48}";
+         panel-lengths       = "{\"0\":100}";
+         panel-positions     = "{\"0\":\"BOTTOM\"}";
+
          panel-element-positions = "{\"0\":[
              {\"element\":\"rightBox\",\"visible\":false,\"position\":\"stackedTL\"}
              {\"element\":\"centerBox\",\"visible\":false,\"position\":\"stackedTL\"}
@@ -93,19 +107,10 @@
              {\"element\":\"activitiesButton\",\"visible\":false,\"position\":\"stackedTL\"}
 
              {\"element\":\"leftBox\",\"visible\":true,\"position\":\"stackedTL\"}
-
              {\"element\":\"taskbar\",\"visible\":true,\"position\":\"stackedTL\"}
-
-             {\"element\":\"systemMenu\",\"visible\":true,\"position\":\"stackedTL\"}
-
-             {\"element\":\"dateMenu\",\"visible\":true,\"position\":\"stackedTL\"}
+             {\"element\":\"systemMenu\",\"visible\":true,\"position\":\"stackedTR\"}
+             {\"element\":\"dateMenu\",\"visible\":true,\"position\":\"stackedTR\"}
          ]}";
-       };
-
-       "org/gnome/settings-daemon/plugins/color" = {
-         night-light-enabled            = true;
-         night-light-schedule-automatic = true;
-         night-light-temperature        = 1700;
        };
      };
    };
