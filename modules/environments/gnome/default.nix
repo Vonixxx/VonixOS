@@ -26,7 +26,10 @@
      dconf.settings = {
        "org/gnome/shell" = {
          disable-user-extensions = false;
-         enabled-extensions = [ "arcmenu@arcmenu.com" ];
+         enabled-extensions = [ 
+           "arcmenu@arcmenu.com" 
+           "dash-to-panel@jderose9.github.com"
+         ];
        };
      };
    };
