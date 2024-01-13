@@ -18,6 +18,7 @@
        defaultSession = "gnome";
      };
 
+     enable                      = true;
      desktopManager.gnome.enable = true;
    };
  };
