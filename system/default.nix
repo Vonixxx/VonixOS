@@ -41,7 +41,7 @@ in {
 
    modules = [
      ./configuration.nix
-     ./hosts/desktop/imports.nix
+     ./hosts/desktops/lian-li/imports.nix
      home-manager.nixosModules.home-manager { home-manager.useGlobalPkgs = true; }
    ];
  };

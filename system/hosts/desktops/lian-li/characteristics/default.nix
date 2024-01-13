@@ -5,7 +5,6 @@
 #################################
 [
  ./users/default.nix
- ./version/default.nix
  ./hardware/default.nix
  ./packages/default.nix
  ./bookmarks/default.nix
