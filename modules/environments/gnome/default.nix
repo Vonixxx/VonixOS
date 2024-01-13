@@ -77,7 +77,7 @@
        };
 
        "org/gnome/shell/extensions/dash-to-panel" = {
-         panel-positions = "'{\"0\":\"BOTTOM\"}'";
+         panel-positions = "{\"0\":\"BOTTOM\"}";
        };
 
        "org/gnome/settings-daemon/plugins/color" = {
