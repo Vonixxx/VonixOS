@@ -78,6 +78,7 @@
 
        "org/gnome/shell/extensions/dash-to-panel" = {
          panel-positions = "{\"0\":\"BOTTOM\"}";
+         panel-element-positions = "{\"0\":[{\"element\":\"showAppsButton\",\"visible\":false,\"position\":\"stackedTL\"}]}";
        };
 
        "org/gnome/settings-daemon/plugins/color" = {
