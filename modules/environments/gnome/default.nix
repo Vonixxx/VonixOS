@@ -44,7 +44,7 @@
          menu-layout                  = "Budgie";
        };
        "org/gnome/shell/extensions/dash-to-panel" = {
-         panel-positions = "0:TOP";
+         panel-positions = "{0:TOP}";
        };
      };
    };
