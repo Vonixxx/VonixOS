@@ -114,7 +114,7 @@
     "home-manager": {
       "inputs": {
         "nixpkgs": [
-          "nixpkgs-unstable"
+          "nixpkgs-stable"
         ]
       },
       "locked": {
@@ -212,11 +212,11 @@
     },
     "nur": {
       "locked": {
-        "lastModified": 1705147390,
-        "narHash": "sha256-0lVryWXzjEk0SbUMY/aRkewzb5zglaykdpWh2gExrHs=",
+        "lastModified": 1705151260,
+        "narHash": "sha256-ziu19BS7v3Cg6ueM0znxndQdMtdGNYInzwl+7F2jogE=",
         "owner": "nix-community",
         "repo": "NUR",
-        "rev": "8252c4a2edad482d170c4006a680d4e441f90ff6",
+        "rev": "0880c3c03c2125b267ae20bbf72eb5bebc5a8470",
         "type": "github"
       },
       "original": {

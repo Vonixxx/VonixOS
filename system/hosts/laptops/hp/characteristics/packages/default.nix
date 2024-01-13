@@ -18,13 +18,13 @@
    coreutils 
    freetube
    libreoffice-fresh
- ]) ++ (with pkgs.gnomeExtensions; [
+ ]) ++ (with stable.gnomeExtensions; [
     arcmenu
     burn-my-windows
     dash-to-panel
     space-bar
     user-themes
- ]) ++ (with pkgs.gnome; [ gnome-tweaks ]);
+ ]) ++ (with stable.gnome; [ gnome-tweaks ]);
 
  environment.gnome.excludePackages = with stable.gnome; [
    atomix

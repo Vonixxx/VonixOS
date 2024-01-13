@@ -16,7 +16,7 @@ let
     config   = { allowUnfree = false; };
   };
 in { 
- laptop-lenovo = nixpkgs-unstable.lib.nixosSystem {
+ lenovo = nixpkgs-unstable.lib.nixosSystem {
    specialArgs = { inherit vars arkenfox unstable unknown-vars; };
 
    modules = [
@@ -26,8 +26,8 @@ in {
    ];
  };
 
- laptop-hp = nixpkgs-stable.lib.nixosSystem {
-   specialArgs = { inherit vars stable arkenfox unknown-vars; };
+ hp = nixpkgs-stable.lib.nixosSystem {
+   specialArgs = { inherit vars stable arkenfox unstable unknown-vars; };
 
    modules = [
      ./configuration.nix
@@ -36,7 +36,7 @@ in {
    ];
  };
 
- desktop = nixpkgs-unstable.lib.nixosSystem {
+ lian-li = nixpkgs-unstable.lib.nixosSystem {
    specialArgs = { inherit vars arkenfox unstable unknown-vars; };
 
    modules = [

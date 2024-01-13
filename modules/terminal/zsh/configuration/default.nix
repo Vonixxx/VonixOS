@@ -39,8 +39,8 @@
      shellAliases = {
        ls     = "lsd";
        cat    = "bat";
-       update = "nix flake update && sudo nixos-rebuild switch --flake '.#laptop-lenovo' --impure";
-       test   = "nix flake update && sudo nixos-rebuild dry-activate --flake '.#laptop-lenovo' --impure";
+       update = "nix flake update && sudo nixos-rebuild switch --flake '.#lenovo' --impure";
+       test   = "nix flake update && sudo nixos-rebuild dry-activate --flake '.#lenovo' --impure";
      };
    };
 

@@ -25,7 +25,7 @@
    ##########################
    # Synchronizing Packages #
    ##########################
-   home-manager.inputs.nixpkgs.follows = "nixpkgs-unstable";
+   home-manager.inputs.nixpkgs.follows = "nixpkgs-stable";
    ##########################
    # Community Repositories #
    ##########################
@@ -47,7 +47,7 @@
  in {
    nixosConfigurations = (
      import ./system {
-      inherit (nixpkgs-unstable) lib;
+      inherit (nixpkgs-stable) lib;
       inherit nur vars inputs arkenfox home-manager unknown-vars nixpkgs-stable nixpkgs-unstable;
      }
    );

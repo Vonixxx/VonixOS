@@ -10,6 +10,6 @@
    import ./characteristics                        
    ++ import ../../../../modules/environments         
    ++ import ../../../../modules/programs/generic.nix 
-   ++ import ../../../../modules/programs/optional.nix
+   ++ import ../../../../modules/programs/recording.nix
  );
 }

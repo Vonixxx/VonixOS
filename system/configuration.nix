@@ -5,7 +5,7 @@
 #############################################################################################################
 # System & Home-Manager stateVersion, Learn More: https://nixos.wiki/wiki/FAQ/When_do_I_update_stateVersion #
 #############################################################################################################
-{ lib, unstable, ... }: with lib;
+{ lib, vars, unstable, ... }: with lib;
 
 {
  services.fstrim.enable     = true;
