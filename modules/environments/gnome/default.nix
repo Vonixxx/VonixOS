@@ -26,9 +26,15 @@
      dconf.settings = {
        "org/gnome/shell" = {
          disable-user-extensions = false;
+         disabled-extensions = [ 
+           ""
+         ];
          enabled-extensions = [ 
+           "space-bar@luchrioh"
            "arcmenu@arcmenu.com" 
            "dash-to-panel@jderose9.github.com"
+           "burn-my-windows@schneegans.github.com"
+           "user-theme@gnome-shell-extensions.gcapax.github.com"
          ];
        };
      };
