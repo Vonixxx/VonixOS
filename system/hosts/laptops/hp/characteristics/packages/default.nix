@@ -3,30 +3,30 @@
 #########################################
 # System-Specific Package Configuration #
 #########################################
-{ stable, ... }:
+{ unstable, ... }:
 
 {
- hardware.opengl.extraPackages = with stable; [
+ hardware.opengl.extraPackages = with unstable; [
    intel-media-driver
    libvdpau-va-gl
    vaapiVdpau 
  ];
 
- fonts.packages = with stable; [ liberation_ttf ];
+ fonts.packages = with unstable; [ liberation_ttf ];
 
- environment.systemPackages = (with stable; [
+ environment.systemPackages = (with unstable; [
    coreutils 
    freetube
    libreoffice-fresh
- ]) ++ (with stable.gnomeExtensions; [
+ ]) ++ (with unstable.gnomeExtensions; [
     arcmenu
     burn-my-windows
     dash-to-panel
     space-bar
     user-themes
- ]) ++ (with stable.gnome; [ gnome-tweaks ]);
+ ]) ++ (with unstable.gnome; [ gnome-tweaks ]);
 
- environment.gnome.excludePackages = with stable.gnome; [
+ environment.gnome.excludePackages = with unstable.gnome; [
    atomix
    epiphany
    gnome-shell-extensions

@@ -3,14 +3,9 @@
 ###################
 # Default Profile #
 ###################
-{ nur, vars, arkenfox, home-manager, unknown-vars, nixpkgs-stable, nixpkgs-unstable, ... }:
+{ nur, vars, arkenfox, home-manager, unknown-vars, nixpkgs-unstable, ... }:
 
 let 
-  stable = import nixpkgs-stable {
-    overlays = [ nur.overlay ];
-    config   = { allowUnfree = false; };
-  };
-
   unstable = import nixpkgs-unstable {
     overlays = [ nur.overlay ];
     config   = { allowUnfree = false; };
@@ -26,8 +21,8 @@ in {
    ];
  };
 
- hp = nixpkgs-stable.lib.nixosSystem {
-   specialArgs = { inherit vars stable arkenfox unstable unknown-vars; };
+ hp = nixpkgs-unstable.lib.nixosSystem {
+   specialArgs = { inherit vars arkenfox unstable unknown-vars; };
 
    modules = [
      ./configuration.nix

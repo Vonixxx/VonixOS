@@ -7,17 +7,19 @@
 # ├─/variables
 # └─/system
 #    └─default.nix
-#      ├─general-configuration.nix      
+#      ├─configuration.nix      
 #      └─/hosts/<chosen host>
 #         └─configuration.nix
 #           ├─/characteristics          
 #           └─/modules
-#              ├─/programs
-#              │   └─default.nix
-#              ├─/programs-wm
-#              │   └─default.nix
-#              └─/terminal
-#                  └─default.nix
+#              ├─/environments
+#              │  └─default.nix
+#              ├─/terminal
+#              │  └─default.nix
+#              └─/programs
+#                 ├─generic.nix
+#                 ├─recording.nix
+#                 └─window-manager.nix
 {
  description = "Flake Configuration - Sway";
 
@@ -25,21 +27,20 @@
    ##########################
    # Synchronizing Packages #
    ##########################
-   home-manager.inputs.nixpkgs.follows = "nixpkgs-stable";
-   ##########################
-   # Community Repositories #
-   ##########################
-   nur.url              = "github:nix-community/NUR";
-   arkenfox.url         = "github:dwarfmaster/arkenfox-nixos";
-   home-manager.url     = "github:nix-community/home-manager"; 
+   home-manager.inputs.nixpkgs.follows = "nixpkgs-unstable";
    #########################
    # Official Repositories #
    #########################
-   nixpkgs-stable.url   = "github:nixos/nixpkgs/nixos-23.11";
    nixpkgs-unstable.url = "github:nixos/nixpkgs/nixos-unstable";
+   ##########################
+   # Community Repositories #
+   ##########################
+   nur.url          = "github:nix-community/NUR";
+   arkenfox.url     = "github:dwarfmaster/arkenfox-nixos";
+   home-manager.url = "github:nix-community/home-manager/master"; 
  };
 
- outputs = inputs @ { nur, self, arkenfox, home-manager, nixpkgs-stable, nixpkgs-unstable, ... }:
+ outputs = inputs @ { nur, self, arkenfox, home-manager, nixpkgs-unstable, ... }:
 
  let
   vars         = import ./variables/known.nix;
@@ -47,8 +48,8 @@
  in {
    nixosConfigurations = (
      import ./system {
-      inherit (nixpkgs-stable) lib;
-      inherit nur vars inputs arkenfox home-manager unknown-vars nixpkgs-stable nixpkgs-unstable;
+      inherit (nixpkgs-unstable) lib;
+      inherit nur vars inputs arkenfox home-manager unknown-vars nixpkgs-unstable;
      }
    );
  };
