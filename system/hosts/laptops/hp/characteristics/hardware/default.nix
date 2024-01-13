@@ -11,11 +11,6 @@
  hardware.cpu.intel.updateMicrocode = true;
  powerManagement.cpuFreqGovernor    = "powersave";
 
- services = { 
-   tlp.enable                   = true; 
-   power-profiles-daemon.enable = false;
- };
-
  fileSystems = { 
    "boot" = { 
      fsType     = "vfat";
@@ -29,8 +24,6 @@
      device     = "/dev/disk/by-uuid/081d74a4-5d25-4abf-b443-17306c9568a4";
    };
  };
-
- swapDevices = [ { device = "/dev/disk/by-uuid/cb0fdf3d-d42e-4750-94a5-ced94489b4ef"; } ];
 
  boot = { 
    kernelModules        = [ "i915" "kvm-intel" ];

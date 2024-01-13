@@ -8,7 +8,6 @@
 {
  hardware.opengl.extraPackages = with stable; [
    intel-media-driver
-   intel-vaapi-driver
    libvdpau-va-gl
    vaapiVdpau 
  ];
