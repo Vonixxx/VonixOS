@@ -114,13 +114,13 @@
              {\"element\":\"leftBox\",\"visible\":true,\"position\":\"stackedTL\"},
              {\"element\":\"taskbar\",\"visible\":true,\"position\":\"stackedTL\"},
              {\"element\":\"systemMenu\",\"visible\":true,\"position\":\"stackedBR\"},
-             {\"element\":\"dateMenu\",\"visible\":true,\"position\":\"stackedBR\"}
+             {\"element\":\"dateMenu\",\"visible\":true,\"position\":\"stackedBR\"},
 
              {\"element\":\"rightBox\",\"visible\":false,\"position\":\"stackedTL\"},
              {\"element\":\"centerBox\",\"visible\":false,\"position\":\"stackedTL\"},
              {\"element\":\"desktopButton\",\"visible\":false,\"position\":\"stackedTL\"},
              {\"element\":\"showAppsButton\",\"visible\":false,\"position\":\"stackedTL\"},
-             {\"element\":\"activitiesButton\",\"visible\":false,\"position\":\"stackedTL\"},
+             {\"element\":\"activitiesButton\",\"visible\":false,\"position\":\"stackedTL\"}
          ]}";
        };
      };
