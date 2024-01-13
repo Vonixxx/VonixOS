@@ -67,6 +67,14 @@
            ""
          ];
 
+         favorite-apps = [
+           "com.obsproject.Studio.desktop"
+           "org.gnome.Console.desktop"
+           "firefox.desktop"
+           "freetube.desktop"
+           "startcenter.desktop"
+         ];
+
          enabled-extensions = [ 
            "arcmenu@arcmenu.com" 
            "dash-to-panel@jderose9.github.com"
