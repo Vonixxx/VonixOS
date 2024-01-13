@@ -3,7 +3,7 @@
 #######################
 # Gnome Configuration #
 #######################
-{ lib, config, ... }: with lib;
+{ lib, vars, config, ... }: with lib;
 
 {
  options.gnome.enable = mkOption {
@@ -20,6 +20,14 @@
 
      enable                      = true;
      desktopManager.gnome.enable = true;
+   };
+
+   home-manager.users.${vars.user} = {
+     dconf.settings = {
+       "org/gnome/shell" = {
+         "enabled-extensions" = [ "arcmenu@arcmenu.com" ];
+       };
+     };
    };
  };
 }
