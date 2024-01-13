@@ -22,7 +22,6 @@
     arcmenu
     burn-my-windows
     dash-to-panel
-    space-bar
     user-themes
  ]) ++ (with unstable.gnome; [ gnome-tweaks ]);
 

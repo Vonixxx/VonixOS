@@ -68,7 +68,6 @@
          ];
 
          enabled-extensions = [ 
-           "space-bar@luchrioh"
            "arcmenu@arcmenu.com" 
            "dash-to-panel@jderose9.github.com"
            "burn-my-windows@schneegans.github.com"
@@ -78,7 +77,21 @@
 
        "org/gnome/shell/extensions/dash-to-panel" = {
          panel-positions = "{\"0\":\"BOTTOM\"}";
-         panel-element-positions = "{\"0\":[{\"element\":\"showAppsButton\",\"visible\":false,\"position\":\"stackedTL\"}]}";
+         panel-element-positions = "{\"0\":[
+             {\"element\":\"rightBox\",\"visible\":false,\"position\":\"stackedTL\"}
+             {\"element\":\"centerBox\",\"visible\":false,\"position\":\"stackedTL\"}
+             {\"element\":\"desktopButton\",\"visible\":false,\"position\":\"stackedTL\"}
+             {\"element\":\"showAppsButton\",\"visible\":false,\"position\":\"stackedTL\"}
+             {\"element\":\"activitiesButton\",\"visible\":false,\"position\":\"stackedTL\"}
+
+             {\"element\":\"leftBox\",\"visible\":true,\"position\":\"stackedTL\"}
+
+             {\"element\":\"taskbar\",\"visible\":true,\"position\":\"stackedTL\"}
+
+             {\"element\":\"systemMenu\",\"visible\":true,\"position\":\"stackedTL\"}
+
+             {\"element\":\"dateMenu\",\"visible\":true,\"position\":\"stackedTL\"}
+         ]}";
        };
 
        "org/gnome/settings-daemon/plugins/color" = {
