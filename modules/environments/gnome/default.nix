@@ -44,7 +44,7 @@
        };
 
        "org/gnome/desktop/session" = {
-         idle-delay = hm.gvariant.mkUint32 0;
+         idle-delay = lib.hm.gvariant.mkUint32 0;
        };
 
        "org/gnome/shell/extensions/arcmenu" = {
@@ -79,7 +79,7 @@
        "org/gnome/settings-daemon/plugins/color" = {
          night-light-enabled            = true;
          night-light-schedule-automatic = true;
-         night-light-temperature        = hm.gvariant.mkUint32 1700;
+         night-light-temperature        = lib.hm.gvariant.mkUint32 1700;
        };
      };
    };
