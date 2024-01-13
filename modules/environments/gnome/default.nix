@@ -25,7 +25,7 @@
    home-manager.users.${vars.user} = {
      dconf.settings = {
        "org/gnome/shell" = {
-         "enabled-extensions" = [ "arcmenu@arcmenu.com" ];
+         enabled-extensions = [ "arcmenu@arcmenu.com" ];
        };
      };
    };
