@@ -76,6 +76,10 @@
          ];
        };
 
+       "org/gnome/shell/extensions/dash-to-panel" = {
+         panel-positions = "'{\"0\":\"BOTTOM\"}'";
+       };
+
        "org/gnome/settings-daemon/plugins/color" = {
          night-light-enabled            = true;
          night-light-schedule-automatic = true;
