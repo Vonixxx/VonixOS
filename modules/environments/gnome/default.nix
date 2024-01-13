@@ -32,7 +32,7 @@
          enabled-extensions = [ 
            "space-bar@luchrioh"
            "arcmenu@arcmenu.com" 
-           "dash-to-panel@jderose9.github.com"
+           # "dash-to-panel@jderose9.github.com"
            "burn-my-windows@schneegans.github.com"
            "user-theme@gnome-shell-extensions.gcapax.github.com"
          ];
@@ -43,9 +43,9 @@
          hide-overview-on-startup     = true;
          menu-layout                  = "Budgie";
        };
-       "org/gnome/shell/extensions/dash-to-panel" = {
-         panel-positions = "{ '0':'TOP' }";
-       };
+       # "org/gnome/shell/extensions/dash-to-panel" = {
+       #   panel-positions = "0:TOP";
+       # };
      };
    };
  };
