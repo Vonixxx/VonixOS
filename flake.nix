@@ -21,7 +21,7 @@
 #                 ├─recording.nix
 #                 └─window-manager.nix
 {
- description = "Flake Configuration - Sway";
+ description = "Flake Configuration";
 
  inputs = {
    ##########################
