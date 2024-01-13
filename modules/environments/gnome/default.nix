@@ -37,6 +37,15 @@
            "user-theme@gnome-shell-extensions.gcapax.github.com"
          ];
        };
+       "org/gnome/shell/extensions/arcmenu" = {
+         distro-icon                  = 8;
+         custom-menu-button-icon-size = 35;
+         hide-overview-on-startup     = true;
+         menu-layout                  = "Budgie";
+       };
+       "org/gnome/shell/extensions/dash-to-panel" = {
+         panel-positions  = {"0" = "TOP"; };
+       };
      };
    };
  };
