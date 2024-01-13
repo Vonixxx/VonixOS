@@ -49,7 +49,7 @@
 
        "org/gnome/shell/extensions/arcmenu" = {
          distro-icon                  = 8;
-         custom-menu-button-icon-size = 35;
+         custom-menu-button-icon-size = 35.0;
          hide-overview-on-startup     = true;
          menu-layout                  = "Budgie";
        };
