@@ -16,5 +16,4 @@ rec {
     backlight        = "#F9E2AF";
     pulseaudio       = "#CBA6F7";
   };
- };
 }
