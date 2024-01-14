@@ -26,8 +26,7 @@
          window   = { titlebar = false; };
          bars     = [ { command = "waybar"; } ];
          input    = { "*" = { xkb_variant = "us"; }; };
-         output   = { ${vars.output} = { mode = "${vars.outputConfig}"; }; };
-  
+
          gaps = {
            top        = 10;
            left       = 10;
@@ -83,17 +82,19 @@
            "${modifier}+Shift+3" = "move container to workspace number 3";
            "${modifier}+Shift+4" = "move container to workspace number 4";
          };
-  
-         startup = [ 
-           { command = "${unstable.autotiling}/bin/autotiling"; always = true; } 
-           { command = "swaybg -i /home/'${vars.user}'/GitHub/VonixOS/modules/wallpapers/'${vars.staticWallpaper}' -m fill"; always = true; }
-         ];
+
+         output.eDP-1 = { 
+           mode = "1920x1080@60Hz"; 
+           bg   = "~/GitHub/VonixOS/modules/wallpapers/Whispers.png fill";
+         }; 
+    
+         startup = [ { command = "${unstable.autotiling}/bin/autotiling"; always = true; } ];
   
          colors = {
-           urgent          = { childBorder = "${vars.sway.urgent}";          border = "${vars.sway.urgent}";          background = "${vars.sway.foreground}"; text = "${vars.sway.foreground}"; indicator = "${vars.sway.urgent}"; };
-           focused         = { childBorder = "${vars.sway.focusedBorder}";   border = "${vars.sway.focusedBorder}";   background = "${vars.sway.foreground}"; text = "${vars.sway.foreground}"; indicator = "${vars.sway.focusedBorder}"; };
-           unfocused       = { childBorder = "${vars.sway.unfocusedBorder}"; border = "${vars.sway.unfocusedBorder}"; background = "${vars.sway.foreground}"; text = "${vars.sway.foreground}"; indicator = "${vars.sway.unfocusedBorder}"; };
-           focusedInactive = { childBorder = "${vars.sway.unfocusedBorder}"; border = "${vars.sway.unfocusedBorder}"; background = "${vars.sway.foreground}"; text = "${vars.sway.foreground}"; indicator = "${vars.sway.unfocusedBorder}"; };
+           urgent          = { childBorder = "#F38BA8"; border = "#F38BA8"; background = "#CDD6F4"; text = "#CDD6F4"; indicator = "#F38BA8"; };
+           focused         = { childBorder = "#CBA6F7"; border = "#CBA6F7"; background = "#CDD6F4"; text = "#CDD6F4"; indicator = "#CBA6F7"; };
+           unfocused       = { childBorder = "#000000"; border = "#000000"; background = "#CDD6F4"; text = "#CDD6F4"; indicator = "#000000"; };
+           focusedInactive = { childBorder = "#000000"; border = "#000000"; background = "#CDD6F4"; text = "#CDD6F4"; indicator = "#000000"; };
          };
        };
      };

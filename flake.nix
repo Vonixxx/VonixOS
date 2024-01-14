@@ -4,8 +4,8 @@
 # Flake Configuration #
 #######################
 # flake.nix
-# ├─/variables
 # └─/system
+#    ├─/variables
 #    └─default.nix
 #      ├─configuration.nix      
 #      └─/hosts/<chosen host>

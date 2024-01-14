@@ -66,9 +66,9 @@
          font-antialiasing   = "rgba";
          font-hinting        = "full";
          color-scheme        = "prefer-dark";
+         monospace-font-name = "Liberation Mono 12";
          font-name           = "Liberation Serif 12";
          document-font-name  = "Liberation Serif 12";
-         monospace-font-name = "Liberation Mono 12";
          titlebar-font       = "Liberation Serif Bold 12";
        };
 
@@ -86,6 +86,7 @@
          favorite-apps = [
            "com.obsproject.Studio.desktop"
            "org.gnome.Console.desktop"
+           "org.gnome.Nautilus.desktop"
            "firefox.desktop"
            "freetube.desktop"
            "startcenter.desktop"

@@ -13,6 +13,16 @@
      settings = {
        border.width  = 3;
 
+       colors = {
+         text            = "#313244DD";
+         match           = "#F38bA8DD";
+         border          = "#CBA6F7DD";
+         selection       = "#CDD6F4DD";
+         background      = "#11111BDD";
+         selection-text  = "#CDD6F4DD";
+         selection-match = "#F38BA8DD";
+       };
+
        main = {
          inner-pad      = 3;
          lines          = 10;
@@ -21,16 +31,6 @@
          icons-enabled  = false;
          prompt         = "Launch --> ";
          font           = "Cascadia Code:size=8";
-       };
-
-       colors = {
-         match           = "${vars.fuzzel.match}";
-         border          = "${vars.fuzzel.border}";
-         selection       = "${vars.fuzzel.selection}";
-         text            = "${vars.fuzzel.foreground}";
-         background      = "${vars.fuzzel.background}";
-         selection-match = "${vars.fuzzel.selectionMatch}";
-         selection-text  = "${vars.fuzzel.selectionForeground}";
        };
      };
    };
