@@ -1,4 +1,4 @@
-{ ... }:
+{ stable, ... }:
 
 { 
  imports = [ ./configuration/default.nix ];

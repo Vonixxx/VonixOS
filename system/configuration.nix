@@ -8,10 +8,12 @@
 { lib, stable, ... }: with lib;
 
 {
- programs.dconf.enable      = true;
- system.stateVersion        = "23.11"; 
- i18n.defaultLocale         = "en_GB.UTF-8";
- nixpkgs.hostPlatform       = "x86_64-linux";
+ programs.dconf.enable             = true;
+ networking.networkmanager.enable  = true; 
+ system.stateVersion               = "23.11"; 
+ i18n.defaultLocale                = "en_GB.UTF-8";
+ nixpkgs.hostPlatform              = "x86_64-linux";
+
 
  fonts.fontconfig = {
    allowBitmaps  = false;
@@ -27,11 +29,6 @@
    };
 
    pulseaudio.enable = false;
- };
-
- networking = {
-   useDHCP                = true;
-   networkmanager.enable  = true; 
  };
 
  security = {

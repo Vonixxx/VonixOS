@@ -6,7 +6,7 @@
 { nur, arkenfox, home-manager, nixpkgs-stable, ... }:
 
 let 
-  unstable = import nixpkgs-stable {
+  stable = import nixpkgs-stable {
     overlays = [ nur.overlay ];
     config   = { allowUnfree = false; };
   };

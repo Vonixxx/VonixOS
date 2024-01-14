@@ -70,10 +70,10 @@
            #####################
            # Program Shortcuts #
            #####################
-           "${modifier}+t" = "exec ${unstable.foot}/bin/foot";
-           "${modifier}+d" = "exec ${unstable.fuzzel}/bin/fuzzel";
-           "${modifier}+b" = "exec ${unstable.firefox}/bin/firefox";
-           "${modifier}+y" = "exec ${unstable.freetube}/bin/freetube";
+           "${modifier}+t" = "exec ${stable.foot}/bin/foot";
+           "${modifier}+d" = "exec ${stable.fuzzel}/bin/fuzzel";
+           "${modifier}+b" = "exec ${stable.firefox}/bin/firefox";
+           "${modifier}+y" = "exec ${stable.freetube}/bin/freetube";
            ######################################
            # Switching Containers -> Workspaces #
            ######################################
