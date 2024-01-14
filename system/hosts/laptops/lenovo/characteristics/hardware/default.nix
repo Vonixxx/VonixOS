@@ -11,11 +11,6 @@
  hardware.cpu.amd.updateMicrocode = true;
  powerManagement.cpuFreqGovernor  = "powersave";
 
- services.tlp.settings = {
-   enable              = true;
-   auto-cpufreq.enable = true;
- };
-
  fileSystems = {
    "boot" = { 
      fsType     = "vfat";  

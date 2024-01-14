@@ -3,7 +3,7 @@
 ######################
 # Sway Configuration #
 ######################
-{ lib, vars, config, unstable, ... }: with lib;
+{ lib, config, stable, ... }: with lib;
 
 {
  options.sway.enable = mkOption {
@@ -12,7 +12,7 @@
  };
 
  config = mkIf (config.sway.enable) {
-   home-manager.users.${vars.user}.wayland.windowManager = {
+   home-manager.users.vonix.wayland.windowManager = {
      sway = {
        enable   = true;
        xwayland = true;
@@ -88,7 +88,7 @@
            bg   = "~/GitHub/VonixOS/modules/wallpapers/Whispers.png fill";
          }; 
     
-         startup = [ { command = "${unstable.autotiling}/bin/autotiling"; always = true; } ];
+         startup = [ { command = "${stable.autotiling}/bin/autotiling"; always = true; } ];
   
          colors = {
            urgent          = { childBorder = "#F38BA8"; border = "#F38BA8"; background = "#CDD6F4"; text = "#CDD6F4"; indicator = "#F38BA8"; };

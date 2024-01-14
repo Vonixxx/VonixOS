@@ -3,10 +3,10 @@
 #######################
 # Helix Configuration #
 #######################
-{ vars, ... }:
+{ ... }:
 
 {
- home-manager.users.${vars.user}.programs = {
+ home-manager.users.vonix.programs = {
    helix = {
      enable         = true;
      settings.theme = "catppuccin_mocha";

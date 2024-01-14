@@ -3,10 +3,10 @@
 #####################
 # MPV Configuration #
 #####################
-{ vars, ... }:
+{ ... }:
 
 {
- home-manager.users.${vars.user}.programs = {
+ home-manager.users.vonix.programs = {
    mpv.enable = true;
  };
 }

@@ -1,18 +1,18 @@
 ###########
 # VonixOS #
-###################
-# Default Profile #
-###################
-{ nur, vars, arkenfox, home-manager, unknown-vars, nixpkgs-unstable, ... }:
+############
+# Profiles #
+############
+{ nur, arkenfox, home-manager, nixpkgs-stable, ... }:
 
 let 
-  unstable = import nixpkgs-unstable {
+  unstable = import nixpkgs-stable {
     overlays = [ nur.overlay ];
     config   = { allowUnfree = false; };
   };
 in { 
- lenovo = nixpkgs-unstable.lib.nixosSystem {
-   specialArgs = { inherit vars arkenfox unstable unknown-vars; };
+ lenovo = nixpkgs-stable.lib.nixosSystem {
+   specialArgs = { inherit arkenfox stable; };
 
    modules = [
      ./configuration.nix
@@ -21,8 +21,8 @@ in {
    ];
  };
 
- hp = nixpkgs-unstable.lib.nixosSystem {
-   specialArgs = { inherit vars arkenfox unstable unknown-vars; };
+ hp = nixpkgs-stable.lib.nixosSystem {
+   specialArgs = { inherit arkenfox stable; };
 
    modules = [
      ./configuration.nix
@@ -31,8 +31,8 @@ in {
    ];
  };
 
- lian-li = nixpkgs-unstable.lib.nixosSystem {
-   specialArgs = { inherit vars arkenfox unstable unknown-vars; };
+ lian-li = nixpkgs-stable.lib.nixosSystem {
+   specialArgs = { inherit arkenfox stable; };
 
    modules = [
      ./configuration.nix

@@ -5,7 +5,6 @@
 #######################
 # flake.nix
 # └─/system
-#    ├─/variables
 #    └─default.nix
 #      ├─configuration.nix      
 #      └─/hosts/<chosen host>
@@ -27,11 +26,11 @@
    ##########################
    # Synchronizing Packages #
    ##########################
-   home-manager.inputs.nixpkgs.follows = "nixpkgs-unstable";
+   home-manager.inputs.nixpkgs.follows = "nixpkgs-stable";
    #########################
    # Official Repositories #
    #########################
-   nixpkgs-unstable.url = "github:nixos/nixpkgs/nixos-23.11";
+   nixpkgs-stable.url = "github:nixos/nixpkgs/nixos-23.11";
    ##########################
    # Community Repositories #
    ##########################
@@ -40,16 +39,11 @@
    home-manager.url = "github:nix-community/home-manager/release-23.11"; 
  };
 
- outputs = inputs @ { nur, self, arkenfox, home-manager, nixpkgs-unstable, ... }:
-
- let
-  vars         = import ./variables/known.nix;
-  unknown-vars = import ./variables/unknown.nix;
- in {
+ outputs = inputs @ { nur, self, arkenfox, home-manager, nixpkgs-stable, ... }: {
    nixosConfigurations = (
      import ./system {
-      inherit (nixpkgs-unstable) lib;
-      inherit nur vars inputs arkenfox home-manager unknown-vars nixpkgs-unstable;
+      inherit (nixpkgs-stable) lib;
+      inherit nur inputs arkenfox home-manager nixpkgs-stable;
      }
    );
  };

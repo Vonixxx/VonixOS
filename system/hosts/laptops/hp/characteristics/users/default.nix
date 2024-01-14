@@ -3,10 +3,10 @@
 ######################
 # User Configuration #
 ######################
-{ vars, ... }:
+{ ... }:
 
 {
- users.users.${vars.user} = {
+ users.users.vonix = {
    uid            = 1000;
    isNormalUser   = true;
    name           = "Bubinka";

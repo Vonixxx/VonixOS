@@ -3,10 +3,10 @@
 ########################
 # Fuzzel Configuration #
 ########################
-{ vars, ... }:
+{ ... }:
 
 {
- home-manager.users.${vars.user}.programs = {
+ home-manager.users.vonix.programs = {
    fuzzel = {
      enable = true;
 

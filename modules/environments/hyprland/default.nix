@@ -3,7 +3,7 @@
 ##########################
 # Hyprland Configuration #
 ##########################
-{ lib, vars, config, ... }: with lib;
+{ lib, config, ... }: with lib;
 
 {
  options.hyprland.enable = mkOption {
@@ -12,7 +12,7 @@
  };
 
  config = mkIf (config.hyprland.enable) {
-   home-manager.users.${vars.user}.wayland.windowManager = {
+   home-manager.users.vonix.wayland.windowManager = {
      hyprland = {
        enable          = true;
        xwayland.enable = true;

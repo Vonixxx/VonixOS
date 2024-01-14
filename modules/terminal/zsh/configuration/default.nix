@@ -3,10 +3,10 @@
 #####################
 # ZSH Configuration #
 #####################
-{ vars, ... }:
+{ ... }:
 
 {
- home-manager.users.${vars.user}.programs = {
+ home-manager.users.vonix.programs = {
    zsh = {
      enable         = true;
      initExtraFirst = "pfetch";

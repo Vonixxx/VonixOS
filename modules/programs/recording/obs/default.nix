@@ -3,13 +3,13 @@
 #####################
 # OBS Configuration #
 #####################
-{ pkgs, vars, ... }:
+{ stable, ... }:
 
 {
- home-manager.users.${vars.user}.programs = {
+ home-manager.users.vonix.programs = {
    obs-studio = {
      enable = true;
-     plugins = with pkgs.obs-studio-plugins; [
+     plugins = with stable.obs-studio-plugins; [
        wlrobs
        obs-backgroundremoval
        obs-pipewire-audio-capture

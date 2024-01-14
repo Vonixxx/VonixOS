@@ -3,10 +3,10 @@
 ########################
 # Sioyek Configuration #
 ########################
-{ vars, ... }:
+{ ... }:
 
 {
- home-manager.users.${vars.user}.programs = {
+ home-manager.users.vonix.programs = {
    sioyek = {
      enable = true; 
    };

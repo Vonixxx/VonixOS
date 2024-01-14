@@ -3,10 +3,10 @@
 #########################
 # FireFox Configuration #
 #########################
-{ vars, arkenfox, unstable, ... }:
+{ arkenfox, stable, ... }:
 
 {
- home-manager.users.${vars.user} = {
+ home-manager.users.vonix = {
    imports = [ arkenfox.hmModules.arkenfox ];
 
    programs.firefox = {
@@ -25,7 +25,7 @@
          default = "DuckDuckGo";
        };
   
-       extensions = with unstable.nur.repos.rycee.firefox-addons; [
+       extensions = with stable.nur.repos.rycee.firefox-addons; [
          bitwarden
     	   darkreader
          firefox-color

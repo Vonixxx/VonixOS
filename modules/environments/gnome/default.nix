@@ -3,7 +3,7 @@
 #######################
 # Gnome Configuration #
 #######################
-{ lib, vars, config, ... }: with lib;
+{ lib, config, ... }: with lib;
 
 {
  options.gnome.enable = mkOption {
@@ -22,7 +22,7 @@
      desktopManager.gnome.enable = true;
    };
 
-   home-manager.users.${vars.user} = {
+   home-manager.users.vonix = {
      dconf.settings = {
        "org/gnome/desktop/session" = {
          idle-delay = 0;

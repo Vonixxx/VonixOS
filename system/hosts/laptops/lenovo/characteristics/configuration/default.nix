@@ -3,7 +3,7 @@
 #######################################
 # NixOS System-Specific Configuration #
 #######################################
-{ vars, unknown-vars, ... }:
+{ ... }:
 
 {
  sway.enable                    = true;
@@ -14,19 +14,9 @@
    getty.autologinUser = "vonix";
  };
 
- home-manager.users.${vars.user}.programs.git = {
+ home-manager.users.vonix.programs.git = {
    userName  = "Vonixxx";
    userEmail = "vonixxxwork@tuta.io";
- };
-
- networking.wireless = {
-   enable   = true; 
-   networks = {
-     Vonix.psk                = "${unknown-vars.wifi.vonix}"; 
-     Pixel.psk                = "${unknown-vars.wifi.pixel}"; 
-     O2-Internet-704.psk      = "${unknown-vars.wifi.libor}"; 
-     O2-Internet-704-5GHz.psk = "${unknown-vars.wifi.libor}"; 
-   };
  };
 
  environment = {

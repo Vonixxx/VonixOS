@@ -3,10 +3,10 @@
 ##########################
 # WLSunset Configuration #
 ##########################
-{ vars, ... }:
+{ ... }:
 
 {
- home-manager.users.${vars.user}.services = {
+ home-manager.users.vonix.services = {
    wlsunset = {
      enable = true;
 

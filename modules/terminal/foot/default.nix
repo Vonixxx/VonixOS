@@ -3,10 +3,10 @@
 ######################
 # Foot Configuration #
 ######################
-{ vars, ... }:
+{ ... }:
 
 {
- home-manager.users.${vars.user}.programs = {
+ home-manager.users.vonix.programs = {
    foot = {
      enable        = true;
      server.enable = true;

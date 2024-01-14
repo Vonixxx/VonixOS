@@ -3,10 +3,10 @@
 #####################################
 # System-Specific FireFox Bookmarks #
 #####################################
-{ vars, arkenfox, ... }:
+{ arkenfox, ... }:
 
 {
- home-manager.users.${vars.user} = {
+ home-manager.users.vonix = {
    programs.firefox = {
      profiles.default = {
        bookmarks = [

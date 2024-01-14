@@ -3,16 +3,32 @@
 ########################
 # Waybar Configuration #
 ########################
-{ vars, ... }:
+{ ... }:
 
 {
  programs.light.enable = true;
 
- home-manager.users.${vars.user}.programs = {
+ home-manager.users.vonix.programs = {
    waybar = {
     enable = true;
 
     style = '' 
+       /* Colors */
+       @define-color power            #F38BA8;
+       @define-color sleep            #89B4FA;
+       @define-color reboot           #F9E2AF;
+       @define-color battery          #A6E3A1;
+       @define-color network          #89DCEB;
+       @define-color backlight        #F9E2AF;
+       @define-color pulseaudio       #CBA6F7;
+       @define-color foreground       #CDD6F4;
+       @define-color background1      #11111B;
+       @define-color background2      #181825;
+       @define-color background3      #1E1E2E;
+       @define-color urgentBackground #1E1E2E;
+       @define-color urgentForeground #F38BA8;
+
+
        /* Base */
        * {
         min-height:    0px;
@@ -21,6 +37,7 @@
         margin:        1px 2px 2px 2px;
        }
      
+
        /* Whole Bar */
        #waybar {
         font-size:   20px;
@@ -29,6 +46,7 @@
         background:  rgba(0,0,0,0);
        }
      
+
        /* Modules */
        #mode,
        #disk,
@@ -42,75 +60,91 @@
        #custom-power,
        #custom-reboot {
         padding:    2px 12px;
-        color:      ${vars.waybar.foreground};
-        background: ${vars.waybar.background1};
+        color:      @foreground;
+        background: @background1;
        }
  
+
        /* Icon Color */
        #battery {
-        color:      ${vars.waybar.battery};
-        background: ${vars.waybar.background1};
+        color:      @battery;
+        background: @background1;
        }
+
        #network {
-        color:      ${vars.waybar.network};
-        background: ${vars.waybar.background1};
+        color:      @network;
+        background: @background1;
        }
+
        #backlight {
-        color:      ${vars.waybar.backlight};
-        background: ${vars.waybar.background1};
+        color:      @backlight;
+        background: @background1;
        }
+
        #pulseaudio {
-        color:      ${vars.waybar.pulseaudio};
-        background: ${vars.waybar.background1};
+        color:      @pulseaudio;
+        background: @background1;
        }
+
        #custom-sleep {
-        color:      ${vars.waybar.sleep};
-        background: ${vars.waybar.background3};
+        color:      @sleep;
+        background: @background3;
        }
+
        #custom-power {
-        color:      ${vars.waybar.power};
-        background: ${vars.waybar.background3};
+        color:      @power;
+        background: @background3;
        }
+
        #custom-reboot {
-        color:      ${vars.waybar.reboot};
-        background: ${vars.waybar.background3};
+        color:      @reboot;
+        background: @background3;
        }
  
+
        /* Icon Position Fix */
        #network { 
         padding-right: 20px;
        }
+
        #backlight {
         padding-right: 20px;
        }
+
        #custom-sleep {
         padding-right: 16px;
        }
+
        #workspaces button {
         padding-right: 20px;
        }
+
        #custom-power, 
        #custom-reboot {
         padding-right: 14px;
        }
+
        #pulseaudio { 
         padding-right: 17.5px;
        }
+
  
        /* Workspaces */
        #workspaces button {
         opacity:    0.5;
         background: none;
-        color:      ${vars.waybar.foreground};
+        color:      @foreground;
        }
+
        #workspaces button.focused {
         opacity:    1;
-        background: ${vars.waybar.background2};
+        background: @background2;
        }
+
        #workspaces button.urgent {
         opacity:    0.8;
-        background: ${vars.waybar.urgentBackground};
-        color:      ${vars.waybar.urgentForeground};
+        background: @urgentBackground;
+        color:      @urgentForeground;
        }
     '';
 
