@@ -3,14 +3,14 @@
 ##############################
 # Cursor-Style Configuration #
 ##############################
-{ stable, ... }:
+{ pkgs, ... }:
 
 {
  home-manager.users.vonix = {
    home.pointerCursor = {
      gtk.enable = true;
      name       = "Catppuccin-Mocha-Light-Cursors";
-     package    = stable.catppuccin-cursors.mochaLight;
+     package    = pkgs.catppuccin-cursors.mochaLight;
    };
  };
 }

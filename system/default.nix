@@ -28,14 +28,4 @@ lenovo = nixpkgs.lib.nixosSystem {
      home-manager.nixosModules.home-manager
    ];
  };
-
- lian-li = nixpkgs.lib.nixosSystem {
-   specialArgs = { inherit pkgs arkenfox; };
-
-   modules = [
-     ./configuration.nix
-     ./hosts/desktops/lian-li/imports.nix
-     home-manager.nixosModules.home-manager
-   ];
- };
 }
