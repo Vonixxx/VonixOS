@@ -6,11 +6,11 @@
 { nixpkgs, arkenfox, home-manager, ... }:
 
 let 
- nixpkgs = import nixpkgs { config.allowUnfree = false; };
+ pkgs = import nixpkgs { config.allowUnfree = false; };
 in
 { 
  lenovo = nixpkgs.lib.nixosSystem {
-   specialArgs = { inherit nixpkgs arkenfox; };
+   specialArgs = { inherit pkgs arkenfox; };
 
    modules = [
      ./configuration.nix
@@ -20,7 +20,7 @@ in
  };
 
  hp = nixpkgs.lib.nixosSystem {
-   specialArgs = { inherit nixpkgs arkenfox; };
+   specialArgs = { inherit pkgs arkenfox; };
 
    modules = [
      ./configuration.nix
@@ -30,7 +30,7 @@ in
  };
 
  lian-li = nixpkgs.lib.nixosSystem {
-   specialArgs = { inherit nixpkgs arkenfox; };
+   specialArgs = { inherit pkgs arkenfox; };
 
    modules = [
      ./configuration.nix
