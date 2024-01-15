@@ -35,7 +35,6 @@
          bitwarden
     	   darkreader
          firefox-color
-         ublock-origin
        ];
 
        arkenfox = {
