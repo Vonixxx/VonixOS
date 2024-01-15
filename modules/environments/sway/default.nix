@@ -88,7 +88,7 @@
            bg   = "~/GitHub/VonixOS/modules/wallpapers/Whispers.png fill";
          }; 
     
-         startup = [ { command = "${stable.autotiling}/bin/autotiling"; always = true; } ];
+         startup = [ { command = "${pkgs.autotiling}/bin/autotiling"; always = true; } ];
   
          colors = {
            urgent          = { childBorder = "#F38BA8"; border = "#F38BA8"; background = "#CDD6F4"; text = "#CDD6F4"; indicator = "#F38BA8"; };
