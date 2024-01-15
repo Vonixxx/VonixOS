@@ -5,7 +5,7 @@
 #############################################################################################################
 # System & Home-Manager stateVersion, Learn More: https://nixos.wiki/wiki/FAQ/When_do_I_update_stateVersion #
 #############################################################################################################
-{ nixpkgs, ... }: 
+{ pkgs, ... }: 
 
 {
  programs.dconf.enable            = true;
@@ -13,6 +13,7 @@
  system.stateVersion              = "23.11"; 
  powerManagement.cpuFreqGovernor  = "powersave";
  i18n.defaultLocale               = "en_GB.UTF-8";
+ nixpkgs.hostPlatform             = "x86_64-linux";
 
  fonts.fontconfig = {
    allowBitmaps  = false;
@@ -34,10 +35,6 @@
    rtkit.enable            = true;
    polkit.enable           = true;
    sudo.wheelNeedsPassword = false;
- };
-
- nixpkgs = { 
-  hostPlatform       = "x86_64-linux";
  };
 
  home-manager.users.vonix = {
@@ -75,7 +72,7 @@
 
    supportedFilesystems = [ "ntfs" ];
    kernelParams         = [ "quiet" ]; 
-   kernelPackages       = nixpkgs.linuxPackages_latest;
+   kernelPackages       = pkgs.linuxPackages_latest;
  };
 
  nix = {

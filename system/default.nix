@@ -9,22 +9,22 @@ let
  pkgs = import nixpkgs { config.allowUnfree = false; };
 in
 { 
- lenovo = nixpkgs.lib.nixosSystem {
-   specialArgs = { inherit pkgs arkenfox; };
-
-   modules = [
-     ./configuration.nix
-     ./hosts/laptops/lenovo/imports.nix
-     home-manager.nixosModules.home-manager
-   ];
- };
-
  hp = nixpkgs.lib.nixosSystem {
    specialArgs = { inherit pkgs arkenfox; };
 
    modules = [
      ./configuration.nix
      ./hosts/laptops/hp/imports.nix
+     home-manager.nixosModules.home-manager
+   ];
+ };
+
+lenovo = nixpkgs.lib.nixosSystem {
+   specialArgs = { inherit pkgs arkenfox; };
+
+   modules = [
+     ./configuration.nix
+     ./hosts/laptops/lenovo/imports.nix
      home-manager.nixosModules.home-manager
    ];
  };
