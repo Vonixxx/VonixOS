@@ -3,7 +3,7 @@
 #####################
 # BAT Configuration #
 #####################
-{ stable, ... }:
+{ pkgs, ... }:
 
 {
  home-manager.users.vonix.programs = {
@@ -14,7 +14,7 @@
      themes.Catppuccin-Mocha = {
        file = "Catppuccin-mocha.tmTheme";
 
-       src = stable.fetchFromGitHub {
+       src = pkgs.fetchFromGitHub {
          repo  = "bat";
          owner = "catppuccin";
          rev   = "ba4d16880d63e656acced2b7d4e034e4a93f74b1";
