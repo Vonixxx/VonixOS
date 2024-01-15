@@ -3,7 +3,7 @@
 #####################################
 # System-Specific FireFox Bookmarks #
 #####################################
-{ arkenfox, ... }:
+{ ... }:
 
 {
  home-manager.users.vonix = {

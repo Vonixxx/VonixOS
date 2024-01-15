@@ -3,15 +3,15 @@
 #######################
 # Gnome Configuration #
 #######################
-{ lib, config, ... }:
+{ lib, config, ... }: with lib;
 
 {
- options.gnome.enable = lib.mkOption {
+ options.gnome.enable = mkOption {
    default = false;
-   type    = lib.types.bool;
+   type    = types.bool;
  };
 
- config = lib.mkIf (config.gnome.enable) {
+ config = mkIf (config.gnome.enable) {
    services.xserver = {
      displayManager = {
        gdm.enable     = true;

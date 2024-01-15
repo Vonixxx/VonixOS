@@ -20,7 +20,6 @@
    libreoffice-fresh
  ]) ++ (with stable.gnomeExtensions; [
     arcmenu
-    burn-my-windows
     dash-to-panel
     user-themes
  ]) ++ (with stable.gnome; [ gnome-tweaks ]);

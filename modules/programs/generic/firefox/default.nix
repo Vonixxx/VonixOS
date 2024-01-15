@@ -12,6 +12,12 @@
    programs.firefox = {
      enable = true;
 
+     policies = {
+       Extension = {
+         Locked = [ "uBlock0@raymondhill.net" ]; 
+       };      
+     };
+
      arkenfox = {
        enable = true;
        version = "119.0";
