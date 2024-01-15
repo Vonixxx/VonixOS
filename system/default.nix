@@ -6,7 +6,7 @@
 { stable, arkenfox, home-manager, ... }:
 
 let
- stable = import stable;
+ stable = import nixpkgs;
 in 
 { 
  lenovo = stable.lib.nixosSystem {
