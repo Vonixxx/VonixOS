@@ -5,6 +5,9 @@
 ############
 { stable, arkenfox, home-manager, ... }:
 
+let
+ stable = import stable;
+in 
 { 
  lenovo = stable.lib.nixosSystem {
    specialArgs = { inherit stable arkenfox; };

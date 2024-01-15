@@ -76,7 +76,7 @@
 
    supportedFilesystems = [ "ntfs" ];
    kernelParams         = [ "quiet" ]; 
-   # kernelPackages       = stable.linuxPackages_latest;
+   kernelPackages       = stable.linuxPackages_latest;
  };
 
  nix = {
