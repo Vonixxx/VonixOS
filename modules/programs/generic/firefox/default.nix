@@ -14,7 +14,7 @@
 
      policies = {
        Extensions = {
-         Locked = [ "uBlock0@raymondhill.net" ]; 
+         Locked = "[ \"uBlock0@raymondhill.net\" ]"; 
        };      
      };
 
