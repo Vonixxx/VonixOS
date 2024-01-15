@@ -26,24 +26,23 @@
    ##########################
    # Synchronizing Packages #
    ##########################
-   home-manager.inputs.nixpkgs.follows = "nixpkgs-stable";
+   home-manager.inputs.nixpkgs.follows = "stable";
    #########################
    # Official Repositories #
    #########################
-   nixpkgs-stable.url = "github:nixos/nixpkgs/nixos-23.11";
+   stable.url = "github:nixos/nixpkgs/nixos-23.11";
    ##########################
    # Community Repositories #
    ##########################
-   nur.url          = "github:nix-community/NUR";
    arkenfox.url     = "github:dwarfmaster/arkenfox-nixos";
    home-manager.url = "github:nix-community/home-manager/release-23.11"; 
  };
 
- outputs = inputs @ { nur, self, arkenfox, home-manager, nixpkgs-stable, ... }: {
+ outputs = inputs @ { self, stable, arkenfox, home-manager, ... }: {
    nixosConfigurations = (
      import ./system {
-      inherit (nixpkgs-stable) lib;
-      inherit nur inputs arkenfox home-manager nixpkgs-stable;
+      inherit (stable) lib;
+      inherit inputs stable arkenfox home-manager;
      }
    );
  };

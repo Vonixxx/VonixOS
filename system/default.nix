@@ -3,15 +3,10 @@
 ############
 # Profiles #
 ############
-{ nur, arkenfox, home-manager, nixpkgs-stable, ... }:
+{ stable, arkenfox, home-manager, ... }:
 
-let 
-  stable = import nixpkgs-stable {
-    overlays = [ nur.overlay ];
-    config   = { allowUnfree = false; };
-  };
-in { 
- lenovo = nixpkgs-stable.lib.nixosSystem {
+{ 
+ lenovo = stable.lib.nixosSystem {
    specialArgs = { inherit stable arkenfox; };
 
    modules = [
@@ -21,7 +16,7 @@ in {
    ];
  };
 
- hp = nixpkgs-stable.lib.nixosSystem {
+ hp = stable.lib.nixosSystem {
    specialArgs = { inherit stable arkenfox; };
 
    modules = [
@@ -31,7 +26,7 @@ in {
    ];
  };
 
- lian-li = nixpkgs-stable.lib.nixosSystem {
+ lian-li = stable.lib.nixosSystem {
    specialArgs = { inherit stable arkenfox; };
 
    modules = [
