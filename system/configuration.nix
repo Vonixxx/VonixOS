@@ -37,8 +37,7 @@
  };
 
  nixpkgs = { 
-   config.allowUnfree = false;
-   hostPlatform       = "x86_64-linux";
+  hostPlatform       = "x86_64-linux";
  };
 
  home-manager.users.vonix = {

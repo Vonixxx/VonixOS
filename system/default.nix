@@ -5,6 +5,9 @@
 ############
 { nixpkgs, arkenfox, home-manager, ... }:
 
+let 
+ nixpkgs = import nixpkgs = { config.allowUnfree = false; };
+in
 { 
  lenovo = nixpkgs.lib.nixosSystem {
    specialArgs = { inherit nixpkgs arkenfox; };
