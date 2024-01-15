@@ -91,7 +91,6 @@
  }; 
 
  environment.shellAliases = {
-   update-flake  = "nix flake update";
    update-hp     = "sudo nix flake update 'github:Vonixxx/VonixOS' && sudo nixos-rebuild switch --no-write-lock-file --flake 'github:Vonixxx/VonixOS#hp' --impure"; 
    update-lenovo = "sudo nix flake update 'github:Vonixxx/VonixOS' && sudo nixos-rebuild switch --no-write-lock-file --flake 'github:Vonixxx/VonixOS#lenovo' --impure"; 
    test-hp       = "sudo nix flake update 'github:Vonixxx/VonixOS' && sudo nixos-rebuild dry-activate --no-write-lock-file --flake 'github:Vonixxx/VonixOS#hp' --impure"; 

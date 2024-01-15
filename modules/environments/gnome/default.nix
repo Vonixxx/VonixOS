@@ -8,7 +8,7 @@
 {
  options.gnome.enable = lib.mkOption {
    default = false;
-   type    = types.bool;
+   type    = lib.types.bool;
  };
 
  config = lib.mkIf (config.gnome.enable) {
