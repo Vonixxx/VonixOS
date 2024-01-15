@@ -9,7 +9,7 @@ let
  stable = import nixpkgs;
 in 
 { 
- lenovo = stable.lib.nixosSystem {
+ lenovo = nixpkgs.lib.nixosSystem {
    specialArgs = { inherit stable arkenfox; };
 
    modules = [
@@ -19,7 +19,7 @@ in
    ];
  };
 
- hp = stable.lib.nixosSystem {
+ hp = nixpkgs.lib.nixosSystem {
    specialArgs = { inherit stable arkenfox; };
 
    modules = [
@@ -29,7 +29,7 @@ in
    ];
  };
 
- lian-li = stable.lib.nixosSystem {
+ lian-li = nixpkgs.lib.nixosSystem {
    specialArgs = { inherit stable arkenfox; };
 
    modules = [
