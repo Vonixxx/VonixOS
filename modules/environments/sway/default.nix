@@ -3,7 +3,7 @@
 ######################
 # Sway Configuration #
 ######################
-{ lib, config, stable, ... }: with lib;
+{ lib, pkgs, config, ... }: with lib;
 
 {
  options.sway.enable = mkOption {
@@ -73,7 +73,7 @@
            "${modifier}+t" = "exec ~/.nix-profile/bin/foot";
            "${modifier}+d" = "exec ~/.nix-profile/bin/fuzzel";
            "${modifier}+b" = "exec ~/.nix-profile/bin/firefox";
-           "${modifier}+y" = "exec ${stable.freetube}/bin/freetube";
+           "${modifier}+y" = "exec ${pkgs.freetube}/bin/freetube";
            ######################################
            # Switching Containers -> Workspaces #
            ######################################

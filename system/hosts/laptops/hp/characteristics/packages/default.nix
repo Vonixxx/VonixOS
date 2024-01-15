@@ -3,28 +3,28 @@
 #########################################
 # System-Specific Package Configuration #
 #########################################
-{ stable, ... }:
+{ pkgs, ... }:
 
 {
- hardware.opengl.extraPackages = with stable; [
+ hardware.opengl.extraPackages = with pkgs; [
    intel-media-driver
    libvdpau-va-gl
    vaapiVdpau 
  ];
 
- fonts.packages = with stable; [ liberation_ttf ];
+ fonts.packages = with pkgs; [ liberation_ttf ];
 
- environment.systemPackages = (with stable; [
+ environment.systemPackages = (with pkgs; [
    coreutils 
    freetube
    libreoffice-fresh
- ]) ++ (with stable.gnomeExtensions; [
+ ]) ++ (with pkgs.gnomeExtensions; [
     arcmenu
     dash-to-panel
     user-themes
- ]) ++ (with stable.gnome; [ gnome-tweaks ]);
+ ]) ++ (with pkgs.gnome; [ gnome-tweaks ]);
 
- environment.gnome.excludePackages = with stable.gnome; [
+ environment.gnome.excludePackages = with pkgs.gnome; [
    atomix
    epiphany
    gnome-shell-extensions
