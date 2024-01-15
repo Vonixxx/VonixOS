@@ -3,15 +3,15 @@
 ######################
 # Sway Configuration #
 ######################
-{ lib, config, stable, ... }: with lib;
+{ lib, config, stable, ... }:
 
 {
- options.sway.enable = mkOption {
+ options.sway.enable = lib.mkOption {
    default = false;
    type    = types.bool;
  };
 
- config = mkIf (config.sway.enable) {
+ config = lib.mkIf (config.sway.enable) {
    home-manager.users.vonix.wayland.windowManager = {
      sway = {
        enable   = true;

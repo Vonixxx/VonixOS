@@ -11,7 +11,7 @@
    type    = types.bool;
  };
 
- config = mkIf (config.gnome.enable) {
+ config = lib.mkIf (config.gnome.enable) {
    services.xserver = {
      displayManager = {
        gdm.enable     = true;
