@@ -37,7 +37,6 @@
        extensions = with stable.nur.repos.rycee.firefox-addons; [
          bitwarden
     	   darkreader
-         firefox-color
        ];
 
        arkenfox = {
