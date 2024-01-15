@@ -11,7 +11,7 @@
    isNormalUser   = true;
    name           = "Vonix";
    home           = "/home/vonix";
-   extraGroups    = [ "audio" "video" "wheel" "libvirtd" "networkmanager" ];
+   extraGroups    = [ "audio" "video" "wheel" "networkmanager" ];
    hashedPassword = "$y$j9T$eDooCqRrtgj05orlhUujQ1$RDV9aOlJZkKZI6wtkpR.YD00ELzIlNZbDWY8IiDIxfB";
  };
 }

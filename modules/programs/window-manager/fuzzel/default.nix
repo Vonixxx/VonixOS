@@ -14,11 +14,11 @@
        border.width  = 3;
 
        colors = {
-         text            = "#313244DD";
+         text            = "#CDD6F4DD";
          match           = "#F38bA8DD";
          border          = "#CBA6F7DD";
          selection       = "#CDD6F4DD";
-         background      = "#11111BDD";
+         background      = "#181825DD";
          selection-text  = "#CDD6F4DD";
          selection-match = "#F38BA8DD";
        };
@@ -29,7 +29,7 @@
          horizontal-pad = 12;
          vertical-pad   = 12;
          icons-enabled  = false;
-         prompt         = "Launch --> ";
+         prompt         = "Launch ->‎";
          font           = "Cascadia Code:size=8";
        };
      };

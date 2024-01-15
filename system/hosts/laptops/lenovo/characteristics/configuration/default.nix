@@ -7,11 +7,10 @@
 
 {
  sway.enable                    = true;
- virtualisation.libvirtd.enable = true;
 
  services = {
    udev.enable         = true;
-   getty.autologinUser = "vonix";
+   getty.autologinUser = "Vonix";
  };
 
  home-manager.users.vonix.programs.git = {

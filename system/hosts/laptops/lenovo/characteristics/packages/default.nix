@@ -21,9 +21,7 @@
    # Terminal Utilities #
    ######################
    alsa-utils
-   git-crypt
    pfetch-rs
-   swaybg
    swayimg
    tldr
    wget
@@ -36,8 +34,6 @@
    nixos-generators
    pulsemixer
    youtube-dl
-   virt-manager
-   zathura
    ##############
    # Ergonomics #
    ##############

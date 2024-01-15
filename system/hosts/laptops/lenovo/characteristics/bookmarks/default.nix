@@ -35,16 +35,16 @@
      	    url  = "https://nur.nix-community.org";
      	   }
          {
-     	    name = "Certificates";
-     	    url  = "https://devopscube.com/best-devops-certifications";
-     	   }
-         {
      	    name = "NixOS Options";
-     	    url  = "https://search.nixos.org/options?channel=unstable&";
+     	    url  = "https://search.nixos.org/options?channel=23.11&";
      	   }
          {
      	    name = "NixOS Packages";
-     	    url  = "https://search.nixos.org/packages?channel=unstable&";
+     	    url  = "https://search.nixos.org/packages?channel=23.11&";
+     	   }
+         {
+     	    name = "Certificates";
+     	    url  = "https://devopscube.com/best-devops-certifications";
      	   }
          {
      	    name = "Home-Manager";

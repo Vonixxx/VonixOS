@@ -11,6 +11,7 @@
  programs.dconf.enable             = true;
  networking.networkmanager.enable  = true; 
  system.stateVersion               = "23.11"; 
+ powerManagement.cpuFreqGovernor   = "powersave";
  i18n.defaultLocale                = "en_GB.UTF-8";
  nixpkgs.hostPlatform              = "x86_64-linux";
 
@@ -76,10 +77,12 @@
  };
 
  nix = {
+   optimise.automatic = true;
+
    gc = {
      automatic = true;
      dates     = "weekly";
-     options   = "--delete-older-than 3d";
+     options   = "--delete-older-than 7d";
    };
 
    settings = {
