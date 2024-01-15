@@ -3,7 +3,7 @@
 ############
 # Profiles #
 ############
-{ stable, arkenfox, home-manager, ... }:
+{ nixpkgs, arkenfox, home-manager, ... }:
 
 let
  stable = import nixpkgs;

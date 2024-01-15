@@ -26,11 +26,11 @@
    ##########################
    # Synchronizing Packages #
    ##########################
-   home-manager.inputs.nixpkgs.follows = "stable";
+   home-manager.inputs.nixpkgs.follows = "nixpkgs";
    #########################
    # Official Repositories #
    #########################
-   stable.url = "github:nixos/nixpkgs/nixos-23.11";
+   nixpkgs.url = "github:nixos/nixpkgs/nixos-23.11";
    ##########################
    # Community Repositories #
    ##########################
@@ -38,11 +38,11 @@
    home-manager.url = "github:nix-community/home-manager/release-23.11"; 
  };
 
- outputs = inputs @ { self, stable, arkenfox, home-manager, ... }: {
+ outputs = inputs @ { self, nixpkgs, arkenfox, home-manager, ... }: {
    nixosConfigurations = (
      import ./system {
-      inherit (stable) lib;
-      inherit inputs stable arkenfox home-manager;
+      inherit (nixpkgs) lib;
+      inherit inputs nixpkgs arkenfox home-manager;
      }
    );
  };
