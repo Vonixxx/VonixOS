@@ -6,10 +6,7 @@
 { config, modulesPath, ... }:
 
 {
- imports = [ (modulesPath + "/installer/scan/not-detected.nix") ];
-
  hardware.cpu.intel.updateMicrocode = true;
- powerManagement.cpuFreqGovernor    = "powersave";
 
  fileSystems = { 
    "boot" = { 

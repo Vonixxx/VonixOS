@@ -11,6 +11,11 @@
      enable         = true;
      initExtraFirst = "pfetch";
 
+     shellAliases = {
+       ls  = "lsd";
+       cat = "bat";
+     };
+
      prezto = {
        enable = true;
 
@@ -34,13 +39,6 @@
          "completion"
          "autosuggestions"
        ];
-     };
-
-     shellAliases = {
-       ls     = "lsd";
-       cat    = "bat";
-       update = "nix flake update && sudo nixos-rebuild switch --flake '.#lenovo' --impure";
-       test   = "nix flake update && sudo nixos-rebuild dry-activate --flake '.#lenovo' --impure";
      };
    };
 

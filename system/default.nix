@@ -12,32 +12,32 @@ let
   };
 in { 
  lenovo = nixpkgs-stable.lib.nixosSystem {
-   specialArgs = { inherit arkenfox stable; };
+   specialArgs = { inherit stable arkenfox; };
 
    modules = [
      ./configuration.nix
      ./hosts/laptops/lenovo/imports.nix
-     home-manager.nixosModules.home-manager { home-manager.useGlobalPkgs = true; }
+     home-manager.nixosModules.home-manager
    ];
  };
 
  hp = nixpkgs-stable.lib.nixosSystem {
-   specialArgs = { inherit arkenfox stable; };
+   specialArgs = { inherit stable arkenfox; };
 
    modules = [
      ./configuration.nix
      ./hosts/laptops/hp/imports.nix
-     home-manager.nixosModules.home-manager { home-manager.useGlobalPkgs = true; }
+     home-manager.nixosModules.home-manager
    ];
  };
 
  lian-li = nixpkgs-stable.lib.nixosSystem {
-   specialArgs = { inherit arkenfox stable; };
+   specialArgs = { inherit stable arkenfox; };
 
    modules = [
      ./configuration.nix
      ./hosts/desktops/lian-li/imports.nix
-     home-manager.nixosModules.home-manager { home-manager.useGlobalPkgs = true; }
+     home-manager.nixosModules.home-manager
    ];
  };
 }

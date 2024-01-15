@@ -5,16 +5,15 @@
 #############################################################################################################
 # System & Home-Manager stateVersion, Learn More: https://nixos.wiki/wiki/FAQ/When_do_I_update_stateVersion #
 #############################################################################################################
-{ lib, stable, ... }: with lib;
+{ stable, ... }: 
 
 {
- programs.dconf.enable             = true;
- networking.networkmanager.enable  = true; 
- system.stateVersion               = "23.11"; 
- powerManagement.cpuFreqGovernor   = "powersave";
- i18n.defaultLocale                = "en_GB.UTF-8";
- nixpkgs.hostPlatform              = "x86_64-linux";
-
+ programs.dconf.enable            = true;
+ networking.networkmanager.enable = true; 
+ system.stateVersion              = "23.11"; 
+ powerManagement.cpuFreqGovernor  = "powersave";
+ i18n.defaultLocale               = "en_GB.UTF-8";
+ nixpkgs.hostPlatform             = "x86_64-linux";
 
  fonts.fontconfig = {
    allowBitmaps  = false;
@@ -90,4 +89,11 @@
      experimental-features = [ "nix-command" "flakes" ];
    };
  }; 
+
+ environment.shellAliases = {
+   update-hp     = "sudo nix flake update 'github:Vonixxx/VonixOS' && sudo nixos-rebuild switch --no-write-lock-file --flake 'github:Vonixxx/VonixOS#hp' --impure"; 
+   update-lenovo = "sudo nix flake update 'github:Vonixxx/VonixOS' && sudo nixos-rebuild switch --no-write-lock-file --flake 'github:Vonixxx/VonixOS#lenovo' --impure"; 
+   test-hp       = "sudo nix flake update 'github:Vonixxx/VonixOS' && sudo nixos-rebuild dry-activate --no-write-lock-file --flake 'github:Vonixxx/VonixOS#hp' --impure"; 
+   test-lenovo   = "sudo nix flake update 'github:Vonixxx/VonixOS' && sudo nixos-rebuild dry-activate --no-write-lock-file --flake 'github:Vonixxx/VonixOS#lenovo' --impure"; 
+ };
 }

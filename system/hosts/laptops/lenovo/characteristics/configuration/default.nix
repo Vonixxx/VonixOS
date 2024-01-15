@@ -6,7 +6,7 @@
 { ... }:
 
 {
- sway.enable                    = true;
+ sway.enable = true;
 
  services = {
    udev.enable         = true;

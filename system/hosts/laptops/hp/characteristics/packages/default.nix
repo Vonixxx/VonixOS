@@ -18,7 +18,7 @@
    coreutils 
    freetube
    libreoffice-fresh
- ]) ++ (with unstable.gnomeExtensions; [
+ ]) ++ (with stable.gnomeExtensions; [
     arcmenu
     burn-my-windows
     dash-to-panel
