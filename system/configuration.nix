@@ -5,7 +5,7 @@
 #############################################################################################################
 # System & Home-Manager stateVersion, Learn More: https://nixos.wiki/wiki/FAQ/When_do_I_update_stateVersion #
 #############################################################################################################
-{ stable, ... }: 
+{ nixpkgs, ... }: 
 
 {
  programs.dconf.enable            = true;
@@ -76,7 +76,7 @@
 
    supportedFilesystems = [ "ntfs" ];
    kernelParams         = [ "quiet" ]; 
-   kernelPackages       = stable.linuxPackages_latest;
+   kernelPackages       = nixpkgs.linuxPackages_latest;
  };
 
  nix = {

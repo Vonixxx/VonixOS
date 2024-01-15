@@ -5,12 +5,9 @@
 ############
 { nixpkgs, arkenfox, home-manager, ... }:
 
-let
- stable = import nixpkgs;
-in 
 { 
  lenovo = nixpkgs.lib.nixosSystem {
-   specialArgs = { inherit stable arkenfox; };
+   specialArgs = { inherit nixpkgs arkenfox; };
 
    modules = [
      ./configuration.nix
@@ -20,7 +17,7 @@ in
  };
 
  hp = nixpkgs.lib.nixosSystem {
-   specialArgs = { inherit stable arkenfox; };
+   specialArgs = { inherit nixpkgs arkenfox; };
 
    modules = [
      ./configuration.nix
@@ -30,7 +27,7 @@ in
  };
 
  lian-li = nixpkgs.lib.nixosSystem {
-   specialArgs = { inherit stable arkenfox; };
+   specialArgs = { inherit nixpkgs arkenfox; };
 
    modules = [
      ./configuration.nix
