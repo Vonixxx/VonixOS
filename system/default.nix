@@ -6,7 +6,7 @@
 { nixpkgs, arkenfox, home-manager, ... }:
 
 let 
- nixpkgs = import nixpkgs = { config.allowUnfree = false; };
+ nixpkgs = import nixpkgs { config.allowUnfree = false; };
 in
 { 
  lenovo = nixpkgs.lib.nixosSystem {
