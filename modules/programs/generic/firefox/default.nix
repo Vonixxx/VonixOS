@@ -13,7 +13,7 @@
      enable = true;
 
      policies = {
-       Extension = {
+       Extensions = {
          Locked = [ "uBlock0@raymondhill.net" ]; 
        };      
      };
