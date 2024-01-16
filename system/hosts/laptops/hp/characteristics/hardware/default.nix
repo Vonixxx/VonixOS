@@ -14,13 +14,13 @@
    "boot" = { 
      fsType     = "vfat";
      mountPoint = "/boot";
-     device     = "/dev/disk/by-uuid/76FC-D4AA";
+     device     = "/dev/disk/by-uuid/310C-AB3B";
    };
 
    "root" = { 
      mountPoint = "/";
      fsType     = "ext4";
-     device     = "/dev/disk/by-uuid/f44c64c2-056c-4e1b-854e-7d46dbb531f9";
+     device     = "/dev/disk/by-uuid/b6df6bcb-0f62-415b-9402-31dd4760ae28";
    };
  };
 
