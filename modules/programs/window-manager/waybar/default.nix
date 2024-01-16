@@ -206,20 +206,20 @@
           format   = "{:󰃭 %d/%m/%y | %H:%M}";
         };
 
+	      "network" = {
+          tooltip             = false;
+          on-click            = "foot nmtui";
+      	  format-ethernet     = "<big>󰤪</big>";
+      	  format-wifi         = "<big>󰤨</big>";
+          format-disconnected = "<big>󰤭</big>";
+        };
+
         "backlight" = {
           tooltip        = false;
           on-scroll-up   = "exec light -A 1";
           on-scroll-down = "exec light -U 1";
           format         = "<big>{icon}</big>";
           format-icons   = [ "󱩏" "󱩑" "󱩓" "󱩕" "󰛨" ];
-        };
-
-	      "network" = {
-          tooltip             = false;
-      	  format-ethernet     = "<big>󰤪</big>";
-      	  format-wifi         = "<big>󰤨</big>";
-          format-disconnected = "<big>󰤭</big>";
-          on-click            = "kitty zsh -c nmtui";
         };
 
         "pulseaudio" = {
@@ -239,9 +239,9 @@
           bat                        = "BAT0";
           format-charging            = "<big>󰂄</big>";
           format                     = "<big>{icon}</big>";
+          tooltip-format-charging    = "Full Charge: {time}";
           format-icons               = [ "󰁻" "󰁽" "󰁿" "󰂁" "󰁹" ];
-          tooltip-format-charging    = "Full Charge Duration: {time}";
-          tooltip-format-discharging = "Discharging Duration: {time}";
+          tooltip-format-discharging = "Full Discharge: {time}";
         };
      }];
    };

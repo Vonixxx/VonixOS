@@ -7,5 +7,6 @@
 
 {
  gnome.enable            = true;
+ xdg.portal.enable       = true;
  services.xserver.layout = "cz"; 
 }

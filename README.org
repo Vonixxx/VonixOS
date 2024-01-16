@@ -1,19 +1,20 @@
-* VonixOS | System Configuration
-This configuration was designed with minimalism in mind.
+* System Setup
+Designed to be a minimalistic, fully declarative setup.
 
 * System Components
-|                  | *VonixOS (Sway)* |
-|------------------+------------------|
-| *Shell*          | ZSH              |
-| *Window Manager* | Sway             |
-| *Notifications*  | Mako             |
-| *Editor*         | Helix            |
-| *Terminal*       | Kitty            |
-| *Launcher*       | Fuzzel           |
-| *Bar*            | Waybar           |
-| *Theme*          | Catppuccin       |
-| *Login Manager*  | TTY1 Login       |
-| *Browser*        | (Arken)Firefox   |
+|                  | *VonixOS (Sway)* | *VonixOS (Gnome)* |
+|------------------+------------------+-------------------|
+| *Notifications*  | Mako             | -                 |
+| *Launcher*       | Fuzzel           | -                 |
+| *Bar*            | Waybar           | -                 |
+| *Shell*          | ZSH              | Bash              |
+| *Theme*          | Catppuccin       | Adwaita           |
+| *Editor*         | Helix            | Gnome Text Editor |
+| *Terminal*       | Foot             | Gnome Terminal    |
+| *Login Manager*  | TTY1 Login       | GDM               |
+| *Environment*    | Sway             | Gnome             |
+| *Browser*        |            (Arken)Firefox            |
+|------------------+------------------+-------------------|
 
 * Look & Feel
-[[file:desktop.png]]
+[[file:sway.png]]
