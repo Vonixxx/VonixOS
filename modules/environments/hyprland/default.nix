@@ -24,25 +24,27 @@
          monitor   = "DP-1, 1920x1080@60, 0x0, 1";
          wallpaper = "DP-1, ~/GitHub/VonixOS/modules/wallpapers/Whispers.png";
 
-         bind = "$mainMod, C, killactive";
+         bind = { 
+           "$mainMod, C, killactive";
 
-         bind = "$mainMod, 1, workspace, 1";
-         bind = "$mainMod, 2, workspace, 2";
-         bind = "$mainMod, 3, workspace, 3";
-         bind = "$mainMod, 4, workspace, 4";
+           "$mainMod, 1, workspace, 1";
+           "$mainMod, 2, workspace, 2";
+           "$mainMod, 3, workspace, 3";
+           "$mainMod, 4, workspace, 4";
 
-         bind = "$mainMod, R, exec, $menu";
-         bind = "$mainMod, Q, exec, $terminal";
+           "$mainMod, R, exec, $menu";
+           "$mainMod, Q, exec, $terminal";
 
-         bind = "$mainMod, up,    movefocus, k";
-         bind = "$mainMod, down,  movefocus, j";
-         bind = "$mainMod, left,  movefocus, h";
-         bind = "$mainMod, right, movefocus, l";
+           "$mainMod, up,    movefocus, k";
+           "$mainMod, down,  movefocus, j";
+           "$mainMod, left,  movefocus, h";
+           "$mainMod, right, movefocus, l";
 
-         bind = "$mainMod SHIFT, 1, movetoworkspace, 1";
-         bind = "$mainMod SHIFT, 2, movetoworkspace, 2";
-         bind = "$mainMod SHIFT, 3, movetoworkspace, 3";
-         bind = "$mainMod SHIFT, 4, movetoworkspace, 4";
+           "$mainMod SHIFT, 1, movetoworkspace, 1";
+           "$mainMod SHIFT, 2, movetoworkspace, 2";
+           "$mainMod SHIFT, 3, movetoworkspace, 3";
+           "$mainMod SHIFT, 4, movetoworkspace, 4";
+         };
 
          decorations = {
            rounding = 10;
