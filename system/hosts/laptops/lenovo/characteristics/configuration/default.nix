@@ -6,8 +6,8 @@
 { ... }:
 
 {
- # sway.enable = true;
- hyprland.enable = true;
+ sway.enable = true;
+ # hyprland.enable = true;
 
  services = {
    udev.enable         = true;
