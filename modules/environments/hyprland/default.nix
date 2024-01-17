@@ -80,7 +80,7 @@
            "$mainMod SHIFT, 4, movetoworkspace, 4"
          ];
 
-         decorations = {
+         decoration = {
            rounding = 10;
          };
 
