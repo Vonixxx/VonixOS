@@ -21,27 +21,26 @@
          "$mainMod"  = "SUPER";
          "$menu"     = "fuzzel";
 
-         monitor   = "DP-1, 1920x1080@60, 0x0, 1";
+         monitor = "DP-1, 1920x1080@60, 0x0, 1";
 
          misc = {
            force_default_wallpaper = 1;          
          };
 
-         bind = [ 
-           "$mainMod, C, killactive"
-
+         bindr = [ 
            "$mainMod, 1, workspace, 1"
            "$mainMod, 2, workspace, 2"
            "$mainMod, 3, workspace, 3"
            "$mainMod, 4, workspace, 4"
 
-           "$mainMod, R, exec, $menu"
-           "$mainMod, Q, exec, $terminal"
+           "$mainMod, K, movefocus, u"
+           "$mainMod, J, movefocus, d"
+           "$mainMod, H, movefocus, l"
+           "$mainMod, L, movefocus, r"
 
-           "$mainMod, up,    movefocus, k"
-           "$mainMod, down,  movefocus, j"
-           "$mainMod, left,  movefocus, h"
-           "$mainMod, right, movefocus, l"
+           "$mainMod, C, killactive"
+           "$mainMod, D, exec, $menu"
+           "$mainMod, T, exec, $terminal"
 
            "$mainMod SHIFT, 1, movetoworkspace, 1"
            "$mainMod SHIFT, 2, movetoworkspace, 2"
@@ -68,8 +67,8 @@
            gaps_out            = 20;
            allow_tearing       = false;
            layout              = "master";
-           col.inactive_border = "0xffffffff";
-           col.active_border   = "0xff444444";
+           col.inactive_border = "rgba(595959aa)";
+           col.active_border   = "rgba(33ccffee) rgba(00ff99ee) 45deg";
          };
        };
      };
