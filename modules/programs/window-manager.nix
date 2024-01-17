@@ -9,5 +9,6 @@
  ./window-manager/cursor/default.nix
  ./window-manager/fuzzel/default.nix
  ./window-manager/sioyek/default.nix
+ ./window-manager/wpaperd/default.nix
  ./window-manager/wlsunset/default.nix
 ]

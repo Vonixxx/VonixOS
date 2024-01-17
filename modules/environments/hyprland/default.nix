@@ -23,16 +23,10 @@
          "$terminal"         = "foot";
          "$mainMod"          = "SUPER";
          "$menu"             = "fuzzel";
+         exec-once           = "waybar";
          "$browser"          = "firefox";
          "$youtube"          = "freetube";
          monitor             = "eDP-1, 1920x1080@60, 0x0, 1";
-         preload             = "~/GitHub/VonixOS/modules/wallpapers/Whispers.png";
-         wallpaper           = "eDP-1, ~/GitHub/VonixOS/modules/wallpapers/Whispers.png";
-
-         exec-once = [
-           "waybar"
-           "hyprpaper"
-         ];
 
          input = {
            follow_mouse  = 1;

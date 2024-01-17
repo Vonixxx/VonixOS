@@ -20,15 +20,16 @@
        xwayland = true;
   
        config = rec {
-         up       = "k";
-         down     = "j";
-         left     = "l";
-         right    = "h";
-         modifier = "Mod4";
-         window   = { titlebar = false; };
-         bars     = [ { command = "waybar"; } ];
-         input    = { "*" = { xkb_variant = "us"; }; };
-
+         up                = "k";
+         down              = "j";
+         left              = "l";
+         right             = "h";
+         modifier          = "Mod4";
+         output.eDP-1.mode = "1920x1080@60Hz"; 
+         window            = { titlebar = false; };
+         bars              = [ { command = "waybar"; } ];
+         input             = { "*" = { xkb_variant = "us"; }; };
+    
          gaps = {
            top        = 10;
            left       = 10;
@@ -85,11 +86,6 @@
            "${modifier}+Shift+4" = "move container to workspace number 4";
          };
 
-         output.eDP-1 = { 
-           mode = "1920x1080@60Hz"; 
-           bg   = "~/GitHub/VonixOS/modules/wallpapers/Whispers.png fill";
-         }; 
-    
          startup = [ { command = "${pkgs.autotiling}/bin/autotiling"; always = true; } ];
   
          colors = {
