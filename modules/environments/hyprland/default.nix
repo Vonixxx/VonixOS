@@ -22,7 +22,10 @@
          "$menu"     = "fuzzel";
 
          monitor   = "DP-1, 1920x1080@60, 0x0, 1";
-         wallpaper = "DP-1, ~/GitHub/VonixOS/modules/wallpapers/Whispers.png";
+
+         misc = {
+           force_default_wallpaper = 1;          
+         };
 
          bind = [ 
            "$mainMod, C, killactive"
