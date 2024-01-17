@@ -17,13 +17,38 @@
        enable = true;
 
        settings = {
-         monitor = "DP-1, 1920x1080@60, 0x0, 1";
-
          "$terminal" = "foot";
+         "$mainMod"  = "SUPER";
          "$menu"     = "fuzzel";
 
+         monitor   = "DP-1, 1920x1080@60, 0x0, 1";
+         wallpaper = "DP-1, ~/GitHub/VonixOS/modules/wallpapers/Whispers.png";
+
+         bind = "$mainMod, C, killactive";
+
+         bind = "$mainMod, 1, workspace, 1";
+         bind = "$mainMod, 2, workspace, 2";
+         bind = "$mainMod, 3, workspace, 3";
+         bind = "$mainMod, 4, workspace, 4";
+
+         bind = "$mainMod, R, exec, $menu";
+         bind = "$mainMod, Q, exec, $terminal";
+
+         bind = "$mainMod, up,    movefocus, k";
+         bind = "$mainMod, down,  movefocus, j";
+         bind = "$mainMod, left,  movefocus, h";
+         bind = "$mainMod, right, movefocus, l";
+
+         bind = "$mainMod SHIFT, 1, movetoworkspace, 1";
+         bind = "$mainMod SHIFT, 2, movetoworkspace, 2";
+         bind = "$mainMod SHIFT, 3, movetoworkspace, 3";
+         bind = "$mainMod SHIFT, 4, movetoworkspace, 4";
+
+         decorations = {
+           rounding = 10;
+         };
+
          input = {
-           sensitivity  = 0;
            kb_layout    = "us";
            follow_mouse = true;
        
@@ -33,13 +58,13 @@
          };
 
          general = {
-           gaps_in       = 5;
-           border_size   = 2;
-           gaps_out      = 20;
-           layout = "dwindle";
-           allow_tearing = false;
-           col.inactive_border = rgba(595959aa);
-           col.active_border   = rgba(33ccffee) rgba(00ff99ee) 45deg;
+           gaps_in             = 5;
+           border_size         = 2;
+           gaps_out            = 20;
+           allow_tearing       = false;
+           layout              = "master";
+           col.inactive_border = "0xffffffff";
+           col.active_border   = "0xff444444";
          };
        };
      };
