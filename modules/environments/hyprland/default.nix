@@ -46,8 +46,8 @@
            cursor_inactive_timeout = 5;
            resize_on_border        = true;
            layout                  = "master";
-           col.active_border       = "rgb(CBA6F7)";
-           col.inactive_border     = "rgb(11111B)";
+           "col.active_border"     = "rgb(CBA6F7)";
+           "col.inactive_border"   = "rgb(11111B)";
          };
 
          bindr = [ 
