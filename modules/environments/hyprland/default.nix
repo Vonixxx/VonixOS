@@ -26,7 +26,7 @@
           }
        '';
 
-       settings = {[
+       settings = [{
          "hyprland/workspaces" = {
            all-outputs  = true;
            format       = "{icon}";
