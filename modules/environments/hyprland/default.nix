@@ -12,8 +12,39 @@
  };
 
  config = mkIf (config.hyprland.enable) {
-   home-manager.users.vonix.wayland.windowManager = {
-     hyprland = {
+   home-manager.users.vonix = {
+     programs.waybar = {
+       style = ''
+          /* Colors */
+          @define-color background2 181825;
+
+
+          /* Workspaces */
+          #workspaces button.active {
+           opacity:    1;
+           background: @background2;
+          }
+       '';
+
+       settings = {[
+         "hyprland/workspaces" = {
+           all-outputs  = true;
+           format       = "{icon}";
+ 
+           format-icons = {
+             "1" = "<big>󰜏</big>";
+             "2" = "<big>󰆍</big>";
+             "3" = "<big>󰭣</big>";
+             "4" = "<big>󰯜</big>";
+           };
+         };
+ 
+         modules-center = [ "hyprland/workspaces" ];
+         modules-left   = [ "custom/power" "custom/reboot" "custom/sleep" "backlight" "pulseaudio" "network" "battery" "hyprland/mode" ];
+      }];
+    };
+
+     wayland.windowManager.hyprland = {
        enable = true;
 
        settings = {
@@ -21,7 +52,8 @@
          "$mainMod"  = "SUPER";
          "$menu"     = "fuzzel";
 
-         monitor = "DP-1, 1920x1080@60, 0x0, 1";
+         exec-once = "waybar";
+         monitor   = "DP-1, 1920x1080@60, 0x0, 1";
 
          misc = {
            force_default_wallpaper = 1;          
@@ -67,8 +99,8 @@
            gaps_out            = 20;
            allow_tearing       = false;
            layout              = "master";
-           col.inactive_border = "0xffffffff";
-           col.active_border   = "0xff444444";
+           # col.inactive_border = "0xffffffff";
+           # col.active_border   = "0xff444444";
          };
        };
      };

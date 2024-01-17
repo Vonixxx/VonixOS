@@ -23,7 +23,6 @@
        @define-color pulseaudio       #CBA6F7;
        @define-color foreground       #CDD6F4;
        @define-color background1      #11111B;
-       @define-color background2      #181825;
        @define-color background3      #1E1E2E;
        @define-color urgentBackground #1E1E2E;
        @define-color urgentForeground #F38BA8;
@@ -136,11 +135,6 @@
         color:      @foreground;
        }
 
-       #workspaces button.focused {
-        opacity:    1;
-        background: @background2;
-       }
-
        #workspaces button.urgent {
         opacity:    0.8;
         background: @urgentBackground;
@@ -149,25 +143,10 @@
     '';
 
     settings = [{
-        height   = 55;
-        layer    = "top";
-        position = "top";
-
-        modules-center = [ "sway/workspaces" ];
-        modules-right  = [ "disk" "memory" "clock" ];
-        modules-left   = [ "custom/power" "custom/reboot" "custom/sleep" "backlight" "pulseaudio" "network" "battery" "sway/mode" ];
-
-        "sway/workspaces" = {
-          all-outputs  = true;
-          format       = "{icon}";
-
-          format-icons = {
-            "1" = "<big>󰜏</big>";
-            "2" = "<big>󰆍</big>";
-            "3" = "<big>󰭣</big>";
-            "4" = "<big>󰯜</big>";
-          };
-        };
+        height        = 55;
+        layer         = "top";
+        position      = "top";
+        modules-right = [ "disk" "memory" "clock" ];
 
         "memory" = {
           interval = 10;

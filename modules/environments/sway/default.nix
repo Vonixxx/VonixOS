@@ -12,8 +12,39 @@
  };
 
  config = mkIf (config.sway.enable) {
-   home-manager.users.vonix.wayland.windowManager = {
-     sway = {
+   home-manager.users.vonix = {
+     programs.waybar = {
+       style = ''
+          /* Colors */
+          @define-color background2 #181825;
+
+
+          /* Workspaces */
+          #workspaces button.focused {
+           opacity:    1;
+           background: @background2;
+          }
+       '';
+ 
+       settings = [{        
+          "sway/workspaces" = {
+            all-outputs  = true;
+            format       = "{icon}";
+  
+            format-icons = {
+              "1" = "<big>󰜏</big>";
+              "2" = "<big>󰆍</big>";
+              "3" = "<big>󰭣</big>";
+              "4" = "<big>󰯜</big>";
+            };
+          };
+  
+          modules-center = [ "sway/workspaces" ];
+          modules-left   = [ "custom/power" "custom/reboot" "custom/sleep" "backlight" "pulseaudio" "network" "battery" "sway/mode" ];
+       }];
+     };
+
+     wayland.windowManager.sway = {
        enable   = true;
        xwayland = true;
   
