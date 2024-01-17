@@ -22,7 +22,7 @@
  environment = {
    loginShellInit = ''
       if [ "$(tty)" = "/dev/tty1" ]; then
-        exec-once hyprland
+        exec Hyprland
       fi
    '';
 
