@@ -26,7 +26,10 @@
          "$menu"             = "fuzzel";
          "$browser"          = "firefox";
          "$youtube"          = "freetube";
+         exec-once           = "hyprpaper";
          monitor             = "eDP-1, 1920x1080@60, 0x0, 1";
+         preload             = "~/GitHub/VonixOS/modules/wallpapers/Whispers.png";
+         wallpaper           = "eDP-1, ~/GitHub/VonixOS/modules/wallpapers/Whispers.png";
 
          input = {
            follow_mouse  = 1;
