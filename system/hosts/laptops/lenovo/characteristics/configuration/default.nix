@@ -6,8 +6,8 @@
 { ... }:
 
 {
- sway.enable = true;
- # hyprland.enable = true;
+ # sway.enable = true;
+ hyprland.enable = true;
 
  services = {
    udev.enable         = true;
@@ -22,7 +22,7 @@
  environment = {
    loginShellInit = ''
       if [ "$(tty)" = "/dev/tty1" ]; then
-        exec sway
+        exec Hyprland
       fi
    '';
 

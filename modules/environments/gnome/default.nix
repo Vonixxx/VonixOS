@@ -32,6 +32,11 @@
          enabled = true;
        };
 
+       "org/gnome/desktop/peripherals/touchpad" = {
+         tap-to-click   = true;
+         natural-scroll = false;
+       };
+
        "org/gnome/desktop/session" = {
          idle-delay = mkUint32 0;
        };

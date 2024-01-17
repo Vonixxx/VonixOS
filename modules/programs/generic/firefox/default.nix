@@ -49,6 +49,9 @@
          force   = true;
          default = "DuckDuckGo";
        };
+
+       userChrome = ''
+       '';
   
        arkenfox = {
          enable        = true;
