@@ -22,9 +22,11 @@
          "$terminal" = "foot";
          "$mainMod"  = "SUPER";
          "$menu"     = "fuzzel";
+         "$browser"  = "firefox";
+         "$youtube"  = "freetube";
 
          exec-once = "waybar";
-         monitor   = "DP-1, 1920x1080@60, 0x0, 1";
+         monitor   = "eDP-1, 1920x1080@60, 0x0, 1";
 
          misc = {
            force_default_wallpaper = 1;          
@@ -43,6 +45,8 @@
 
            "$mainMod, C, killactive"
            "$mainMod, D, exec, $menu"
+           "$mainMod, B, exec, $browser"
+           "$mainMod, Y, exec, $youtube"
            "$mainMod, T, exec, $terminal"
 
            "$mainMod SHIFT, 1, movetoworkspace, 1"
