@@ -6,14 +6,14 @@
 { lib, config, ... }: with lib;
 
 {
+ imports = [ ./waybar/default.nix ];
+
  options.hyprland.enable = mkOption {
    default = false;
    type    = types.bool;
  };
 
  config = mkIf (config.hyprland.enable) {
-   imports = [ ./waybar/default.nix ];
-
    home-manager.users.vonix.wayland.windowManager = {
      hyprland = {
        enable = true;

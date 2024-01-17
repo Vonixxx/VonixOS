@@ -6,14 +6,14 @@
 { lib, pkgs, config, ... }: with lib;
 
 {
+ imports = [ ./waybar/default.nix ];
+
  options.sway.enable = mkOption {
    default = false;
    type    = types.bool;
  };
 
  config = mkIf (config.sway.enable) {
-   imports = [ ./waybar/default.nix ];
-
    home-manager.users.vonix.wayland.windowManager = {
      sway = {
        enable   = true;
