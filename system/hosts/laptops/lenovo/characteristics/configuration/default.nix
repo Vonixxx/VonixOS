@@ -7,7 +7,8 @@
 
 {
  # sway.enable = true;
- hyprland.enable = true;
+ hyprland.enable       = true;
+ programs.light.enable = true;
 
  services = {
    udev.enable         = true;

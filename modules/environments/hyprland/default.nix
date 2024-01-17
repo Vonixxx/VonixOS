@@ -12,39 +12,10 @@
  };
 
  config = mkIf (config.hyprland.enable) {
-   home-manager.users.vonix = {
-     programs.waybar = {
-       style = ''
-          /* Colors */
-          @define-color background2 181825;
+   imports = [ ./waybar/default.nix ];
 
-
-          /* Workspaces */
-          #workspaces button.active {
-           opacity:    1;
-           background: @background2;
-          }
-       '';
-
-       settings = [{
-         "hyprland/workspaces" = {
-           all-outputs  = true;
-           format       = "{icon}";
- 
-           format-icons = {
-             "1" = "<big>󰜏</big>";
-             "2" = "<big>󰆍</big>";
-             "3" = "<big>󰭣</big>";
-             "4" = "<big>󰯜</big>";
-           };
-         };
- 
-         modules-center = [ "hyprland/workspaces" ];
-         modules-left   = [ "custom/power" "custom/reboot" "custom/sleep" "backlight" "pulseaudio" "network" "battery" "hyprland/mode" ];
-      }];
-    };
-
-     wayland.windowManager.hyprland = {
+   home-manager.users.vonix.wayland.windowManager = {
+     hyprland = {
        enable = true;
 
        settings = {

@@ -3,16 +3,14 @@
 ########################
 # Waybar Configuration #
 ########################
-{ lib, ... }: with lib;
+{ ... }:
 
 {
- programs.light.enable = true;
-
  home-manager.users.vonix.programs = {
    waybar = {
     enable = true;
 
-    style = mkDefault '' 
+    style = '' 
        /* Colors */
        @define-color power            #F38BA8;
        @define-color sleep            #89B4FA;
@@ -23,6 +21,7 @@
        @define-color pulseaudio       #CBA6F7;
        @define-color foreground       #CDD6F4;
        @define-color background1      #11111B;
+       @define-color background2      #181825;
        @define-color background3      #1E1E2E;
        @define-color urgentBackground #1E1E2E;
        @define-color urgentForeground #F38BA8;
@@ -135,6 +134,11 @@
         color:      @foreground;
        }
 
+       #workspaces button.active {
+        opacity:    1;
+        background: @background2;
+       }
+
        #workspaces button.urgent {
         opacity:    0.8;
         background: @urgentBackground;
@@ -142,11 +146,26 @@
        }
     '';
 
-    settings = mkDefault [{
-        height        = 55;
-        layer         = "top";
-        position      = "top";
-        modules-right = [ "disk" "memory" "clock" ];
+    settings = [{
+        height   = 55;
+        layer    = "top";
+        position = "top";
+
+        modules-center = [ "hyprland/workspaces" ];
+        modules-right  = [ "disk" "memory" "clock" ];
+        modules-left   = [ "custom/power" "custom/reboot" "custom/sleep" "backlight" "pulseaudio" "network" "battery" "hyprland/mode" ];
+
+        "hyprland/workspaces" = {
+          all-outputs  = true;
+          format       = "{icon}";
+
+          format-icons = {
+            "1" = "<big>󰜏</big>";
+            "2" = "<big>󰆍</big>";
+            "3" = "<big>󰭣</big>";
+            "4" = "<big>󰯜</big>";
+          };
+        };
 
         "memory" = {
           interval = 10;
