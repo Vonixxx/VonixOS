@@ -3,7 +3,7 @@
 ########################
 # Waybar Configuration #
 ########################
-{ ... }:
+{ lib, ... }: with lib;
 
 {
  programs.light.enable = true;
@@ -12,7 +12,7 @@
    waybar = {
     enable = true;
 
-    style = lib.mkDefault '' 
+    style = mkDefault '' 
        /* Colors */
        @define-color power            #F38BA8;
        @define-color sleep            #89B4FA;
@@ -142,7 +142,7 @@
        }
     '';
 
-    settings = lib.mkDefault [{
+    settings = mkDefault [{
         height        = 55;
         layer         = "top";
         position      = "top";
