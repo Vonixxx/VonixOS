@@ -3,10 +3,10 @@
 ########################
 # Waybar Configuration #
 ########################
-{ ... }:
+{ lib, ... }: with lib;
 
 {
- home-manager.users.vonix.programs = {
+ home-manager.users.vonix.programs = mkDefault {
    waybar = {
     enable = true;
 
