@@ -19,17 +19,35 @@
        enable = true;
 
        settings = {
-         "$terminal" = "foot";
-         "$mainMod"  = "SUPER";
-         "$menu"     = "fuzzel";
-         "$browser"  = "firefox";
-         "$youtube"  = "freetube";
+         decoration.rounding = 10;
+         "$terminal"         = "foot";
+         "$mainMod"          = "SUPER";
+         exec-once           = "waybar";
+         "$menu"             = "fuzzel";
+         "$browser"          = "firefox";
+         "$youtube"          = "freetube";
+         monitor             = "eDP-1, 1920x1080@60, 0x0, 1";
 
-         exec-once = "waybar";
-         monitor   = "eDP-1, 1920x1080@60, 0x0, 1";
+         input = {
+           follow_mouse  = 1;
+           kb_layout     = "us";
+           scroll_method = "2fg";
+         };
 
          misc = {
-           force_default_wallpaper = 1;          
+           force_default_wallpaper      = 0;
+           disable_hyprland_logo        = true;
+           animate_manual_resizes       = true;
+           animate_mouse_windowdragging = true;
+         };
+
+         general = {
+           border_size             = 3;
+           cursor_inactive_timeout = 5;
+           resize_on_border        = true;
+           layout                  = "master";
+           col.active_border       = "rgb(CBA6F7)";
+           col.inactive_border     = "rgb(11111B)";
          };
 
          bindr = [ 
@@ -54,29 +72,6 @@
            "$mainMod SHIFT, 3, movetoworkspace, 3"
            "$mainMod SHIFT, 4, movetoworkspace, 4"
          ];
-
-         decoration = {
-           rounding = 10;
-         };
-
-         input = {
-           kb_layout    = "us";
-           follow_mouse = true;
-       
-           touchpad = {
-             natural_scroll = false;
-           };
-         };
-
-         general = {
-           gaps_in             = 5;
-           border_size         = 2;
-           gaps_out            = 20;
-           allow_tearing       = false;
-           layout              = "master";
-           # col.inactive_border = "0xffffffff";
-           # col.active_border   = "0xff444444";
-         };
        };
      };
    };
