@@ -12,7 +12,7 @@
    waybar = {
     enable = true;
 
-    style = '' 
+    style = lib.mkDefault '' 
        /* Colors */
        @define-color power            #F38BA8;
        @define-color sleep            #89B4FA;
@@ -142,7 +142,7 @@
        }
     '';
 
-    settings = [{
+    settings = lib.mkDefault [{
         height        = 55;
         layer         = "top";
         position      = "top";
