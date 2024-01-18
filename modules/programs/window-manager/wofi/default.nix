@@ -25,7 +25,8 @@
         @define-color text            #CDD6F4;
         @define-color border          #CBA6F7;
         @define-color surface         #313244;
-        @define-color highlightResult #9399B2;
+        @define-color selectedText      #11111B;
+        @define-color selectedHighlight #9399B2;
          
         #entry {
          padding: 10px;
@@ -56,7 +57,7 @@
          padding:          5px;
          border-radius:    5px;
          margin-bottom:    15px;
-         color:            @surface;
+         color:            @text;
          background-color: @surface;
          border:           3px solid @border;
         }
@@ -67,7 +68,8 @@
         }
          
         #entry:selected {
-         background-color: @highlightResult;
+         color:          : @selectedText;
+         background-color: @selectedHighlight;
         }
 
         #inner-box {
