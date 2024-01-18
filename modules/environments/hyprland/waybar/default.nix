@@ -32,7 +32,7 @@
         min-height:    0;
         border-radius: 0;
         padding:       0;
-        margin:        3px;
+        margin:        0;
         border:        none;
        }
      
@@ -142,19 +142,19 @@
     '';
 
     settings = [{
-        height   = 40;
+        height   = 65;
         layer    = "top";
         position = "top";
 
         modules-center = [ "hyprland/workspaces" ];
         modules-right  = [ "disk" "memory" "clock" ];
-        modules-left   = [ "custom/power" "custom/reboot" "custom/sleep" "backlight" "pulseaudio" "network" "battery" "hyprland/mode" ];
+        modules-left   = [ "custom/power" "custom/reboot" "custom/sleep" "backlight" "pulseaudio" "network" "battery" ];
 
         "hyprland/workspaces" = {
           all-outputs = true;
           format      = "{icon}";
 
-          persistent_workspaces = {
+          persistent-workspaces = {
             "1" = "[]";
             "2" = "[]";
             "3" = "[]";
