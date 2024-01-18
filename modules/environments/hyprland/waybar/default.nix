@@ -25,7 +25,8 @@
 
        @define-color active     #CBA6F7;
        @define-color urgent     #F38BA8;
-       @define-color inactive   #94E2D5;
+       @define-color inactive   #F5E0DC;
+       @define-color occupied   #A6E3A1;
 
        /* Base */
        * {
@@ -33,7 +34,7 @@
         border-radius: 0px;
         padding:       0px;
         border:        none;
-        margin:        -1px 3px 3px;
+        margin:        -1px;
        }
      
 
@@ -126,16 +127,19 @@
  
        /* Workspaces */
        #workspaces button.urgent {
-        color:        @urgent;
-        border-color: @urgent;
+        color: @urgent;
        }
 
        #workspaces button.active {
-        border-bottom: 3px solid @active;
+        color: @active;
+       }
+
+       #workspaces button.occupied {
+        color: @occupied;
        }
 
        #workspaces button {
-        border-bottom: 3px solid @inactive;
+        color: @inactive;
        }
     '';
 
