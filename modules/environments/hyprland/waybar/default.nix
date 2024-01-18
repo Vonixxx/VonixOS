@@ -23,9 +23,10 @@
        @define-color background1      #11111B;
        @define-color background2      #181825;
        @define-color background3      #1E1E2E;
-       @define-color urgentBackground #1E1E2E;
-       @define-color urgentForeground #F38BA8;
 
+       @define-color active           #CBA6F7;
+       @define-color urgent           #F38BA8;
+       @define-color inactive         #94E2D5;
 
        /* Base */
        * {
@@ -70,37 +71,30 @@
        /* Icon Color */
        #battery {
         color:      @battery;
-        background: @background2;
        }
 
        #network {
         color:      @network;
-        background: @background2;
        }
 
        #backlight {
         color:      @backlight;
-        background: @background2;
        }
 
        #pulseaudio {
         color:      @pulseaudio;
-        background: @background2;
        }
 
        #custom-sleep {
         color:      @sleep;
-        background: @background3;
        }
 
        #custom-power {
         color:      @power;
-        background: @background3;
        }
 
        #custom-reboot {
         color:      @reboot;
-        background: @background3;
        }
  
 
@@ -132,21 +126,19 @@
 
  
        /* Workspaces */
-       #workspaces button {
-        opacity:    0.5;
-        background: none;
-        color:      @foreground;
+       #workspaces button.urgent {
+        color:        @urgent;
+        border-color: @urgent;
        }
 
        #workspaces button.active {
-        opacity:    1;
-        background: @background2;
+        margin-bottom: 0px;
+        border-bottom: 3px solid @active;
        }
 
-       #workspaces button.urgent {
-        opacity:    0.8;
-        background: @urgentBackground;
-        color:      @urgentForeground;
+       #workspaces button {
+        margin-bottom: 0px;
+        border-bottom: 3px solid @inactive;
        }
     '';
 
@@ -160,8 +152,15 @@
         modules-left   = [ "custom/power" "custom/reboot" "custom/sleep" "backlight" "pulseaudio" "network" "battery" "hyprland/mode" ];
 
         "hyprland/workspaces" = {
-          all-outputs  = true;
-          format       = "{icon}";
+          all-outputs = true;
+          format      = "{icon}";
+
+          persistent_workspaces = {
+            "1" = "[]";
+            "2" = "[]";
+            "3" = "[]";
+            "4" = "[]";
+          };
 
           format-icons = {
             "1" = "<big>󰜏</big>";
