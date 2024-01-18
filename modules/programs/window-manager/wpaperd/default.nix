@@ -13,7 +13,7 @@
        default = { 
          duration     = "30m";
          apply-shadow = false;
-         path         = "/home/vonix/GitHub/VonixOS/modules/wallpapers"; 
+         path         = "~/Pictures/Wallpapers"; 
        };
      };
    };

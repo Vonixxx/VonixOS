@@ -113,10 +113,6 @@
         padding-right: 16px;
        }
 
-       #workspaces button {
-        padding-right: 20px;
-       }
-
        #custom-power, 
        #custom-reboot {
         padding-right: 14px;
