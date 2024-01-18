@@ -116,10 +116,6 @@
         padding-right: 13px;
        }
 
-       #workspaces button {
-        padding-right: 15px;
-       }
-
        #pulseaudio { 
         padding-right: 17.5px;
        }
