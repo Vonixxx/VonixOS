@@ -44,7 +44,7 @@
         border-radius:    20px;
         font-weight:      bold;
         color:            @text;
-        background:       transparent;
+        background:       @background;
         font-family:      CascadiaCode;
        }
      
