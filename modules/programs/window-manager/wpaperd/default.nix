@@ -10,7 +10,11 @@
    wpaperd = {
      enable = true;
      settings = {
-       eDP-1.path = "~/GitHub/VonixOS/modules/wallpapers/Whispers.png";
+       default = { 
+         duration     = "30m";
+         apply-shadow = false;
+         path         = "/home/vonix/GitHub/VonixOS/modules/wallpapers"; 
+       };
      };
    };
  };
