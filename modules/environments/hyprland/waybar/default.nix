@@ -33,15 +33,15 @@
         min-height:    0;
         border-radius: 0;
         padding:       0;
-        margin:        1px;
         border:        none;
+        margin:        3px 3px 3px 3px;
        }
      
 
        /* Whole Bar */
        #waybar {
         font-size:        20px;
-        border-radius:    15px;
+        border-radius:    20px;
         font-weight:      bold;
         color:            @text;
         background:       transparent;
@@ -117,7 +117,7 @@
        }
 
        #workspaces button {
-        padding-left:  15px;
+        padding-left:  10px;
         padding-right: 15px;
        }
 
