@@ -11,18 +11,19 @@
      enable = true;
 
      settings = {
-       show = "run";
-       width = 250;
-       prompt = "Launch:";
+       lines        = 5;
+       width        = 250;
        allow_markup = true;
-       hide_scroll = true;
-       lines = 5;
+       hide_scroll  = true;
+       show         = "run";
+       prompt       = "Launch:";
      };
 
      style = '' 
         @define-color base            #181825;
         @define-color baseAlt         #1E1E2E;
         @define-color border          #CBA6F7;
+        @define-color text            #CDD6F4;
         @define-color highlightResult #F5E0DC;
         @define-color highlightSearch #F2CDCD;
          
@@ -30,20 +31,20 @@
          padding: 10px;
         }
 
+        #text {
+         padding: 5px;
+         color:   @text;
+        }
+         
         #entry:nth-child(even) {
          background-color: @base;
         }
          
         #outer-box {
-         margin:            5px;
+         margin:            0px;
          padding:           10px;
-         border-radius:     15px;
+         border-radius:     10px;
          background-color:  @base;
-        }
-         
-        #text {
-         padding: 5px;
-         color:   @highlightSearch;
         }
          
         * {
@@ -52,11 +53,11 @@
         }
          
         #input {
-         padding:       3px;
+         padding:       5px;
          border-radius: 5px;
-         border:        none;
          margin-bottom: 15px;
-         color:         @highlightSearch;
+         color:         @base;
+         border:        3px solid @border;
         }
          
         window {
@@ -69,8 +70,8 @@
         }
 
         #inner-box {
+         border-radius:    10px;
          background-color: @baseAlt;
-         box-shadow:       -4px -3px 45px 20px rgba(0,0,0,0.35);
         }
      '';
    };
