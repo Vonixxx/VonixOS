@@ -20,27 +20,28 @@
      };
 
      style = '' 
-        @define-color base            #181825;
-        @define-color baseAlt         #1E1E2E;
-        @define-color text            #CDD6F4;
-        @define-color border          #CBA6F7;
-        @define-color surface         #313244;
+        @define-color base              #181825;
+        @define-color baseAlt           #1E1E2E;
+        @define-color text              #CDD6F4;
+        @define-color border            #CBA6F7;
+        @define-color textBox           #313244;
         @define-color selectedText      #11111B;
         @define-color selectedHighlight #9399B2;
          
-        #entry {
-         padding: 10px;
-        }
-
         #text {
          padding: 5px;
          color:   @text;
         }
          
-        #entry:nth-child(even) {
+        #entry {
+         padding:       10px;
+         border-radius: 10px;
+        }
+
+        #inner-box {
          background-color: @base;
         }
-         
+
         #outer-box {
          margin:            3px;
          padding:           10px;
@@ -48,9 +49,18 @@
          background-color:  @base;
         }
          
+        #entry:nth-child(even) {
+         background-color: @baseAlt;
+        }
+         
         * {
          font-size:   15px;
          font-family: "CascadiaCode";
+        }
+         
+        #window {
+         border-radius: 10px;
+         border:        3px solid @border;
         }
          
         #input {
@@ -58,22 +68,12 @@
          border-radius:    5px;
          margin-bottom:    15px;
          color:            @text;
-         background-color: @surface;
+         background-color: @textBox;
          border:           3px solid @border;
-        }
-         
-        window {
-         border-radius: 10px;
-         border:        3px solid @border;
-        }
-         
-        #inner-box {
-         border-radius:    10px;
-         background-color: @baseAlt;
         }
 
         #entry:selected {
-         color           : @selectedText;
+         color:            @selectedText;
          background-color: @selectedHighlight;
         }
      '';
