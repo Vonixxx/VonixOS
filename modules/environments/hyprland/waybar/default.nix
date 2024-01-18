@@ -115,7 +115,11 @@
 
        #custom-power, 
        #custom-reboot {
-        padding-right: 14px;
+        padding-right: 13px;
+       }
+
+       #workspaces button {
+        padding-right: 15px;
        }
 
        #pulseaudio { 

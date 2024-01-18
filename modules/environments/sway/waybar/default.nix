@@ -119,7 +119,7 @@
 
        #custom-power, 
        #custom-reboot {
-        padding-right: 14px;
+        padding-right: 13px;
        }
 
        #pulseaudio { 

@@ -1,8 +1,8 @@
 ###########
 # VonixOS #
-##########################
-# Terminal Programs List #
-##########################
+#################
+# Programs List #
+#################
 [
  ./bat/default.nix
  ./git/default.nix

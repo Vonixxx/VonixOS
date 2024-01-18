@@ -11,7 +11,7 @@
      enable = true;
      settings = {
        default = { 
-         duration     = "30m";
+         duration     = "5m";
          apply-shadow = false;
          path         = "~/Pictures/Wallpapers"; 
        };
