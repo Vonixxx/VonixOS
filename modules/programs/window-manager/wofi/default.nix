@@ -22,8 +22,8 @@
      style = '' 
         @define-color base            #181825;
         @define-color baseAlt         #1E1E2E;
-        @define-color border          #CBA6F7;
         @define-color text            #CDD6F4;
+        @define-color border          #CBA6F7;
         @define-color surface         #313244;
         @define-color highlightResult #9399B2;
          
@@ -53,15 +53,15 @@
         }
          
         #input {
-         padding:       5px;
-         border-radius: 5px;
-         margin-bottom: 15px;
-         color:         @text;
-         background-color: @surface
-         border:        3px solid @border;
+         padding:          5px;
+         border-radius:    5px;
+         margin-bottom:    15px;
+         color:            @surface;
+         background-color: @surface;
+         border:           3px solid @border;
         }
          
-        window {
+        #window {
          border-radius: 10px;
          border:        3px solid @border;
         }
