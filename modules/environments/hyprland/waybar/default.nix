@@ -29,21 +29,22 @@
 
        /* Base */
        * {
-        min-height:    0px;
-        border-radius: 0px;
-        padding:       0px;
+        min-height:    0;
+        border-radius: 0;
+        padding:       0;
+        margin:        1px;
         border:        none;
-        margin:        1px 2px 2px 2px;
        }
      
 
        /* Whole Bar */
        #waybar {
-        font-size:     20px;
-        border-radius: 15px;
-        font-weight:   bold;
-        font-family:   CascadiaCode;
-        background:    transparent;
+        font-size:        20px;
+        border-radius:    15px;
+        font-weight:      bold;
+        color:            @text;
+        background:       transparent;
+        font-family:      CascadiaCode;
         background-color: @background1;
        }
      
@@ -60,9 +61,9 @@
        #custom-sleep,
        #custom-power,
        #custom-reboot {
+        margin:     1px 0px;
         padding:    2px 12px;
         color:      @foreground;
-        background: @background2;
        }
  
 
