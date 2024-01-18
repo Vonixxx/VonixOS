@@ -42,7 +42,7 @@
         }
          
         #outer-box {
-         margin:            0px;
+         margin:            3px;
          padding:           10px;
          border-radius:     10px;
          background-color:  @base;
@@ -62,19 +62,19 @@
          border:           3px solid @border;
         }
          
-        #window {
+        window {
          border-radius: 10px;
          border:        3px solid @border;
         }
          
-        #entry:selected {
-         color:          : @selectedText;
-         background-color: @selectedHighlight;
-        }
-
         #inner-box {
          border-radius:    10px;
          background-color: @baseAlt;
+        }
+
+        #entry:selected {
+         color           : @selectedText;
+         background-color: @selectedHighlight;
         }
      '';
    };
