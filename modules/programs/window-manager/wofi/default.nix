@@ -24,8 +24,8 @@
         @define-color baseAlt         #1E1E2E;
         @define-color border          #CBA6F7;
         @define-color text            #CDD6F4;
-        @define-color highlightResult #F5E0DC;
-        @define-color highlightSearch #F2CDCD;
+        @define-color surface         #313244;
+        @define-color highlightResult #9399B2;
          
         #entry {
          padding: 10px;
@@ -56,7 +56,8 @@
          padding:       5px;
          border-radius: 5px;
          margin-bottom: 15px;
-         color:         @base;
+         color:         @text;
+         background-color: @surface
          border:        3px solid @border;
         }
          
