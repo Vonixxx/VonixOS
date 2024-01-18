@@ -6,7 +6,7 @@
 { lib, config, ... }: with lib;
 
 {
- imports = [ ./waybar/default.nix ];
+ imports = [ ./eww/default.nix ];
 
  options.hyprland.enable = mkOption {
    default = false;
