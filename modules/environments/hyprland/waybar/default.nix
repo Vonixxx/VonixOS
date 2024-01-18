@@ -30,7 +30,7 @@
        /* Base */
        * {
         min-height:    0px;
-        border-radius: 10px;
+        border-radius: 0px;
         border:        none;
         margin:        1px 2px 2px 2px;
        }
@@ -38,10 +38,11 @@
 
        /* Whole Bar */
        #waybar {
-        font-size:   20px;
-        font-weight: bold;
-        font-family: CascadiaCode;
-        background:  rgba(0,0,0,0);
+        font-size:     20px;
+        border-radius: 15px;
+        font-weight:   bold;
+        font-family:   CascadiaCode;
+        background:    @background1;
        }
      
 
@@ -59,29 +60,29 @@
        #custom-reboot {
         padding:    2px 12px;
         color:      @foreground;
-        background: @background1;
+        background: @background2;
        }
  
 
        /* Icon Color */
        #battery {
         color:      @battery;
-        background: @background1;
+        background: @background2;
        }
 
        #network {
         color:      @network;
-        background: @background1;
+        background: @background2;
        }
 
        #backlight {
         color:      @backlight;
-        background: @background1;
+        background: @background2;
        }
 
        #pulseaudio {
         color:      @pulseaudio;
-        background: @background1;
+        background: @background2;
        }
 
        #custom-sleep {
