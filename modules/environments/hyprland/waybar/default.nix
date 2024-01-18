@@ -60,38 +60,38 @@
        #custom-sleep,
        #custom-power,
        #custom-reboot {
-        padding: 2px 6px;
+        padding: 2px 12px;
         color:   @foreground;
        }
  
 
        /* Icon Color */
        #battery {
-        color:      @battery;
+        color: @battery;
        }
 
        #network {
-        color:      @network;
+        color: @network;
        }
 
        #backlight {
-        color:      @backlight;
+        color: @backlight;
        }
 
        #pulseaudio {
-        color:      @pulseaudio;
+        color: @pulseaudio;
        }
 
        #custom-sleep {
-        color:      @sleep;
+        color: @sleep;
        }
 
        #custom-power {
-        color:      @power;
+        color: @power;
        }
 
        #custom-reboot {
-        color:      @reboot;
+        color: @reboot;
        }
  
 
@@ -142,7 +142,7 @@
     '';
 
     settings = [{
-        height   = 55;
+        height   = 40;
         layer    = "top";
         position = "top";
 
