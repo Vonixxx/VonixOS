@@ -19,10 +19,9 @@
        @define-color network          #89DCEB;
        @define-color backlight        #F9E2AF;
        @define-color pulseaudio       #CBA6F7;
+
        @define-color foreground       #CDD6F4;
-       @define-color background1      #11111B;
-       @define-color background2      #181825;
-       @define-color background3      #1E1E2E;
+       @define-color background       #11111B;
 
        @define-color active           #CBA6F7;
        @define-color urgent           #F38BA8;
