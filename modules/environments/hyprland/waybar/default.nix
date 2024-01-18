@@ -31,6 +31,7 @@
        * {
         min-height:    0px;
         border-radius: 0px;
+        padding:       0px;
         border:        none;
         margin:        1px 2px 2px 2px;
        }
@@ -42,7 +43,8 @@
         border-radius: 15px;
         font-weight:   bold;
         font-family:   CascadiaCode;
-        background:    @background1;
+        background:    transparent;
+        background-color: @background1;
        }
      
 
