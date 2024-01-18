@@ -12,27 +12,27 @@
 
     style = '' 
        /* Colors */
-       @define-color power            #F38BA8;
-       @define-color sleep            #89B4FA;
-       @define-color reboot           #F9E2AF;
-       @define-color battery          #A6E3A1;
-       @define-color network          #89DCEB;
-       @define-color backlight        #F9E2AF;
-       @define-color pulseaudio       #CBA6F7;
+       @define-color power      #F38BA8;
+       @define-color sleep      #89B4FA;
+       @define-color reboot     #F9E2AF;
+       @define-color battery    #A6E3A1;
+       @define-color network    #89DCEB;
+       @define-color backlight  #F9E2AF;
+       @define-color pulseaudio #CBA6F7;
 
-       @define-color foreground       #CDD6F4;
-       @define-color background       #11111B;
+       @define-color foreground #CDD6F4;
+       @define-color background #11111B;
 
-       @define-color active           #CBA6F7;
-       @define-color urgent           #F38BA8;
-       @define-color inactive         #94E2D5;
+       @define-color active     #CBA6F7;
+       @define-color urgent     #F38BA8;
+       @define-color inactive   #94E2D5;
 
        /* Base */
        * {
         min-height:    0;
         border-radius: 0;
         padding:       0;
-        margin:        0;
+        margin:        -1;
         border:        none;
        }
      
