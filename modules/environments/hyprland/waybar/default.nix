@@ -33,8 +33,8 @@
         min-height:    0;
         border-radius: 0;
         padding:       0;
+        margin:        3px;
         border:        none;
-        margin:        3px 3px 3px 3px;
        }
      
 
@@ -46,7 +46,6 @@
         color:            @text;
         background:       transparent;
         font-family:      CascadiaCode;
-        background-color: @background1;
        }
      
 
