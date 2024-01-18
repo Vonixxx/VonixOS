@@ -33,7 +33,7 @@
         border-radius: 0px;
         padding:       0px;
         border:        none;
-        margin:        -1px;
+        margin:        -1px 3px 3px;
        }
      
 
@@ -131,18 +131,16 @@
        }
 
        #workspaces button.active {
-        margin-bottom: 0px;
         border-bottom: 3px solid @active;
        }
 
        #workspaces button {
-        margin-bottom: 0px;
         border-bottom: 3px solid @inactive;
        }
     '';
 
     settings = [{
-        height   = 40;
+        height   = 45;
         layer    = "top";
         position = "top";
 
