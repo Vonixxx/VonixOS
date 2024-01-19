@@ -24,7 +24,7 @@ minix = nixpkgs.lib.nixosSystem {
 
   modules = [
     ./configuration.nix
-    ./hosts/mini/hp/imports.nix
+    ./hosts/miniature/minix/imports.nix
     home-manager.nixosModules.home-manager
   ];
 };
