@@ -13,6 +13,6 @@
    pkgs.runCommand "brcm-firmware" { } ''
       mkdir -p $out/lib/firmware/
       cp -r ${./brcm} "$out"/lib/firmware/
-   '';
+   ''
  };
 }
