@@ -26,6 +26,6 @@
 
  boot = { 
    kernelModules        = [ "i915" "kvm-intel" ];
-   initrd.kernelModules = [ "vmd" "ahci" "ext4" "nvme" "sd_mod" "xhci_pci" "usb_storage" ];
+   initrd.kernelModules = [ "vmd" "ahci" "ext4" "nvme" "sd_mod" "usbhid" "xhci_pci" "sdhci_acpi" "usb_storage" ];
  };
 }
