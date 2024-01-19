@@ -6,7 +6,7 @@
 { lib, config, ... }: with lib;
 
 {
- imports = [ ./eww/default.nix ];
+ imports = [ ./waybar/default.nix ];
 
  options.hyprland.enable = mkOption {
    default = false;
@@ -28,8 +28,8 @@
          monitor             = "eDP-1, 1920x1080@60, 0x0, 1";
 
          exec-once = [
+           "waybar" 
            "wpaperd"
-           "eww --force-wayland daemon" 
          ];
 
          input = {

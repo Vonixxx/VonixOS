@@ -98,8 +98,6 @@
          favorite-apps = [
            "org.gnome.Nautilus.desktop"
            "firefox.desktop"
-           "freetube.desktop"
-           "startcenter.desktop"
          ];
 
          enabled-extensions = [ 

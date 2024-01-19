@@ -19,6 +19,16 @@ in
    ];
  };
 
+minix = nixpkgs.lib.nixosSystem {
+  specialArgs = { inherit pkgs arkenfox; };
+
+  modules = [
+    ./configuration.nix
+    ./hosts/mini/hp/imports.nix
+    home-manager.nixosModules.home-manager
+  ];
+};
+
 lenovo = nixpkgs.lib.nixosSystem {
    specialArgs = { inherit pkgs arkenfox; };
 
