@@ -91,9 +91,11 @@
  }; 
 
  environment.shellAliases = {
-   update-hp     = "sudo nix flake update 'github:Vonixxx/VonixOS' && sudo nixos-rebuild switch --no-write-lock-file --flake 'github:Vonixxx/VonixOS#hp' --impure"; 
-   update-lenovo = "sudo nix flake update 'github:Vonixxx/VonixOS' && sudo nixos-rebuild switch --no-write-lock-file --flake 'github:Vonixxx/VonixOS#lenovo' --impure"; 
+   update-hp     = "sudo nix flake update 'github:Vonixxx/VonixOS' && sudo nixos-rebuild boot --no-write-lock-file --flake 'github:Vonixxx/VonixOS#hp' --impure"; 
+   update-minix  = "sudo nix flake update 'github:Vonixxx/VonixOS' && sudo nixos-rebuild boot --no-write-lock-file --flake 'github:Vonixxx/VonixOS#minix' --impure"; 
+   update-lenovo = "sudo nix flake update 'github:Vonixxx/VonixOS' && sudo nixos-rebuild boot --no-write-lock-file --flake 'github:Vonixxx/VonixOS#lenovo' --impure"; 
    test-hp       = "sudo nix flake update 'github:Vonixxx/VonixOS' && sudo nixos-rebuild dry-activate --no-write-lock-file --flake 'github:Vonixxx/VonixOS#hp' --impure"; 
+   test-minix    = "sudo nix flake update 'github:Vonixxx/VonixOS' && sudo nixos-rebuild dry-activate --no-write-lock-file --flake 'github:Vonixxx/VonixOS#minix' --impure"; 
    test-lenovo   = "sudo nix flake update 'github:Vonixxx/VonixOS' && sudo nixos-rebuild dry-activate --no-write-lock-file --flake 'github:Vonixxx/VonixOS#lenovo' --impure"; 
  };
 }
