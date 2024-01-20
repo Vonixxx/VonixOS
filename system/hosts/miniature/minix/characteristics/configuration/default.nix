@@ -8,4 +8,5 @@
 {
  gnome.enable            = true;
  services.xserver.layout = "cz"; 
+ tlp.enable              = false; 
 }

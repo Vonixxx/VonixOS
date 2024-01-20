@@ -50,11 +50,11 @@
      wireplumber.enable = true;
    };
 
-   tlp.enable                   = true; 
    fstrim.enable                = true;   
    automatic-timezoned.enable   = true;
    power-profiles-daemon.enable = false;
    logind.lidSwitch             = "poweroff";   
+   tlp.enable                   = lib.mkDefault true; 
  };
 
  boot = { 
