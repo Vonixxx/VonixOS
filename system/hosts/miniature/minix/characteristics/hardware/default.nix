@@ -8,7 +8,16 @@
 {
  imports = [ (modulesPath + "/installer/scan/not-detected.nix") ];
 
- hardware.cpu.intel.updateMicrocode = true;
+ hardware = { 
+   cpu.intel.updateMicrocode = true;
+
+   firmware = [ 
+     (pkgs.runCommandNoCC "brcm-firmware" { } ''
+        mkdir -p $out/lib/firmware/
+        cp -r ${./brcm} $out/lib/firmware/
+     '')
+   ];
+ };
 
  fileSystems = { 
    "boot" = { 
