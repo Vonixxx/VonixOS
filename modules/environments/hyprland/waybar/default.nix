@@ -26,7 +26,7 @@
        @define-color active     #CBA6F7;
        @define-color urgent     #F38BA8;
        @define-color inactive   #F5E0DC;
-       @define-color occupied   #A6E3A1;
+
 
        /* Base */
        * {
@@ -34,7 +34,7 @@
         border-radius: 0px;
         padding:       0px;
         border:        none;
-        margin:        -1px;
+        margin:        1px 1px 1px 1px;
        }
      
 
@@ -67,6 +67,18 @@
  
 
        /* Icon Color */
+       #custom-sleep {
+        color: @sleep;
+       }
+
+       #custom-power {
+        color: @power;
+       }
+
+       #custom-reboot {
+        color: @reboot;
+       }
+
        #battery {
         color: @battery;
        }
@@ -81,18 +93,6 @@
 
        #pulseaudio {
         color: @pulseaudio;
-       }
-
-       #custom-sleep {
-        color: @sleep;
-       }
-
-       #custom-power {
-        color: @power;
-       }
-
-       #custom-reboot {
-        color: @reboot;
        }
  
 
@@ -131,15 +131,11 @@
        }
 
        #workspaces button.active {
-        color: @active;
-       }
-
-       #workspaces button.occupied {
-        color: @occupied;
+        border-bottom: 3px @active;
        }
 
        #workspaces button {
-        color: @inactive;
+        border-bottom: 3px @inactive;
        }
     '';
 

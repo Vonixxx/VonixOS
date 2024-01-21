@@ -5,15 +5,15 @@
 #############################################################################################################
 # System & Home-Manager stateVersion, Learn More: https://nixos.wiki/wiki/FAQ/When_do_I_update_stateVersion #
 #############################################################################################################
-{ pkgs, ... }: 
+{ lib, pkgs, ... }: with lib;
 
 {
  programs.dconf.enable            = true;
  networking.networkmanager.enable = true; 
  system.stateVersion              = "23.11"; 
- powerManagement.cpuFreqGovernor  = "powersave";
- i18n.defaultLocale               = "en_GB.UTF-8";
  nixpkgs.hostPlatform             = "x86_64-linux";
+ powerManagement.cpuFreqGovernor  = mkDefault "powersave";
+ i18n.defaultLocale               = mkDefault "en_GB.UTF-8";
 
  fonts.fontconfig = {
    allowBitmaps  = false;
@@ -54,7 +54,7 @@
    automatic-timezoned.enable   = true;
    power-profiles-daemon.enable = false;
    logind.lidSwitch             = "poweroff";   
-   tlp.enable                   = lib.mkDefault true; 
+   tlp.enable                   = mkDefault true; 
  };
 
  boot = { 
