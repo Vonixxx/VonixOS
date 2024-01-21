@@ -131,11 +131,13 @@
        }
 
        #workspaces button.active {
-        border-bottom: 3px @active;
+        margin-bottom: 0px;
+        border-bottom: 3px solid @active;
        }
 
        #workspaces button {
-        border-bottom: 3px @inactive;
+        margin-bottom: 0px;
+        border-bottom: 3px solid @inactive;
        }
     '';
 

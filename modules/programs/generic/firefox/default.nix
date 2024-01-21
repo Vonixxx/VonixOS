@@ -51,121 +51,123 @@
        };
 
        userChrome = ''
-          /* 1.6.1
-          - Prevent single tab window controls from overlaping website content (#16)
-              the bookmarks bar will still be overlaped, difficult to fix
-          */
-          
           :root {
-              --urlbar-collapsed-width: 200px;
-              --urlbar-open-width: 300px; /* Only when disable-centering-of-URLbar is enabled */
+           --urlbar-collapsed-width: 500px;
           }
           
           #navigator-toolbox {
-              display: flex;
-              flex-wrap: wrap;
-              flex-direction: row;
-              position: relative !important;
-              padding-left: var(--tab-block-margin);
+           flex-direction: row;
+           display:        flex;
+           flex-wrap:      wrap;
+           position:       relative !important;
+           padding-left:   var(--tab-block-margin);
           }
           
           
           /* Hide flexible spaces */
           toolbarspring,
           [id^="wrapper-customizableui-special-spring"] {
-              display: none !important;
+           display: none !important;
           }
           
           
           /* Tabs */
           #titlebar {
-              width: 0;
-              flex-grow: 1;
-              overflow: hidden;
+           width:     0;
+           flex-grow: 1;
+           overflow:  hidden;
           }
-          #toolbar-menubar[inactive="true"] { /* Prevent duplicate window controls */
-              display: none !important;
+
+          #toolbar-menubar[inactive="true"] {
+           display: none !important;
           }
+
           #TabsToolbar {
-              display: flex !important;
-              align-items: center;
+           display: flex !important;
+           align-items: center;
           }
+
           .toolbar-items {
-              flex-grow: 1 !important;
+           flex-grow: 1 !important;
           }
+
           #TabsToolbar-customization-target {
-              display: flex !important;
-              margin-block: auto !important;
-              align-items: center;
+           align-items:  center;
+           display:      flex !important;
+           margin-block: auto !important;
           }
+
           #tabbrowser-tabs {
-              overflow: hidden !important;
-              width: 0 !important;
-              flex: 1 !important;
+           flex:     1 !important;
+           width:    0 !important;
+           overflow: hidden !important;
           }
+
           .tabbrowser-tab {
               min-height: calc(var(--tab-min-height) - 2px) !important;
           }
-          .tab-background { /* Just thought it looked nicer */
-              margin-block: calc(2px + var(--tab-block-margin)) !important;
-              box-shadow: none !important;
-              transition: background-color .2s;
+
+          .tab-background {
+           box-shadow:   none !important;
+           transition:   background-color .2s;
+           margin-block: calc(2px + var(--tab-block-margin)) !important;
           }
           
           @media (-moz-bool-pref: "onebar.hide-all-tabs-button") {
-              @media not (max-width: 700px) {
-                  #alltabs-button {
-                      display: none !important;
-                  }
-              }
+           @media not (max-width: 700px) {
+            #alltabs-button {
+             display: none !important;
+            }
+           }
           }
           
           
           /* Navigation buttons */
           @media (-moz-bool-pref: "onebar.conditional-navigation-buttons") {
-              :root:not([customizing]) #back-button[disabled],
-              :root:not([customizing]) #forward-button[disabled] {
-                  display: none !important;
-              }
+           :root:not([customizing]) #back-button[disabled],
+           :root:not([customizing]) #forward-button[disabled] {
+            display: none !important;
+           }
           }
+
           @media (-moz-bool-pref: "onebar.hide-navigation-buttons") {
-              #urlbar-container ~ :is(#back-button, #forward-button) {
-                  display: none !important;
-              }
-              /* In the customize menu */
-              :is(#wrapper-back-button, #wrapper-forward-button) {
-                  opacity: 1 !important;
-              }
-              #wrapper-urlbar-container ~ :is(#wrapper-back-button, #wrapper-forward-button) {
-                  opacity: .5 !important;
-              }
-          
-              /* Add note in customize menu for nav buttons */
-              #customization-header::after {
-                  content: "To hide the back & forward buttons, drag them to the right of the URL bar";
-                  background-color: blue;
-                  color: white;
-                  border-radius: 4px;
-                  padding: .4em .7em;
-                  margin-top: 1em;
-                  display: block;
-                  width: max-content;
-              }
+           #urlbar-container ~ :is(#back-button, #forward-button) {
+            display: none !important;
+           }
+
+           :is(#wrapper-back-button, #wrapper-forward-button) {
+            opacity: 1 !important;
+           }
+
+           #wrapper-urlbar-container ~ :is(#wrapper-back-button, #wrapper-forward-button) {
+            opacity: .5 !important;
+           }
+       
+           #customization-header::after {
+            margin-top:       1em;
+            border-radius:    4px;
+            background-color: blue;
+            color:            white;
+            display:          block;
+            padding:          .4em .7em;
+            width:            max-content;
+            content:          "To hide the back & forward buttons, drag them to the right of the URL bar";
+           }
           }
+
           :root[customizing] .urlbar-input-box {
-              visibility: visible !important;
+           visibility: visible !important;
           }
+
           :root[customizing] .urlbar-input-box::before {
-              content: "https://";
-              margin-block: auto;
+           margin-block: auto;
+           content:      "https://";
           }
+
           :root[customizing] #urlbar-input {
               display: none !important;
           }
-          
-          
-          
-          
+       
           
           /* Single Tab, *properties* also copy & pasted into "Small Window Fixes" */
           @media (not (-moz-bool-pref: "onebar.disable-single-tab")) {
