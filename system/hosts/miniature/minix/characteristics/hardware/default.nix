@@ -3,7 +3,7 @@
 ##########################
 # Hardware Configuration #
 ##########################
-{ config, modulesPath, ... }:
+{ pkgs, config, modulesPath, ... }:
 
 {
  imports = [ (modulesPath + "/installer/scan/not-detected.nix") ];
