@@ -6,7 +6,6 @@
 { ... }:
 
 {
- # sway.enable = true;
  hyprland.enable       = true;
  programs.light.enable = true;
 

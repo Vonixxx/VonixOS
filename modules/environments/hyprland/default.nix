@@ -6,8 +6,6 @@
 { lib, config, ... }: with lib;
 
 {
- imports = [ ./waybar/default.nix ];
-
  options.hyprland.enable = mkOption {
    default = false;
    type    = types.bool;
@@ -19,23 +17,27 @@
        enable = true;
 
        settings = {
-         decoration.rounding = 10;
-         "$terminal"         = "foot";
-         "$menu"             = "wofi";
-         "$mainMod"          = "SUPER";
-         "$browser"          = "firefox";
-         "$youtube"          = "freetube";
-         monitor             = "eDP-1, 1920x1080@60, 0x0, 1";
+         "$menu"     = "wofi";
+         "$terminal" = "foot";
+         "$mainMod"  = "SUPER";
+         "$browser"  = "firefox";
+         "$youtube"  = "freetube";
+         monitor     = "eDP-1, 1920x1080@60, 0x0, 1";
 
          exec-once = [
            "waybar" 
            "wpaperd"
          ];
 
+         decoration = {
+           rounding         = 10;
+           inactive_opacity = 0.9;
+           drop_shadow      = false;
+         };
+
          input = {
-           follow_mouse  = 1;
-           kb_layout     = "us";
            scroll_method = "2fg";
+           accel_profile = "adaptive";
          };
 
          misc = {
@@ -57,6 +59,9 @@
          };
 
          bindr = [ 
+           "$mainMod, C, killactive"
+           "$mainMod, F, fullscreen"
+
            "$mainMod, 1, workspace, 1"
            "$mainMod, 2, workspace, 2"
            "$mainMod, 3, workspace, 3"
@@ -67,7 +72,6 @@
            "$mainMod, H, movefocus, l"
            "$mainMod, L, movefocus, r"
 
-           "$mainMod, C, killactive"
            "$mainMod, D, exec, $menu"
            "$mainMod, B, exec, $browser"
            "$mainMod, Y, exec, $youtube"
