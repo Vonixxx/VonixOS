@@ -11,8 +11,8 @@
  programs.dconf.enable            = true;
  networking.networkmanager.enable = true; 
  system.stateVersion              = "23.11"; 
+ powerManagement.cpuFreqGovernor  = "ondemand";
  nixpkgs.hostPlatform             = "x86_64-linux";
- powerManagement.cpuFreqGovernor  = mkDefault "powersave";
  i18n.defaultLocale               = mkDefault "en_GB.UTF-8";
 
  fonts.fontconfig = {

@@ -50,8 +50,10 @@
          default = "DuckDuckGo";
        };
 
-       userChrome = ''
+       userChrome = ''       
+          /* Search Bar */
           :root {
+           --urlbar-open-width:      250px;
            --urlbar-collapsed-width: 500px;
           }
           
@@ -64,7 +66,7 @@
           }
           
           
-          /* Hide flexible spaces */
+          /* Hide Flexible Spaces */
           toolbarspring,
           [id^="wrapper-customizableui-special-spring"] {
            display: none !important;
@@ -78,41 +80,14 @@
            overflow:  hidden;
           }
 
-          #toolbar-menubar[inactive="true"] {
-           display: none !important;
-          }
-
-          #TabsToolbar {
-           display: flex !important;
-           align-items: center;
-          }
-
           .toolbar-items {
            flex-grow: 1 !important;
           }
 
-          #TabsToolbar-customization-target {
-           align-items:  center;
-           display:      flex !important;
-           margin-block: auto !important;
+          #toolbar-menubar[inactive="true"] {
+           display: none !important;
           }
 
-          #tabbrowser-tabs {
-           flex:     1 !important;
-           width:    0 !important;
-           overflow: hidden !important;
-          }
-
-          .tabbrowser-tab {
-              min-height: calc(var(--tab-min-height) - 2px) !important;
-          }
-
-          .tab-background {
-           box-shadow:   none !important;
-           transition:   background-color .2s;
-           margin-block: calc(2px + var(--tab-block-margin)) !important;
-          }
-          
           @media (-moz-bool-pref: "onebar.hide-all-tabs-button") {
            @media not (max-width: 700px) {
             #alltabs-button {
@@ -121,8 +96,35 @@
            }
           }
           
+          #tabbrowser-tabs {
+           flex:     1 !important;
+           width:    0 !important;
+           overflow: hidden !important;
+          }
+
+          #TabsToolbar {
+           align-items: center;
+           display:     flex !important;
+          }
+
+          #TabsToolbar-customization-target {
+           align-items:  center;
+           display:      flex !important;
+           margin-block: auto !important;
+          }
+
+          .tab-background {
+           margin-block: calc(2px + var(--tab-block-margin)) !important;
+           box-shadow: none !important;
+           transition: background-color .2s;
+          }
           
-          /* Navigation buttons */
+          .tabbrowser-tab {
+           min-height: calc(var(--tab-min-height) - 2px) !important;
+          }
+
+          
+          /* Navigation Buttons */
           @media (-moz-bool-pref: "onebar.conditional-navigation-buttons") {
            :root:not([customizing]) #back-button[disabled],
            :root:not([customizing]) #forward-button[disabled] {
@@ -130,11 +132,20 @@
            }
           }
 
-          @media (-moz-bool-pref: "onebar.hide-navigation-buttons") {
-           #urlbar-container ~ :is(#back-button, #forward-button) {
-            display: none !important;
-           }
+          :root[customizing] .urlbar-input-box::before {
+           content: "https://";
+           margin-block: auto;
+          }
 
+          :root[customizing] #urlbar-input {
+           display: none !important;
+          }
+          
+          :root[customizing] .urlbar-input-box {
+           visibility: visible !important;
+          }
+
+          @media (-moz-bool-pref: "onebar.hide-navigation-buttons") {
            :is(#wrapper-back-button, #wrapper-forward-button) {
             opacity: 1 !important;
            }
@@ -143,6 +154,10 @@
             opacity: .5 !important;
            }
        
+           #urlbar-container ~ :is(#back-button, #forward-button) {
+            display: none !important;
+           }
+
            #customization-header::after {
             margin-top:       1em;
             border-radius:    4px;
@@ -155,221 +170,227 @@
            }
           }
 
-          :root[customizing] .urlbar-input-box {
-           visibility: visible !important;
-          }
-
-          :root[customizing] .urlbar-input-box::before {
-           margin-block: auto;
-           content:      "https://";
-          }
-
-          :root[customizing] #urlbar-input {
-              display: none !important;
-          }
-       
           
-          /* Single Tab, *properties* also copy & pasted into "Small Window Fixes" */
+          /* Single Tab, *Properties* Also in --> "Small Window Fixes" */
           @media (not (-moz-bool-pref: "onebar.disable-single-tab")) {
-              #titlebar #tabbrowser-tabs .tabbrowser-tab:only-of-type {
-                  width: max-content !important;
-                  -moz-box-flex: unset !important;
-                  flex: unset !important;
-                  max-width: unset !important;
-                  margin-inline-end: auto !important;
-                  --toolbar-bgcolor: transparent !important;
-                  --tab-selected-bgimage: transparent !important;
-              }
-              .tabbrowser-tab:only-of-type .tab-text {
-                  font-weight: 600 !important;
-              }
-              .tabbrowser-tab:only-of-type .tab-close-button,
-              .tabbrowser-tab:only-of-type .tab-background,
-              #tabbrowser-tabs:not([closebuttons="activetab"]) ~ #alltabs-button {
-                  display: none !important;
-              }
+           .tabbrowser-tab:only-of-type .tab-background,
+           .tabbrowser-tab:only-of-type .tab-close-button,
+           #tabbrowser-tabs:not([closebuttons="activetab"]) ~ #alltabs-button {
+            display: none !important;
+           }
+
+           .tabbrowser-tab:only-of-type .tab-text {
+            font-weight: 600 !important;
+           }
+
+           #titlebar #tabbrowser-tabs .tabbrowser-tab:only-of-type {
+            margin-inline-end:      auto !important;
+            flex:                   unset !important;
+            max-width:              unset !important;
+            -moz-box-flex:          unset !important;
+            width:                  max-content !important;
+            --toolbar-bgcolor:      transparent !important;
+            --tab-selected-bgimage: transparent !important;
+           }
           }
           
           
-          
-          /* Match button sizes to toolbar buttons */
-          #TabsToolbar {
-              --toolbarbutton-inner-padding: 8px !important;
-          }
-          #TabsToolbar toolbarbutton {
-              margin: 0 !important;
-          }
-          
-          
+          /* Match Button Sizes to Toolbar Buttons */
           #alltabs-button {
-              order: -1;
+           order: -1;
           }
+
+          #TabsToolbar toolbarbutton {
+           margin: 0 !important;
+          }
+
           .titlebar-buttonbox-container {
-              order: -100 !important;
+           order: -100 !important;
           }
+
+          #TabsToolbar {
+           --toolbarbutton-inner-padding: 8px !important;
+          }
+
           
           /* Toolbar */
-          #nav-bar {
-              background: none !important;
-              /* Set max-width so the tabs list dropdown isn't hidden */
-              max-width: calc(100vw - ((2 * var(--toolbarbutton-inner-padding) + 16px) + (var(--toolbarbutton-outer-padding) * 2)) - var(--tab-block-margin)) !important;
-              position: static !important;
-          }
-          #urlbar-container {
-              min-width: var(--urlbar-collapsed-width) !important;
-              z-index: 10;
-              transition: background-color .2s, width .2s, min-width .2s;
-              position: static !important;
-              width: unset !important;
-          }
-          #urlbar {
-              position: relative !important;
-              top: unset !important;
-              align-self: flex-start !important;
-              margin-block: auto !important;
-          }
-          #urlbar[breakout-extend] {
-              position: absolute !important;
-              inset-inline: 20vw !important;
-              width: unset !important;
-          }
-          @media (-moz-bool-pref: "onebar.disable-centering-of-URLbar") {
-              #urlbar-container {
-                  position: relative !important;
-              }
-              #urlbar[breakout-extend] {
-                  /* width: 100% !important; */
-                  inset-inline: 0 !important;
-              }
-              #urlbar[breakout-extend] .urlbar-input-box {
-                  min-width: 400px !important;
-              }
-              #urlbar-container:focus-within, #urlbar-container:hover {
-                  min-width: var(--urlbar-open-width) !important;
-              }
-          }
-          #urlbar-input-container {
-              display: flex !important;
-          }
           #urlbar-input-container > :not(.urlbar-input-box) {
-              order: 2;
+           order: 2;
           }
-          .urlbar-input-box {
-              flex-grow: 1 !important;
-              padding-left: .5em !important;
-              width: 100px !important;
-              min-width: 50px !important;
-              transition: width .2s;
-          }
-          #urlbar-input:not(:focus-within) {
-              mask: linear-gradient(to right, black calc(100% - 20px), transparent);
-          }
+
           #urlbar-background {
-              transition: border .2s;
+           transition: border .2s;
           }
+
+          #urlbar-input-container {
+           display: flex !important;
+          }
+
+          .urlbar-input-box {
+           transition:   width .2s;
+           flex-grow:    1 !important;
+           min-width:    50px !important;
+           padding-left: .5em !important;
+           width:        100px !important;
+          }
+
+          #urlbar[breakout-extend] {
+           inset-inline: 20vw !important;
+           width:        unset !important;
+           position:     absolute !important;
+          }
+
+          #urlbar {
+           margin-block: auto !important;
+           top:          unset !important;
+           position:     relative !important;
+           align-self:   flex-start !important;
+          }
+
+          @media (-moz-bool-pref: "onebar.disable-centering-of-URLbar") {
+           #urlbar[breakout-extend] {
+            inset-inline: 0 !important;
+           }
+
+           #urlbar[breakout-extend] .urlbar-input-box {
+            min-width: 400px !important;
+           }
+
+           #urlbar-container {
+            position: relative !important;
+           }
+
+           #urlbar-container:focus-within, #urlbar-container:hover {
+            min-width: var(--urlbar-open-width) !important;
+           }
+          }
+
+          #urlbar-container {
+           z-index:    10;
+           width:      unset !important;
+           position:   static !important;
+           min-width:  var(--urlbar-collapsed-width) !important;
+           transition: background-color .2s, width .2s, min-width .2s;
+          }
+
           #urlbar:hover:not([focused="true"]) > #urlbar-background {
-              --toolbar-field-border-color: var(--toolbar-field-focus-border-color)
+           --toolbar-field-border-color: var(--toolbar-field-focus-border-color)
           }
           
-          /* Truncate https:// when collapsed */
+          #urlbar-input:not(:focus-within) {
+           mask: linear-gradient(to right, black calc(100% - 20px), transparent);
+          }
+
+          #nav-bar {
+           background: none !important;
+           position:   static !important;
+           max-width:  calc(100vw - ((2 * var(--toolbarbutton-inner-padding) + 16px) + (var(--toolbarbutton-outer-padding) * 2)) - var(--tab-block-margin)) !important;
+          }
+
+
+          /* Truncate https:// when Collapsed */
           @media (not (-moz-bool-pref: "onebar.disable-https-truncate")) and (not (-moz-bool-pref: "browser.urlbar.trimHttps")) {
-              #urlbar-input {
-                  transition: margin .1s;
-              }
-              .verifiedDomain ~ .urlbar-input-box:not(:focus-within) #urlbar-input {
-                  margin-left: -4ch !important;
-                  mask: linear-gradient(to right, transparent 4ch, black 5ch calc(100% - 3ch), transparent) !important;
-              }
+           #urlbar-input {
+            transition: margin .1s;
+           }
+
+           .verifiedDomain ~ .urlbar-input-box:not(:focus-within) #urlbar-input {
+            margin-left: -4ch !important;
+            mask:        linear-gradient(to right, transparent 4ch, black 5ch calc(100% - 3ch), transparent) !important;
+           }
           }
           
-          /* Hide unimportant buttons until hover */
-          :root {
-              --in-transition: font-size .2s, padding .2s, margin .2s, max-width .2s, opacity .2s .15s;
-              --out-transition: font-size .2s, padding .2s, margin .2s, max-width .2s, opacity .07s;
-          }
-          #urlbar-container:hover #urlbar-input-container > box:not(#page-action-buttons),
+
+          /* Hide Unimportant Buttons Until Hover */
+          #urlbar-container:hover #userContext-label, 
           #urlbar-container:hover #page-action-buttons > *,
-          #urlbar-container:hover #userContext-label {
-              transition: var(--in-transition) !important;
-              max-width: 200px;
+          #urlbar-container:hover #urlbar-input-container > box:not(#page-action-buttons) {
+           max-width:  200px;
+           transition: var(--in-transition) !important;
           }
+
           @media (-moz-bool-pref: "onebar.disable-autohide-of-URLbar-icons") {
-              #urlbar-container {
-                  min-width: var(--urlbar-open-width) !important;
-              }
+           #urlbar-container {
+            min-width: var(--urlbar-open-width) !important;
+           }
           }
+
+          #urlbar-container #urlbar[focused="true"] #page-action-buttons > *, 
+          #urlbar-container #urlbar[focused="true"] #urlbar-input-container > box {
+           opacity:        0 !important;
+           font-size:      0 !important;
+           max-width:      0 !important;
+           margin-inline:  0 !important;
+           padding-inline: 0 !important;
+           transition:     var(--out-transition) !important;
+          }
+          
           @media (not (-moz-bool-pref: "onebar.disable-autohide-of-URLbar-icons")) {
-              #urlbar-container:not(:hover) :where(
-                  toolbarbutton,
-                  #userContext-label,
-                  #star-button-box,
-                  .verifiedDomain,
-                  #tracking-protection-icon-container,
-                  #pageAction-urlbar-_testpilot-containers,
-                  #pageActionButton,
-              ) {
-                  font-size: 0 !important;
-                  max-width: 0 !important;
-                  padding-inline: 0 !important;
-                  margin-inline: 0 !important;
-                  opacity: 0 !important;
-                  transition: var(--out-transition) !important;
-              }
-              @media (-moz-bool-pref: "onebar.hide-all-URLbar-icons") {
-                  #urlbar-container:not(:hover) :where(#page-action-buttons, #identity-box) > * {
-                      font-size: 0 !important;
-                      max-width: 0 !important;
-                      padding-inline: 0 !important;
-                      margin-inline: 0 !important;
-                      opacity: 0 !important;
-                      transition: var(--out-transition) !important;
-                  }
-              }
+           #urlbar-container:not(:hover) :where (
+              toolbarbutton,
+              .verifiedDomain,
+              #star-button-box,
+              #pageActionButton,
+              #userContext-label,
+              #tracking-protection-icon-container,
+              #pageAction-urlbar-_testpilot-containers,
+           ) {
+            opacity:        0 !important;
+            font-size:      0 !important;
+            max-width:      0 !important;
+            margin-inline:  0 !important;
+            padding-inline: 0 !important;
+            transition:     var(--out-transition) !important;
+           }
+
+           @media (-moz-bool-pref: "onebar.hide-all-URLbar-icons") {
+            #urlbar-container:not(:hover) :where(#page-action-buttons, #identity-box) > * {
+             opacity:        0 !important;
+             font-size:      0 !important;
+             max-width:      0 !important;
+             margin-inline:  0 !important;
+             padding-inline: 0 !important;
+             transition:     var(--out-transition) !important;
+            }
+           }
           }
-          #urlbar-container #urlbar[focused="true"] #urlbar-input-container > box,
-          #urlbar-container #urlbar[focused="true"] #page-action-buttons > * {
-              font-size: 0 !important;
-              max-width: 0 !important;
-              padding-inline: 0 !important;
-              margin-inline: 0 !important;
-              opacity: 0 !important;
-              transition: var(--out-transition) !important;
+
+          :root {
+           --out-transition: font-size .2s, padding .2s, margin .2s, max-width .2s, opacity .07s;
+           --in-transition:  font-size .2s, padding .2s, margin .2s, max-width .2s, opacity .2s .15s;
           }
-          
+
+
           /* Other Buttons */
-          
-          .toolbarbutton-icon {
-              transition: background-color .1s;
-          }
-          
-          #nav-bar #search-container {
-              min-width: 32px !important;
-              transition: min-width .2s;
-          }
-          
           .titlebar-spacer,
           #identity-icon-label {
-              display: none;
+           display: none;
           }
           
           @media (-moz-bool-pref: "onebar.hide-unified-extensions-button") {
-              #unified-extensions-button, #unified-extensions-button > .toolbarbutton-icon{
-                  width: 0px !important;
-                  padding: 0px !important;
-              }
+           #unified-extensions-button, #unified-extensions-button > .toolbarbutton-icon{
+            width:   0px !important;
+            padding: 0px !important;
+           }
           }
           
-          /* Wrap other toolbars to bottom */
+          #nav-bar #search-container {
+           transition: min-width .2s;
+           min-width:  32px !important;
+          }
+          
+          .toolbarbutton-icon {
+           transition: background-color .1s;
+          }
+          
+
+          /* Wrap Other Toolbars to the Bottom */
           #nav-bar ~ * {
-              width: 100vw !important;
+           width: 100vw !important;
           }
           
-          
-          
-          
-          
-          /* Linux fixes, credits: https://github.com/ranmaru22/firefox-vertical-tabs/pull/39 */
-          
+                                       
+          /* Linux Fixes */
           @media (-moz-gtk-csd-available) {
               /* window control padding values (these don't change the size of the actual buttons, only the padding for the navbar) */
               :root[tabsintitlebar] {
@@ -439,88 +460,98 @@
                   }
               }
           }
-          
-          /* Small window */
-          
+
+
+          /* Small Window */
           @media (max-width: 700px) {
-              #nav-bar {
-                  width: 100% !important;
-              }
-          
-              @media (-moz-gtk-csd-minimize-button),
-              (-moz-gtk-csd-maximize-button),
-              (-moz-gtk-csd-close-button) {
-                  @media (-moz-gtk-csd-reversed-placement) {
-                      #nav-bar {
-                          max-width: calc(100vw - ((2 * var(--toolbarbutton-inner-padding) + 16px) + (var(--toolbarbutton-outer-padding) * 2)) - var(--tab-block-margin)
-                                      - (var(--uc-navbar-padding, 0) + var(--uc-win-ctrl-padding))) !important;
-                      }
-                  }
-              }
-          
-              #TabsToolbar {
-                  width: 100vw;
-              }
-              #titlebar {
-                  overflow: visible !important;
-              }
-              #tabbrowser-tabs {
-                  padding-inline: 0 !important;
-              }
-              #tabbrowser-tabs, #nav-bar {
-                  transition: opacity .2s !important;
-              }
-              #navigator-toolbox:hover #tabbrowser-tabs,
-              #navigator-toolbox:focus-within #tabbrowser-tabs {
-                  opacity: 0;
-              }
-              #navigator-toolbox:hover #nav-bar,
-              #navigator-toolbox:focus-within #nav-bar {
-                  z-index: 2 !important;
-              }
-              #navigator-toolbox:not(:hover):not(:focus-within) #nav-bar {
-                  opacity: 0;
-              }
-              #TabsToolbar-customization-target:first-of-type > :not(#alltabs-button):not(#tabbrowser-tabs),
-              #tabbrowser-arrowscrollbox > :not(.tabbrowser-tab) {
-                  display: none !important;
-              }
-              #navigator-toolbox #tabbrowser-tabs ~ #alltabs-button {
-                  display: -moz-box !important;
-              }
-              #scrollbutton-up,
-              #scrollbutton-down {
-                  display: none !important;
-              }
-          
-              #navigator-toolbox :is(#urlbar, #urlbar-container) {
-                  min-width: unset !important;
-              }
-              #urlbar[breakout-extend] {
-                  inset-inline: 15px !important;
-                  z-index: 102 !important;
-              }
-          
-              /* Single Tab styling */
-              #titlebar #tabbrowser-tabs .tabbrowser-tab {
-                  -moz-box-flex: unset !important;
-                  margin-right: auto !important;
-                  max-width: unset !important;
-                  -moz-box-flex: 100 !important;
-                  --toolbar-bgcolor: transparent !important;
-                  --tab-selected-bgimage: transparent !important;
-              }
-              .tabbrowser-tab .tab-text {
-                  font-weight: 600 !important;
-              }
-              .tabbrowser-tab .tab-close-button,
-              .tabbrowser-tab .tab-background {
-                  display: none !important;
-              }
-          
-              .tabbrowser-tab:not([visuallyselected]) {
-                  display: none !important;
-              }
+           #navigator-toolbox:hover #tabbrowser-tabs,
+           #navigator-toolbox:focus-within #tabbrowser-tabs {
+            opacity: 0;
+           }
+
+           #navigator-toolbox:not(:hover):not(:focus-within) #nav-bar {
+            opacity: 0;
+           }
+
+           #TabsToolbar {
+            width: 100vw;
+           }
+
+           #navigator-toolbox:hover #nav-bar,
+           #navigator-toolbox:focus-within #nav-bar {
+            z-index: 2 !important;
+           }
+
+           #nav-bar {
+            width: 100% !important;
+           }
+       
+           #TabsToolbar-customization-target:first-of-type > :not(#alltabs-button):not(#tabbrowser-tabs),
+           #tabbrowser-arrowscrollbox > :not(.tabbrowser-tab) {
+            display: none !important;
+           }
+
+           #scrollbutton-up,
+           #scrollbutton-down {
+            display: none !important;
+           }
+       
+           .tabbrowser-tab .tab-background, 
+           .tabbrowser-tab .tab-close-button {
+            display: none !important;
+           }
+       
+           .tabbrowser-tab:not([visuallyselected]) {
+            display: none !important;
+           }
+
+           .tabbrowser-tab .tab-text {
+            font-weight: 600 !important;
+           }
+
+           #navigator-toolbox :is(#urlbar, #urlbar-container) {
+            min-width: unset !important;
+           }
+
+           #titlebar {
+            overflow: visible !important;
+           }
+
+           #tabbrowser-tabs {
+            padding-inline: 0 !important;
+           }
+
+           #navigator-toolbox #tabbrowser-tabs ~ #alltabs-button {
+            display: -moz-box !important;
+           }
+
+           #urlbar[breakout-extend] {
+            z-index:      102 !important;
+            inset-inline: 15px !important;
+           }
+      
+           #tabbrowser-tabs, #nav-bar {
+            transition: opacity .2s !important;
+           }
+
+           #titlebar #tabbrowser-tabs .tabbrowser-tab {
+            -moz-box-flex:          100 !important;
+            margin-right:           auto !important;
+            max-width:              unset !important;
+            -moz-box-flex:          unset !important;
+            --toolbar-bgcolor:      transparent !important;
+            --tab-selected-bgimage: transparent !important;
+           }
+
+           @media (-moz-gtk-csd-minimize-button),
+           (-moz-gtk-csd-maximize-button),
+           (-moz-gtk-csd-close-button) {
+            @media (-moz-gtk-csd-reversed-placement) {
+             #nav-bar {
+              max-width: calc(100vw - ((2 * var(--toolbarbutton-inner-padding) + 16px) + (var(--toolbarbutton-outer-padding) * 2)) - var(--tab-block-margin) - (var(--uc-navbar-padding, 0) + var(--uc-win-ctrl-padding))) !important;
+             }
+            }
+           }
           }
        '';
             

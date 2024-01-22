@@ -11,7 +11,6 @@
    tlp.enable     = false; 
  };
 
- gnome.enable                     = true;
- powerManagement.cpuFreqGovernor  = "performance";
- i18n.defaultLocale               = "cs_CZ.UTF-8";
+ gnome.enable       = true;
+ i18n.defaultLocale = "cs_CZ.UTF-8";
 }
