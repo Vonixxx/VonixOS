@@ -52,9 +52,9 @@
            "workspace 1         , ^(firefox)$"
            "opacity 1.0 override, ^(firefox)$"
 
-           "workspace 4         , ^(Freetube)$"
-           "nofullscreenrequest , ^(Freetube)$"
-           "opacity 1.0 override, ^(Freetube)$"
+           "workspace 4         , ^(FreeTube)$"
+           "nofullscreenrequest , ^(FreeTube)$"
+           "opacity 1.0 override, ^(FreeTube)$"
          ];
 
          misc = {
