@@ -1,20 +1,21 @@
 * System Setup
-Designed to be a minimalistic, fully declarative setup.
+Designed to be a minimalistic & fully declarative setup.
 
 * System Components
-|                  | *VonixOS (Sway)* | *VonixOS (Gnome)* |
-|------------------+------------------+-------------------|
-| *Notifications*  | Mako             | -                 |
-| *Launcher*       | Fuzzel           | -                 |
-| *Bar*            | Waybar           | -                 |
-| *Shell*          | ZSH              | Bash              |
-| *Theme*          | Catppuccin       | Adwaita           |
-| *Editor*         | Helix            | Gnome Text Editor |
-| *Terminal*       | Foot             | Gnome Terminal    |
-| *Login Manager*  | TTY1 Login       | GDM               |
-| *Environment*    | Sway             | Gnome             |
-| *Browser*        |            (Arken)Firefox            |
-|------------------+------------------+-------------------|
+|                  | *VonixOS (Hyprland)* | *VonixOS (Gnome)* |
+|------------------+----------------------+-------------------|
+| *Launcher*       | Wofi                 | -                 |
+| *Notifications*  | Mako                 | -                 |
+| *Bar*            | Waybar               | -                 |
+| *Shell*          | ZSH                  | Bash              |
+| *Theme*          | Catppuccin           | Adwaita           |
+| *Editor*         | Helix                | Gnome Text Editor |
+| *Browser*        | (Arken)Firefox       | (Arken)Firefox    |
+| *Terminal*       | Foot                 | Gnome Terminal    |
+| *Environment*    | Hyprland             | Gnome             |
+| *Login-Manager*  | TTY1 Login           | GDM               |
+|------------------+----------------------+-------------------|
 
 * Look & Feel
-[[file:sway.png]]
+[[file:gnome.png]]
+[[file:hyprland.png]]

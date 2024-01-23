@@ -8,15 +8,14 @@
 #    └─default.nix
 #      ├─configuration.nix      
 #      └─/hosts/<chosen host>
-#         └─configuration.nix
+#         └─imports.nix
 #           ├─/characteristics          
 #           └─/modules
 #              ├─/environments
 #              │  └─default.nix
-#              ├─/terminal
-#              │  └─default.nix
 #              └─/programs
 #                 ├─generic.nix
+#                 ├─terminal.nix
 #                 ├─recording.nix
 #                 └─window-manager.nix
 {

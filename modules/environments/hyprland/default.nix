@@ -20,18 +20,21 @@
          "$menu"     = "wofi";
          "$terminal" = "foot";
          "$mainMod"  = "SUPER";
+         "$pdf"      = "sioyek";
          "$browser"  = "firefox";
          "$youtube"  = "freetube";
          monitor     = "eDP-1, 1920x1080@60, 0x0, 1";
 
          exec-once = [
+           "mako" 
            "waybar" 
            "wpaperd"
          ];
 
          decoration = {
            rounding         = 10;
-           inactive_opacity = 0.9;
+           active_opacity   = 0.95;
+           inactive_opacity = 0.80;
            drop_shadow      = false;
          };
 
@@ -72,6 +75,7 @@
            "$mainMod, H, movefocus, l"
            "$mainMod, L, movefocus, r"
 
+           "$mainMod, P, exec, $pdf"
            "$mainMod, D, exec, $menu"
            "$mainMod, B, exec, $browser"
            "$mainMod, Y, exec, $youtube"
