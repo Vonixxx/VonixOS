@@ -11,7 +11,7 @@
      enable = true; 
 
      config = {
-       "default_dark_mode" = true;
+       "default_dark_mode" = "true";
        "ui_font"           = "CascadiaCode";
      };
    };
