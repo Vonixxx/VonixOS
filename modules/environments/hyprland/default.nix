@@ -33,14 +33,21 @@
 
          decoration = {
            rounding         = 10;
-           active_opacity   = 0.95;
-           inactive_opacity = 0.80;
+           active_opacity   = 0.90;
+           inactive_opacity = 0.50;
            drop_shadow      = false;
          };
 
          input = {
            scroll_method = "2fg";
            accel_profile = "adaptive";
+         };
+
+         windowrule = {
+           "opacity 0.7 override, ^(foot)$"
+           "opacity 1.0 override, ^(sioyek)$"
+           "opacity 1.0 override, ^(freetube)$"
+           "nofullscreenrequest , ^(freetube)$"
          };
 
          misc = {
@@ -61,7 +68,7 @@
            "col.inactive_border"   = "rgb(11111B)";
          };
 
-         bindr = [ 
+         bind = [ 
            "$mainMod, C, killactive"
            "$mainMod, F, fullscreen"
 

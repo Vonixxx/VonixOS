@@ -13,7 +13,7 @@
 
      settings = {
        csd.font  = "CascadiaCode";
-       main.font = "monospace:size=14";
+       main.font = "monospace:size=15";
 
        cursor = {
          blink = true;
@@ -26,7 +26,6 @@
        };
 
        colors = {
-         alpha      = 0.8;
          bright0    = "988BA2"; 
          bright1    = "F28FAD"; 
          bright2    = "ABE9B3"; 
