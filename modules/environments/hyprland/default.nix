@@ -43,12 +43,12 @@
            accel_profile = "adaptive";
          };
 
-         windowrule = {
+         windowrule = [
            "opacity 0.7 override, ^(foot)$";
            "opacity 1.0 override, ^(sioyek)$";
            "opacity 1.0 override, ^(freetube)$";
            "nofullscreenrequest , ^(freetube)$";
-         };
+         ];
 
          misc = {
            force_default_wallpaper      = 0;
