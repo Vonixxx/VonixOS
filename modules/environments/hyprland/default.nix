@@ -44,10 +44,10 @@
          };
 
          windowrule = [
-           "opacity 0.7 override, ^(foot)$";
-           "opacity 1.0 override, ^(sioyek)$";
-           "opacity 1.0 override, ^(freetube)$";
-           "nofullscreenrequest , ^(freetube)$";
+           "opacity 0.7 override, ^(foot)$"
+           "opacity 1.0 override, ^(sioyek)$"
+           "opacity 1.0 override, ^(freetube)$"
+           "nofullscreenrequest , ^(freetube)$"
          ];
 
          misc = {
