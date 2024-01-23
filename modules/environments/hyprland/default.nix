@@ -33,8 +33,8 @@
 
          decoration = {
            rounding         = 10;
-           active_opacity   = 0.90;
-           inactive_opacity = 0.50;
+           active_opacity   = 0.95;
+           inactive_opacity = 0.60;
            drop_shadow      = false;
          };
 
@@ -44,10 +44,17 @@
          };
 
          windowrule = [
-           "opacity 0.7 override, ^(foot)$"
+           "opacity 0.8 override, ^(foot)$"
+
+           "workspace 3         , ^(sioyek)$"
            "opacity 1.0 override, ^(sioyek)$"
-           "opacity 1.0 override, ^(freetube)$"
-           "nofullscreenrequest , ^(freetube)$"
+
+           "workspace 1         , ^(firefox)$"
+           "opacity 1.0 override, ^(firefox)$"
+
+           "workspace 4         , ^(Freetube)$"
+           "nofullscreenrequest , ^(Freetube)$"
+           "opacity 1.0 override, ^(Freetube)$"
          ];
 
          misc = {

@@ -11,8 +11,8 @@
      enable = true; 
 
      config = {
-       "custom_background_color" = "0 0 0";  
-       "custom_text_color"       = "1.0 1.0 1.0";
+       "default_dark_mode" = true;
+       "ui_font"           = "CascadiaCode";
      };
    };
  };
