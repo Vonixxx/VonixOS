@@ -6,9 +6,11 @@
 { ... }:
 
 {
- accounts.email.accounts.default = {
-   thunderbird.enable = true;
-   address            = "vonixxx@tuta.io";
+ home-manager.users.vonix.services = {
+   accounts.email.accounts.default = {
+     thunderbird.enable = true;
+     address            = "vonixxx@tuta.io";
+   };
  };
 
  users.users.vonix = {
