@@ -10,6 +10,8 @@
    email.accounts.default = {
      primary            = true;
      thunderbird.enable = true;
+     realName           = "Luca";
+     userName           = "Vonix";
      address            = "vonixxx@tuta.io";
    };
  };
