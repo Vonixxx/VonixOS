@@ -5,4 +5,5 @@
 #################
 [
  ./generic/firefox/default.nix
+ ./generic/thunderbird/default.nix
 ]

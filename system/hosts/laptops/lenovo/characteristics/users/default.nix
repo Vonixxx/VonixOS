@@ -6,6 +6,11 @@
 { ... }:
 
 {
+ accounts.email.accounts.default = {
+   thunderbird.enable = true;
+   address            = "vonixxx@tuta.io";
+ };
+
  users.users.vonix = {
    uid            = 1000;
    isNormalUser   = true;
