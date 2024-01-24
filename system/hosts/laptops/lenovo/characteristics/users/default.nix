@@ -8,6 +8,7 @@
 {
  home-manager.users.vonix.accounts = {
    email.accounts.default = {
+     primary            = true;
      thunderbird.enable = true;
      address            = "vonixxx@tuta.io";
    };
