@@ -22,7 +22,6 @@
    # Terminal Utilities #
    ######################
    alsa-utils
-   hyprpaper
    pfetch-rs
    swayimg
    tldr
