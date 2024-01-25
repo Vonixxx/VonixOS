@@ -19,10 +19,14 @@
    freetube
    libreoffice-fresh
  ]) ++ (with pkgs.gnomeExtensions; [
-    arcmenu
-    dash-to-panel
-    user-themes
- ]) ++ (with pkgs.gnome; [ gnome-tweaks ]);
+   arcmenu
+   dash-to-panel
+   user-themes
+ ]) ++ (with pkgs.gnome; [ 
+   gnome-tweaks 
+ ]) ++ (with pkgs.libsForQt5; [
+    kdenlive 
+ ]);
 
  environment.gnome.excludePackages = with pkgs.gnome; [
    atomix
