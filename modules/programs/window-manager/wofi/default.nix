@@ -21,60 +21,45 @@
 
      style = '' 
         @define-color base              #181825;
-        @define-color baseAlt           #1E1E2E;
         @define-color text              #CDD6F4;
         @define-color border            #CBA6F7;
-        @define-color textBox           #313244;
-        @define-color selectedText      #11111B;
+        @define-color baseAlt           #1E1E2E;
         @define-color selectedHighlight #9399B2;
-         
-        #text {
-         padding: 5px;
-         color:   @text;
-        }
-         
-        #entry {
-         padding:       10px;
-         border-radius: 10px;
-        }
 
-        #inner-box {
+        #window {
+         border-radius:    10px;
          background-color: @base;
         }
-
+        
         #outer-box {
-         margin:            3px;
-         padding:           10px;
-         border-radius:     10px;
-         background-color:  @base;
+         border-radius:    10px;
+         background-color: @base;
+         border: 4px solid @border;
         }
-         
-        #entry:nth-child(even) {
+        
+        #entry:selected {
+         color:            @text;
+         background-color: @baseAlt;
+        } 
+
+        #input{
+         margin:           1rem;
+         border-radius:    10px;
+         padding:          0.5rem;
          background-color: @baseAlt;
         }
-         
+        
         * {
          font-size:   15px;
+         all:         unset;
          font-family: "CascadiaCode";
         }
-         
-        #window {
-         border-radius: 10px;
-         border:        3px solid @border;
-        }
-         
-        #input {
-         padding:          5px;
-         border-radius:    5px;
-         margin-bottom:    15px;
-         color:            @text;
-         background-color: @textBox;
-         border:           3px solid @border;
-        }
-
-        #entry:selected {
-         color:            @selectedText;
-         background-color: @selectedHighlight;
+        
+        #entry {
+         border-radius: 8px;
+         color:         @selectedHighlight;
+         margin:        0.25rem 0.75rem 0.25rem 0.75rem;
+         padding:       0.25rem 0.75rem 0.25rem 0.75rem;
         }
      '';
    };
