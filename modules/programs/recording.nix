@@ -4,5 +4,5 @@
 # Programs List #
 #################
 [
- ./recording/obs/default.nix
+ ./recording/kdenlive-obs/default.nix
 ]

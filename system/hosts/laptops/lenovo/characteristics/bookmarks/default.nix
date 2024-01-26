@@ -27,6 +27,10 @@
      	    url  = "https://app.tuta.com/login";
      	   }
          {
+     	    name = "Hoogle";
+     	    url  = "https://hoogle.haskell.org/";
+     	   }
+         {
      	    name = "Coinbase";
      	    url  = "https://www.coinbase.com/home";
      	   }

@@ -1,8 +1,8 @@
 ###########
 # VonixOS #
-#####################
-# OBS Configuration #
-#####################
+##############################
+# KDenlive/OBS Configuration #
+##############################
 { pkgs, ... }:
 
 {
@@ -15,4 +15,8 @@
      ];
    };
  };
+
+ environment.systemPackages = with pkgs.libsForQt5; [
+   kdenlive 
+ ];
 }

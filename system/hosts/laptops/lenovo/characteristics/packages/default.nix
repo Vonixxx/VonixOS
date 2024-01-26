@@ -22,6 +22,7 @@
    # Terminal Utilities #
    ######################
    alsa-utils
+   grimblast
    pfetch-rs
    swayimg
    tldr

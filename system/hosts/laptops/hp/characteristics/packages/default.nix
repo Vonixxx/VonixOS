@@ -23,10 +23,8 @@
    dash-to-panel
    user-themes
  ]) ++ (with pkgs.gnome; [ 
-   gnome-tweaks 
- ]) ++ (with pkgs.libsForQt5; [
-    kdenlive 
- ]);
+    gnome-tweaks 
+ ]); 
 
  environment.gnome.excludePackages = with pkgs.gnome; [
    atomix
