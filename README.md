@@ -6,8 +6,8 @@
 - [FireFox Theme](https://codeberg.org/Freeplay/Firefox-Onebar/)
 - [Matthias' NixOS Configuration](https://github.com/MatthiasBenaets/nixos-config/)
 
-![Gnome](https://github.com/Vonixxx/VonixOS/blob/main/pictures/hyprland.png)
-![Hyprland](https://github.com/Vonixxx/VonixOS/blob/main/pictures/hyprland.png)
+![Gnome](https://github.com/Vonixxx/VonixOS/blob/main/screenshots/gnome.png)
+![Hyprland](https://github.com/Vonixxx/VonixOS/blob/main/screenshots/hyprland.png)
 
 ## Sytem Information
 - Shell: ZSH on Hyprland and Bash on Gnome.
