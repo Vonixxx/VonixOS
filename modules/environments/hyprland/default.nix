@@ -100,7 +100,7 @@
            "$mainMod SHIFT, 3, movetoworkspace, 3"
            "$mainMod SHIFT, 4, movetoworkspace, 4"
 
-           "$mainMod, Print, exec, grimblast save area ~/Pictures/Screenshots"
+           "$mainMod, Print, exec, grimblast save area ~/Pictures/Screenshots/screenshot.png"
          ];
        };
      };
