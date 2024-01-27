@@ -6,16 +6,6 @@
 { ... }:
 
 {
- home-manager.users.vonix.accounts = {
-   email.accounts.default = {
-     primary            = true;
-     thunderbird.enable = true;
-     realName           = "Luca";
-     userName           = "Vonix";
-     address            = "vonixxx@tuta.io";
-   };
- };
-
  users.users.vonix = {
    uid            = 1000;
    isNormalUser   = true;
