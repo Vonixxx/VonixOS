@@ -17,6 +17,12 @@
      openFirewall    = true;
      defaultShared   = true;
      startWhenNeeded = false;
+
+     drivers = with pkgs; [
+       cups-bjnp
+       carps-cups 
+       canon-cups-ufr2
+     ];
    };
  };
 }
