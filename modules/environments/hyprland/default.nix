@@ -75,31 +75,31 @@
          };
 
          bind = [ 
-           "$mainMod, C, killactive"
-           "$mainMod, F, fullscreen"
+           "SUPER, C, killactive"
+           "SUPER, F, fullscreen"
 
-           "$mainMod, 1, workspace, 1"
-           "$mainMod, 2, workspace, 2"
-           "$mainMod, 3, workspace, 3"
-           "$mainMod, 4, workspace, 4"
+           "SUPER, 1, workspace, 1"
+           "SUPER, 2, workspace, 2"
+           "SUPER, 3, workspace, 3"
+           "SUPER, 4, workspace, 4"
 
-           "$mainMod, K, movefocus, u"
-           "$mainMod, J, movefocus, d"
-           "$mainMod, H, movefocus, l"
-           "$mainMod, L, movefocus, r"
+           "SUPER, K, movefocus, u"
+           "SUPER, J, movefocus, d"
+           "SUPER, H, movefocus, l"
+           "SUPER, L, movefocus, r"
 
-           "$mainMod, P, exec, $pdf"
-           "$mainMod, D, exec, $menu"
-           "$mainMod, B, exec, $browser"
-           "$mainMod, Y, exec, $youtube"
-           "$mainMod, T, exec, $terminal"
+           "SUPER, P, exec, $pdf"
+           "SUPER, D, exec, $menu"
+           "SUPER, B, exec, $browser"
+           "SUPER, Y, exec, $youtube"
+           "SUPER, T, exec, $terminal"
 
-           "$mainMod SHIFT, 1, movetoworkspace, 1"
-           "$mainMod SHIFT, 2, movetoworkspace, 2"
-           "$mainMod SHIFT, 3, movetoworkspace, 3"
-           "$mainMod SHIFT, 4, movetoworkspace, 4"
+           "SUPER SHIFT, 1, movetoworkspace, 1"
+           "SUPER SHIFT, 2, movetoworkspace, 2"
+           "SUPER SHIFT, 3, movetoworkspace, 3"
+           "SUPER SHIFT, 4, movetoworkspace, 4"
 
-           "$mainMod, Print, exec, grimblast save area ~/Pictures/Screenshots/screenshot.png"
+           "SUPER, Print, exec, grimblast save area ~/Pictures/Screenshots/screenshot.png"
          ];
        };
      };
