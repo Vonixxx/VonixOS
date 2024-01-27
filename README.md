@@ -1,7 +1,8 @@
-# 󰜗 - NixOS Configuration Hyprland|Gnome
+# 󰜗   NixOS Configuration   󰜗
 *A minimal and fully declarative setup utilising NixOS, with most of the standard tools you'd need.* 
 
 ## Sytem Information
+- Environments: Hyprland and Gnome.
 - Shell: ZSH on Hyprland and Bash on Gnome.
 - Editor: Helix on Hyprland and the default Text Editor on Gnome.
 - Specific to Hyprland: Mako, Waybar, Wofi, wPaperd and WLSunset.
