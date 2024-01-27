@@ -8,9 +8,9 @@
 {
  imports = ( 
    import ./characteristics                       
-   ++ import ../../../../modules/environments        
-   ++ import ../../../../modules/programs/generic.nix
-   ++ import ../../../../modules/programs/terminal.nix
-   ++ import ../../../../modules/programs/window-manager.nix
+   ++ import ../../../../../modules/environments        
+   ++ import ../../../../../modules/programs/generic.nix
+   ++ import ../../../../../modules/programs/terminal.nix
+   ++ import ../../../../../modules/programs/window-manager.nix
  );
 }

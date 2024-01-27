@@ -8,7 +8,7 @@
 let 
  pkgs = import nixpkgs { config.allowUnfree = false; };
 in { 
- f.jarka = nixpkgs.lib.nixosSystem {
+ "f.jarka" = nixpkgs.lib.nixosSystem {
    specialArgs = { inherit pkgs arkenfox; };
 
    modules = [
@@ -18,7 +18,7 @@ in {
    ];
  };
 
- f.stepanka = nixpkgs.lib.nixosSystem {
+ "f.stepanka" = nixpkgs.lib.nixosSystem {
    specialArgs = { inherit pkgs arkenfox; };
 
    modules = [
@@ -28,7 +28,7 @@ in {
    ];
  };
 
- f.libor = nixpkgs.lib.nixosSystem {
+ "f.libor" = nixpkgs.lib.nixosSystem {
    specialArgs = { inherit pkgs arkenfox; };
  
    modules = [
