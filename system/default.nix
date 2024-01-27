@@ -38,7 +38,7 @@ in {
    ];
  };
 
- u.luca = nixpkgs.lib.nixosSystem {
+ "u.luca" = nixpkgs.lib.nixosSystem {
    specialArgs = { inherit pkgs arkenfox; };
 
    modules = [

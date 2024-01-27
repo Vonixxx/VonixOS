@@ -61,7 +61,7 @@
  boot = { 
    loader = {
      systemd-boot = {
-       configurationLimit = 5;
+       configurationLimit = 10;
        enable             = true;
        memtest86.enable   = true;
        editor             = false;
