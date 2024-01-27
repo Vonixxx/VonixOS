@@ -8,7 +8,6 @@
 {
  hyprland.enable       = true;
  programs.light.enable = true;
- xdg.portal.wlr.enable = true;
 
  services = {
    udev.enable         = true;
