@@ -12,20 +12,15 @@
 
     style = '' 
        /* Colors */
-       @define-color power      #F38BA8;
-       @define-color sleep      #89B4FA;
-       @define-color reboot     #F9E2AF;
-       @define-color battery    #A6E3A1;
-       @define-color network    #89DCEB;
-       @define-color backlight  #F9E2AF;
-       @define-color pulseaudio #CBA6F7;
-
-       @define-color foreground #CDD6F4;
-       @define-color background #11111B;
-
-       @define-color active     #CBA6F7;
-       @define-color urgent     #F38BA8;
-       @define-color inactive   #F5E0DC;
+       @define-color red       #F38BA8;
+       @define-color teal      #89DCEB;
+       @define-color blue      #89B4FA;
+       @define-color mauve     #CBA6F7;
+       @define-color white     #CDD6F4;
+       @define-color green     #A6E3A1;
+       @define-color mantle    #181825;
+       @define-color yellow    #F9E2AF;
+       @define-color rosewater #F5E0DC;
 
 
        /* Base */
@@ -35,17 +30,6 @@
         padding:       0px;
         border:        none;
         margin:        1px 1px 1px 1px;
-       }
-     
-
-       /* Whole Bar */
-       #waybar {
-        font-size:     20px;
-        border-radius: 20px;
-        font-weight:   bold;
-        color:         @text;
-        background:    @background;
-        font-family:   CascadiaCode;
        }
      
 
@@ -61,84 +45,64 @@
        #custom-sleep,
        #custom-power,
        #custom-reboot {
+        color:   @white;
         padding: 2px 12px;
-        color:   @foreground;
        }
  
+ 
+       /* Whole Bar */
+       #waybar {
+        font-size:     20px;
+        border-radius: 20px;
+        font-weight:   bold;
+        background:    @mantle;
+        font-family:   CascadiaCode;
+       }
+     
+
+       /* Workspaces */
+       #workspaces button.urgent {
+        margin-bottom: 0px;
+        color:         @red;
+        border-bottom: 3px solid @red;
+       }
+
+       #workspaces button.active {
+        margin-bottom: 0px;
+        color:         @mauve;
+        border-bottom: 3px solid @mauve;
+       }
+
+       #workspaces button {
+        margin-bottom: 0px;
+        color:         @white;
+        border-bottom: 3px solid @white;
+       }
+
 
        /* Icon Color */
-       #custom-sleep {
-        color: @sleep;
-       }
+       #custom-power  { color: @red; }
+       #network       { color: @teal; }
+       #custom-sleep  { color: @blue; }
+       #battery       { color: @green; }
+       #pulseaudio    { color: @mauve; }
+       #custom-reboot { color: @yellow; }
+       #backlight     { color: @rosewater; }
 
-       #custom-power {
-        color: @power;
-       }
-
-       #custom-reboot {
-        color: @reboot;
-       }
-
-       #battery {
-        color: @battery;
-       }
-
-       #network {
-        color: @network;
-       }
-
-       #backlight {
-        color: @backlight;
-       }
-
-       #pulseaudio {
-        color: @pulseaudio;
-       }
- 
 
        /* Icon Position Fix */
-       #network { 
-        padding-right: 20px;
-       }
-
-       #backlight {
-        padding-right: 20px;
-       }
-
-       #custom-sleep {
-        padding-right: 16px;
-       }
-
-       #custom-power, 
-       #custom-reboot {
-        padding-right: 13px;
-       }
-
        #workspaces button {
         margin-right:  5px;
         padding-left:  10px;
         padding-right: 15px;
        }
 
-       #pulseaudio { 
-        padding-right: 17.5px;
-       }
-
- 
-       /* Workspaces */
-       #workspaces button.urgent {
-        color: @urgent;
-       }
-
-       #workspaces button.active {
-        margin-bottom: 0px;
-        border-bottom: 3px solid @active;
-       }
-
-       #workspaces button {
-        margin-bottom: 0px;
-        border-bottom: 3px solid @inactive;
-       }
+       #network       { padding-right: 20px; }
+       #backlight     { padding-right: 20px; }
+       #custom-sleep  { padding-right: 16px; }
+       #custom-power, 
+       #custom-reboot { padding-right: 13px; }
+       #pulseaudio    { padding-right: 17.5px; }
     '';
 
     settings = [{

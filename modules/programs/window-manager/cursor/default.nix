@@ -6,6 +6,8 @@
 { pkgs, ... }:
 
 {
+ environment.variables = XCURSOR_SIZE = 32;
+
  home-manager.users.vonix = {
    home.pointerCursor = {
      size       = 32;

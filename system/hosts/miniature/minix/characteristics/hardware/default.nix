@@ -14,7 +14,7 @@
    firmware = [ 
      (pkgs.runCommandNoCC "brcm-firmware" { } ''
         mkdir -p $out/lib/firmware/brcm/
-        cp ${./brcm/brcmfmac43455-sdio.txt} $out/lib/firmware/brcm/brcmfmac43455-sdio.txt
+        cp ${./brcm/brcmfmac43455-sdio.txt} $out/lib/firmware/brcm/
      '')
    ];
  };

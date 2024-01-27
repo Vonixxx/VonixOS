@@ -19,7 +19,6 @@
        settings = {
          "$menu"     = "wofi";
          "$terminal" = "foot";
-         "$mainMod"  = "SUPER";
          "$pdf"      = "sioyek";
          "$browser"  = "firefox";
          "$youtube"  = "freetube";

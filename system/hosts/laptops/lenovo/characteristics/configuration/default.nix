@@ -29,7 +29,7 @@
    variables = {
      VISUAL   = "hx";
      EDITOR   = "hx";
-     TERMINAL = "kitty";
+     TERMINAL = "foot";
      BROWSER  = "firefox";
      PF_INFO  = "ascii title uptime pkgs kernel memory os host";
    };
