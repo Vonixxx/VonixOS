@@ -3,7 +3,7 @@
 #######################################
 # System-Specific NixOS Configuration #
 #######################################
-{ ... }:
+{ pkgs, ... }:
 
 {
  gnome.enable       = true;
