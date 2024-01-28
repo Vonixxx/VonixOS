@@ -3,7 +3,7 @@
 ###########################
 # Intel CPU Configuration #
 ###########################
-{ ... }:
+{ lib, ... }: with lib;
 
 {
  options.intelcpu.enable = mkOption {
