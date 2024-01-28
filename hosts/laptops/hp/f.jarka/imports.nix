@@ -8,6 +8,7 @@
 {
  imports = ( 
    import ./characteristics                        
+   ++ import ../../../../system
    ++ import ../../../../modules/environments         
    ++ import ../../../../modules/programs/generic.nix 
  );

@@ -6,10 +6,17 @@
 { ... }:
 
 {
- hardware.cpu.intel.updateMicrocode = true;
+ options.intelcpu.enable = mkOption {
+   default = false;
+   type    = types.bool;
+ };
 
- boot = {
-   initrd.kernelModules = [ "vmd" ];
-   kernelModules        = [ "kvm-intel" ];
+ config = mkIf (config.intelcpu.enable) {
+   hardware.cpu.intel.updateMicrocode = true;
+  
+   boot = {
+     initrd.kernelModules = [ "vmd" ];
+     kernelModules        = [ "kvm-intel" ];
+   };
  };
 }

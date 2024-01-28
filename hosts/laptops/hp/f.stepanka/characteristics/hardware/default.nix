@@ -8,6 +8,9 @@
 {
  imports = [ (modulesPath + "/installer/scan/not-detected.nix") ];
 
+ intelcpu.enable = true;
+ intelgpu.enable = true;
+
  fileSystems = { 
    "boot" = { 
      fsType     = "vfat";
