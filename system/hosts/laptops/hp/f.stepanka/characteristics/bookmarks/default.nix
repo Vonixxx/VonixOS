@@ -11,7 +11,7 @@
      policies = {
        ManagedBookmarks = [
          {
-          toplevel_name = "Bookmarks"
+          toplevel_name = "Bookmarks";
          }
          {
      	    name = "ChatGPT";

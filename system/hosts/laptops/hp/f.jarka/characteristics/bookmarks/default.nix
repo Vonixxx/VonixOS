@@ -11,7 +11,7 @@
      policies = {
        ManagedBookmarks = [
          {
-          toplevel_name = "Zalozky"
+          toplevel_name = "Zalozky";
          }
          {
           name = "Seznam"; 
