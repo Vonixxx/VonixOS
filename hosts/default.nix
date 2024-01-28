@@ -49,7 +49,7 @@ in {
 
    modules = [
      ../system/configuration/default.nix
-     ./laptops/lenovo/f.libor/imports.nix
+     ./laptops/lenovo/u.luca/imports.nix
      ../system/architecture/amd/cpu/default.nix
      ../system/architecture/amd/gpu/default.nix
      home-manager.nixosModules.home-manager
