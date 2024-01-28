@@ -27,6 +27,8 @@
      };
 
      policies = {
+       DisableProfileImport    = true;
+       DisablePocket           = true;
        DisplayBookmarksToolbar = "always";
 
        ExtensionSettings = {
