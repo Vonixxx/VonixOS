@@ -3,15 +3,15 @@
 #########################
 # FireFox Configuration #
 #########################
-{ arkenfox, ... }:
+{ ... }:
 
 {
- home-manager.users.vonix = {
-   imports = [ 
-     ./theme.nix
-     ./arkenfox.nix
-   ];
+ imports = [ 
+   ./theme.nix
+   ./arkenfox.nix
+ ];
 
+ home-manager.users.vonix = {
    programs.firefox = {
      enable = true;
 
