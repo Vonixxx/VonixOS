@@ -8,8 +8,11 @@
 {
  home-manager.users.vonix = {
    programs.firefox = {
-     profiles.default = {
-       bookmarks = [
+     policies = {
+       ManagedBookmarks = [
+         {
+          toplevel_name = "Bookmarks"
+         }
          {
      	    name = "GitHub";
      	    url  = "https://github.com";

@@ -11,6 +11,9 @@
      policies = {
        ManagedBookmarks = [
          {
+          toplevel_name = "Zalozky"
+         }
+         {
           name = "Seznam"; 
           url  = "seznam.cz";
          }

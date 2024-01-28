@@ -27,6 +27,8 @@
      };
 
      policies = {
+       DisplayBookmarksToolbar = "always";
+
        ExtensionSettings = {
          "addon@darkreader.org" = {
            installation_mode = "normal_installed";          
