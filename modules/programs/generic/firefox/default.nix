@@ -6,17 +6,17 @@
 { lib, config, ... }: with lib;
 
 {
+ imports = [ 
+   ./theme.nix
+   ./arkenfox.nix
+ ];
+  
  options.generic.enable = mkOption {
    default = false;
    type    = types.bool;
  };
 
  config = mkIf (config.generic.enable) {
-   imports = [ 
-     ./theme.nix
-     ./arkenfox.nix
-   ];
-  
    home-manager.users.vonix = {
      programs.firefox = {
        enable = true;
