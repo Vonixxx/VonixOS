@@ -9,7 +9,7 @@
  imports = ( 
    import ./characteristics                        
    ++ import ../../../../system
+   ++ import ../../../../modules/programs
    ++ import ../../../../modules/environments         
-   ++ import ../../../../modules/programs/generic.nix 
  );
 }

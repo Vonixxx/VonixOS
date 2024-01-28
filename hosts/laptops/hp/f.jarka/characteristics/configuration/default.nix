@@ -7,6 +7,7 @@
 
 {
  gnome.enable       = true;
+ generic.enable     = true;
  i18n.defaultLocale = "cs_CZ.UTF-8";
 
  services = {
