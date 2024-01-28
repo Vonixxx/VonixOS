@@ -28,7 +28,7 @@
    };
  };
 
- config = mkMerge [ 
+ config = mkMerge { 
    (mkIf config.terminal.enable {
      imports = [
        ./terminal/bat/default.nix
@@ -64,5 +64,5 @@
        ./window-manager/gammastep/default.nix
      ];
    })
- ];
+ };
 }
