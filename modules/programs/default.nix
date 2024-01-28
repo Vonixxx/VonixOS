@@ -29,7 +29,7 @@
  };
 
  config = mkMerge [ 
-   (mkIf (config.terminal.enable) {
+   (mkIf config.terminal.enable {
      imports = [
        ./terminal/bat/default.nix
        ./terminal/git/default.nix
@@ -42,19 +42,19 @@
      ];
    })
 
-   (mkIf (config.generic.enable) {
+   (mkIf config.generic.enable {
      imports = [
        ./generic/firefox/default.nix
      ];
    })
 
-   (mkIf (config.recording.enable) {
+   (mkIf config.recording.enable {
      imports = [
        ./recording/kdenlive-obs/default.nix
      ];
    })
 
-   (mkIf (config.terminal.enable) {
+   (mkIf config.terminal.enable {
      imports = [
        ./window-manager/wofi/default.nix
        ./window-manager/mako/default.nix
