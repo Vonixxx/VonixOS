@@ -25,6 +25,7 @@
      profiles.default = {
        settings = {
          "general.useragent.locale" = "cs-CZ";
+         "init.locale.requested"    = "cs,en-US";
        };
      };
    };

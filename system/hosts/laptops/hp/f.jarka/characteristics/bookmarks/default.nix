@@ -8,24 +8,24 @@
 {
  home-manager.users.vonix = {
    programs.firefox = {
-     profiles.default = {
-       bookmarks = [
+     policies = {
+       ManagedBookmarks = [
          {
-     	    name = "Seznam";
-     	    url  = "https://www.seznam.cz";
-     	   }
+          name = "Seznam"; 
+          url  = "seznam.cz";
+         }
          {
-     	    name = "Seznam Email";
-     	    url  = "https://email.seznam.cz";
-     	   }
+          name = "FIO Banka"; 
+          url  = "ib.fio.cz/ib/login";
+         }
          {
-     	    name = "FIO Banka";
-     	    url  = "https://ib.fio.cz/ib/login";
-     	   }
+          name = "Seznam Email"; 
+          url  = "email.seznam.cz";
+         }
          {
-     	    name = "Datove Schranky";
-     	    url  = "https://www.mojedatovaschranka.cz/portal/ISDS/seznamzprav/prijate";
-     	   }
+          name = "Datove Schranky"; 
+          url  = "mojedatovaschranka.cz/portal/ISDS/seznamzprav/prijate";
+         }
        ];
      };
    };
