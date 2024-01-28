@@ -3,20 +3,27 @@
 ##############################
 # KDenlive/OBS Configuration #
 ##############################
-{ pkgs, ... }:
+{ lib, pkgs, config, ... }: with lib;
 
 {
- home-manager.users.vonix.programs = {
-   obs-studio = {
-     enable = true;
-     plugins = with pkgs.obs-studio-plugins; [
-       obs-backgroundremoval
-       obs-pipewire-audio-capture
-     ];
-   };
+ options.recording.enable = mkOption {
+   default = false;
+   type    = types.bool;
  };
 
- environment.systemPackages = with pkgs.libsForQt5; [
-   kdenlive 
- ];
+ config = mkIf (config.recording.enable) {
+   home-manager.users.vonix.programs = {
+     obs-studio = {
+       enable = true;
+       plugins = with pkgs.obs-studio-plugins; [
+         obs-backgroundremoval
+         obs-pipewire-audio-capture
+       ];
+     };
+   };
+  
+   environment.systemPackages = with pkgs.libsForQt5; [
+     kdenlive 
+   ];
+ };
 }
