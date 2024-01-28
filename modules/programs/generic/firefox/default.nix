@@ -3,7 +3,7 @@
 #########################
 # FireFox Configuration #
 #########################
-{ ... }:
+{ arkenfox, ... }:
 
 {
  home-manager.users.vonix = {
