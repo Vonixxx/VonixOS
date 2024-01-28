@@ -3,7 +3,7 @@
 #########################
 # AMD CPU Configuration #
 #########################
-{ lib, ... }: with lib;
+{ lib, config, ... }: with lib;
 
 {
  options.amdcpu.enable = mkOption {

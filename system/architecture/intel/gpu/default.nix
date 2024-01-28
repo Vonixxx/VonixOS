@@ -3,7 +3,7 @@
 ###########################
 # Intel GPU Configuration #
 ###########################
-{ lib, pkgs, ... }: with lib;
+{ lib, pkgs, config, ... }: with lib;
 
 {
  options.intelgpu.enable = mkOption {

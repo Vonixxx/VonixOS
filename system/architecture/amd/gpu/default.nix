@@ -3,7 +3,7 @@
 #########################
 # AMD GPU Configuration #
 #########################
-{ lib, pkgs, ... }: with lib;
+{ lib, pkgs, config, ... }: with lib;
 
 {
  options.amdgpu.enable = mkOption {
