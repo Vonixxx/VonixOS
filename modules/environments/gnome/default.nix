@@ -13,13 +13,34 @@
 
  config = mkIf (config.gnome.enable) {
    services.xserver = {
+     enable                      = true;
+     desktopManager.gnome.enable = true;
+
      displayManager = {
        gdm.enable     = true;
        defaultSession = "gnome";
      };
+   };
 
-     enable                      = true;
-     desktopManager.gnome.enable = true;
+   fonts.packages = with pkgs; [ liberation_ttf ];
+
+   environment = { 
+     systemPackages = (with pkgs.gnomeExtensions; [
+       arcmenu
+       dash-to-panel
+       user-themes
+     ]) ++ (with pkgs.gnome; [ 
+        gnome-tweaks 
+     ]); 
+  
+     gnome.excludePackages = with pkgs.gnome; [
+       atomix
+       epiphany
+       gnome-shell-extensions
+       hitori
+       iagno
+       tali
+     ];
    };
 
    home-manager.users.vonix = { lib, ... }: with lib.hm.gvariant; {

@@ -1,13 +1,19 @@
-# 󰜗 NixOS Configuration󰜗
+# NixOS Configuration
 *A minimal and fully declarative setup utilising NixOS, with most of the standard tools you'd need.* 
 
 ## Sytem Information
-- Environments: Hyprland and Gnome.
-- Shell: ZSH on Hyprland and Bash on Gnome.
-- Editor: Helix on Hyprland and the default Text Editor on Gnome.
-- Specific to Hyprland: Mako, Waybar, Wofi, wPaperd and WLSunset.
-- Terminal Emulator: Foot on Hyprland and the default Gnome Terminal on Gnome. 
-- Browser: FireFox hardened with the ArkenFox user.js, and customised with the OneBar theme. 
+- Gnome
+  - Shell: Bash
+  - Editor: gEdit
+  - Terminal: Gnome Terminal
+  - Browser: FireFox (ArkenFox + OneBar Theme)
+
+- Hyprland
+  - Shell: ZSH
+  - Editor: Helix
+  - Terminal: Foot
+  - Browser: FireFox (ArkenFox + OneBar Theme)
+  - Also...: Gammastep, wPaperd, Waybar, Mako and Wofi
 
 ## Appearance
 ![Gnome](https://github.com/Vonixxx/VonixOS/blob/main/screenshots/gnome.png)

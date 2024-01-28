@@ -7,7 +7,7 @@
 # └─/system
 #    └─default.nix
 #      ├─configuration.nix      
-#      └─/hosts/<chosen host>
+#      └─/hosts/<type>/<brand>/<chosen host>
 #         └─imports.nix
 #           ├─/characteristics          
 #           └─/modules
@@ -39,7 +39,7 @@
 
  outputs = inputs @ { self, nixpkgs, arkenfox, home-manager, ... }: {
    nixosConfigurations = (
-     import ./system {
+     import ./hosts {
       inherit (nixpkgs) lib;
       inherit inputs nixpkgs arkenfox home-manager;
      }
