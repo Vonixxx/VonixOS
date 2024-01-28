@@ -6,9 +6,8 @@
 { arkenfox, ... }:
 
 {
- imports = [ arkenfox.hmModules.arkenfox ];
-
  home-manager.users.vonix = {
+ imports = [ arkenfox.hmModules.arkenfox ];
    programs.firefox = {
      arkenfox = {
        enable = true;
