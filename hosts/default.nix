@@ -13,7 +13,7 @@ in {
 
    modules = [
      ../system/configuration/default.nix
-     ./hosts/laptops/hp/f.jarka/imports.nix
+     ./laptops/hp/f.jarka/imports.nix
      ../system/architecture/intel/cpu/default.nix
      ../system/architecture/intel/gpu/default.nix
      home-manager.nixosModules.home-manager
@@ -25,7 +25,7 @@ in {
 
    modules = [
      ../system/configuration/default.nix
-     ./hosts/laptops/hp/f.stepanka/imports.nix
+     ./laptops/hp/f.stepanka/imports.nix
      ../system/architecture/intel/cpu/default.nix
      ../system/architecture/intel/gpu/default.nix
      home-manager.nixosModules.home-manager
@@ -37,7 +37,7 @@ in {
  
    modules = [
      ../system/configuration/default.nix
-     ./hosts/miniature/minix/f.libor/imports.nix
+     ./miniature/minix/f.libor/imports.nix
      ../system/architecture/intel/cpu/default.nix
      ../system/architecture/intel/gpu/default.nix
      home-manager.nixosModules.home-manager
@@ -49,7 +49,7 @@ in {
 
    modules = [
      ../system/configuration/default.nix
-     ./hosts/laptops/lenovo/f.libor/imports.nix
+     ./laptops/lenovo/f.libor/imports.nix
      ../system/architecture/amd/cpu/default.nix
      ../system/architecture/amd/gpu/default.nix
      home-manager.nixosModules.home-manager
