@@ -29,7 +29,7 @@
  };
 
  config = mkMerge [ 
-   (mkIf (config.terminal.enable) {
+   (mkIf (config.window-manager.enable) {
      imports = [
        ./terminal/bat/default.nix
        ./terminal/git/default.nix
