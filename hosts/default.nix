@@ -39,7 +39,9 @@ in {
    specialArgs = { inherit pkgs arkenfox; };
 
    modules = [
-     ./laptops/lenovo/u.luca/imports.nix
+     ../system
+     ../modules
+     ./laptops/lenovo/u.luca/characteristics
      home-manager.nixosModules.home-manager
    ];
  };

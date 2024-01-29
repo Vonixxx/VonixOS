@@ -12,13 +12,23 @@
  };
 
  config = mkIf (config.gnome.enable) {
-   services.xserver = {
-     enable                      = true;
-     desktopManager.gnome.enable = true;
+   services = { 
+     xserver = {
+       enable                      = true;
+       desktopManager.gnome.enable = true;
 
-     displayManager = {
-       gdm.enable     = true;
-       defaultSession = "gnome";
+       displayManager = {
+         gdm.enable     = true;
+         defaultSession = "gnome";
+       };
+     };
+
+     printing = {
+       enable          = true;
+       browsing        = true;
+       openFirewall    = true;
+       defaultShared   = true;
+       startWhenNeeded = false;
      };
    };
 

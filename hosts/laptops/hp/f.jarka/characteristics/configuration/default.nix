@@ -9,19 +9,8 @@
  gnome.enable                 = true;
  generic.enable               = true;
  general-configuration.enable = true;
+ services.xserver.layout      = "cz";
  i18n.defaultLocale           = "cs_CZ.UTF-8";
-
- services = {
-   xserver.layout = "cz"; 
-
-   printing = {
-     enable          = true;
-     browsing        = true;
-     openFirewall    = true;
-     defaultShared   = true;
-     startWhenNeeded = false;
-   };
- };
 
  home-manager.users.vonix = {
    programs.firefox = {
