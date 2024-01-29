@@ -6,11 +6,12 @@
 { ... }:
 
 {
- generic.enable        = true;
- terminal.enable       = true;
- hyprland.enable       = true;
- window-manager.enable = true;
- programs.light.enable = true;
+ generic.enable               = true;
+ terminal.enable              = true;
+ hyprland.enable              = true;
+ window-manager.enable        = true;
+ programs.light.enable        = true;
+ general-configuration.enable = true;
 
  services = {
    udev.enable         = true;
