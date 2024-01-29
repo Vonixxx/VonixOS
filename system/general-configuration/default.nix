@@ -15,6 +15,28 @@
  nixpkgs.hostPlatform             = "x86_64-linux";
  i18n.defaultLocale               = mkDefault "en_GB.UTF-8";
 
+ options = {
+   generic.enable = mkOption {
+     default = false;
+     type    = types.bool;
+   };
+
+   terminal.enable = mkOption {
+     default = false;
+     type    = types.bool;
+   };
+
+   recording.enable = mkOption {
+     default = false;
+     type    = types.bool;
+   };
+
+   window-manager.enable = mkOption {
+     default = false;
+     type    = types.bool;
+   };
+ };
+
  fonts.fontconfig = {
    allowBitmaps  = false;
    subpixel.rgba = "rgb";

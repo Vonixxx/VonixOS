@@ -6,11 +6,6 @@
 { lib, pkgs, config, ... }: with lib;
 
 { 
- options.terminal.enable = mkOption {
-   default = false;
-   type    = types.bool;
- };
-
  config = mkIf (config.terminal.enable) {
    programs.zsh.enable    = true;
    users.defaultUserShell = with pkgs; zsh;
