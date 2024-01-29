@@ -12,12 +12,15 @@
  ./terminal/foot/default.nix
  ./terminal/helix/default.nix
  ./terminal/sioyek/default.nix
+
  ./generic/firefox/default.nix
+
+ ./recording/kdenlive-obs/default.nix
+
  ./window-manager/wofi/default.nix
  ./window-manager/mako/default.nix
  ./window-manager/cursor/default.nix
  ./window-manager/waybar/default.nix
  ./window-manager/wpaperd/default.nix
- ./recording/kdenlive-obs/default.nix
  ./window-manager/gammastep/default.nix
 ]

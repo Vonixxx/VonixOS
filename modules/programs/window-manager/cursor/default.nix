@@ -3,17 +3,21 @@
 ##############################
 # Cursor-Style Configuration #
 ##############################
-{ pkgs, ... }:
+{ lib, pkgs, config, ... }: with lib;
 
 {
- environment.variables = { XCURSOR_SIZE = "32"; };
+ options.window-manager.enable = mkOption {
+   default = false;
+   type    = types.bool;
+ };
 
- home-manager.users.vonix = {
-   home.pointerCursor = {
-     size       = 32;
-     gtk.enable = true;
-     name       = "Catppuccin-Mocha-Light-Cursors";
-     package    = pkgs.catppuccin-cursors.mochaLight;
+ config = mkIf (config.window-manager.enable) {
+   home-manager.users.vonix = {
+     home.pointerCursor = {
+       gtk.enable = true;
+       name       = "Catppuccin-Mocha-Light-Cursors";
+       package    = pkgs.catppuccin-cursors.mochaLight;
+     };
    };
  };
 }
