@@ -3,25 +3,32 @@
 #####################
 # LSD Configuration #
 #####################
-{ ... }:
+{ lib, config, ... }: with lib;
 
 {
- home-manager.users.vonix.programs = {
-   lsd = {
-     enable = true;
+ options.terminal.enable = mkOption {
+   default = false;
+   type    = types.bool;
+ };
 
-     settings = {
-       recursion = {
-         depth   = 2;
-         enabled = true;
+ config = mkIf (config.terminal.enable) {
+   home-manager.users.vonix.programs = {
+     lsd = {
+       enable = true;
+  
+       settings = {
+         recursion = {
+           depth   = 2;
+           enabled = true;
+         };
+  
+         indicators           = true;
+         layout               = "tree";
+         size                 = "short";
+         color.when           = "never";
+         sorting.dir-grouping = "first";
+         icons.when           = "always";
        };
-
-       indicators           = true;
-       layout               = "tree";
-       size                 = "short";
-       color.when           = "never";
-       sorting.dir-grouping = "first";
-       icons.when           = "always";
      };
    };
  };
