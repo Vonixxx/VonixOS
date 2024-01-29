@@ -9,6 +9,26 @@
 
 {
  options = {
+   amdcpu.enable = mkOption {
+     default = false;
+     type    = types.bool;
+   };
+
+   amdgpu.enable = mkOption {
+     default = false;
+     type    = types.bool;
+   };
+
+   intelcpu.enable = mkOption {
+     default = false;
+     type    = types.bool;
+   };
+
+   intelgpu.enable = mkOption {
+     default = false;
+     type    = types.bool;
+   };
+
    generic.enable = mkOption {
      default = false;
      type    = types.bool;
@@ -35,7 +55,7 @@
    };
  };
 
- config = mkIf (config.terminal.enable) {
+ config = mkIf (config.general-configuration.enable) {
    programs.dconf.enable            = true;
    networking.networkmanager.enable = true; 
    system.stateVersion              = "23.11"; 

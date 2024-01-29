@@ -4,20 +4,16 @@
 # Flake Configuration #
 #######################
 # flake.nix
-# └─/system
+# └─/hosts
 #    └─default.nix
-#      ├─configuration.nix      
 #      └─/hosts/<type>/<brand>/<chosen host>
 #         └─imports.nix
-#           ├─/characteristics          
-#           └─/modules
-#              ├─/environments
-#              │  └─default.nix
-#              └─/programs
-#                 ├─generic.nix
-#                 ├─terminal.nix
-#                 ├─recording.nix
-#                 └─window-manager.nix
+#           ├─/modules 
+#           │  ├─/programs
+#           │  └─/environments
+#           └─/system
+#              ├─/architecture
+#              └─/general-configuration
 {
  description = "Flake Configuration";
 
