@@ -38,13 +38,10 @@ in {
  "u.luca" = nixpkgs.lib.nixosSystem {
    specialArgs = { inherit pkgs arkenfox; };
 
-   imports = [
+   modules = [
      ../system
      ../modules
      ./laptops/lenovo/u.luca/characteristics
-   ];
-
-   modules = [
      home-manager.nixosModules.home-manager
    ];
  };

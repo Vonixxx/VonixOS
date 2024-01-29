@@ -3,7 +3,10 @@
 ############################
 # Environment/Program List #
 ############################
-[
+{ ... }:
+
+{
+imports = [
  ./environments/gnome/default.nix
  ./environments/hyprland/default.nix
 
@@ -26,4 +29,5 @@
  ./programs/window-manager/waybar/default.nix
  ./programs/window-manager/wpaperd/default.nix
  ./programs/window-manager/gammastep/default.nix
-]
+];
+}
