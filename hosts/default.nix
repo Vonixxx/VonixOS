@@ -12,7 +12,9 @@ in {
    specialArgs = { inherit pkgs arkenfox; };
 
    modules = [
-     ./laptops/hp/f.jarka/imports.nix
+     ../system
+     ../modules
+     ./laptops/hp/f.jarka
      home-manager.nixosModules.home-manager
    ];
  };
@@ -21,7 +23,9 @@ in {
    specialArgs = { inherit pkgs arkenfox; };
 
    modules = [
-     ./laptops/hp/f.stepanka/imports.nix
+     ../system
+     ../modules
+     ./laptops/hp/f.stepanka
      home-manager.nixosModules.home-manager
    ];
  };
@@ -30,7 +34,9 @@ in {
    specialArgs = { inherit pkgs arkenfox; };
  
    modules = [
-     ./miniature/minix/f.libor/imports.nix
+     ../system
+     ../modules
+     ./miniature/minix/f.libor
      home-manager.nixosModules.home-manager
    ];
  };
@@ -41,7 +47,7 @@ in {
    modules = [
      ../system
      ../modules
-     ./laptops/lenovo/u.luca/characteristics
+     ./laptops/lenovo/u.luca
      home-manager.nixosModules.home-manager
    ];
  };
