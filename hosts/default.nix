@@ -6,7 +6,7 @@
 { nixpkgs, arkenfox, home-manager, ... }:
 
 let 
- pkgs = import nixpkgs { config.allowUnfree = false; };
+ pkgs = import nixpkgs { config.allowUnfree = true; };
 in { 
  "f.jarka" = nixpkgs.lib.nixosSystem {
    specialArgs = { inherit pkgs arkenfox; };
