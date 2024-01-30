@@ -36,13 +36,13 @@
        defaultShared   = true;
        startWhenNeeded = false;
 
-       drivers = with pkgs; [
-         brlaser 
-         brgenml1lpr 
-         brgenml1cupswrapper
-         cups-brother-hl1110 
-         gutenprint 
-       ];
+#       drivers = with pkgs; [
+#         brlaser 
+#         brgenml1lpr 
+#         brgenml1cupswrapper
+#         cups-brother-hl1110 
+#         gutenprint 
+#       ];
      };
    };
 
