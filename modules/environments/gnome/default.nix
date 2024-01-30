@@ -13,22 +13,6 @@
 
  config = mkIf (config.gnome.enable) {
    services = { 
-     xserver = {
-       enable                      = true;
-       desktopManager.gnome.enable = true;
-
-       displayManager = {
-         gdm.enable     = true;
-         defaultSession = "gnome";
-       };
-     };
-
-#     avahi = {
-#       enable       = true;
-#       nssmdns      = true;
-#       openFirewall = true;
-#     };
-
      printing = {
        enable          = true;
        browsing        = true;
@@ -40,9 +24,21 @@
          brlaser 
          brgenml1lpr 
          brgenml1cupswrapper
-         cups-brother-hl1110 
          gutenprint 
+         gutenprintBin
+         hplip
+         postscript-lexmark
        ];
+     };
+
+     xserver = {
+       enable                      = true;
+       desktopManager.gnome.enable = true;
+
+       displayManager = {
+         gdm.enable     = true;
+         defaultSession = "gnome";
+       };
      };
    };
 
