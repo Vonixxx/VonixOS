@@ -6,7 +6,7 @@
 { pkgs, ... }:
 
 {
- environment.systemPackages = (with pkgs; [
+ environment.systemPackages = with pkgs; [
    coreutils 
    freetube
    libreoffice-fresh
