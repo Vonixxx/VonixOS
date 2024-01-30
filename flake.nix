@@ -36,9 +36,6 @@
  outputs = inputs @ { self, nixpkgs, arkenfox, home-manager, ... }: {
    nixosConfigurations = (
      import ./hosts {
-      imports = [
-        home-manager.nixosModules.home-manager
-      ];
       inherit (nixpkgs) lib;
       inherit inputs nixpkgs arkenfox home-manager;
      }
