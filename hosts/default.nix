@@ -48,7 +48,6 @@ in {
      ../system
      ../modules
      ./laptops/lenovo/u.luca
-     home-manager.nixosModules.home-manager
    ];
  };
 }
