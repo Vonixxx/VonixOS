@@ -3,7 +3,7 @@
 #######################
 # Gnome Configuration #
 #######################
-{ lib, config, ... }: with lib;
+{ lib, pkgs, config, ... }: with lib;
 
 {
  options.gnome.enable = mkOption {
