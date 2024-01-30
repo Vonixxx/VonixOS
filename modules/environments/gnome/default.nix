@@ -29,6 +29,7 @@
        openFirewall    = true;
        defaultShared   = true;
        startWhenNeeded = false;
+       drivers         = with pkgs; [ cups-brother-hl1110 ];
      };
    };
 
