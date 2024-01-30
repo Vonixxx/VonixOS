@@ -38,7 +38,7 @@
      import ./hosts {
       modules = [
         home-manager.nixosModules.home-manager
-      ];
+      ]
       inherit (nixpkgs) lib;
       inherit inputs nixpkgs arkenfox home-manager;
      }
