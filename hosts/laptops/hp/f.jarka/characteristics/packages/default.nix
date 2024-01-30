@@ -10,5 +10,6 @@
    coreutils 
    freetube
    libreoffice-fresh
+   system-config-printer
  ]; 
 }
