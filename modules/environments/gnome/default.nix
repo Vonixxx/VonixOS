@@ -23,13 +23,26 @@
        };
      };
 
+     avahi = {
+       enable       = true;
+       nssmdns      = true;
+       openFirewall = true;
+     };
+
      printing = {
        enable          = true;
        browsing        = true;
        openFirewall    = true;
        defaultShared   = true;
        startWhenNeeded = false;
-       drivers         = with pkgs; [ cups-brother-hl1110 ];
+
+       drivers = with pkgs; [
+         brlaser 
+         brgenml1lpr 
+         brgenml1cupswrapper
+         cups-brother-hl1110 
+         gutenprint 
+       ];
      };
    };
 
