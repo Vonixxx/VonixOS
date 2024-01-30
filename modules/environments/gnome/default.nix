@@ -23,11 +23,11 @@
        };
      };
 
-     avahi = {
-       enable       = true;
-       nssmdns      = true;
-       openFirewall = true;
-     };
+#     avahi = {
+#       enable       = true;
+#       nssmdns      = true;
+#       openFirewall = true;
+#     };
 
      printing = {
        enable          = true;
