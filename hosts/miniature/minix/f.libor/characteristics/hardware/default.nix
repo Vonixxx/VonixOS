@@ -3,11 +3,9 @@
 ##########################
 # Hardware Configuration #
 ##########################
-{ pkgs, config, modulesPath, ... }:
+{ pkgs, ... }:
 
 {
- imports = [ (modulesPath + "/installer/scan/not-detected.nix") ];
-
  intelcpu.enable           = true;
  intelgpu.enable           = true;
  boot.initrd.kernelModules = [ "sdhci_acpi" ];

@@ -56,12 +56,13 @@
  };
 
  config = mkIf (config.general-configuration.enable) {
-   programs.dconf.enable            = true;
-   networking.networkmanager.enable = true; 
-   system.stateVersion              = "23.11"; 
-   powerManagement.cpuFreqGovernor  = "ondemand";
-   nixpkgs.hostPlatform             = "x86_64-linux";
-   i18n.defaultLocale               = mkDefault "en_GB.UTF-8";
+   programs.dconf.enable                  = true;
+   networking.networkmanager.enable       = true; 
+   hardware.enableRedistributableFirmware = true;
+   system.stateVersion                    = "23.11"; 
+   powerManagement.cpuFreqGovernor        = "ondemand";
+   nixpkgs.hostPlatform                   = "x86_64-linux";
+   i18n.defaultLocale                     = mkDefault "en_GB.UTF-8";
   
    fonts.fontconfig = {
      allowBitmaps  = false;

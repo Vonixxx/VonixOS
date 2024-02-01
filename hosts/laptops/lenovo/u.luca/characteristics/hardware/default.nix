@@ -3,11 +3,9 @@
 ##########################
 # Hardware Configuration #
 ##########################
-{ config, modulesPath, ... }:
+{ config, ... }:
 
 {
- imports = [ (modulesPath + "/installer/scan/not-detected.nix") ];
-
  amdcpu.enable = true;
  amdgpu.enable = true;
 

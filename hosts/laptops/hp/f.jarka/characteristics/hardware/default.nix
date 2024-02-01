@@ -3,11 +3,9 @@
 ##########################
 # Hardware Configuration #
 ##########################
-{ config, modulesPath, ... }:
+{ ... }:
 
 {
- imports = [ (modulesPath + "/installer/scan/not-detected.nix") ];
-
  intelcpu.enable           = true;
  intelgpu.enable           = true;
  boot.initrd.kernelModules = [ "rtsx_usb_sdmmc" ];
