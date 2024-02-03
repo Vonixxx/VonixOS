@@ -5,18 +5,15 @@
 #######################
 # flake.nix
 # └─/hosts
-#    └─default.nix
-#      └─/hosts/<type>/<brand>/<chosen host>
-#         └─imports.nix
-#           ├─/modules 
-#           │  ├─/programs
-#           │  └─/environments
-#           └─/system
-#              ├─/architecture
-#              └─/general-configuration
+#    ├─/modules 
+#    │  ├─/programs
+#    │  └─/environments
+#    ├─/system
+#    │  ├─/architecture
+#    │  └─/general-configuration
+#    └─/hosts/<type>/<brand>/<chosen host>
+#       └─/characteristics
 {
- description = "Flake Configuration";
-
  inputs = {
    ##########################
    # Synchronizing Packages #

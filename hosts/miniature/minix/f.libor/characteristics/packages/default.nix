@@ -6,8 +6,7 @@
 { pkgs, ... }:
 
 {
- environment.systemPackages = (with pkgs; [
-   coreutils 
+ environment.systemPackages = with pkgs; [
    freetube
  ];
 }

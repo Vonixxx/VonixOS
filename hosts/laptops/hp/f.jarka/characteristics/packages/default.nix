@@ -7,9 +7,7 @@
 
 {
  environment.systemPackages = with pkgs; [
-   coreutils 
    freetube
    libreoffice-fresh
-   system-config-printer
  ]; 
 }

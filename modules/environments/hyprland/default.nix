@@ -6,11 +6,6 @@
 { lib, config, ... }: with lib;
 
 {
- options.hyprland.enable = mkOption {
-   default = false;
-   type    = types.bool;
- };
-
  config = mkIf (config.hyprland.enable) {
    home-manager.users.vonix.wayland.windowManager = {
      hyprland = {
@@ -25,7 +20,6 @@
          monitor     = "eDP-1, 1920x1080@60, 0x0, 1";
 
          exec-once = [
-           "mako" 
            "waybar" 
            "wpaperd"
          ];

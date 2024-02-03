@@ -6,11 +6,6 @@
 { lib, pkgs, config, ... }: with lib;
 
 {
- options.gnome.enable = mkOption {
-   default = false;
-   type    = types.bool;
- };
-
  config = mkIf (config.gnome.enable) {
    services = { 
      printing = {
@@ -41,8 +36,6 @@
        };
      };
    };
-
-   fonts.packages = with pkgs; [ liberation_ttf ];
 
    environment = { 
      systemPackages = (with pkgs.gnomeExtensions; [

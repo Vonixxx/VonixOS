@@ -6,11 +6,9 @@
 { ... }:
 
 {
- gnome.enable                 = true;
- generic.enable               = true;
- general-configuration.enable = true;
- services.xserver.layout      = "cz";
- i18n.defaultLocale           = "cs_CZ.UTF-8";
+ gnome.enable            = true;
+ services.xserver.layout = "cz";
+ i18n.defaultLocale      = "cs_CZ.UTF-8";
 
  home-manager.users.vonix = {
    programs.firefox = {

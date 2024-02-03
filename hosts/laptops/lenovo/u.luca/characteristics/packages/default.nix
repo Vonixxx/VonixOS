@@ -10,7 +10,6 @@
    ############
    # Standard #
    ############
-   coreutils
    efibootmgr
    xdg-utils
    ###############
@@ -36,22 +35,7 @@
    nixos-generators
    pulsemixer
    youtube-dl
-   ##############
-   # Ergonomics #
-   ##############
-   autotiling      
  ];
 
- ############################################################
- # Liberation for Firefox, CascadiaCode for everything else #
- ############################################################
- fonts.packages = with pkgs; [
-   liberation_ttf
-   (nerdfonts.override { fonts = [ "CascadiaCode" ]; })
- ];
-
- #########################################
- # Useful if Customising Android Devices #
- #########################################
  services.udev.packages = with pkgs; [ android-udev-rules ];
 }

@@ -6,9 +6,10 @@
 { nixpkgs, arkenfox, home-manager, ... }:
 
 let 
+ lib  = nixpkgs.lib;
  pkgs = import nixpkgs { config.allowUnfree = true; };
 in { 
- "f.jarka" = nixpkgs.lib.nixosSystem {
+ "f.jarka" = lib.nixosSystem {
    specialArgs = { inherit pkgs arkenfox; };
 
    modules = [
@@ -19,7 +20,7 @@ in {
    ];
  };
 
- "f.stepanka" = nixpkgs.lib.nixosSystem {
+ "f.stepanka" = lib.nixosSystem {
    specialArgs = { inherit pkgs arkenfox; };
 
    modules = [
@@ -30,7 +31,7 @@ in {
    ];
  };
 
- "f.libor" = nixpkgs.lib.nixosSystem {
+ "f.libor" = lib.nixosSystem {
    specialArgs = { inherit pkgs arkenfox; };
  
    modules = [
@@ -41,7 +42,7 @@ in {
    ];
  };
 
- "u.luca" = nixpkgs.lib.nixosSystem {
+ "u.luca" = lib.nixosSystem {
    specialArgs = { inherit pkgs arkenfox; };
 
    modules = [

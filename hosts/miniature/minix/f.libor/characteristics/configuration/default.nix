@@ -6,10 +6,8 @@
 { ... }:
 
 {
- gnome.enable                 = true;
- generic.enable               = true;
- general-configuration.enable = true;
- i18n.defaultLocale           = "cs_CZ.UTF-8";
+ gnome.enable       = true;
+ i18n.defaultLocale = "cs_CZ.UTF-8";
 
  services = { 
    xserver.layout = "cz"; 

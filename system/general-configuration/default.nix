@@ -29,7 +29,17 @@
      type    = types.bool;
    };
 
+   gnome.enable = mkOption {
+     default = false;
+     type    = types.bool;
+   };
+
    generic.enable = mkOption {
+     default = true;
+     type    = types.bool;
+   };
+
+   hyprland.enable = mkOption {
      default = false;
      type    = types.bool;
    };
@@ -50,7 +60,7 @@
    };
 
    general-configuration.enable = mkOption {
-     default = false;
+     default = true;
      type    = types.bool;
    };
  };
@@ -63,12 +73,6 @@
    powerManagement.cpuFreqGovernor        = "ondemand";
    nixpkgs.hostPlatform                   = "x86_64-linux";
    i18n.defaultLocale                     = mkDefault "en_GB.UTF-8";
-  
-   fonts.fontconfig = {
-     allowBitmaps  = false;
-     subpixel.rgba = "rgb";
-     hinting.style = "full";
-   };
   
    hardware = {
      opengl = {
@@ -152,6 +156,17 @@
        experimental-features = [ "nix-command" "flakes" ];
      };
    }; 
+  
+   fonts.fontconfig = {
+     allowBitmaps  = false;
+     subpixel.rgba = "rgb";
+     hinting.style = "full";
+
+     packages = with pkgs; [
+       liberation_ttf
+       (nerdfonts.override { fonts = [ "CascadiaCode" ]; })
+     ];
+   };
   
    environment.shellAliases = {
      "update-u.luca"     = "sudo nix flake update 'github:Vonixxx/VonixOS' && sudo nixos-rebuild boot --no-write-lock-file --flake 'github:Vonixxx/VonixOS#u.luca' --impure"; 
