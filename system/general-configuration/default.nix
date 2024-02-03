@@ -157,10 +157,12 @@
      };
    }; 
   
-   fonts.fontconfig = {
-     allowBitmaps  = false;
-     subpixel.rgba = "rgb";
-     hinting.style = "full";
+   fonts = {
+     fontconfig = {
+       allowBitmaps  = false;
+       subpixel.rgba = "rgb";
+       hinting.style = "full";
+     };
 
      packages = with pkgs; [
        liberation_ttf
