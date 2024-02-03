@@ -6,12 +6,12 @@
 { lib, config, ... }: with lib;
 
 {
- config = mkIf (config.generic.enable) {
-   imports = [ 
-     ./theme.nix
-     ./arkenfox.nix
-   ];
+ imports = [ 
+   ./theme.nix
+   ./arkenfox.nix
+ ];
 
+ config = mkIf (config.generic.enable) {
    home-manager.users.vonix = {
      programs.firefox = {
        enable = true;
