@@ -139,10 +139,10 @@ with pkgs;
        };
    
        timeout                  = 5;
-       tmp.cleanOnBoot          = true;
        efi.canTouchEfiVariables = true;
      };
   
+     tmp.cleanOnBoot      = true;
      supportedFilesystems = [ "ntfs" ];
      kernelParams         = [ "quiet" ]; 
      kernelPackages       = linuxPackages_latest;
