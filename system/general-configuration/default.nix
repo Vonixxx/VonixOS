@@ -5,7 +5,9 @@
 #############################################################################################################
 # System & Home-Manager stateVersion, Learn More: https://nixos.wiki/wiki/FAQ/When_do_I_update_stateVersion #
 #############################################################################################################
-{ lib, config, pkgs, ... }: with lib;
+{ lib, config, pkgs, ... }: 
+with lib;
+with pkgs;
 
 {
  options = {
@@ -80,7 +82,7 @@
        driSupport      = true;
        driSupport32Bit = true;
   
-       extraPackages = with pkgs; [
+       extraPackages = [
          libvdpau-va-gl
          vaapiVdpau
        ];
@@ -141,7 +143,7 @@
   
      supportedFilesystems = [ "ntfs" ];
      kernelParams         = [ "quiet" ]; 
-     kernelPackages       = pkgs.linuxPackages_latest;
+     kernelPackages       = linuxPackages_latest;
    };
   
    nix = {
@@ -164,7 +166,7 @@
        hinting.style = "full";
      };
 
-     packages = with pkgs; [
+     packages = [
        liberation_ttf
        (nerdfonts.override { fonts = [ "CascadiaCode" ]; })
      ];

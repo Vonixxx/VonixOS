@@ -1,5 +1,5 @@
 # NixOS Configuration
-*A minimal and fully declarative setup utilising NixOS, with most of the standard tools you'd need.* 
+*A minimal and fully declarative setup utilising NixOS, with a personalised setup for each machine.* 
 
 ## Sytem Information
 - Gnome
