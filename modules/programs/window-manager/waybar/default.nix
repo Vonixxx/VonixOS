@@ -31,7 +31,7 @@
           min-height:    0px;
           border-radius: 0px;
           padding:       0px;
-          border:        3px solid @red;
+          border:        none;
           margin:        1px 1px 1px 1px;
          }
        
