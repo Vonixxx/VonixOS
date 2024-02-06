@@ -5,8 +5,10 @@
 #########################################
 { pkgs, ... }:
 
+with pkgs;
+
 {
- environment.systemPackages = with pkgs; [
+ environment.systemPackages = [
    freetube
    libreoffice-fresh
  ]; 

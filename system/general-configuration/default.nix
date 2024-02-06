@@ -6,6 +6,7 @@
 # System & Home-Manager stateVersion, Learn More: https://nixos.wiki/wiki/FAQ/When_do_I_update_stateVersion #
 #############################################################################################################
 { lib, config, pkgs, ... }: 
+
 with lib;
 with pkgs;
 
@@ -138,6 +139,7 @@ with pkgs;
        };
    
        timeout                  = 5;
+       tmp.cleanOnBoot          = true;
        efi.canTouchEfiVariables = true;
      };
   

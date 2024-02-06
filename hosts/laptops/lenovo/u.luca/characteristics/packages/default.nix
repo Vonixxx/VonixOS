@@ -5,8 +5,10 @@
 #########################################
 { pkgs, ... }:
 
+with pkgs;
+
 {
- environment.systemPackages = with pkgs; [
+ environment.systemPackages = [
    ############
    # Standard #
    ############
@@ -37,5 +39,5 @@
    youtube-dl
  ];
 
- services.udev.packages = with pkgs; [ android-udev-rules ];
+ services.udev.packages = [ android-udev-rules ];
 }

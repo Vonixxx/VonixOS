@@ -3,7 +3,10 @@
 #######################
 # Gnome Configuration #
 #######################
-{ lib, pkgs, config, ... }: with lib;
+{ lib, pkgs, config, ... }: 
+
+with lib;
+with pkgs;
 
 {
  config = mkIf (config.gnome.enable) {
@@ -15,7 +18,7 @@
        defaultShared   = true;
        startWhenNeeded = false;
 
-       drivers = with pkgs; [
+       drivers = [
          brlaser 
          brgenml1lpr 
          brgenml1cupswrapper
@@ -38,15 +41,15 @@
    };
 
    environment = { 
-     systemPackages = (with pkgs.gnomeExtensions; [
+     systemPackages = (with gnomeExtensions; [
        arcmenu
        dash-to-panel
        user-themes
-     ]) ++ (with pkgs.gnome; [ 
+     ]) ++ (with gnome; [ 
         gnome-tweaks 
      ]); 
   
-     gnome.excludePackages = with pkgs.gnome; [
+     gnome.excludePackages = with gnome; [
        atomix
        epiphany
        gnome-shell-extensions

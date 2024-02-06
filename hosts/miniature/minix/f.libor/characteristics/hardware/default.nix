@@ -5,6 +5,8 @@
 ##########################
 { pkgs, ... }:
 
+with pkgs;
+
 {
  intelcpu.enable           = true;
  intelgpu.enable           = true;
@@ -12,7 +14,7 @@
 
  hardware = { 
    firmware = [ 
-     (pkgs.runCommandNoCC "brcm-firmware" { } ''
+     (runCommandNoCC "brcm-firmware" { } ''
         mkdir -p $out/lib/firmware/brcm/
         cp ${./brcm/brcmfmac43455-sdio.txt} $out/lib/firmware/brcm/
      '')
