@@ -7,13 +7,6 @@
 
 {
  imports = [
-   ./general/default.nix
-
-   ./architecture/amd/cpu/default.nix
-   ./architecture/amd/gpu/default.nix
-   ./architecture/intel/cpu/default.nix
-   ./architecture/intel/gpu/default.nix
-
    ./environments/gnome/default.nix
    ./environments/hyprland/default.nix
 
@@ -33,5 +26,11 @@
    ./programs/window-manager/wpaperd/default.nix
    ./programs/recording/kdenlive-obs/default.nix
    ./programs/window-manager/gammastep/default.nix
+
+   ./configuration/general/default.nix
+   ./configuration/architecture/amd/cpu/default.nix
+   ./configuration/architecture/amd/gpu/default.nix
+   ./configuration/architecture/intel/cpu/default.nix
+   ./configuration/architecture/intel/gpu/default.nix
  ];
 }
