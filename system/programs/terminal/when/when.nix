@@ -3,13 +3,20 @@
 with lib;                      
 with pkgs;
 with types;
+with maintainers;
 
 let
   cfg = config.services.hello;
 in {
  options.programs.when = {
-   enable  = mkEnableOption "when";
-   package = mkPackageOption pkgs "when" { };
+   meta.maintainers = [ Vonixxx ];
+
+   enable = mkEnableOption "when";
+
+   package = mkOption { 
+     default = when;
+     type    = package; 
+   };
 
    preferences = mkOption {
      default = { };
