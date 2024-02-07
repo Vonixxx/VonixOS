@@ -47,7 +47,7 @@
   
          "0100" = {
            "0102"."browser.startup.page".value     = 3;
-           "0102"."browser.startup.homepage".value = "https://duckduckgo.com/";
+           "0103"."browser.startup.homepage".value = "https://duckduckgo.com/";
          };
   
          "1000" = {
