@@ -9,62 +9,63 @@
 
 with lib;
 with pkgs;
+with types;
 
 {
  options = {
    amdcpu.enable = mkOption {
+     type    = bool;
      default = false;
-     type    = types.bool;
    };
 
    amdgpu.enable = mkOption {
+     type    = bool;
      default = false;
-     type    = types.bool;
    };
 
    intelcpu.enable = mkOption {
+     type    = bool;
      default = false;
-     type    = types.bool;
    };
 
    intelgpu.enable = mkOption {
+     type    = bool;
      default = false;
-     type    = types.bool;
    };
 
    gnome.enable = mkOption {
+     type    = bool;
      default = false;
-     type    = types.bool;
    };
 
    generic.enable = mkOption {
+     type    = bool;
      default = true;
-     type    = types.bool;
    };
 
    hyprland.enable = mkOption {
+     type    = bool;
      default = false;
-     type    = types.bool;
    };
 
    terminal.enable = mkOption {
+     type    = bool;
      default = false;
-     type    = types.bool;
    };
 
    recording.enable = mkOption {
+     type    = bool;
      default = false;
-     type    = types.bool;
    };
 
    window-manager.enable = mkOption {
+     type    = bool;
      default = false;
-     type    = types.bool;
    };
 
    general-configuration.enable = mkOption {
+     type    = bool;
      default = true;
-     type    = types.bool;
    };
  };
 
