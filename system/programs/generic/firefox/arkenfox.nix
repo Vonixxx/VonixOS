@@ -46,8 +46,9 @@
          "8000".enable = false;
   
          "0100" = {
-           "0102"."browser.startup.page".value     = 3;
-           "0103"."browser.startup.homepage".value = "https://duckduckgo.com/";
+           "0102"."browser.startup.page".value       = 3;
+           "0103"."browser.startup.homepage".value   = "https://duckduckgo.com/";
+           "0104"."browser.newtabpage.enabled".value = true;
          };
   
          "1000" = {
