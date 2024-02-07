@@ -15,6 +15,7 @@
    ./programs/terminal/lsd/default.nix
    ./programs/terminal/mpv/default.nix
    ./programs/terminal/zsh/default.nix
+   ./programs/terminal/when/default.nix
    ./programs/terminal/foot/default.nix
    ./programs/terminal/helix/default.nix
    ./programs/terminal/sioyek/default.nix
