@@ -7,29 +7,31 @@
 
 {
  imports = [
-   ./general/configuration/default.nix
-   ./general/architecture/amd/cpu/default.nix
-   ./general/architecture/amd/gpu/default.nix
-   ./general/architecture/intel/cpu/default.nix
-   ./general/architecture/intel/gpu/default.nix
+   ./general/default.nix
 
-   ./modules/environments/gnome/default.nix
-   ./modules/environments/hyprland/default.nix
-   ./modules/programs/terminal/bat/default.nix
-   ./modules/programs/terminal/git/default.nix
-   ./modules/programs/terminal/lsd/default.nix
-   ./modules/programs/terminal/mpv/default.nix
-   ./modules/programs/terminal/zsh/default.nix
-   ./modules/programs/terminal/foot/default.nix
-   ./modules/programs/terminal/helix/default.nix
-   ./modules/programs/terminal/sioyek/default.nix
-   ./modules/programs/generic/firefox/default.nix
-   ./modules/programs/window-manager/wofi/default.nix
-   ./modules/programs/window-manager/mako/default.nix
-   ./modules/programs/window-manager/cursor/default.nix
-   ./modules/programs/window-manager/waybar/default.nix
-   ./modules/programs/window-manager/wpaperd/default.nix
-   ./modules/programs/recording/kdenlive-obs/default.nix
-   ./modules/programs/window-manager/gammastep/default.nix
+   ./architecture/amd/cpu/default.nix
+   ./architecture/amd/gpu/default.nix
+   ./architecture/intel/cpu/default.nix
+   ./architecture/intel/gpu/default.nix
+
+   ./environments/gnome/default.nix
+   ./environments/hyprland/default.nix
+
+   ./programs/terminal/bat/default.nix
+   ./programs/terminal/git/default.nix
+   ./programs/terminal/lsd/default.nix
+   ./programs/terminal/mpv/default.nix
+   ./programs/terminal/zsh/default.nix
+   ./programs/terminal/foot/default.nix
+   ./programs/terminal/helix/default.nix
+   ./programs/terminal/sioyek/default.nix
+   ./programs/generic/firefox/default.nix
+   ./programs/window-manager/wofi/default.nix
+   ./programs/window-manager/mako/default.nix
+   ./programs/window-manager/cursor/default.nix
+   ./programs/window-manager/waybar/default.nix
+   ./programs/window-manager/wpaperd/default.nix
+   ./programs/recording/kdenlive-obs/default.nix
+   ./programs/window-manager/gammastep/default.nix
  ];
 }

@@ -41,14 +41,6 @@ with pkgs;
    };
 
    environment = { 
-     systemPackages = (with gnomeExtensions; [
-       arcmenu
-       dash-to-panel
-       user-themes
-     ]) ++ (with gnome; [ 
-        gnome-tweaks 
-     ]); 
-  
      gnome.excludePackages = with gnome; [
        atomix
        epiphany
@@ -57,6 +49,12 @@ with pkgs;
        iagno
        tali
      ];
+
+     systemPackages = (with gnomeExtensions; [
+       arcmenu
+       dash-to-panel
+       user-themes
+     ]) ++ (with gnome; [ gnome-tweaks ]); 
    };
 
    home-manager.users.vonix = { lib, ... }: with lib.hm.gvariant; {
@@ -170,6 +168,8 @@ with pkgs;
          ]}";
        };
      };
+
+     programs.firefox.profiles.default.settings."extensions.activeThemeID" = "{aec77dcc-cbdb-4dac-9a4f-8c6192040aab}"; 
    };
  };
 }

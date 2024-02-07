@@ -23,6 +23,7 @@
          };
   
          settings = {
+           "ui.systemUsesDarkTheme"                              = 1;
            "toolkit.legacyUserProfileCustomizations.stylesheets" = true; 
          };
        };

@@ -32,7 +32,7 @@
 
  outputs = inputs @ { self, nixpkgs, arkenfox, home-manager, ... }: {
    nixosConfigurations = (
-     import ./default.nix {
+     import ./users {
       inherit (nixpkgs) lib;
       inherit inputs nixpkgs arkenfox home-manager;
      }
