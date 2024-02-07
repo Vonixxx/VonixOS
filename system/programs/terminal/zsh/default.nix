@@ -3,13 +3,16 @@
 #####################
 # ZSH Configuration #
 #####################
-{ lib, pkgs, config, ... }: with lib;
+{ lib, pkgs, config, ... }: 
+
+with lib;
+with pkgs;
 
 { 
  config = mkIf (config.terminal.enable) {
+   users.defaultUserShell = zsh;
    programs.zsh.enable    = true;
-   users.defaultUserShell = with pkgs; zsh;
-   environment.shells     = with pkgs; [ zsh ];
+   environment.shells     = [ zsh ];
 
    home-manager.users.vonix.programs = {
      zsh = {
@@ -50,7 +53,7 @@
      oh-my-posh = {
        enable               = true;
        enableZshIntegration = true;
-       settings             = builtins.fromJSON (builtins.unsafeDiscardStringContext (builtins.readFile "/home/vonix/GitHub/VonixOS/system/modules/programs/terminal/zsh/theme.omp.json"));
+       settings             = builtins.fromJSON (builtins.unsafeDiscardStringContext (builtins.readFile "/home/vonix/GitHub/VonixOS/system/programs/terminal/zsh/theme.omp.json"));
      };
    };
  };
