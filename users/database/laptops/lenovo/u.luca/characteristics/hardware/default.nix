@@ -3,7 +3,7 @@
 ##########################
 # Hardware Configuration #
 ##########################
-{ config, ... }:
+{ ... }:
 
 {
  amdcpu.enable = true;
