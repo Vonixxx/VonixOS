@@ -12,7 +12,7 @@ with lib;
 
 {
  config = mkIf (config.terminal.enable) {
-   home-manager.users.vonix.programs = { 
+   home-manager.users.vonix = { 
      lib
    , config
    , unstable
