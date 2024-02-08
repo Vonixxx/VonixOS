@@ -16,20 +16,19 @@ in {
    meta.maintainers = [ vonixxx ];
    enable           = mkEnableOption "when";
 
-   package = mkOption { 
-     type    = package; 
-     default = unstable.when;
-   };
+   package = mkPackageOption unstable "when" { };
 
    preferences = mkOption {
      default = { };
      type    = attrsOf (oneOf [ int str ]);
 
-     example = {
-       styled_output = 1; # 1/0 = True/False
-       future        = 14;
-       language      = "en";
-     };
+     example = literalExpression ''
+        {
+         styled_output = 1; # 1/0 = True/False
+         future        = 14;
+         language      = "en";
+        }
+     '';
      description = ''
         Configuration for .when/preferences
          See <https://www.lightandmatter.com/when/when.html>
@@ -50,6 +49,10 @@ in {
  };
 
  config = mkIf cfg.enable {
+   home.packages = [ cfg.package ];
+
+   assertions = [ (hm.assertions.assertPlatform "programs.when" unstable platforms.linux) ];
+
    xdg.configFile.".when/calendar" = mkIf (cfg.calendar != null) { 
      text = writeText ".when/calendar" cfg.calendar;
    };
