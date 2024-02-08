@@ -16,7 +16,6 @@ in {
  config = mkIf (config.terminal.enable) {
    home-manager.users.vonix.programs = {
      when.enable = true;
-   };
 
    options.programs.when = {
      meta.maintainers = [ vonixxx ];
@@ -57,8 +56,6 @@ in {
    config = mkIf cfg.enable {
      home.packages = [ cfg.package ];
   
-     assertions = [ (hm.assertions.assertPlatform "programs.when" unstable platforms.linux) ];
-  
      xdg.configFile.".when/calendar" = mkIf (cfg.calendar != null) { 
        text = writeText ".when/calendar" cfg.calendar;
      };
@@ -66,6 +63,9 @@ in {
      xdg.configFile.".when/preferences" = mkIf (cfg.preferences != { }) { 
        text = writeText ".when/preferences" cfg.preferences;
      };
+
+     assertions = [ (hm.assertions.assertPlatform "programs.when" unstable platforms.linux) ];
    };
  };
+   };
 }
