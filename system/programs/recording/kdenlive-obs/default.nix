@@ -3,10 +3,10 @@
 ##############################
 # KDenlive/OBS Configuration #
 ##############################
-{ ...
-, lib
+{ lib
 , pkgs
 , config 
+, ...
 }: 
 
 with lib;

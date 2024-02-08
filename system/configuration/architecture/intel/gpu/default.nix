@@ -3,10 +3,10 @@
 ###########################
 # Intel GPU Configuration #
 ###########################
-{ ...
-, lib
+{ lib
 , pkgs
 , config 
+, ...
 }: 
 
 with lib;

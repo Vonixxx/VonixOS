@@ -3,9 +3,9 @@
 ######################
 # Foot Configuration #
 ######################
-{ ...
-, lib
+{ lib
 , config
+, ...
 }: 
 
 with lib;

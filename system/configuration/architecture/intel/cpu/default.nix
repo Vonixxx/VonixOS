@@ -3,9 +3,9 @@
 ###########################
 # Intel CPU Configuration #
 ###########################
-{ ...
-, lib
+{ lib
 , config
+, ...
 }: 
 
 with lib;

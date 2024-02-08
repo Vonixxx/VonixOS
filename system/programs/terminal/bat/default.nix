@@ -3,10 +3,10 @@
 #####################
 # BAT Configuration #
 #####################
-{ ...
-, lib
+{ lib
 , pkgs
 , config
+, ...
 }: 
 
 with lib;

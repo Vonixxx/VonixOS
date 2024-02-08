@@ -3,10 +3,10 @@
 ##############################
 # Cursor-Style Configuration #
 ##############################
-{ ...
-, lib
+{ lib
 , pkgs
 , config
+, ...
 }: 
 
 with lib;

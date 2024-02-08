@@ -3,9 +3,9 @@
 ########################
 # Waybar Configuration #
 ########################
-{ ...
-, lib
+{ lib
 , config
+, ...
 }: 
 
 with lib;
