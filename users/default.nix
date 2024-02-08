@@ -6,6 +6,7 @@
 { nixpkgs
 , arkenfox
 , home-manager
+, ...
 }:
 
 let 
