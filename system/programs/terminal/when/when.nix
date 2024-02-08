@@ -1,6 +1,7 @@
 { lib
 , config
 , unstable
+, home-manager
 , ...
 }:
 
