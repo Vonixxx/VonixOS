@@ -31,7 +31,8 @@
  };
 
  outputs = inputs @ 
- { nixpkgs
+ { self 
+ , nixpkgs
  , arkenfox
  , home-manager
  , ... }: { 
