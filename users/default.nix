@@ -3,8 +3,7 @@
 ############
 # Profiles #
 ############
-{ ...
-, nixpkgs
+{ nixpkgs
 , arkenfox
 , home-manager
 }:
