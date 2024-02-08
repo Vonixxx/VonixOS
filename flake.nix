@@ -30,7 +30,12 @@
    home-manager.url = "github:nix-community/home-manager/release-23.11"; 
  };
 
- outputs = inputs @ { self, nixpkgs, arkenfox, home-manager, ... }: {
+ outputs = inputs @ 
+ { self
+ , nixpkgs
+ , arkenfox
+ , home-manager
+ , ... }: { 
    nixosConfigurations = (
      import ./users {
       inherit (nixpkgs) lib;
