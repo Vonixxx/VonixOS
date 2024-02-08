@@ -13,7 +13,7 @@ let
   cfg = config.programs.when;
 in {
  options.programs.when = {
-   meta.maintainers = [ Vonixxx ];
+   meta.maintainers = [ vonixxx ];
    enable           = mkEnableOption "when";
 
    package = mkOption { 
