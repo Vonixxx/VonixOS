@@ -6,13 +6,8 @@
 { lib, config, unstable, ... }: 
 
 with lib;
-with types;
-with unstable;
-with maintainers;
 
-let
-  cfg = config.programs.when;
-in {
+ {
  config = mkIf (config.terminal.enable) {
    home-manager.users.vonix.programs = { lib, ... }:
    
@@ -20,7 +15,9 @@ in {
    with types;
    with unstable;
    with maintainers;
-  
+ let
+  cfg = config.programs.when;
+in 
    {
      when.enable = true;
 
