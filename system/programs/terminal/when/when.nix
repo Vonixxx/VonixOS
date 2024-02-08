@@ -1,4 +1,7 @@
-{ lib, pkgs, config, ... }:
+{ lib
+, pkgs
+, config
+}:
 
 with lib;                      
 with pkgs;
@@ -8,8 +11,6 @@ with maintainers;
 let
   cfg = config.programs.when;
 in {
- imports = [ ./when-package.nix ];
-
  options.programs.when = {
    meta.maintainers = [ Vonixxx ];
    enable           = mkEnableOption "when";

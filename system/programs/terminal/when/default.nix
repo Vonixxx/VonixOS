@@ -8,7 +8,10 @@
 with lib;
 
 {
- imports = [ ./when.nix ];
+ imports = [ 
+   ./when.nix 
+   ./when-package.nix
+ ];
 
  config = mkIf (config.terminal.enable) {
    home-manager.users.vonix.programs = {
