@@ -13,7 +13,6 @@ with maintainers;
 let
   cfg = config.programs.when;
 in {
- imports = [ home-manager.nixosModules.home-manager ];
 
  options.programs.when = {
    meta.maintainers = [ vonixxx ];
