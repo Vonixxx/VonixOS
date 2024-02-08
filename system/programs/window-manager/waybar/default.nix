@@ -3,10 +3,16 @@
 ########################
 # Waybar Configuration #
 ########################
-{ lib, config, ... }: with lib;
+{ ...
+, lib
+, config
+}: 
+
+with lib;
+with config;
 
 {
- config = mkIf (config.window-manager.enable) {
+ config = mkIf (window-manager.enable) {
    programs.light.enable = true;
 
    home-manager.users.vonix.programs = {

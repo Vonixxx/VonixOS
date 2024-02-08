@@ -3,7 +3,7 @@
 ##########################
 # ArkenFox Configuration #
 ##########################
-{ arkenfox, ... }:
+{ ..., arkenfox }:
 
 {
  home-manager.users.vonix = {

@@ -3,7 +3,11 @@
 ############
 # Profiles #
 ############
-{ nixpkgs, arkenfox, home-manager, ... }:
+{ ...
+, nixpkgs
+, arkenfox
+, home-manager
+}:
 
 let 
  lib  = nixpkgs.lib;

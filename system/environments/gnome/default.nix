@@ -3,13 +3,18 @@
 #######################
 # Gnome Configuration #
 #######################
-{ lib, pkgs, config, ... }: 
+{ ...
+, lib
+, pkgs
+, config
+}: 
 
 with lib;
 with pkgs;
+with config;
 
 {
- config = mkIf (config.gnome.enable) {
+ config = mkIf (gnome.enable) {
    services = { 
      printing = {
        enable          = true;

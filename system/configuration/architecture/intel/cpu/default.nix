@@ -3,10 +3,16 @@
 ###########################
 # Intel CPU Configuration #
 ###########################
-{ lib, config, ... }: with lib;
+{ ...
+, lib
+, config
+}: 
+
+with lib;
+with config;
 
 {
- config = mkIf (config.intelcpu.enable) {
+ config = mkIf (intelcpu.enable) {
    hardware.cpu.intel.updateMicrocode = true;
   
    boot = {

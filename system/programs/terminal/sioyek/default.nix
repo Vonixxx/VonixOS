@@ -3,10 +3,16 @@
 ########################
 # Sioyek Configuration #
 ########################
-{ lib, config, ... }: with lib;
+{ ...
+, lib
+, config
+}: 
+
+with lib;
+with config;
 
 {
- config = mkIf (config.terminal.enable) {
+ config = mkIf (terminal.enable) {
    home-manager.users.vonix.programs = {
      sioyek = {
        enable = true; 

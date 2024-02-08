@@ -3,10 +3,16 @@
 ##########################
 # Hyprland Configuration #
 ##########################
-{ lib, config, ... }: with lib;
+{ ...
+, lib
+, config
+}: 
+
+with lib;
+with config;
 
 {
- config = mkIf (config.hyprland.enable) {
+ config = mkIf (hyprland.enable) {
    home-manager.users.vonix.wayland.windowManager = {
      hyprland = {
        enable = true;

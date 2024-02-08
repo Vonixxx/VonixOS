@@ -3,10 +3,18 @@
 #####################
 # BAT Configuration #
 #####################
-{ lib, pkgs, config, ... }: with lib;
+{ ...
+, lib
+, pkgs
+, config
+}: 
+
+with lib;
+with pkgs;
+with config;
 
 {
- config = mkIf (config.terminal.enable) {
+ config = mkIf (terminal.enable) {
    home-manager.users.vonix.programs = {
      bat = {
        enable       = true;
@@ -15,7 +23,7 @@
        themes.Catppuccin-Mocha = {
          file = "Catppuccin-mocha.tmTheme";
   
-         src = pkgs.fetchFromGitHub {
+         src = fetchFromGitHub {
            repo  = "bat";
            owner = "catppuccin";
            rev   = "ba4d16880d63e656acced2b7d4e034e4a93f74b1";

@@ -3,10 +3,16 @@
 ######################
 # Mako Configuration #
 ######################
-{ lib, config, ... }: with lib;
+{ ...
+, lib
+, config
+}: 
+
+with lib;
+with config;
 
 {
- config = mkIf (config.window-manager.enable) {
+ config = mkIf (window-manager.enable) {
    home-manager.users.vonix.services = {
      mako = {
        enable          = true;

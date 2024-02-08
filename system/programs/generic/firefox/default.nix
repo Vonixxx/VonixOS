@@ -3,7 +3,13 @@
 #########################
 # FireFox Configuration #
 #########################
-{ lib, config, ... }: with lib;
+{ ...
+, lib
+, config
+}: 
+
+with lib;
+with config;
 
 {
  imports = [ 
@@ -11,7 +17,7 @@
    ./arkenfox.nix
  ];
 
- config = mkIf (config.generic.enable) {
+ config = mkIf (generic.enable) {
    home-manager.users.vonix = {
      programs.firefox = {
        enable = true;

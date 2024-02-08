@@ -5,11 +5,16 @@
 #############################################################################################################
 # System & Home-Manager stateVersion, Learn More: https://nixos.wiki/wiki/FAQ/When_do_I_update_stateVersion #
 #############################################################################################################
-{ lib, config, pkgs, ... }: 
+{ ...
+, lib
+, pkgs
+, config
+}: 
 
 with lib;
 with pkgs;
 with types;
+with config;
 
 {
  options = {
@@ -69,7 +74,7 @@ with types;
    };
  };
 
- config = mkIf (config.general-configuration.enable) {
+ config = mkIf (general-configuration.enable) {
    programs.dconf.enable                  = true;
    networking.networkmanager.enable       = true; 
    hardware.enableRedistributableFirmware = true;

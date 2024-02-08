@@ -3,13 +3,18 @@
 #####################
 # ZSH Configuration #
 #####################
-{ lib, pkgs, config, ... }: 
+{ ...
+, lib
+, pkgs
+, config
+}: 
 
 with lib;
 with pkgs;
+with config;
 
 { 
- config = mkIf (config.terminal.enable) {
+ config = mkIf (terminal.enable) {
    users.defaultUserShell = zsh;
    programs.zsh.enable    = true;
    environment.shells     = [ zsh ];
