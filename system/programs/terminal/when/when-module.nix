@@ -1,3 +1,4 @@
+{
 home-manager = {
     lib
   , config
@@ -63,4 +64,5 @@ in
 
    assertions = [ (hm.assertions.assertPlatform "programs.when" unstable platforms.linux) ];
  };
+}
 }
