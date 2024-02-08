@@ -50,8 +50,6 @@ in {
  };
 
  config = mkIf cfg.enable {
-   home.packages = [ cfg.package ];
-
    xdg.configFile = {
      ".when/calendar" = mkIf (cfg.calendar != null) { 
        text = writeText ".when/calendar" cfg.calendar;
