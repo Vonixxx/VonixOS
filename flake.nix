@@ -45,9 +45,8 @@
  , arkenfox
  , home-manager
  , ... 
- }: 
- { 
-   nixosConfigurations = (
+ }:
+ { nixosConfigurations = (
      import ./users {
       inherit (nixpkgs) lib;
       inherit inputs nixpkgs arkenfox home-manager;
