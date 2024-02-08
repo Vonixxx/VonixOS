@@ -4,14 +4,23 @@
 # Flake Configuration #
 #######################
 # flake.nix
-# └─/hosts
-#    ├─/modules 
-#    │  ├─/programs
-#    │  └─/environments
-#    ├─/system
-#    │  ├─/architecture
-#    │  └─/general-configuration
-#    └─/hosts/<type>/<brand>/<chosen host>
+# └─/users
+#    ├─/system 
+#    │  ├─/environments
+#    │  │  ├─/gnome
+#    │  │  └─/hyprland
+#    │  │
+#    │  ├─/configuration
+#    │  │  ├─/general
+#    │  │  └─/architecture
+#    │  │
+#    │  └─/programs
+#    │     ├─/generic
+#    │     ├─/terminal
+#    │     ├─/recording
+#    │     └─/window-manager
+#    │
+#    └─/database/<type>/<brand>/<chosen host>
 #       └─/characteristics
 {
  inputs = {
@@ -30,14 +39,16 @@
    home-manager.url = "github:nix-community/home-manager/release-23.11"; 
  };
 
- outputs = inputs @ 
- { self 
+ outputs = inputs @ { 
+   self 
  , nixpkgs
  , arkenfox
  , home-manager
- , ... }: { 
+ , ... 
+ }: 
+ { 
    nixosConfigurations = (
-     import ./users {
+     import ./users/default.nix {
       inherit (nixpkgs) lib;
       inherit inputs nixpkgs arkenfox home-manager;
      }
