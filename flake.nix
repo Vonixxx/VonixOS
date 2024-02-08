@@ -43,6 +43,7 @@
  outputs = inputs @ { 
    self 
  , nixpkgs
+ , nixpkgs-unstable
  , arkenfox
  , home-manager
  , ... 
