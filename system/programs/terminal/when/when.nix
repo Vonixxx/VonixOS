@@ -50,14 +50,14 @@ in {
  };
 
  config = mkIf cfg.enable {
-   xdg.configFile = {
-     ".when/calendar" = mkIf (cfg.calendar != null) { 
-       text = writeText ".when/calendar" cfg.calendar;
-     };
+#   xdg.configFile = {
+#     ".when/calendar" = mkIf (cfg.calendar != null) { 
+#       text = writeText ".when/calendar" cfg.calendar;
+#     };
 
-     ".when/preferences" = mkIf (cfg.preferences != { }) { 
-       text = writeText ".when/preferences" cfg.preferences;
-     };
-   };
+#     ".when/preferences" = mkIf (cfg.preferences != { }) { 
+#       text = writeText ".when/preferences" cfg.preferences;
+#     };
+#   };
  };
 }
