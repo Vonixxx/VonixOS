@@ -43,12 +43,22 @@ in {
    ];
  };
 
- "u.luca" = lib.nixosSystem {
+ "u.luca-lenovo" = lib.nixosSystem {
    specialArgs = { inherit pkgs arkenfox; };
 
    modules = [
      ../system
      ./database/laptops/lenovo/u.luca
+     home-manager.nixosModules.home-manager
+   ];
+ };
+
+ "u.luca-raspberry" = lib.nixosSystem {
+   specialArgs = { inherit pkgs; };
+
+   modules = [
+     ../system
+     ./database/miniature/raspberry-pi-3B+/u.luca
      home-manager.nixosModules.home-manager
    ];
  };

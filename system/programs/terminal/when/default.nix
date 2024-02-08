@@ -10,7 +10,6 @@ with lib;
 {
  imports = [ 
    ./when.nix 
-   ./when-package.nix 
  ];
 
  config = mkIf (config.terminal.enable) {

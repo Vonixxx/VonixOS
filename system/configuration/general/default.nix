@@ -77,10 +77,11 @@ with types;
    programs.dconf.enable                  = true;
    networking.networkmanager.enable       = true; 
    hardware.enableRedistributableFirmware = true;
+   documentation.nixos.enable             = false;
    system.stateVersion                    = "23.11"; 
    powerManagement.cpuFreqGovernor        = "ondemand";
-   nixpkgs.hostPlatform                   = "x86_64-linux";
    i18n.defaultLocale                     = mkDefault "en_GB.UTF-8";
+   nixpkgs.hostPlatform                   = mkDefault "x86_64-linux";
   
    hardware = {
      opengl = {
@@ -145,6 +146,7 @@ with types;
    
        timeout                  = 5;
        efi.canTouchEfiVariables = true;
+       grub.enable              = false;
      };
   
      tmp.cleanOnBoot      = true;
