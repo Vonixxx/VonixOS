@@ -38,7 +38,7 @@ in {
  
    modules = [
      ../system
-     ./database/laptops/hp/f.libor
+     ./database/miniature/minix/f.libor
      home-manager.nixosModules.home-manager
    ];
  };
