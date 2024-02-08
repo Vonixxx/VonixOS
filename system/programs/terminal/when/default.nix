@@ -3,24 +3,30 @@
 ######################
 # When Configuration #
 ######################
-{ lib, config, unstable, ... }: 
+{ lib
+, config
+, ... 
+}: 
 
 with lib;
 
- {
+{
  config = mkIf (config.terminal.enable) {
-   home-manager.users.vonix.programs = { lib, ... }:
+   home-manager.users.vonix.programs = { 
+     lib
+   , config
+   , unstable
+   , ... 
+   }:
    
    with lib;
    with types;
    with unstable;
    with maintainers;
- let
-  cfg = config.programs.when;
-in 
-   {
-     when.enable = true;
 
+   let
+    cfg = config.programs.when;
+   in {
      options.programs.when = {
        meta.maintainers = [ vonixxx ];
        enable           = mkEnableOption "when";
