@@ -11,10 +11,9 @@
 
 with lib;
 with pkgs;
-with config;
 
 {
- config = mkIf (terminal.enable) {
+ config = mkIf (config.terminal.enable) {
    home-manager.users.vonix.programs = {
      bat = {
        enable       = true;

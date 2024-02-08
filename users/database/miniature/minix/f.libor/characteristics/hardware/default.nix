@@ -3,7 +3,9 @@
 ##########################
 # Hardware Configuration #
 ##########################
-{ pkgs, ... }:
+{ pkgs
+, ... 
+}:
 
 with pkgs;
 

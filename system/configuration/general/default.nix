@@ -14,7 +14,6 @@
 with lib;
 with pkgs;
 with types;
-with config;
 
 {
  options = {
@@ -74,7 +73,7 @@ with config;
    };
  };
 
- config = mkIf (general-configuration.enable) {
+ config = mkIf (config.general-configuration.enable) {
    programs.dconf.enable                  = true;
    networking.networkmanager.enable       = true; 
    hardware.enableRedistributableFirmware = true;

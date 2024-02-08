@@ -9,10 +9,9 @@
 }: 
 
 with lib;
-with config;
 
 {
- config = mkIf (intelcpu.enable) {
+ config = mkIf (config.intelcpu.enable) {
    hardware.cpu.intel.updateMicrocode = true;
   
    boot = {

@@ -11,10 +11,9 @@
 
 with lib;
 with pkgs;
-with config;
 
 { 
- config = mkIf (terminal.enable) {
+ config = mkIf (config.terminal.enable) {
    users.defaultUserShell = zsh;
    programs.zsh.enable    = true;
    environment.shells     = [ zsh ];

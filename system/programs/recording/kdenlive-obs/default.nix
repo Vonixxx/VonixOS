@@ -11,10 +11,9 @@
 
 with lib;
 with pkgs;
-with config;
 
 {
- config = mkIf (recording.enable) {
+ config = mkIf (config.recording.enable) {
    home-manager.users.vonix.programs = {
      obs-studio = {
        enable = true;

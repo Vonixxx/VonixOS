@@ -9,10 +9,9 @@
 }: 
 
 with lib;
-with config;
 
 {
- config = mkIf (window-manager.enable) {
+ config = mkIf (config.window-manager.enable) {
    home-manager.users.vonix.services = {
      gammastep = {
        enable    = true;

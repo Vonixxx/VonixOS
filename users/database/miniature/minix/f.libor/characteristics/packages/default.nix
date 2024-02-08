@@ -3,12 +3,12 @@
 #########################################
 # System-Specific Package Configuration #
 #########################################
-{ pkgs, ... }:
+{ pkgs
+, ... 
+}:
 
 with pkgs;
 
 {
- environment.systemPackages = [
-   freetube
- ];
+ environment.systemPackages = [ freetube ];
 }

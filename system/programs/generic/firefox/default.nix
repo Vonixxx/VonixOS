@@ -9,7 +9,6 @@
 }: 
 
 with lib;
-with config;
 
 {
  imports = [ 
@@ -17,7 +16,7 @@ with config;
    ./arkenfox.nix
  ];
 
- config = mkIf (generic.enable) {
+ config = mkIf (config.generic.enable) {
    home-manager.users.vonix = {
      programs.firefox = {
        enable = true;

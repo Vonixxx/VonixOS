@@ -9,10 +9,9 @@
 }: 
 
 with lib;
-with config;
 
 {
- config = mkIf (window-manager.enable) {
+ config = mkIf (config.window-manager.enable) {
    programs.light.enable = true;
 
    home-manager.users.vonix.programs = {

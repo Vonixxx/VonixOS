@@ -9,10 +9,9 @@
 }: 
 
 with lib;
-with config;
 
 {
- config = mkIf (hyprland.enable) {
+ config = mkIf (config.hyprland.enable) {
    home-manager.users.vonix.wayland.windowManager = {
      hyprland = {
        enable = true;

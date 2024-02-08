@@ -9,10 +9,9 @@
 }: 
 
 with lib;
-with config;
 
 {
- config = mkIf (amdcpu.enable) {
+ config = mkIf (config.amdcpu.enable) {
    hardware.cpu.amd.updateMicrocode = true;
    boot.kernelModules               = [ "kvm-amd" ];
  };

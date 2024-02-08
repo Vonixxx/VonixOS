@@ -11,10 +11,9 @@
 
 with lib;
 with pkgs;
-with config;
 
 {
- config = mkIf (amdgpu.enable) {
+ config = mkIf (config.amdgpu.enable) {
    hardware.opengl.extraPackages = [ amdvlk ];
    boot.kernelModules            = [ "amdgpu" ];
  };

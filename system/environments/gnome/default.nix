@@ -11,10 +11,9 @@
 
 with lib;
 with pkgs;
-with config;
 
 {
- config = mkIf (gnome.enable) {
+ config = mkIf (config.gnome.enable) {
    services = { 
      printing = {
        enable          = true;
