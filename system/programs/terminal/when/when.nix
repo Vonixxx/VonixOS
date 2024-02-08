@@ -6,7 +6,7 @@ with types;
 with maintainers;
 
 let
-  cfg = config.services.hello;
+  cfg = config.programs.when;
 in {
  options.programs.when = {
    meta.maintainers = [ Vonixxx ];
