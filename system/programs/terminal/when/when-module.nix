@@ -21,6 +21,7 @@ with lib;
     in 
   
     {
+     users.vonix.programs.when.enable = true;
      options.programs.when = {
        meta.maintainers = [ vonixxx ];
        enable           = mkEnableOption "when";
