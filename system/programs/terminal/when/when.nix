@@ -51,7 +51,7 @@ in {
 
    xdg.configFile = {
      ".when/calendar" = mkIf (cfg.calendar != null) { 
-       writeText ".when/calendar" cfg.calendar;
+       text = writeText ".when/calendar" cfg.calendar;
      };
 
      ".when/preferences" = mkIf (cfg.preferences != { }) { 
