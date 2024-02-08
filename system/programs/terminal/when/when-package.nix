@@ -3,7 +3,6 @@
 , stdenvNoCC
 , installShellFiles
 , fetchFromBitbucket
-, ...
 }:
 
 stdenvNoCC.mkDerivation (finalAttrs: {
