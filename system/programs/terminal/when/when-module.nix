@@ -15,7 +15,6 @@ let
  cfg = config.programs.when; 
 in 
 
-{
  options.programs.when = {
    meta.maintainers = [ vonixxx ];
    enable           = mkEnableOption "when";
@@ -64,5 +63,4 @@ in
 
    assertions = [ (hm.assertions.assertPlatform "programs.when" unstable platforms.linux) ];
  };
-}
 }
