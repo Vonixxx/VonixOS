@@ -1,5 +1,6 @@
 { lib
 , config
+, inputs
 , unstable
 , home-manager
 , ...
