@@ -56,7 +56,7 @@ in {
      };
 
      ".when/preferences" = mkIf (cfg.preferences != { }) { 
-       text = finalConfig; 
+       text = writeText ".when/preferences" cfg.preferences;
      };
    };
  };
