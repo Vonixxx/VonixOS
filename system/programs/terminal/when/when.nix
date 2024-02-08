@@ -14,8 +14,8 @@ in {
    enable = mkEnableOption "when";
 
    package = mkOption { 
-     default = when;
      type    = package; 
+     default = pkgs.when;
    };
 
    preferences = mkOption {
