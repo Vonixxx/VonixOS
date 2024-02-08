@@ -31,7 +31,8 @@
    #########################
    # Official Repositories #
    #########################
-   nixpkgs.url = "github:nixos/nixpkgs/nixos-23.11";
+   nixpkgs.url          = "github:nixos/nixpkgs/nixos-23.11";
+   nixpkgs-unstable.url = "github:nixos/nixpkgs/nixos-unstable";
    ##########################
    # Community Repositories #
    ##########################
@@ -49,7 +50,7 @@
  { nixosConfigurations = (
      import ./users {
       inherit (nixpkgs) lib;
-      inherit inputs nixpkgs arkenfox home-manager;
+      inherit inputs nixpkgs nixpkgs-unstable arkenfox home-manager;
      }
    );
  };

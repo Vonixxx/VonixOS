@@ -1,12 +1,12 @@
 { lib
-, pkgs
 , config
+, unstable
 , ...
 }:
 
 with lib;                      
-with pkgs;
 with types;
+with unstable;
 with maintainers;
 
 let
@@ -18,7 +18,7 @@ in {
 
    package = mkOption { 
      type    = package; 
-     default = pkgs.when;
+     default = unstable.when;
    };
 
    preferences = mkOption {

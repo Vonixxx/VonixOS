@@ -6,12 +6,14 @@
 { nixpkgs
 , arkenfox
 , home-manager
+, nixpkgs-unstable
 , ...
 }:
 
 let 
  lib  = nixpkgs.lib;
  pkgs = import nixpkgs { config.allowUnfree = true; };
+ unstable = import nixpkgs-unstable { config.allowUnfree = true; };
 in { 
  "f.jarka" = lib.nixosSystem {
    specialArgs = { inherit pkgs arkenfox; };
@@ -44,7 +46,7 @@ in {
  };
 
  "u.luca-lenovo" = lib.nixosSystem {
-   specialArgs = { inherit pkgs arkenfox; };
+   specialArgs = { inherit pkgs unstable arkenfox; };
 
    modules = [
      ../system
