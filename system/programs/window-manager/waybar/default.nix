@@ -178,20 +178,20 @@ with lib;
             format   = "{:󰃭 %d/%m/%y | %H:%M}";
           };
   
-  	      "network" = {
-            tooltip             = false;
-            on-click            = "foot nmtui";
-        	  format-ethernet     = "<big>󰤪</big>";
-        	  format-wifi         = "<big>󰤨</big>";
-            format-disconnected = "<big>󰤭</big>";
-          };
-  
           "backlight" = {
             tooltip        = false;
             on-scroll-up   = "exec light -A 1";
             on-scroll-down = "exec light -U 1";
             format         = "<big>{icon}</big>";
             format-icons   = [ "󱩏" "󱩑" "󱩓" "󱩕" "󰛨" ];
+          };
+  
+  	      "network" = {
+            tooltip             = false;
+        	  format-ethernet     = "<big>󰤪</big>";
+        	  format-wifi         = "<big>󰤨</big>";
+            format-disconnected = "<big>󰤭</big>";
+            on-click            = "foot nmtui connect";
           };
   
           "pulseaudio" = {
