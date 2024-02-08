@@ -8,10 +8,11 @@ with maintainers;
 let
   cfg = config.programs.when;
 in {
+ imports = [ ./when-package.nix ];
+
  options.programs.when = {
    meta.maintainers = [ Vonixxx ];
-
-   enable = mkEnableOption "when";
+   enable           = mkEnableOption "when";
 
    package = mkOption { 
      type    = package; 
