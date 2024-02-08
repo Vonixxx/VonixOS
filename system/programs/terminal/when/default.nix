@@ -12,7 +12,7 @@ with lib;
 
 {
  config = mkIf (config.terminal.enable) {
-   home-manager.users.vonix = { 
+   home-manager.users.vonix = {
      lib
    , config
    , unstable
@@ -27,6 +27,7 @@ with lib;
    let
     cfg = config.programs.when;
    in {
+     programs.when.enable = true;
      options.programs.when = {
        meta.maintainers = [ vonixxx ];
        enable           = mkEnableOption "when";
