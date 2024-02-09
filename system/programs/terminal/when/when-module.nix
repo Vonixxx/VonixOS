@@ -9,7 +9,7 @@
 {
  home-manager.options.programs.when = { lib, config, unstable, ... }: 
 
- with types;
+ with types.hm;
  with lib.hm;
  with unstable;
  with maintainers;
