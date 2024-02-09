@@ -3,12 +3,13 @@
 ######################
 # When Configuration #
 ######################
-{ ... }:
+{ lib, config, unstable, home-manager, ... }:
 
 
 {
  home-manager.options.programs.when = { lib, config, unstable, ... }: 
 
+ with lib;
  with lib.hm;
  with unstable;
  with maintainers;
