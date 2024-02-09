@@ -9,14 +9,13 @@
 {
  home-manager.options.programs.when = { lib, config, unstable, ... }: 
 
- with types.hm;
  with lib.hm;
  with unstable;
  with maintainers;
 
-let 
- cfg = config.programs.when; 
-in 
+ let 
+  cfg = config.programs.when; 
+ in 
 
 
  {
@@ -26,7 +25,7 @@ in
 
    preferences = mkOption {
      default = { };
-     type    = attrsOf (oneOf [ int str ]);
+     type    = types.attrsOf (oneOf [ int str ]);
 
      example = literalExpression ''
         {
