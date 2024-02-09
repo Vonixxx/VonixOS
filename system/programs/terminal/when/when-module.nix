@@ -3,7 +3,7 @@
 ######################
 # When Configuration #
 ######################
-{ lib, config, unstable, home-manager, ... }:
+{ ... }:
 
 
 {
@@ -18,16 +18,15 @@
   cfg = config.programs.when; 
  in 
 
-
  {
    meta.maintainers = [ vonixxx ];
    enable           = mkEnableOption "when";
    package          = mkPackageOption unstable "when" { };
-
+ 
    preferences = mkOption {
      default = { };
      type    = types.attrsOf (oneOf [ int str ]);
-
+ 
      example = literalExpression ''
         {
          styled_output = 1; # 1/0 = True/False
@@ -41,11 +40,10 @@
          for options.
      '';
    };
-
+ 
    calendar = mkOption {
      default = "";
      type    = lines;
-
      example = literalExpression ''
         {
          * dec 25     , Christmas
@@ -54,23 +52,24 @@
          2003 feb 3   , Fly to Stockholm to accept Nobel Prize.
         }
      '';
+
      description = ''
         Configuration for .when/calendar
          See <https://www.lightandmatter.com/when/when.html>
          for options.
      '';
    };
- };
 
- config = mkIf cfg.enable {
-   home.packages = [ cfg.package ];
-
-   xdg.configFile.".when/calendar" = mkIf (cfg.calendar != null) { 
-     text = writeText ".when/calendar" cfg.calendar;
-   };
-
-   xdg.configFile.".when/preferences" = mkIf (cfg.preferences != { }) { 
-     text = writeText ".when/preferences" cfg.preferences;
+   config = mkIf cfg.enable {
+     home.packages = [ cfg.package ];
+  
+     xdg.configFile.".when/calendar" = mkIf (cfg.calendar != null) { 
+       text = writeText ".when/calendar" cfg.calendar;
+     };
+  
+     xdg.configFile.".when/preferences" = mkIf (cfg.preferences != { }) { 
+       text = writeText ".when/preferences" cfg.preferences;
+     };
    };
  };
 }
