@@ -3,8 +3,6 @@
 ######################
 # When Configuration #
 ######################
-{ ... }: 
-
 {
  home-manager = { lib, config, unstable, ... }:
 
