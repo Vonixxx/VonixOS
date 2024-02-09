@@ -3,12 +3,13 @@
 ######################
 # When Configuration #
 ######################
-{ lib, config, unstable, ... }:
+{ lib, config, unstable, home-manager, ... }:
 
 with lib;
 with types;
 with unstable;
 with maintainers;
+with home-manager;
 
 let 
  cfg = config.programs.when; 
