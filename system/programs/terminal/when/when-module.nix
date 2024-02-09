@@ -3,20 +3,23 @@
 ######################
 # When Configuration #
 ######################
-{ lib, config, unstable, home-manager, ... }:
+{ ... }:
 
-with hm;
-with lib;
-with types;
-with unstable;
-with maintainers;
+
+{
+ home-manager.options.programs.when = { lib, config, unstable, ... }: 
+
+ with lib;
+ with types;
+ with unstable;
+ with maintainers;
 
 let 
  cfg = config.programs.when; 
 in 
 
-{
- options.programs.when = {
+
+ {
    meta.maintainers = [ vonixxx ];
    enable           = mkEnableOption "when";
    package          = mkPackageOption unstable "when" { };
