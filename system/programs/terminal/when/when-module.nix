@@ -9,8 +9,8 @@
 {
  home-manager.options.programs.when = { lib, config, unstable, ... }: 
 
- with lib;
  with types;
+ with lib.hm;
  with unstable;
  with maintainers;
 
@@ -62,14 +62,14 @@ in
    };
  };
 
- config = lib.mkIf cfg.enable {
+ config = mkIf cfg.enable {
    home.packages = [ cfg.package ];
 
-   xdg.configFile.".when/calendar" = lib.mkIf (cfg.calendar != null) { 
+   xdg.configFile.".when/calendar" = mkIf (cfg.calendar != null) { 
      text = writeText ".when/calendar" cfg.calendar;
    };
 
-   xdg.configFile.".when/preferences" = lib.mkIf (cfg.preferences != { }) { 
+   xdg.configFile.".when/preferences" = mkIf (cfg.preferences != { }) { 
      text = writeText ".when/preferences" cfg.preferences;
    };
  };
