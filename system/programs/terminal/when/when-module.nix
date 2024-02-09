@@ -5,11 +5,11 @@
 ######################
 { lib, config, unstable, home-manager, ... }:
 
+with hm;
 with lib;
 with types;
 with unstable;
 with maintainers;
-with home-manager;
 
 let 
  cfg = config.programs.when; 
