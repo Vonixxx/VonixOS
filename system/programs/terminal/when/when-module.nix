@@ -69,4 +69,4 @@ in
      text = writeText ".when/preferences" cfg.preferences;
    };
  };
-;
+}
