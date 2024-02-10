@@ -852,7 +852,7 @@
         "nixHaskell": "nixHaskell",
         "nixpkgs": [
           "nixHaskell",
-          "nixpkgs-unstable"
+          "nixpkgs"
         ],
         "nixpkgs-unstable": "nixpkgs-unstable_2"
       }
