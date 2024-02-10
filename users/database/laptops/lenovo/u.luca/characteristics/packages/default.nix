@@ -19,6 +19,8 @@ with pkgs;
    ###############
    # Programming #
    ###############
+   cabal
+   ghc
    haskell-language-server
    ######################
    # Terminal Utilities #

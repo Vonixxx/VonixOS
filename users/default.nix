@@ -5,7 +5,6 @@
 ############
 { nixpkgs
 , arkenfox
-, nixHaskell
 , home-manager
 , nixpkgs-unstable
 , ...
@@ -47,7 +46,7 @@ in {
  };
 
  "u.luca-lenovo" = lib.nixosSystem {
-   specialArgs = { inherit pkgs arkenfox unstable nixHaskell; };
+   specialArgs = { inherit pkgs arkenfox unstable; };
 
    modules = [
      ../system

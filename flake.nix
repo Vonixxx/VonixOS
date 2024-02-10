@@ -28,7 +28,6 @@
    # Synchronizing Packages #
    ##########################
    home-manager.inputs.nixpkgs.follows = "nixpkgs";
-   # nixpkgs.follows                     = "nixHaskell/nixpkgs";
    #########################
    # Official Repositories #
    #########################
@@ -38,7 +37,6 @@
    # Community Repositories #
    ##########################
    arkenfox.url     = "github:dwarfmaster/arkenfox-nixos";
-   nixHaskell.url   = "github:input-output-hk/haskell.nix";
    home-manager.url = "github:nix-community/home-manager/release-23.11"; 
  };
 
@@ -46,7 +44,6 @@
    self 
  , nixpkgs
  , arkenfox
- , nixHaskell
  , home-manager
  , nixpkgs-unstable
  , ... 
@@ -54,7 +51,7 @@
  { nixosConfigurations = (
      import ./users {
       inherit (nixpkgs) lib;
-      inherit inputs nixpkgs arkenfox nixHaskell home-manager nixpkgs-unstable;
+      inherit inputs nixpkgs arkenfox home-manager nixpkgs-unstable;
      }
    );
  };
