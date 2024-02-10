@@ -19,9 +19,7 @@ with pkgs;
    ###############
    # Programming #
    ###############
-   ghc
    haskell-language-server
-   stack
    ######################
    # Terminal Utilities #
    ######################

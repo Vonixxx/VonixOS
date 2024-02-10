@@ -24,34 +24,37 @@
 #       └─/characteristics
 {
  inputs = {
-   ##########################
-   # Synchronizing Packages #
-   ##########################
-   home-manager.inputs.nixpkgs.follows = "nixpkgs";
    #########################
    # Official Repositories #
    #########################
    nixpkgs.url          = "github:nixos/nixpkgs/nixos-23.11";
    nixpkgs-unstable.url = "github:nixos/nixpkgs/nixos-unstable";
    ##########################
+   # Synchronizing Packages #
+   ##########################
+   home-manager.inputs.nixpkgs.follows = "nixpkgs";
+   nixpkgs.follows                     = "haskellNix/nixpkgs-unstable";
+   ##########################
    # Community Repositories #
    ##########################
    arkenfox.url     = "github:dwarfmaster/arkenfox-nixos";
+   nixHaskell.url   = "github:input-output-hk/haskell.nix";
    home-manager.url = "github:nix-community/home-manager/release-23.11"; 
  };
 
  outputs = inputs @ { 
    self 
  , nixpkgs
- , nixpkgs-unstable
  , arkenfox
+ , nixHaskell
  , home-manager
+ , nixpkgs-unstable
  , ... 
  }:
  { nixosConfigurations = (
      import ./users {
       inherit (nixpkgs) lib;
-      inherit inputs nixpkgs nixpkgs-unstable arkenfox home-manager;
+      inherit inputs nixpkgs arkenfox nixHaskell home-manager nixpkgs-unstable;
      }
    );
  };
