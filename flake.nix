@@ -33,7 +33,7 @@
    # Synchronizing Packages #
    ##########################
    home-manager.inputs.nixpkgs.follows = "nixpkgs";
-   nixpkgs.follows                     = "haskellNix/nixpkgs-unstable";
+   nixpkgs.follows                     = "nixHaskell/nixpkgs-unstable";
    ##########################
    # Community Repositories #
    ##########################
