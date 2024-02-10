@@ -806,6 +806,22 @@
         "type": "github"
       }
     },
+    "nixpkgs_4": {
+      "locked": {
+        "lastModified": 1707347730,
+        "narHash": "sha256-0etC/exQIaqC9vliKhc3eZE2Mm2wgLa0tj93ZF/egvM=",
+        "owner": "nixos",
+        "repo": "nixpkgs",
+        "rev": "6832d0d99649db3d65a0e15fa51471537b2c56a6",
+        "type": "github"
+      },
+      "original": {
+        "owner": "nixos",
+        "ref": "nixos-23.11",
+        "repo": "nixpkgs",
+        "type": "github"
+      }
+    },
     "old-ghc-nix": {
       "flake": false,
       "locked": {
@@ -850,10 +866,7 @@
         "arkenfox": "arkenfox",
         "home-manager": "home-manager",
         "nixHaskell": "nixHaskell",
-        "nixpkgs": [
-          "nixHaskell",
-          "nixpkgs"
-        ],
+        "nixpkgs": "nixpkgs_4",
         "nixpkgs-unstable": "nixpkgs-unstable_2"
       }
     },

@@ -28,7 +28,7 @@
    # Synchronizing Packages #
    ##########################
    home-manager.inputs.nixpkgs.follows = "nixpkgs";
-   nixpkgs.follows                     = "nixHaskell/nixpkgs";
+   # nixpkgs.follows                     = "nixHaskell/nixpkgs";
    #########################
    # Official Repositories #
    #########################
