@@ -19,7 +19,7 @@ with pkgs;
    ###############
    # Programming #
    ###############
-   cabal
+   cabal-install
    ghc
    haskell-language-server
    ######################
