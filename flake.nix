@@ -24,16 +24,16 @@
 #       └─/characteristics
 {
  inputs = {
+   ##########################
+   # Synchronizing Packages #
+   ##########################
+   home-manager.inputs.nixpkgs.follows = "nixpkgs";
+   nixpkgs.follows                     = "nixHaskell/master";
    #########################
    # Official Repositories #
    #########################
    nixpkgs.url          = "github:nixos/nixpkgs/nixos-23.11";
    nixpkgs-unstable.url = "github:nixos/nixpkgs/nixos-unstable";
-   ##########################
-   # Synchronizing Packages #
-   ##########################
-   home-manager.inputs.nixpkgs.follows = "nixpkgs";
-   nixpkgs.follows                     = "nixHaskell/nixpkgs";
    ##########################
    # Community Repositories #
    ##########################

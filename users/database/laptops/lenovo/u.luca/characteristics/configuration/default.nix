@@ -6,7 +6,6 @@
 { ... }:
 
 {
- generic.enable               = true;
  terminal.enable              = true;
  hyprland.enable              = true;
  window-manager.enable        = true;
