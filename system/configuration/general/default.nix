@@ -84,6 +84,8 @@ with types;
    nixpkgs.hostPlatform                   = mkDefault "x86_64-linux";
   
    hardware = {
+     pulseaudio.enable = false;
+
      opengl = {
        enable          = true;
        driSupport      = true;
@@ -94,8 +96,6 @@ with types;
          vaapiVdpau
        ];
      };
-  
-     pulseaudio.enable = false;
    };
   
    security = {
@@ -109,6 +109,20 @@ with types;
      home.stateVersion            = "23.11";
    };
   
+   fileSystems = {
+     "boot" = { 
+       fsType     = "vfat";  
+       mountPoint = "/boot";
+       device     = "/dev/disk/by-label/boot";
+     };
+  
+     "root" = { 
+       mountPoint = "/";
+       fsType     = "ext4"; 
+       device     = "/dev/disk/by-label/root";
+     };
+   };
+
    services = {
      pipewire = {
        enable             = true;

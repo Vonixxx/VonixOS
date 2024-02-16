@@ -6,9 +6,12 @@
 { ... }:
 
 {
- gnome.enable            = true;
- services.xserver.layout = "cz";
- i18n.defaultLocale      = "cs_CZ.UTF-8";
+ gnome.enable              = true;
+ intelcpu.enable           = true;
+ intelgpu.enable           = true;
+ services.xserver.layout   = "cz";
+ i18n.defaultLocale        = "cs_CZ.UTF-8";
+ boot.initrd.kernelModules = [ "rtsx_usb_sdmmc" ];
 
  home-manager.users.vonix = {
    programs.firefox = {

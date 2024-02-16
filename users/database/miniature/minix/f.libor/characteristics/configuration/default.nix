@@ -3,11 +3,18 @@
 #######################################
 # System-Specific NixOS Configuration #
 #######################################
-{ ... }:
+{ pkgs
+, ... 
+}:
+
+with pkgs;
 
 {
- gnome.enable       = true;
- i18n.defaultLocale = "cs_CZ.UTF-8";
+ gnome.enable              = true;
+ intelcpu.enable           = true;
+ intelgpu.enable           = true;
+ i18n.defaultLocale        = "cs_CZ.UTF-8";
+ boot.initrd.kernelModules = [ "sdhci_acpi" ];
 
  services = { 
    xserver.layout = "cz"; 
@@ -24,4 +31,11 @@
      };
    };
  };
+
+ hardware.firmware = [ 
+   (runCommandNoCC "brcm-firmware" { } ''
+      mkdir -p $out/lib/firmware/brcm/
+      cp ${./brcm/brcmfmac43455-sdio.txt} $out/lib/firmware/brcm/
+   '')
+ ];
 }

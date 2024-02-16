@@ -6,31 +6,29 @@
 { nixpkgs
 , arkenfox
 , home-manager
-, nixpkgs-unstable
 , ...
 }:
 
 let 
- lib      = nixpkgs.lib;
- pkgs     = import nixpkgs { config.allowUnfree = true; };
- unstable = import nixpkgs-unstable { config.allowUnfree = true; };
+ lib  = nixpkgs.lib;
+ pkgs = import nixpkgs { config.allowUnfree = true; };
 in { 
+ "vonix" = lib.nixosSystem {
+   specialArgs = { inherit pkgs arkenfox; };
+
+   modules = [
+     ./vonix
+     ../system
+     home-manager.nixosModules.home-manager
+   ];
+ };
+
  "f.jarka" = lib.nixosSystem {
    specialArgs = { inherit pkgs arkenfox; };
 
    modules = [
      ../system
      ./database/laptops/hp/f.jarka
-     home-manager.nixosModules.home-manager
-   ];
- };
-
- "f.stepanka" = lib.nixosSystem {
-   specialArgs = { inherit pkgs arkenfox; };
-
-   modules = [
-     ../system
-     ./database/laptops/hp/f.stepanka
      home-manager.nixosModules.home-manager
    ];
  };
@@ -45,22 +43,12 @@ in {
    ];
  };
 
- "u.luca-lenovo" = lib.nixosSystem {
-   specialArgs = { inherit pkgs arkenfox unstable; };
+ "f.stepanka" = lib.nixosSystem {
+   specialArgs = { inherit pkgs arkenfox; };
 
    modules = [
      ../system
-     ./database/laptops/lenovo/u.luca
-     home-manager.nixosModules.home-manager
-   ];
- };
-
- "u.luca-raspberry" = lib.nixosSystem {
-   specialArgs = { inherit pkgs; };
-
-   modules = [
-     ../system
-     ./database/miniature/raspberry-pi-3B+/u.luca
+     ./database/laptops/hp/f.stepanka
      home-manager.nixosModules.home-manager
    ];
  };
