@@ -33,6 +33,16 @@ in {
    ];
  };
 
+ "u.ofelia" = lib.nixosSystem {
+   specialArgs = { inherit pkgs arkenfox; };
+
+   modules = [
+     ../system
+     ./database/laptops/hp/u.ofelia
+     home-manager.nixosModules.home-manager
+   ];
+ };
+
  "f.libor" = lib.nixosSystem {
    specialArgs = { inherit pkgs arkenfox; };
  

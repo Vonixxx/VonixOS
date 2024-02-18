@@ -10,6 +10,7 @@
  intelcpu.enable         = true;
  intelgpu.enable         = true;
  services.xserver.layout = "be"; 
+ boot.initrd.kernelModules = [ "xhci_pci" ];
 
  home-manager.users.vonix = {
    dconf.settings = {
