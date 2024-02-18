@@ -6,10 +6,11 @@
 { ... }:
 
 {
- gnome.enable            = true;
- intelcpu.enable         = true;
- intelgpu.enable         = true;
- services.xserver.layout = "be"; 
+ gnome.enable              = true;
+ intelcpu.enable           = true;
+ intelgpu.enable           = true;
+ services.xserver.layout   = "be"; 
+ services.tlp.enable       = false; 
  boot.initrd.kernelModules = [ "xhci_pci" ];
 
  home-manager.users.vonix = {
