@@ -63,12 +63,12 @@ with pkgs;
 
    home-manager.users.vonix = { lib, ... }: with lib.hm.gvariant; {
      dconf.settings = {
-       "org/gnome/mutter" = {
-         edge-tiling = true;
-       };
-
        "org/gnome/system/location" = {
          enabled = true;
+       };
+
+       "org/gnome/mutter" = {
+         edge-tiling = true;
        };
 
        "org/gnome/desktop/peripherals/touchpad" = {
@@ -105,9 +105,9 @@ with pkgs;
        };
 
        "org/gnome/settings-daemon/plugins/color" = {
-         night-light-enabled            = true;
          night-light-schedule-automatic = true;
          night-light-temperature        = mkUint32 1700;
+         night-light-enabled            = mkDefault true;
        };
 
        "org/gnome/desktop/interface" = {
