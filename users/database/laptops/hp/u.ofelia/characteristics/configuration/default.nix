@@ -15,8 +15,17 @@
 
  home-manager.users.vonix = {
    dconf.settings = {
+     "org/gnome/desktop/a11y/interface" = {
+       high-contrast = true;
+     };
+
      "org/gnome/settings-daemon/plugins/color" = {
        night-light-enabled = false;
+     };
+
+     "org/gnome/desktop/interface" = {
+       text-scaling-factor = 1.5;
+       icon-theme          = "HighContrast";
      };
    };
  };
