@@ -141,13 +141,17 @@ with types;
    };
   
    boot = { 
-     initrd.kernelModules = [
+     initrd.availableKernelModules = [
+       "vmd"
        "ahci"
        "ext4"
        "nvme"
        "sd_mod"
        "usbhid"
+       "xhci_pci" 
+       "sdhci_acpi"
        "usb_storage"
+       "rtsx_usb_sdmmc"     
      ];
   
      loader = {

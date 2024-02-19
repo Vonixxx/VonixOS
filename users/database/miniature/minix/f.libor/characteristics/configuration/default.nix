@@ -10,11 +10,10 @@
 with pkgs;
 
 {
- gnome.enable              = true;
- intelcpu.enable           = true;
- intelgpu.enable           = true;
- i18n.defaultLocale        = "cs_CZ.UTF-8";
- boot.initrd.kernelModules = [ "sdhci_acpi" ];
+ gnome.enable       = true;
+ intelcpu.enable    = true;
+ intelgpu.enable    = true;
+ i18n.defaultLocale = "cs_CZ.UTF-8";
 
  services = { 
    xserver.layout = "cz"; 
