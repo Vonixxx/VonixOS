@@ -53,7 +53,7 @@ with lib;
           border-radius: 0px;
           padding:       0px;
           border:        none;
-          border-radius: 20px;
+          border-radius: 50px;
           margin:        1px 1px 1px 1px;
          }
        
@@ -62,7 +62,6 @@ with lib;
          #waybar {
           font-size:     20px;
           font-weight:   bold;
-          border-radius: 100px;
           background:    @crust;
           font-family:   CascadiaCode;
           border-top:    3px solid @mauve;
@@ -81,8 +80,12 @@ with lib;
   
 
          /* Workspaces */
+         #workspaces button { 
+          border: none;
+          color:  @white; 
+         }
+
          #workspaces button.urgent { color: @red; }
-         #workspaces button        { color: @white; }
          #workspaces button.active { color: @mauve; }
       '';
   
@@ -96,7 +99,7 @@ with lib;
   
           "hyprland/workspaces" = {
             all-outputs = true;
-            format      = " {icon} ";
+            format      = "  {icon}  ";
   
             persistent-workspaces = {
               "1" = "[]";
