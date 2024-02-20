@@ -80,13 +80,10 @@ with lib;
   
 
          /* Workspaces */
-         #workspaces button { 
-          border: none;
-          color:  @white; 
-         }
-
          #workspaces button.urgent { color: @red; }
          #workspaces button.active { color: @mauve; }
+         #workspaces button        { color: @white; }
+         #workspaces button.hover  { border-color: transparent; }
       '';
   
       settings = [{
