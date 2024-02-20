@@ -19,7 +19,7 @@ with lib;
         position       = "top";
         modules-center = [ "hyprland/workspaces" ];
         modules-right  = [ "disk" "memory" "cpu" "clock" ];
-        modules-left   = [ "custom/power" "custom/reboot" "custom/sleep" "pulseaudio" "network" "backlight" "battery" ];
+        modules-left   = [ "custom/power" "custom/reboot" "custom/sleep" "pulseaudio" "backlight" "battery" "network" ];
 
         "hyprland/workspaces" = {
           all-outputs = true;
@@ -93,9 +93,9 @@ with lib;
 
 	      "network" = {
           tooltip             = false;
-      	  format-ethernet     = "<big>󰤪</big> ";
-      	  format-wifi         = "<big>󰤨</big> ";
-          format-disconnected = "<big>󰤭</big> ";
+      	  format-ethernet     = "<big>󰤪</big>";
+      	  format-wifi         = "<big>󰤨</big>";
+          format-disconnected = "<big>󰤭</big>";
           on-click            = "foot nmtui connect";
         };
 
@@ -116,7 +116,7 @@ with lib;
           interval                   = 5;
           bat                        = "BAT0";
           format-charging            = "<big>󰂄</big>";
-          format                     = "<big>{icon}</big>";
+          format                     = "<big>{icon}</big> ";
           tooltip-format-charging    = "Full Charge: {time}";
           format-icons               = [ "󰁻" "󰁽" "󰁿" "󰂁" "󰁹" ];
           tooltip-format-discharging = "Full Discharge: {time}";
