@@ -80,11 +80,12 @@ with lib;
   
   
          /* Icon Position Fix */
-         /* #workspaces button {
+         /*
+         #workspaces button {
           margin-right:  5px;
           padding-left:  10px;
           padding-right: 15px;
-         } */
+         }
   
          #network       { padding-right: 20px; }
          #backlight     { padding-right: 20px; }
@@ -92,6 +93,7 @@ with lib;
          #custom-power, 
          #custom-reboot { padding-right: 13px; }
          #pulseaudio    { padding-right: 17.5px; }
+         */
 
 
          /* Workspaces */
@@ -141,19 +143,19 @@ with lib;
   
           "custom/reboot" = {
             tooltip  = false;
-            format   = "<big>󰜉</big>";
+            format   = "<big> 󰜉 </big>";
             on-click = "systemctl reboot";
           };
   
           "custom/sleep" = {
             tooltip  = false;
-            format   = "<big>󰜗</big>";
+            format   = "<big> 󰜗 </big>";
             on-click = "systemctl suspend";
           };
   
           "custom/power" = {
             tooltip  = false;
-            format   = "<big>󰐥</big>";
+            format   = "<big> 󰐥 </big>";
             on-click = "systemctl poweroff";
           };
   
@@ -172,7 +174,7 @@ with lib;
   
           "backlight" = {
             tooltip        = false;
-            format-icons   = [ "󰃞" "󰃟" "󰃠" ];
+            format-icons   = [ " 󰃞 " " 󰃟 " " 󰃠 " ];
             on-scroll-up   = "exec light -A 1";
             on-scroll-down = "exec light -U 1";
             format         = "<big>{icon}</big>";
@@ -180,16 +182,16 @@ with lib;
   
   	      "network" = {
             tooltip             = false;
-        	  format-ethernet     = "<big>󰤪</big>";
-        	  format-wifi         = "<big>󰤨</big>";
-            format-disconnected = "<big>󰤭</big>";
+        	  format-ethernet     = "<big> 󰤪 </big>";
+        	  format-wifi         = "<big> 󰤨 </big>";
+            format-disconnected = "<big> 󰤭 </big>";
             on-click            = "foot nmtui connect";
           };
   
           "pulseaudio" = {
             format-icons = {
               headphone = "󰋋";
-              default   = [ "󰖁" "󰕿" "󰖀" "󰕾" ];
+              default   = [ " 󰖁 " " 󰕿 " " 󰖀 " " 󰕾 " ];
             };
   
             tooltip        = false;
@@ -202,10 +204,10 @@ with lib;
           "battery" = {
             interval                   = 5;
             bat                        = "BAT0";
-            format-charging            = "<big>󰂄</big>";
+            format-charging            = "<big> 󰂄 </big>";
             format                     = "<big>{icon}</big>";
             tooltip-format-charging    = "Full Charge: {time}";
-            format-icons               = [ "󰁻" "󰁽" "󰁿" "󰂁" "󰁹" ];
+            format-icons               = [ " 󰁻 " " 󰁽 " " 󰁿 " " 󰂁 " " 󰁹 " ];
             tooltip-format-discharging = "Full Discharge: {time}";
           };
        }];
