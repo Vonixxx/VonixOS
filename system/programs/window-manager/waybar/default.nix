@@ -80,11 +80,11 @@ with lib;
   
   
          /* Icon Position Fix */
-         #workspaces button {
+         /* #workspaces button {
           margin-right:  5px;
           padding-left:  10px;
           padding-right: 15px;
-         }
+         } */
   
          #network       { padding-right: 20px; }
          #backlight     { padding-right: 20px; }
@@ -120,10 +120,10 @@ with lib;
             };
   
             format-icons = {
-              "1" = "<big>󰜏</big>";
-              "2" = "<big>󰆍</big>";
-              "3" = "<big>󰭣</big>";
-              "4" = "<big>󰔂</big>";
+              "1" = "<big> 󰜏 </big>";
+              "2" = "<big> 󰆍 </big>";
+              "3" = "<big> 󰭣 </big>";
+              "4" = "<big> 󰔂 </big>";
             };
           };
   
