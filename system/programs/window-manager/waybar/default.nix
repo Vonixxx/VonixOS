@@ -78,23 +78,6 @@ with lib;
          #custom-reboot { color: @yellow; }
          #backlight     { color: @yellow; }
   
-  
-         /* Icon Position Fix */
-         /*
-         #workspaces button {
-          margin-right:  5px;
-          padding-left:  10px;
-          padding-right: 15px;
-         }
-  
-         #network       { padding-right: 20px; }
-         #backlight     { padding-right: 20px; }
-         #custom-sleep  { padding-right: 16px; }
-         #custom-power, 
-         #custom-reboot { padding-right: 13px; }
-         #pulseaudio    { padding-right: 17.5px; }
-         */
-
 
          /* Workspaces */
          #workspaces button.urgent { color: @red; }
@@ -122,23 +105,23 @@ with lib;
             };
   
             format-icons = {
-              "1" = "<big>󰜏 </big>";
-              "2" = "<big>󰆍 </big>";
-              "3" = "<big>󰭣 </big>";
-              "4" = "<big>󰔂</big>";
+              "1" = "<big> 󰜏 </big>";
+              "2" = "<big> 󰆍 </big>";
+              "3" = "<big> 󰭣 </big>";
+              "4" = "<big> 󰔂 </big>";
             };
           };
   
           "cpu" = {
             interval = 10;
             tooltip  = false;
-            format   = "󰍛 {usage}%";
+            format   = "󰍛 {usage}%";
           };
 
           "memory" = {
             interval = 10;
             tooltip  = false;
-            format   = "󱉟 {percentage}%";
+            format   = "󱉟 {percentage}%";
           };
   
           "custom/reboot" = {
@@ -163,13 +146,13 @@ with lib;
         	  interval = 60;
         	  path     = "/";
             tooltip  = false;
-        	  format   = "󰋊 {percentage_used}%";
+        	  format   = "󰋊 {percentage_used}%";
         	};
   
           "clock" = {
             interval = 30;
             tooltip  = false;
-            format   = "{:󰃭 %d/%m/%y | %H:%M}";
+            format   = "{:󰃭 %d/%m/%y | %H:%M}";
           };
   
           "backlight" = {
