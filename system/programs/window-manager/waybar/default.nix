@@ -60,7 +60,7 @@ with lib;
          /* Whole Bar */
          #waybar {
           font-size:     20px;
-          border-radius: 20px;
+          border-radius: 25px;
           font-weight:   bold;
           background:    @crust;
           font-family:   CascadiaCode;
