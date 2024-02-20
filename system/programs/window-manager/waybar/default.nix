@@ -20,26 +20,14 @@ with lib;
   
       style = '' 
          /* Colors */
-         @define-color red       #F38BA8;
-         @define-color teal      #89DCEB;
-         @define-color blue      #89B4FA;
-         @define-color mauve     #CBA6F7;
-         @define-color white     #CDD6F4;
-         @define-color green     #A6E3A1;
-         @define-color mantle    #181825;
-         @define-color yellow    #F9E2AF;
-         @define-color rosewater #F5E0DC;
+         @define-color red    #F38BA8;
+         @define-color blue   #89B4FA;
+         @define-color mauve  #CBA6F7;
+         @define-color white  #CDD6F4;
+         @define-color green  #A6E3A1;
+         @define-color crust  #11111B;
+         @define-color yellow #F9E2AF;
   
-  
-         /* Base */
-         * {
-          min-height:    0px;
-          border-radius: 0px;
-          padding:       0px;
-          border:        none;
-          margin:        1px 1px 1px 1px;
-         }
-       
   
          /* Modules */
          #cpu,
@@ -58,13 +46,23 @@ with lib;
           padding: 2px 12px;
          }
    
+
+         /* Base */
+         * {
+          min-height:    0px;
+          border-radius: 0px;
+          padding:       0px;
+          border:        none;
+          margin:        1px 1px 1px 1px;
+         }
+       
    
          /* Whole Bar */
          #waybar {
           font-size:     20px;
           border-radius: 20px;
           font-weight:   bold;
-          background:    @mantle;
+          background:    @crust;
           font-family:   CascadiaCode;
           border-top:    3px solid @mauve;
           border-bottom: 3px solid @mauve;
@@ -73,12 +71,12 @@ with lib;
 
          /* Icon Color */
          #custom-power  { color: @red; }
-         #network       { color: @teal; }
+         #network       { color: @blue; }
          #custom-sleep  { color: @blue; }
          #battery       { color: @green; }
          #pulseaudio    { color: @mauve; }
          #custom-reboot { color: @yellow; }
-         #backlight     { color: @rosewater; }
+         #backlight     { color: @yellow; }
   
   
          /* Icon Position Fix */
@@ -174,10 +172,10 @@ with lib;
   
           "backlight" = {
             tooltip        = false;
+            format-icons   = [ "󰃠" "󰃟" "󰃞" ];
             on-scroll-up   = "exec light -A 1";
             on-scroll-down = "exec light -U 1";
             format         = "<big>{icon}</big>";
-            format-icons   = [ "󱩏" "󱩑" "󱩓" "󱩕" "󰛨" ];
           };
   
   	      "network" = {
