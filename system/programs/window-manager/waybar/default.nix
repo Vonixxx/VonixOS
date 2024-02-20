@@ -122,10 +122,10 @@ with lib;
             };
   
             format-icons = {
-              "1" = "<big> 󰜏 </big>";
-              "2" = "<big> 󰆍 </big>";
-              "3" = "<big> 󰭣 </big>";
-              "4" = "<big> 󰔂 </big>";
+              "1" = "<big>󰜏 </big>";
+              "2" = "<big>󰆍 </big>";
+              "3" = "<big>󰭣 </big>";
+              "4" = "<big>󰔂</big>";
             };
           };
   
@@ -143,19 +143,19 @@ with lib;
   
           "custom/reboot" = {
             tooltip  = false;
-            format   = "<big> 󰜉 </big>";
+            format   = "<big>󰜉 </big>";
             on-click = "systemctl reboot";
           };
   
           "custom/sleep" = {
             tooltip  = false;
-            format   = "<big> 󰜗 </big>";
+            format   = "<big>󰜗 </big>";
             on-click = "systemctl suspend";
           };
   
           "custom/power" = {
             tooltip  = false;
-            format   = "<big> 󰐥 </big>";
+            format   = "<big>󰐥 </big>";
             on-click = "systemctl poweroff";
           };
   
@@ -174,29 +174,29 @@ with lib;
   
           "backlight" = {
             tooltip        = false;
-            format-icons   = [ " 󰃞 " " 󰃟 " " 󰃠 " ];
+            format-icons   = [ "󰃞" "󰃟" "󰃠" ];
             on-scroll-up   = "exec light -A 1";
             on-scroll-down = "exec light -U 1";
-            format         = "<big>{icon}</big>";
+            format         = "<big>{icon} </big>";
           };
   
   	      "network" = {
             tooltip             = false;
-        	  format-ethernet     = "<big> 󰤪 </big>";
-        	  format-wifi         = "<big> 󰤨 </big>";
-            format-disconnected = "<big> 󰤭 </big>";
+        	  format-ethernet     = "<big>󰤪 </big>";
+        	  format-wifi         = "<big>󰤨 </big>";
+            format-disconnected = "<big>󰤭 </big>";
             on-click            = "foot nmtui connect";
           };
   
           "pulseaudio" = {
             format-icons = {
               headphone = "󰋋";
-              default   = [ " 󰖁 " " 󰕿 " " 󰖀 " " 󰕾 " ];
+              default   = [ "󰖁" "󰕿" "󰖀" "󰕾" ];
             };
   
             tooltip        = false;
             on-click       = "foot pulsemixer";
-            format         = "<big>{icon}</big>";
+            format         = "<big>{icon} </big>";
             on-scroll-up   = "exec amixer -q sset Master 1%+";
             on-scroll-down = "exec amixer -q sset Master 1%-";
           };
@@ -204,10 +204,10 @@ with lib;
           "battery" = {
             interval                   = 5;
             bat                        = "BAT0";
-            format-charging            = "<big> 󰂄 </big>";
+            format-charging            = "<big>󰂄</big>";
             format                     = "<big>{icon}</big>";
             tooltip-format-charging    = "Full Charge: {time}";
-            format-icons               = [ " 󰁻 " " 󰁽 " " 󰁿 " " 󰂁 " " 󰁹 " ];
+            format-icons               = [ "󰁻" "󰁽" "󰁿" "󰂁" "󰁹" ];
             tooltip-format-discharging = "Full Discharge: {time}";
           };
        }];
