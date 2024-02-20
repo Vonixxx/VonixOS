@@ -60,7 +60,7 @@ with lib;
 
         "custom/sleep" = {
           tooltip  = false;
-          format   = "<big>󰜗</big> ";
+          format   = "<big>󰜗</big>  ";
           on-click = "systemctl suspend";
         };
 
@@ -88,14 +88,14 @@ with lib;
           format-icons   = [ "󰃞" "󰃟" "󰃠" ];
           on-scroll-up   = "exec light -A 1";
           on-scroll-down = "exec light -U 1";
-          format         = "<big>{icon} </big>";
+          format         = "<big>{icon}</big> ";
         };
 
 	      "network" = {
           tooltip             = false;
-      	  format-ethernet     = "<big>󰤪 </big>";
-      	  format-wifi         = "<big>󰤨 </big>";
-          format-disconnected = "<big>󰤭 </big>";
+      	  format-ethernet     = "<big>󰤪</big> ";
+      	  format-wifi         = "<big>󰤨</big> ";
+          format-disconnected = "<big>󰤭</big> ";
           on-click            = "foot nmtui connect";
         };
 
@@ -107,7 +107,7 @@ with lib;
 
           tooltip        = false;
           on-click       = "foot pulsemixer";
-          format         = "<big>{icon} </big>";
+          format         = "<big>{icon}</big> ";
           on-scroll-up   = "exec amixer -q sset Master 1%+";
           on-scroll-down = "exec amixer -q sset Master 1%-";
         };
