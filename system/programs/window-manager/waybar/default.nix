@@ -123,7 +123,7 @@ with lib;
               "1" = "<big>󰜏</big>";
               "2" = "<big>󰆍</big>";
               "3" = "<big>󰭣</big>";
-              "4" = "<big>󰯜</big>";
+              "4" = "<big>󰔂</big>";
             };
           };
   
@@ -172,7 +172,7 @@ with lib;
   
           "backlight" = {
             tooltip        = false;
-            format-icons   = [ "󰃠" "󰃟" "󰃞" ];
+            format-icons   = [ "󰃞" "󰃟" "󰃠" ];
             on-scroll-up   = "exec light -A 1";
             on-scroll-down = "exec light -U 1";
             format         = "<big>{icon}</big>";
