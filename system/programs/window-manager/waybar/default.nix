@@ -53,6 +53,7 @@ with lib;
           border-radius: 0px;
           padding:       0px;
           border:        none;
+          border-radius: 20px;
           margin:        1px 1px 1px 1px;
          }
        
@@ -95,7 +96,7 @@ with lib;
   
           "hyprland/workspaces" = {
             all-outputs = true;
-            format      = "{icon}";
+            format      = " {icon} ";
   
             persistent-workspaces = {
               "1" = "[]";
@@ -105,10 +106,10 @@ with lib;
             };
   
             format-icons = {
-              "1" = "<big> 󰜏 </big>";
-              "2" = "<big> 󰆍 </big>";
-              "3" = "<big> 󰭣 </big>";
-              "4" = "<big> 󰔂 </big>";
+              "1" = "<big>󰖟</big>";
+              "2" = "<big>󰆍</big>";
+              "3" = "<big>󰭣</big>";
+              "4" = "<big>󰔂</big>";
             };
           };
   
