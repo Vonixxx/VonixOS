@@ -6,21 +6,18 @@
 { ... }:
 
 {
- gnome.enable            = true;
- intelcpu.enable         = true;
- intelgpu.enable         = true;
- services.xserver.layout = "cz";
- services.tlp.enable     = false; 
- i18n.defaultLocale      = "cs_CZ.UTF-8";
+ gnome.enable       = true;
+ intelcpu.enable    = true;
+ intelgpu.enable    = true;
+ i18n.defaultLocale = "cs_CZ.UTF-8";
 
- home-manager.users.vonix = {
-   programs.firefox = {
-     profiles.default = {
-       settings = {
-         "general.useragent.locale" = "cs-CZ";
-         "init.locale.requested"    = "cs,en-US";
-       };
-     };
-   };
+ services = {
+   xserver.layout = "cz";
+   tlp.enable     = false; 
+ };
+
+ home-manager.users.vonix.programs.firefox.profiles.default.settings = {
+   "general.useragent.locale" = "cs-CZ";
+   "init.locale.requested"    = "cs,en-US";
  };
 }

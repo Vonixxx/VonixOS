@@ -20,15 +20,9 @@ with pkgs;
    tlp.enable     = false; 
  };
 
- home-manager.users.vonix = {
-   programs.firefox = {
-     profiles.default = {
-       settings = {
-         "general.useragent.locale" = "cs-CZ";
-         "init.locale.requested"    = "cs,en-US";
-       };
-     };
-   };
+ home-manager.users.vonix.programs.firefox.profiles.default.settings = {
+   "general.useragent.locale" = "cs-CZ";
+   "init.locale.requested"    = "cs,en-US";
  };
 
  hardware.firmware = [ 

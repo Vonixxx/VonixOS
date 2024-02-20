@@ -42,6 +42,7 @@ with lib;
        
   
          /* Modules */
+         #cpu,
          #mode,
          #disk,
          #clock,
@@ -65,29 +66,10 @@ with lib;
           font-weight:   bold;
           background:    @mantle;
           font-family:   CascadiaCode;
-         }
-       
-  
-         /* Workspaces */
-         #workspaces button.urgent {
-          margin-bottom: 0px;
-          color:         @red;
-          border-bottom: 3px solid @red;
-         }
-  
-         #workspaces button.active {
-          margin-bottom: 0px;
-          color:         @mauve;
           border-bottom: 3px solid @mauve;
          }
-  
-         #workspaces button {
-          margin-bottom: 0px;
-          color:         @white;
-          border-bottom: 3px solid @white;
-         }
-  
-  
+       
+
          /* Icon Color */
          #custom-power  { color: @red; }
          #network       { color: @teal; }
@@ -111,16 +93,21 @@ with lib;
          #custom-power, 
          #custom-reboot { padding-right: 13px; }
          #pulseaudio    { padding-right: 17.5px; }
+
+
+         /* Workspaces */
+         #workspaces button.urgent { color: @red; }
+         #workspaces button        { color: @white; }
+         #workspaces button.active { color: @mauve; }
       '';
   
       settings = [{
-          height   = 45;
-          layer    = "top";
-          position = "top";
-  
+          height         = 45;
+          layer          = "top";
+          position       = "top";
           modules-center = [ "hyprland/workspaces" ];
-          modules-right  = [ "disk" "memory" "clock" ];
-          modules-left   = [ "custom/power" "custom/reboot" "custom/sleep" "backlight" "pulseaudio" "network" "battery" ];
+          modules-right  = [ "disk" "memory" "clock" "cpu" ];
+          modules-left   = [ "custom/power" "custom/reboot" "custom/sleep" "pulseaudio" "network" "backlight" "battery" ];
   
           "hyprland/workspaces" = {
             all-outputs = true;
@@ -141,6 +128,12 @@ with lib;
             };
           };
   
+          "cpu" = {
+            interval = 10;
+            tooltip  = false;
+            format   = "󰍛 {percentage}%";
+          };
+
           "memory" = {
             interval = 10;
             tooltip  = false;
