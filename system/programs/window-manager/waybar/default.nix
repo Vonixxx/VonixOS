@@ -66,6 +66,7 @@ with lib;
           font-weight:   bold;
           background:    @mantle;
           font-family:   CascadiaCode;
+          border-top:    3px solid @mauve;
           border-bottom: 3px solid @mauve;
          }
        
@@ -106,7 +107,7 @@ with lib;
           layer          = "top";
           position       = "top";
           modules-center = [ "hyprland/workspaces" ];
-          modules-right  = [ "disk" "memory" "clock" "cpu" ];
+          modules-right  = [ "disk" "memory" "cpu" "clock" ];
           modules-left   = [ "custom/power" "custom/reboot" "custom/sleep" "pulseaudio" "network" "backlight" "battery" ];
   
           "hyprland/workspaces" = {
@@ -131,7 +132,7 @@ with lib;
           "cpu" = {
             interval = 10;
             tooltip  = false;
-            format   = "󰍛 {percentage}%";
+            format   = "󰍛 {usage}%";
           };
 
           "memory" = {
