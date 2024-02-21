@@ -22,7 +22,6 @@ with lib;
          "$pdf"      = "sioyek";
          "$browser"  = "firefox";
          "$youtube"  = "freetube";
-         monitor     = "eDP-1,1920x1080@60,0x0,1";
 
          exec-once = [
            "waybar" 
@@ -40,6 +39,11 @@ with lib;
            scroll_method = "2fg";
            accel_profile = "adaptive";
          };
+
+         monitor = [
+           "eDP-1   , 1920x1080@60, 0x0, 1"
+           "HDMI-A-1, 2560x1440@75, 0x0, 1"
+         ];
 
          windowrule = [
            "opacity 0.8 override, ^(foot)$"
