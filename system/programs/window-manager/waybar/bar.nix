@@ -107,7 +107,7 @@ with lib;
 
           tooltip        = false;
           on-click       = "foot pulsemixer";
-          format         = " <big>{icon}</big>";
+          format         = "<big>{icon}</big>";
           on-scroll-up   = "exec amixer -q sset Master 1%+";
           on-scroll-down = "exec amixer -q sset Master 1%-";
         };

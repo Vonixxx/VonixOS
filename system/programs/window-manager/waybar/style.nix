@@ -64,6 +64,10 @@ with lib;
         }
       
 
+        /* Icon Position Fix */
+        #network { padding-right: 5px; }
+
+
         /* Icon Color */
         #custom-power  { color: @red; }
         #network       { color: @blue; }
