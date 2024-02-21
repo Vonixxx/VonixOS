@@ -74,7 +74,7 @@ with lib;
       	  interval = 60;
       	  path     = "/";
           tooltip  = false;
-      	  format   = "󰋊 | {percentage_used}%";
+      	  format   = "󰋊 [{percentage_used}%]";
       	};
 
         "clock" = {
