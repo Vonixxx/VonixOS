@@ -43,7 +43,7 @@ with lib;
         "cpu" = {
           interval = 10;
           tooltip  = false;
-          format   = "<big>󰻠</big> <span rise='1500'>[{usage}%]</span>";
+          format   = "<big>󰻠</big> <span rise='1750'>[{usage}%]</span>";
         };
 
         "memory" = {
