@@ -65,10 +65,10 @@ with lib;
       
 
         /* Icon Position Fix */
+        #network      { margin-right: -4px; }
+        #backlight    { margin-right: -4px; }
         #custom-sleep { margin-right: 7.5px; }
         #battery      { margin-right: -10px; }
-        #network      { margin-right: -3.5px; }
-        #backlight    { margin-right: -3.5px; }
 
 
         /* Icon Color */
