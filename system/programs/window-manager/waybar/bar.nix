@@ -43,13 +43,13 @@ with lib;
         "cpu" = {
           interval = 10;
           tooltip  = false;
-          format   = "<big>󰍛</big> | {usage}%";
+          format   = "󰍛 | {usage}%";
         };
 
         "memory" = {
           interval = 10;
           tooltip  = false;
-          format   = "<big>󱉟</big> | {percentage}%";
+          format   = "󱉟 | {percentage}%";
         };
 
         "custom/reboot" = {
@@ -74,13 +74,13 @@ with lib;
       	  interval = 60;
       	  path     = "/";
           tooltip  = false;
-      	  format   = "<big>󰋊</big> | {percentage_used}%";
+      	  format   = "󰋊 | {percentage_used}%";
       	};
 
         "clock" = {
           interval = 30;
           tooltip  = false;
-          format   = "<big>󰃭</big> | {:%d/%m/%y - %H:%M}";
+          format   = "󰃭 | {:%d/%m/%y - %H:%M}";
         };
 
         "backlight" = {
