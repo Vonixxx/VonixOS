@@ -19,7 +19,7 @@ with lib;
         position       = "top";
         modules-center = [ "hyprland/workspaces" ];
         modules-right  = [ "disk" "memory" "cpu" "clock" ];
-        modules-left   = [ "custom/power" "custom/reboot" "custom/sleep" "pulseaudio" "backlight" "battery" "network" ];
+        modules-left   = [ "custom/power" "custom/reboot" "custom/sleep" "backlight" "pulseaudio" "battery" "network" ];
 
         "hyprland/workspaces" = {
           all-outputs = true;
@@ -88,7 +88,7 @@ with lib;
           format-icons   = [ "󰃞" "󰃟" "󰃠" ];
           on-scroll-up   = "exec light -A 1";
           on-scroll-down = "exec light -U 1";
-          format         = "<big>{icon}</big> ";
+          format         = "<big>{icon}</big>";
         };
 
 	      "network" = {
@@ -107,7 +107,7 @@ with lib;
 
           tooltip        = false;
           on-click       = "foot pulsemixer";
-          format         = "<big>{icon}</big>";
+          format         = "  <big>{icon}</big>";
           on-scroll-up   = "exec amixer -q sset Master 1%+";
           on-scroll-down = "exec amixer -q sset Master 1%-";
         };
