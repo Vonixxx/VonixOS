@@ -88,7 +88,7 @@ with lib;
           format-icons   = [ "󰃞" "󰃟" "󰃠" ];
           on-scroll-up   = "exec light -A 1";
           on-scroll-down = "exec light -U 1";
-          format         = "<big>{icon}</big>";
+          format         = "  <big>{icon}</big>";
         };
 
 	      "network" = {
@@ -107,7 +107,7 @@ with lib;
 
           tooltip        = false;
           on-click       = "foot pulsemixer";
-          format         = "  <big>{icon}</big>";
+          format         = " <big>{icon}</big>";
           on-scroll-up   = "exec amixer -q sset Master 1%+";
           on-scroll-down = "exec amixer -q sset Master 1%-";
         };
@@ -116,7 +116,7 @@ with lib;
           interval                   = 5;
           bat                        = "BAT0";
           format-charging            = "<big>󰂄</big>";
-          format                     = " <big>{icon}</big>";
+          format                     = "  <big>{icon}</big>";
           tooltip-format-charging    = "Full Charge: {time}";
           format-icons               = [ "󰁻" "󰁽" "󰁿" "󰂁" "󰁹" ];
           tooltip-format-discharging = "Full Discharge: {time}";
