@@ -48,7 +48,6 @@ with lib;
          border-radius: 0px;
          padding:       0px;
          border:        none;
-         border-radius: 50px;
          margin:        1px 1px 1px 1px;
         }
       
@@ -57,6 +56,7 @@ with lib;
         #waybar {
          font-size:     20px;
          font-weight:   bold;
+         border-radius: 50px;
          background:    @crust;
          font-family:   CascadiaCode;
          border-top:    3px solid @mauve;
@@ -65,7 +65,7 @@ with lib;
       
 
         /* Icon Position Fix */
-        #network { padding-right: 5px; }
+        #network { margin-right: 5px; }
 
 
         /* Icon Color */

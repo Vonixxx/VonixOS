@@ -19,7 +19,7 @@ with lib;
         position       = "top";
         modules-center = [ "hyprland/workspaces" ];
         modules-right  = [ "disk" "memory" "cpu" "clock" ];
-        modules-left   = [ "custom/power" "custom/reboot" "custom/sleep" "backlight" "pulseaudio" "battery" "network" ];
+        modules-left   = [ "custom/power" "custom/reboot" "custom/sleep" "backlight" "battery" "network" "pulseaudio" ];
 
         "hyprland/workspaces" = {
           all-outputs = true;
