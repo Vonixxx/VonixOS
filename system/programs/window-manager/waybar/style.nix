@@ -67,8 +67,8 @@ with lib;
         /* Icon Position Fix */
         #custom-sleep { margin-right: 7.5px; }
         #battery      { margin-right: -10px; }
-        #network      { margin-right: -4.5px; }
-        #backlight    { margin-right: -4.5px; }
+        #network      { margin-right: -4.25px; }
+        #backlight    { margin-right: -4.25px; }
 
 
         /* Icon Color */
