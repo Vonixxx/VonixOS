@@ -65,6 +65,7 @@ with lib;
       
 
         /* Icon Position Fix */
+        #custom-sleep { margin-right: 5px; }
 
 
         /* Icon Color */
