@@ -40,18 +40,6 @@ with lib;
           };
         };
 
-        "cpu" = {
-          interval = 10;
-          tooltip  = false;
-          format   = "<big>󰻠</big> <span rise='1750'>[{usage}%]</span>";
-        };
-
-        "memory" = {
-          interval = 10;
-          tooltip  = false;
-          format   = "<big>󰍛</big> <span rise='1250'>[{percentage}%]</span>";
-        };
-
         "custom/reboot" = {
           tooltip  = false;
           format   = "<big>󰜉</big>";
@@ -120,6 +108,18 @@ with lib;
           tooltip-format-charging    = "Full Charge: {time}";
           format-icons               = [ "󰁻" "󰁽" "󰁿" "󰂁" "󰁹" ];
           tooltip-format-discharging = "Full Discharge: {time}";
+        };
+
+        "cpu" = {
+          interval = 10;
+          tooltip  = false;
+          format   = "<big>󰻠</big> <span rise='1750'>[{usage}%]</span>";
+        };
+
+        "memory" = {
+          interval = 10;
+          tooltip  = false;
+          format   = "<big>󰍛</big> <span rise='1750'>[{percentage}%]</span>";
         };
      }];
    };
