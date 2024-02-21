@@ -43,13 +43,13 @@ with lib;
         "cpu" = {
           interval = 10;
           tooltip  = false;
-          format   = "󰻠 [{usage}%]";
+          format   = "<big>󰻠</big> [{usage}%]";
         };
 
         "memory" = {
           interval = 10;
           tooltip  = false;
-          format   = "󰍛 [{percentage}%]";
+          format   = "<big>󰍛</big> [{percentage}%]";
         };
 
         "custom/reboot" = {
