@@ -64,13 +64,6 @@ with lib;
         }
       
 
-        /* Icon Position Fix */
-        #custom-sleep { margin-right: 7.5px; }
-        #battery      { margin-right: -10px; }
-        #network      { margin-right: -4.25px; }
-        #backlight    { margin-right: -4.25px; }
-
-
         /* Icon Color */
         #custom-power  { color: @red; }
         #network       { color: @blue; }
@@ -80,6 +73,13 @@ with lib;
         #custom-reboot { color: @yellow; }
         #backlight     { color: @yellow; }
  
+
+        /* Icon Position Fix */
+        #battery      { margin-right: -9px; }
+        #network      { margin-right: -4px; }
+        #backlight    { margin-right: -4px; }
+        #custom-sleep { margin-right: 7.5px; }
+
 
         /* Workspaces */
         #workspaces button.urgent { color: @red; }
