@@ -65,7 +65,6 @@ with lib;
       
 
         /* Icon Position Fix */
-        #network { margin-left: -10px; }
 
 
         /* Icon Color */

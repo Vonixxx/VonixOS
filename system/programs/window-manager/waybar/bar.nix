@@ -43,24 +43,24 @@ with lib;
         "cpu" = {
           interval = 10;
           tooltip  = false;
-          format   = "󰍛 {usage}%";
+          format   = "󰍛 {usage}%";
         };
 
         "memory" = {
           interval = 10;
           tooltip  = false;
-          format   = "󱉟 {percentage}%";
+          format   = "󱉟 {percentage}%";
         };
 
         "custom/reboot" = {
           tooltip  = false;
-          format   = " <big>󰜉</big>";
+          format   = "<big>󰜉</big>";
           on-click = "systemctl reboot";
         };
 
         "custom/sleep" = {
           tooltip  = false;
-          format   = " <big>󰜗</big>";
+          format   = "<big>󰜗</big>";
           on-click = "systemctl suspend";
         };
 
@@ -74,13 +74,13 @@ with lib;
       	  interval = 60;
       	  path     = "/";
           tooltip  = false;
-      	  format   = "󰋊 {percentage_used}%";
+      	  format   = "󰋊 {percentage_used}%";
       	};
 
         "clock" = {
           interval = 30;
           tooltip  = false;
-          format   = "{:󰃭 %d/%m/%y | %H:%M}";
+          format   = "{:󰃭 %d/%m/%y | %H:%M}";
         };
 
         "backlight" = {
@@ -88,7 +88,7 @@ with lib;
           format-icons   = [ "󰃞" "󰃟" "󰃠" ];
           on-scroll-up   = "exec light -A 1";
           on-scroll-down = "exec light -U 1";
-          format         = "  <big>{icon}</big>";
+          format         = "<big>{icon}</big>";
         };
 
 	      "network" = {
@@ -116,7 +116,7 @@ with lib;
           interval                   = 5;
           bat                        = "BAT0";
           format-charging            = "<big>󰂄</big>";
-          format                     = "  <big>{icon}</big>";
+          format                     = "<big>{icon}</big>";
           tooltip-format-charging    = "Full Charge: {time}";
           format-icons               = [ "󰁻" "󰁽" "󰁿" "󰂁" "󰁹" ];
           tooltip-format-discharging = "Full Discharge: {time}";
