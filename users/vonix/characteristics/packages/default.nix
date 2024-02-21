@@ -27,6 +27,7 @@ with pkgs;
    ######################
    alsa-utils
    grimblast
+   parted
    pfetch-rs
    swayimg
    tldr
