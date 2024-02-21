@@ -49,7 +49,7 @@ with lib;
         "memory" = {
           interval = 10;
           tooltip  = false;
-          format   = "<big>󰍛</big> [{percentage}%]";
+          format   = "<big>󰍛</big> <span>[{percentage}%]</span>";
         };
 
         "custom/reboot" = {

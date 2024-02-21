@@ -67,6 +67,7 @@ with lib;
         /* Icon Position Fix */
         #battery      { margin-right: -5px; }
         #custom-sleep { margin-right: 7.5px; }
+        #memory > span { margin-top: -5px; }
 
 
         /* Icon Color */
