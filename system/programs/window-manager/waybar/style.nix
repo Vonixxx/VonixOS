@@ -65,8 +65,8 @@ with lib;
       
 
         /* Icon Position Fix */
-        #network      { margin-right: -4px; }
-        #backlight    { margin-right: -4px; }
+        #network      { margin-right: -5px; }
+        #backlight    { margin-right: -5px; }
         #custom-sleep { margin-right: 7.5px; }
         #battery      { margin-right: -10px; }
 
