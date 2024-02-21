@@ -68,6 +68,7 @@ with lib;
         #battery      { margin-right: -5px; }
         #custom-sleep { margin-right: 7.5px; }
         #memory > span { margin-top: -5px; }
+        #cpu > span { margin-top: -15px; }
 
 
         /* Icon Color */
