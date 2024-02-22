@@ -113,13 +113,13 @@ with lib;
         "cpu" = {
           interval = 10;
           tooltip  = false;
-          format   = "<span rise='1500'><big>󰻠</big></span> <span rise='3000'>[{usage}%]</span>";
+          format   = "<span rise='1300'><big>󰻠</big></span> <span rise='2800'>[{usage}%]</span>";
         };
 
         "memory" = {
           interval = 10;
           tooltip  = false;
-          format   = "<span rise='1500'><big>󰍛</big></span> <span rise='3000'>[{percentage}%]</span>";
+          format   = "<span rise='1300'><big>󰍛</big></span> <span rise='2800'>[{percentage}%]</span>";
         };
      }];
    };
