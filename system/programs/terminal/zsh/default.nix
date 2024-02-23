@@ -57,7 +57,7 @@ with pkgs;
      oh-my-posh = {
        enable               = true;
        enableZshIntegration = true;
-       settings             = builtins.fromJSON (builtins.unsafeDiscardStringContext (builtins.readFile "/home/vonix/GitHub/VonixOS/system/programs/terminal/zsh/theme.omp.json"));
+       settings             = builtins.fromJSON (builtins.unsafeDiscardStringContext (builtins.readFile "/home/vonixos/GitHub/VonixOS/system/programs/terminal/zsh/theme.omp.json"));
      };
    };
  };
