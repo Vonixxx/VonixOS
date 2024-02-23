@@ -40,6 +40,13 @@
      userEmail = "vonixxxwork@tuta.io";
    };
 
-   programs.firefox.profiles.default.settings."extensions.activeThemeID" = "{76aabc99-c1a8-4c1e-832b-d4f2941d5a7a}"; 
+   programs.firefox = {
+     profiles.default.settings."extensions.activeThemeID" = "{76aabc99-c1a8-4c1e-832b-d4f2941d5a7a}"; 
+
+     policies.ExtensionSettings."{76aabc99-c1a8-4c1e-832b-d4f2941d5a7a}" = {
+       installation_mode = "normal_installed";          
+       install_url       = "https://addons.mozilla.org/firefox/downloads/latest/catppuccin-mocha-mauve/latest.xpi";
+     };
+   };
  };
 }
