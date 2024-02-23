@@ -74,6 +74,8 @@ with types;
    };
  };
 
+ imports = [ ../partitioning/default.nix ];
+
  config = mkIf (config.general-configuration.enable) {
    programs.dconf.enable                  = true;
    networking.networkmanager.enable       = true; 
