@@ -7,6 +7,7 @@
 #############################################################################################################
 { lib
 , pkgs
+, disko
 , config
 , ...
 }: 
@@ -109,20 +110,6 @@ with types;
      home.stateVersion            = "23.11";
    };
   
-   fileSystems = {
-     "boot" = { 
-       fsType     = "vfat";  
-       mountPoint = "/boot";
-       device     = "/dev/disk/by-label/boot";
-     };
-  
-     "root" = { 
-       mountPoint = "/";
-       fsType     = "ext4"; 
-       device     = "/dev/disk/by-label/root";
-     };
-   };
-
    services = {
      pipewire = {
        enable             = true;

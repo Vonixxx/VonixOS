@@ -14,7 +14,7 @@
    programs.firefox = {
      arkenfox = {
        enable = true;
-       version = "119.0";
+       version = "122.0";
      };
 
      profiles.default = {

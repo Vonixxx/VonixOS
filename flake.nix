@@ -27,6 +27,7 @@
    ##########################
    # Synchronizing Packages #
    ##########################
+   disko.inputs.nixpkgs.follows        = "nixpkgs";
    home-manager.inputs.nixpkgs.follows = "nixpkgs";
    #########################
    # Official Repositories #
@@ -35,12 +36,14 @@
    ##########################
    # Community Repositories #
    ##########################
+   disko.url        = "github:nix-community/disko";
    arkenfox.url     = "github:dwarfmaster/arkenfox-nixos";
-   home-manager.url = "github:nix-community/home-manager/release-23.11"; 
+   home-manager.url = "github:nix-community/home-manager"; 
  };
 
  outputs = inputs @ { 
    self 
+ , disko
  , nixpkgs
  , arkenfox
  , home-manager
@@ -49,7 +52,7 @@
  { nixosConfigurations = (
      import ./users {
       inherit (nixpkgs) lib;
-      inherit inputs nixpkgs arkenfox home-manager;
+      inherit disko inputs nixpkgs arkenfox home-manager;
      }
    );
  };

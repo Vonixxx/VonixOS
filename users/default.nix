@@ -3,7 +3,8 @@
 ############
 # Profiles #
 ############
-{ nixpkgs
+{ disko
+, nixpkgs
 , arkenfox
 , home-manager
 , ...
@@ -13,12 +14,26 @@ let
  lib  = nixpkgs.lib;
  pkgs = import nixpkgs { config.allowUnfree = true; };
 in { 
- "vonix" = lib.nixosSystem {
+ "vonix-laptop" = lib.nixosSystem {
    specialArgs = { inherit pkgs arkenfox; };
 
    modules = [
-     ./vonix
      ../system
+     ./vonix/common
+     ./vonix/laptop
+     disko.nixosModules.disko
+     home-manager.nixosModules.home-manager
+   ];
+ };
+
+ "vonix-desktop" = lib.nixosSystem {
+   specialArgs = { inherit pkgs arkenfox; };
+
+   modules = [
+     ../system
+     ./vonix/common
+     ./vonix/desktop
+     disko.nixosModules.disko
      home-manager.nixosModules.home-manager
    ];
  };
@@ -29,6 +44,7 @@ in {
    modules = [
      ../system
      ./database/laptops/hp/f.jarka
+     disko.nixosModules.disko
      home-manager.nixosModules.home-manager
    ];
  };
@@ -39,6 +55,7 @@ in {
    modules = [
      ../system
      ./database/laptops/hp/u.ofelia
+     disko.nixosModules.disko
      home-manager.nixosModules.home-manager
    ];
  };
@@ -49,6 +66,7 @@ in {
    modules = [
      ../system
      ./database/miniature/minix/f.libor
+     disko.nixosModules.disko
      home-manager.nixosModules.home-manager
    ];
  };
@@ -59,6 +77,7 @@ in {
    modules = [
      ../system
      ./database/laptops/hp/f.stepanka
+     disko.nixosModules.disko
      home-manager.nixosModules.home-manager
    ];
  };

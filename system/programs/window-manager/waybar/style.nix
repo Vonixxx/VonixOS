@@ -76,9 +76,9 @@ with lib;
 
         /* Icon Position Fix */
         #battery      { margin-right: -9px; }
-        #network      { margin-right: -4px; }
-        #backlight    { margin-right: -4px; }
         #custom-sleep { margin-right: 7.5px; }
+        #network      { margin-right: -3.5px; }
+        #backlight    { margin-right: -3.5px; }
 
 
         /* Workspaces */
