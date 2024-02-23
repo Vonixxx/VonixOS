@@ -38,7 +38,7 @@
    ##########################
    disko.url        = "github:nix-community/disko";
    arkenfox.url     = "github:dwarfmaster/arkenfox-nixos";
-   home-manager.url = "github:nix-community/home-manager"; 
+   home-manager.url = "github:nix-community/home-manager/release-23.11"; 
  };
 
  outputs = inputs @ { 
