@@ -1,7 +1,7 @@
-}
+{
  disko.devices.disk.vdb = {
    type   = "disk";
-   device = "nvme0n1";
+   device = "/dev/nvme0n1";
    content = {
      type = "gpt";
      partitions = {
