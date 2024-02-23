@@ -10,7 +10,7 @@
    syncthing = {
      enable = true;
      user = "Vonix";
-     dataDir = "/home/vonixos/Synchronized"
+     dataDir = "/home/vonixos/Synchronized";
    };
    nginx = {
      enable = true;
