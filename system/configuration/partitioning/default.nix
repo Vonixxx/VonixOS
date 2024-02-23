@@ -1,5 +1,3 @@
-{ ... }:
-
 }
  disko.devices.disk.vdb = {
    type   = "disk";
