@@ -35,9 +35,10 @@ with lib;
        };
   
        policies = {
-         DisableProfileImport    = true;
-         DisablePocket           = true;
-         DisplayBookmarksToolbar = "always";
+         DisableProfileImport     = true;
+         DisablePocket            = true;
+         OfferToSaveLoginsDefault = false;
+         DisplayBookmarksToolbar  = "always";
   
          ExtensionSettings = {
            "addon@darkreader.org" = {
