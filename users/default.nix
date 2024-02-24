@@ -14,7 +14,7 @@ let
  lib  = nixpkgs.lib;
  pkgs = import nixpkgs { config.allowUnfree = true; };
 in { 
- "vonix-laptop" = lib.nixosSystem {
+ "v.laptop" = lib.nixosSystem {
    specialArgs = { inherit pkgs arkenfox; };
 
    modules = [
@@ -26,7 +26,7 @@ in {
    ];
  };
 
- "vonix-desktop" = lib.nixosSystem {
+ "v.desktop" = lib.nixosSystem {
    specialArgs = { inherit pkgs arkenfox; };
 
    modules = [
