@@ -41,11 +41,11 @@
    };
 
    programs.firefox = {
-     profiles.default.settings."extensions.activeThemeID" = "{76aabc99-c1a8-4c1e-832b-d4f2941d5a7a}"; 
+     profiles.default.settings."extensions.activeThemeID" = "{344d6267-2816-44d1-8aee-522d0ba07e04}"; 
 
-     policies.ExtensionSettings."{76aabc99-c1a8-4c1e-832b-d4f2941d5a7a}" = {
+     policies.ExtensionSettings."{344d6267-2816-44d1-8aee-522d0ba07e04}" = {
        installation_mode = "normal_installed";          
-       install_url       = "https://addons.mozilla.org/firefox/downloads/latest/catppuccin-mocha-mauve/latest.xpi";
+       install_url       = "https://addons.mozilla.org/firefox/downloads/file/3880040/catppuccin-1.0.xpi";
      };
    };
  };
