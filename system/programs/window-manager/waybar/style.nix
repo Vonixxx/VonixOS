@@ -80,6 +80,7 @@ with lib;
         #network      { margin-right: -3.5px; }
         #backlight    { margin-right: -3.5px; }
         #disk         { margin-bottom: 2.5px;   }
+        #clock        { margin-bottom: 2.5px;   }
 
 
         /* Workspaces */
