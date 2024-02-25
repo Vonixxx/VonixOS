@@ -62,13 +62,13 @@ with lib;
       	  interval = 60;
       	  path     = "/";
           tooltip  = false;
-      	  format   = "<span rise='500'>󰋊 [{percentage_used}%]</span>";
+      	  format   = "<span rise='1000'>󰋊 [{percentage_used}%]</span>";
       	};
 
         "clock" = {
           interval = 30;
           tooltip  = false;
-          format   = "󰃭 [{:%d/%m/%y - %H:%M}]";
+          format   = "<span rise='1000'>󰃭 [{:%d/%m/%y - %H:%M}]</span>";
         };
 
         "backlight" = {
