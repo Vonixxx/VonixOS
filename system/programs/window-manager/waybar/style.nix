@@ -79,7 +79,7 @@ with lib;
         #custom-sleep { margin-right: 7.5px; }
         #network      { margin-right: -3.5px; }
         #backlight    { margin-right: -3.5px; }
-        #disk         { margin-bottom: 3px;   }
+        #disk         { margin-bottom: 2.5px;   }
 
 
         /* Workspaces */
