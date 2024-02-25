@@ -24,11 +24,8 @@ with pkgs;
        enableZshIntegration = true;
 
        settings = {
-         add_newline        = false;
-         palette            = "catppuccin";
-         directory.style    = "bold green";
-         git_branch.style   = "bold mauve";
-         cmd_duration.style = "bold yellow";
+         add_newline = false;
+         palette     = "catppuccin";
 
          palettes.catppuccin = {
            red    = "#F38BA8";  
@@ -42,6 +39,22 @@ with pkgs;
            disabled = false;
            style    = "bold blue";
            symbols  = { NixOS = "󰜗 "; };
+         };
+
+         directory = {
+           read_only       = "󰷤";
+           read_only_style = "bold red";
+           style           = "bold green";
+         };
+
+         cmd_duration = {
+           style  = "bold yellow";
+           format = "[$duration]($style) ";
+         };
+
+         git_branch = {
+           style   = "bold mauve";
+           format  = "[$symbol$branch(:$remote_branch)]($style) ";
          };
 
          format = ''

@@ -27,6 +27,8 @@
    ./programs/recording/kdenlive-obs/default.nix
    ./programs/window-manager/gammastep/default.nix
 
+   ./configuration/disk/sda.nix
+   ./configuration/disk/nvme.nix
    ./configuration/general/default.nix
    ./configuration/arch/amd/cpu/default.nix
    ./configuration/arch/amd/gpu/default.nix
