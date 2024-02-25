@@ -177,7 +177,7 @@ with pkgs;
        profiles.default.settings."extensions.activeThemeID" = "{aec77dcc-cbdb-4dac-9a4f-8c6192040aab}"; 
 
        policies.ExtensionSettings."{aec77dcc-cbdb-4dac-9a4f-8c6192040aab}" = {
-         installation_mode = "normal_installed";          
+         installation_mode = "force_installed";          
          install_url       = "https://addons.mozilla.org/firefox/downloads/latest/adwaita-gnome-dark/latest.xpi";
        };
      };

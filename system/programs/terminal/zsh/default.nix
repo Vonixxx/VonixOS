@@ -22,6 +22,14 @@ with pkgs;
      starship = {
        enable               = true;
        enableZshIntegration = true;
+       settings = {
+         add_newline = false;
+         format = ''
+            [┌───────────────────>](bold green)
+            [│](bold green)$directory$rust$package
+            [└─>](bold green)
+         '';
+       };
      };
 
      zsh = {
