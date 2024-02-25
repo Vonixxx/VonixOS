@@ -25,9 +25,8 @@ with pkgs;
        settings = {
          add_newline = false;
          format = ''
-            [┌───────────────────>](bold green)
-            [│](bold green)$directory$rust$package
-            [└─>](bold green)
+            [┌](bold #cba6f7)$os(bold #89b4fa)$directory(bold #a6e3a1)$haskell$git_branch$git_status(bold #cba6f7)$cmd_duration
+            [└─](bold #cba6f7)$character
          '';
        };
      };
