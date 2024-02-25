@@ -31,11 +31,11 @@ with pkgs;
          cmd_duration.style = "bold yellow";
 
          palettes.catppuccin = {
-           red    = "f38ba8";  
-           blue   = "89b4fa";
-           green  = "a6e3a1";  
-           mauve  = "cba6f7";  
-           yellow = "f9e2af";  
+           red    = "#F38BA8";  
+           blue   = "#89B4FA";
+           green  = "#A6E3A1";  
+           mauve  = "#CBA6F7";  
+           yellow = "#F9E2AF";  
          };
 
          os = {
