@@ -28,9 +28,9 @@
    ./programs/window-manager/gammastep/default.nix
 
    ./configuration/general/default.nix
-   ./configuration/architecture/amd/cpu/default.nix
-   ./configuration/architecture/amd/gpu/default.nix
-   ./configuration/architecture/intel/cpu/default.nix
-   ./configuration/architecture/intel/gpu/default.nix
+   ./configuration/arch/amd/cpu/default.nix
+   ./configuration/arch/amd/gpu/default.nix
+   ./configuration/arch/intel/cpu/default.nix
+   ./configuration/arch/intel/gpu/default.nix
  ];
 }
