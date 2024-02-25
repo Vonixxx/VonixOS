@@ -41,6 +41,7 @@ with pkgs;
          os = {
            disabled = false;
            style    = "bold blue";
+           symbols  = { NixOS = "󰜗 "; };
          };
 
          format = ''
