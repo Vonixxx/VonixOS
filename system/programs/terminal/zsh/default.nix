@@ -22,10 +22,20 @@ with pkgs;
      starship = {
        enable               = true;
        enableZshIntegration = true;
+
        settings = {
-         add_newline = false;
+         add_newline        = false;
+         directory.style    = "bold #a6e3a1";
+         git_branch.style   = "bold #f38ba8";
+         cmd_duration.style = "bold #f9e2af";
+
+         os = {
+           disabled = false;
+           style    = "bold #89b4fa";
+         };
+
          format = ''
-            [┌](bold #cba6f7)$os(bold #89b4fa)$directory(bold #a6e3a1)$haskell$git_branch$git_status(bold #cba6f7)$cmd_duration
+            [┌](bold #cba6f7)$os$directory$git_branch$git_status$cmd_duration
             [└─](bold #cba6f7)$character
          '';
        };
