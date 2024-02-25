@@ -62,7 +62,7 @@ with lib;
       	  interval = 60;
       	  path     = "/";
           tooltip  = false;
-      	  format   = "󰋊 [{percentage_used}%]";
+      	  format   = "<span rise='500'>󰋊 [{percentage_used}%]</span>";
       	};
 
         "clock" = {
@@ -113,13 +113,13 @@ with lib;
         "cpu" = {
           interval = 10;
           tooltip  = false;
-          format   = "<span rise='1024.5'><big>󰻠</big></span> <span rise='2524.5'>[{usage}%]</span>";
+          format   = "<span rise='1025'><big>󰻠</big></span> <span rise='2525'>[{usage}%]</span>";
         };
 
         "memory" = {
           interval = 10;
           tooltip  = false;
-          format   = "<span rise='1024.5'><big>󰍛</big></span> <span rise='2524.5'>[{percentage}%]</span>";
+          format   = "<span rise='1025'><big>󰍛</big></span> <span rise='2525'>[{percentage}%]</span>";
         };
      }];
    };
