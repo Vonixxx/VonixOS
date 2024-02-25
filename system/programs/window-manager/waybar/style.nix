@@ -74,7 +74,7 @@ with lib;
         #backlight     { color: @yellow; }
  
 
-        /* Icon Position Fix */
+        /* Icon Position */
         #battery      { margin-right: -9px; }
         #custom-sleep { margin-right: 7.5px; }
         #network      { margin-right: -3.5px; }
