@@ -25,18 +25,27 @@ with pkgs;
 
        settings = {
          add_newline        = false;
-         directory.style    = "bold #a6e3a1";
-         git_branch.style   = "bold #f38ba8";
-         cmd_duration.style = "bold #f9e2af";
+         palette            = "catppuccin";
+         directory.style    = "bold green";
+         git_branch.style   = "bold mauve";
+         cmd_duration.style = "bold yellow";
+
+         palettes.catppuccin = {
+           red    = "f38ba8";  
+           blue   = "89b4fa";
+           green  = "a6e3a1";  
+           mauve  = "cba6f7";  
+           yellow = "f9e2af";  
+         };
 
          os = {
            disabled = false;
-           style    = "bold #89b4fa";
+           style    = "bold blue";
          };
 
          format = ''
-            [┌](bold #cba6f7)$os$directory$git_branch$git_status$cmd_duration
-            [└─](bold #cba6f7)$character
+            [┌](bold mauve)$os$directory$git_branch$git_status$cmd_duration
+            [└─](bold mauve)$character
          '';
        };
      };
