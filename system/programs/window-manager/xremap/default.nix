@@ -16,7 +16,7 @@ with lib;
 
  config = mkIf (config.window-manager.enable) {
    services.xremap = {
-     withWlroots = true;
+     withHypr    = true;
      userName    = "Vonix";
      serviceMode = mkForce "user";
 
