@@ -79,8 +79,10 @@ with lib;
         #custom-sleep { margin-right: 7.5px; }
         #network      { margin-right: -3.5px; }
         #backlight    { margin-right: -3.5px; }
-        #clock        { margin-bottom: 2.90px; }
-        #disk         { margin-bottom: 2.95px; }
+        #clock        { margin-bottom: 2.5px; }
+        #disk         { margin-bottom: 2.5px; }
+        #cpu          { margin-bottom: 2.5px; }
+        #memory       { margin-bottom: 2.5px; }
 
 
         /* Workspaces */

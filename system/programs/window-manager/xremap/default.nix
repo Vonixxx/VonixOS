@@ -16,14 +16,14 @@ with lib;
 
  config = mkIf (config.window-manager.enable) {
    services.xremap = {
-     withHypr    = true;
+     withWlroots = true;
      userName    = "Vonix";
-     serviceMode = mkForce "user";
+     serviceMode = mkForce "system";
 
      config.keymap = [
        {
         remap = {
-          alt-u.launch = ["firefox"]; 
+          alt-u.launch = [ "firefox"]; 
         };
        }
      ];
