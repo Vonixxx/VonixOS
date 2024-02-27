@@ -20,14 +20,14 @@ with lib;
      serviceMode = "user";
      userName    = "Vonix";
 
-     config.keymap = [
-       {
-        name = "Main"; 
-        remap = {
-          super-u = { launch = ["firefox"]; };  
-        };
-       } 
-     ];      
+     yamlConfig = ''
+        keymap:
+         -name: main;
+           remap:
+            super-u:
+             launch: ["firefox"]
+
+     '';
    };
  };
 }
