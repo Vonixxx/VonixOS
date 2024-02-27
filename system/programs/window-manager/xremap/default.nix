@@ -17,17 +17,16 @@ with lib;
  config = mkIf (config.window-manager.enable) {
    services.xremap = {
      withWlroots = true;
-     serviceMode = "user";
      userName    = "Vonix";
 
-     yamlConfig = ''
-        keymap:
-         -name: main;
-           remap:
-            super-u:
-             launch: ["firefox"]
-
-     '';
+     config.keymap = [
+       {
+        name = "Main"; 
+        remap = {
+          super-u.launch = ["firefox"]; 
+        };
+       }
+     ];
    };
  };
 }
