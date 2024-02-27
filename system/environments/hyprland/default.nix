@@ -17,12 +17,6 @@ with lib;
        enable = true;
 
        settings = {
-         "$menu"     = "wofi";
-         "$terminal" = "foot";
-         "$pdf"      = "sioyek";
-         "$browser"  = "firefox";
-         "$youtube"  = "freetube";
-
          exec-once = [
            "waybar" 
            "wpaperd"
@@ -64,7 +58,6 @@ with lib;
            disable_autoreload           = true;
            disable_hyprland_logo        = true;
            animate_manual_resizes       = true;
-           disable_splash_rendering     = true;
            animate_mouse_windowdragging = true;
          };
 
@@ -91,18 +84,10 @@ with lib;
            "SUPER, H, movefocus, l"
            "SUPER, L, movefocus, r"
 
-           "SUPER, P, exec, $pdf"
-           "SUPER, D, exec, $menu"
-           "SUPER, B, exec, $browser"
-           "SUPER, Y, exec, $youtube"
-           "SUPER, T, exec, $terminal"
-
            "SUPER SHIFT, 1, movetoworkspace, 1"
            "SUPER SHIFT, 2, movetoworkspace, 2"
            "SUPER SHIFT, 3, movetoworkspace, 3"
            "SUPER SHIFT, 4, movetoworkspace, 4"
-
-           "SUPER, Print, exec, grimblast save area ~/Pictures/Screenshots/screenshot.png"
          ];
        };
      };
