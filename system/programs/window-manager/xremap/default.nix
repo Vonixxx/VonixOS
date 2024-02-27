@@ -18,7 +18,7 @@ with lib;
    services.xremap = {
      withWlroots = true;
      userName    = "Vonix";
-     serviceMode = mkOverride "user";
+     serviceMode = mkForce "user";
 
      config.keymap = [
        {
