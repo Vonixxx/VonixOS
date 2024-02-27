@@ -31,8 +31,8 @@ in
      config.keymap = [
        {
         remap = {
-          super-b.launch     = [ "${pdf}" ]; 
-          super-p.launch     = [ "${browser}" ]; 
+          super-p.launch     = [ "${pdf}" ]; 
+          super-b.launch     = [ "${browser}" ]; 
           super-y.launch     = [ "${youtube}" ]; 
           super-t.launch     = [ "${terminal}" ]; 
           super-d.launch     = [ "${launcher}" ]; 
