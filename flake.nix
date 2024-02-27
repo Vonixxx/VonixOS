@@ -36,6 +36,7 @@
    ##########################
    # Community Repositories #
    ##########################
+   xremap.url       = "github:xremap/nix-flake";
    disko.url        = "github:nix-community/disko";
    arkenfox.url     = "github:dwarfmaster/arkenfox-nixos";
    home-manager.url = "github:nix-community/home-manager/release-23.11"; 
@@ -44,6 +45,7 @@
  outputs = inputs @ { 
    self 
  , disko
+ , xremap
  , nixpkgs
  , arkenfox
  , home-manager
@@ -52,7 +54,7 @@
  { nixosConfigurations = (
      import ./users {
       inherit (nixpkgs) lib;
-      inherit disko inputs nixpkgs arkenfox home-manager;
+      inherit disko inputs xremap nixpkgs arkenfox home-manager;
      }
    );
  };

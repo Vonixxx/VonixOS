@@ -75,12 +75,12 @@ with lib;
  
 
         /* Icon Position */
-        #disk         { margin-bottom: 3px; }
         #battery      { margin-right: -9px; }
         #custom-sleep { margin-right: 7.5px; }
         #network      { margin-right: -3.5px; }
         #backlight    { margin-right: -3.5px; }
         #clock        { margin-bottom: 2.90px; }
+        #disk         { margin-bottom: 2.90px; }
 
 
         /* Workspaces */

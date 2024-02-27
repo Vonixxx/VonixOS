@@ -4,6 +4,7 @@
 # Profiles #
 ############
 { disko
+, xremap
 , nixpkgs
 , arkenfox
 , home-manager
@@ -15,19 +16,20 @@ let
  pkgs = import nixpkgs { config.allowUnfree = true; };
 in { 
  "v.laptop" = lib.nixosSystem {
-   specialArgs = { inherit pkgs arkenfox; };
+   specialArgs = { inherit pkgs xremap arkenfox; };
 
    modules = [
      ../system
      ./vonix/common
      ./vonix/laptop
      disko.nixosModules.disko
+     xremap.nixosModules.default
      home-manager.nixosModules.home-manager
    ];
  };
 
  "v.desktop" = lib.nixosSystem {
-   specialArgs = { inherit pkgs arkenfox; };
+   specialArgs = { inherit pkgs xremap arkenfox; };
 
    modules = [
      ../system
