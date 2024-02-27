@@ -17,11 +17,11 @@
    ./programs/terminal/zsh/default.nix
    ./programs/terminal/foot/default.nix
    ./programs/terminal/helix/default.nix
-   ./programs/terminal/xremap/default.nix
    ./programs/terminal/sioyek/default.nix
    ./programs/generic/firefox/default.nix
    ./programs/window-manager/wofi/default.nix
    ./programs/window-manager/mako/default.nix
+   ./programs/window-manager/xremap/default.nix
    ./programs/window-manager/cursor/default.nix
    ./programs/window-manager/waybar/default.nix
    ./programs/window-manager/wpaperd/default.nix
