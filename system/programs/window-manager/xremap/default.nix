@@ -22,9 +22,8 @@ with lib;
 
      config.keymap = [
        {
-        name = "Main"; 
         remap = {
-          super-u.launch = ["firefox"]; 
+          alt-u.launch = ["firefox"]; 
         };
        }
      ];
