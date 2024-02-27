@@ -17,6 +17,7 @@
    ./programs/terminal/zsh/default.nix
    ./programs/terminal/foot/default.nix
    ./programs/terminal/helix/default.nix
+   ./programs/terminal/xremap/default.nix
    ./programs/terminal/sioyek/default.nix
    ./programs/generic/firefox/default.nix
    ./programs/window-manager/wofi/default.nix
