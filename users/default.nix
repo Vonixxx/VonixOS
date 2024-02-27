@@ -23,7 +23,6 @@ in {
      ./vonix/common
      ./vonix/laptop
      disko.nixosModules.disko
-     xremap.nixosModules.default
      home-manager.nixosModules.home-manager
    ];
  };
