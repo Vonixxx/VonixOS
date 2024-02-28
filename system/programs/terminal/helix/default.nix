@@ -30,7 +30,7 @@ with pkgs;
          editor = {
            true-color        = true;
            undercurl         = true;
-           whitespace.render = "space";
+           whitespace.render.space = "all";
            line-number       = "relative";
          };
        };
