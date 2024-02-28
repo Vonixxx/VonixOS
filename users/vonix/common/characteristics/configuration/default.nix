@@ -26,8 +26,6 @@
    '';
 
    variables = {
-     VISUAL   = "hx";
-     EDITOR   = "hx";
      TERMINAL = "foot";
      BROWSER  = "firefox";
      PF_INFO  = "ascii title uptime pkgs kernel memory os host";
@@ -41,11 +39,11 @@
    };
 
    programs.firefox = {
-     profiles.default.settings."extensions.activeThemeID" = "{344d6267-2816-44d1-8aee-522d0ba07e04}"; 
+     profiles.default.settings."extensions.activeThemeID" = "{76aabc99-c1a8-4c1e-832b-d4f2941d5a7a}"; 
 
-     policies.ExtensionSettings."{344d6267-2816-44d1-8aee-522d0ba07e04}" = {
+     policies.ExtensionSettings."{76aabc99-c1a8-4c1e-832b-d4f2941d5a7a}" = {
        installation_mode = "force_installed";          
-       install_url       = "https://addons.mozilla.org/firefox/downloads/file/4228315/catppuccin_mocha_by_hackadia-1.0.xpi";
+       install_url       = "https://addons.mozilla.org/firefox/downloads/file/3990325/catppuccin_mocha_mauve_git-2.0.xpi";
      };
    };
  };

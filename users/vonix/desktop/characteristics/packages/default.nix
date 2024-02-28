@@ -16,12 +16,6 @@ with pkgs;
    ############
    efibootmgr
    xdg-utils
-   ###############
-   # Programming #
-   ###############
-   cabal-install
-   ghc
-   haskell-language-server
    ######################
    # Terminal Utilities #
    ######################

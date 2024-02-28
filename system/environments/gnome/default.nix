@@ -11,6 +11,8 @@
 
 with lib;
 with pkgs;
+with gnome;
+with gnomeExtensions;
 
 {
  config = mkIf (config.gnome.enable) {
@@ -45,7 +47,14 @@ with pkgs;
    };
 
    environment = { 
-     gnome.excludePackages = with gnome; [
+     systemPackages = [
+       arcmenu
+       dash-to-panel
+       gnome-tweaks       
+       user-themes
+     ];
+
+     gnome.excludePackages = [
        atomix
        epiphany
        gnome-shell-extensions
@@ -53,12 +62,6 @@ with pkgs;
        iagno
        tali
      ];
-
-     systemPackages = (with gnomeExtensions; [
-       arcmenu
-       dash-to-panel
-       user-themes
-     ]) ++ (with gnome; [ gnome-tweaks ]); 
    };
 
    home-manager.users.vonix = { lib, ... }: with lib.hm.gvariant; {
@@ -174,11 +177,11 @@ with pkgs;
      };
 
      programs.firefox = {
-       profiles.default.settings."extensions.activeThemeID" = "{aec77dcc-cbdb-4dac-9a4f-8c6192040aab}"; 
+       profiles.default.settings."extensions.activeThemeID" = "{f1128560-8b23-46c1-aa6f-fb3e79f23cf3}"; 
 
-       policies.ExtensionSettings."{aec77dcc-cbdb-4dac-9a4f-8c6192040aab}" = {
+       policies.ExtensionSettings."{f1128560-8b23-46c1-aa6f-fb3e79f23cf3}" = {
          installation_mode = "force_installed";          
-         install_url       = "https://addons.mozilla.org/firefox/downloads/latest/adwaita-gnome-dark/latest.xpi";
+         install_url       = "https://addons.mozilla.org/firefox/downloads/file/4165370/gnome_adwaita_gtk4_dark-1.1.xpi";
        };
      };
    };
