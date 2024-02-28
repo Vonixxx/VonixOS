@@ -143,7 +143,7 @@ with types;
   
      loader = {
        systemd-boot = {
-         configurationLimit = 3;
+         configurationLimit = 50;
          enable             = true;
          memtest86.enable   = true;
          editor             = false;

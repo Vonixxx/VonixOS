@@ -73,7 +73,6 @@ with lib;
          bind = [ 
            "SUPER, C, killactive"
            "SUPER, F, fullscreen"
-           "SUPER, T, exec, foot"
 
            "SUPER, 1, workspace, 1"
            "SUPER, 2, workspace, 2"
@@ -84,6 +83,12 @@ with lib;
            "SUPER, J, movefocus, d"
            "SUPER, H, movefocus, l"
            "SUPER, L, movefocus, r"
+
+           "SUPER, T, exec, foot"
+           "SUPER, D, exec, wofi"
+           "SUPER, P, exec, sioyek"
+           "SUPER, B, exec, firefox"
+           "SUPER, Y, exec, freetube"
 
            "SUPER SHIFT, 1, movetoworkspace, 1"
            "SUPER SHIFT, 2, movetoworkspace, 2"
