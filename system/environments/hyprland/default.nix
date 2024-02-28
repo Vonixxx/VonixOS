@@ -73,6 +73,7 @@ with lib;
          bind = [ 
            "SUPER, C, killactive"
            "SUPER, F, fullscreen"
+           "SUPER, T, exec, foot"
 
            "SUPER, 1, workspace, 1"
            "SUPER, 2, workspace, 2"

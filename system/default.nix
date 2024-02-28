@@ -21,6 +21,7 @@
    ./programs/generic/firefox/default.nix
    ./programs/window-manager/wofi/default.nix
    ./programs/window-manager/mako/default.nix
+   # ./programs/window-manager/xremap/default.nix
    ./programs/window-manager/cursor/default.nix
    ./programs/window-manager/waybar/default.nix
    ./programs/window-manager/wpaperd/default.nix
