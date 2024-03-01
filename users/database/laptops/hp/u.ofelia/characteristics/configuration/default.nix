@@ -6,9 +6,9 @@
 { ... }:
 
 {
- gnome.enable            = true;
- intelcpu.enable         = true;
- intelgpu.enable         = true;
+ gnome.enable    = true;
+ intelcpu.enable = true;
+ intelgpu.enable = true;
 
  services = { 
    xserver.layout = "be"; 

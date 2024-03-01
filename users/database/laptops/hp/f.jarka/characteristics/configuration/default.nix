@@ -13,7 +13,7 @@
 
  services = {
    xserver.layout = "cz";
-   tlp.enable     = false; 
+   tlp.enable     = false;
  };
 
  home-manager.users.vonix.programs.firefox.profiles.default.settings = {

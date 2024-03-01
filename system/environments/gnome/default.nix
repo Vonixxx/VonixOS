@@ -16,7 +16,31 @@ with gnomeExtensions;
 
 {
  config = mkIf (config.gnome.enable) {
-   services = { 
+   hardware.sane = {
+     enable          = true;
+     openFirewall    = true;
+     brscan4.enable  = true;
+     brscan5.enable  = true;
+     dsseries.enable = true;
+
+     extraBackends = [
+       epkowa
+       hplipWithPlugin
+       sane-airscan
+       utsushi
+     ];
+
+     disabledDefaultBackends = [ "escl" ];
+   };
+
+   services = {
+     ipp-usb.enable = true;
+
+     avahi = {
+       enable  = true;
+       nssmdns = true;
+     };
+
      printing = {
        enable          = true;
        browsing        = true;

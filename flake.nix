@@ -5,20 +5,16 @@
 #######################
 # flake.nix
 # └─/users
-#    ├─/system 
+#    ├─/system
+#    │  ├─/programs
+#    │  │
 #    │  ├─/environments
 #    │  │  ├─/gnome
 #    │  │  └─/hyprland
 #    │  │
-#    │  ├─/configuration
-#    │  │  ├─/general
-#    │  │  └─/architecture
-#    │  │
-#    │  └─/programs
-#    │     ├─/generic
-#    │     ├─/terminal
-#    │     ├─/recording
-#    │     └─/window-manager
+#    │  └─/configuration
+#    │     ├─/general
+#    │     └─/architecture
 #    │
 #    └─/database/<type>/<brand>/<chosen host>
 #       └─/characteristics
@@ -38,16 +34,16 @@
    ##########################
    disko.url        = "github:nix-community/disko";
    arkenfox.url     = "github:dwarfmaster/arkenfox-nixos";
-   home-manager.url = "github:nix-community/home-manager/release-23.11"; 
+   home-manager.url = "github:nix-community/home-manager/release-23.11";
  };
 
- outputs = inputs @ { 
+ outputs = inputs @ {
    self 
  , disko
  , nixpkgs
  , arkenfox
  , home-manager
- , ... 
+ , ...
  }:
  { nixosConfigurations = (
      import ./users {
