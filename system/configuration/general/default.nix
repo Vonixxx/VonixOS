@@ -7,10 +7,9 @@
 #############################################################################################################
 { lib
 , pkgs
-, disko
 , config
 , ...
-}: 
+}:
 
 with lib;
 with pkgs;
@@ -26,7 +25,7 @@ with types;
    powerManagement.cpuFreqGovernor        = "ondemand";
    i18n.defaultLocale                     = mkDefault "en_GB.UTF-8";
    nixpkgs.hostPlatform                   = mkDefault "x86_64-linux";
-  
+
    hardware = {
      pulseaudio.enable = false;
 
@@ -34,20 +33,20 @@ with types;
        enable          = true;
        driSupport      = true;
        driSupport32Bit = true;
-  
+
        extraPackages = [
          libvdpau-va-gl
          vaapiVdpau
        ];
      };
    };
-  
+
    security = {
      rtkit.enable            = true;
      polkit.enable           = true;
      sudo.wheelNeedsPassword = false;
    };
-  
+
    boot = {
      initrd.availableKernelModules = [
        "vmd"
@@ -61,7 +60,7 @@ with types;
        "usb_storage"
        "rtsx_usb_sdmmc"
      ];
-  
+
      loader = {
        systemd-boot = {
          configurationLimit = 3;
@@ -69,18 +68,18 @@ with types;
          memtest86.enable   = true;
          editor             = false;
        };
-   
+
        timeout                  = 5;
        efi.canTouchEfiVariables = true;
        grub.enable              = false;
      };
-  
+
      tmp.cleanOnBoot      = true;
      supportedFilesystems = [ "ntfs" ];
      kernelParams         = [ "quiet" ];
      kernelPackages       = linuxPackages_latest;
    };
-  
+
    services = {
      pipewire = {
        enable             = true;
@@ -97,7 +96,7 @@ with types;
      logind.lidSwitch             = "poweroff";
      tlp.enable                   = mkDefault true;
    };
-  
+
    home-manager.users.vonix = {
      programs.home-manager.enable = true;
      home.stateVersion            = "23.11";
@@ -108,20 +107,20 @@ with types;
        name       = "Catppuccin-Mocha-Light-Cursors";
      };
    };
-  
+
    nix = {
      gc = {
        automatic = true;
        dates     = "weekly";
        options   = "--delete-older-than 3d";
      };
-  
+
      settings = {
        auto-optimise-store   = true;
        experimental-features = [ "nix-command" "flakes" ];
      };
    }; 
-  
+
    fonts = {
      fontconfig = {
        allowBitmaps  = false;
@@ -134,7 +133,7 @@ with types;
        (nerdfonts.override { fonts = [ "CascadiaCode" ]; })
      ];
    };
-  
+
    users.users.vonix = {
      uid            = 1000;
      isNormalUser   = true;
