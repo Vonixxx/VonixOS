@@ -90,8 +90,7 @@ with types;
        alsa.support32Bit  = true;
        wireplumber.enable = true;
      };
-  
-     atuin.enable                 = true;
+
      fstrim.enable                = true;
      automatic-timezoned.enable   = true;
      power-profiles-daemon.enable = false;

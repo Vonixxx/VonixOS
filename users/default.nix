@@ -18,9 +18,10 @@ in {
    specialArgs = { inherit pkgs arkenfox; };
 
    modules = [
+     ./common
      ../system
-     ./vonix/common
-     ./vonix/laptop
+     ./database/vonix/common
+     ./database/vonix/laptop
      disko.nixosModules.disko
      home-manager.nixosModules.home-manager
    ];
@@ -30,9 +31,10 @@ in {
    specialArgs = { inherit pkgs arkenfox; };
 
    modules = [
+     ./common
      ../system
-     ./vonix/common
-     ./vonix/desktop
+     ./database/vonix/common
+     ./database/vonix/desktop
      disko.nixosModules.disko
      home-manager.nixosModules.home-manager
    ];
@@ -42,6 +44,7 @@ in {
    specialArgs = { inherit pkgs arkenfox; };
 
    modules = [
+     ./common
      ../system
      ./database/laptops/hp/f.jarka
      disko.nixosModules.disko
@@ -53,6 +56,7 @@ in {
    specialArgs = { inherit pkgs arkenfox; };
 
    modules = [
+     ./common
      ../system
      ./database/laptops/hp/u.ofelia
      disko.nixosModules.disko
@@ -64,6 +68,7 @@ in {
    specialArgs = { inherit pkgs arkenfox; };
  
    modules = [
+     ./common
      ../system
      ./database/miniature/minix/f.libor
      disko.nixosModules.disko
@@ -75,6 +80,7 @@ in {
    specialArgs = { inherit pkgs arkenfox; };
 
    modules = [
+     ./common
      ../system
      ./database/laptops/hp/f.stepanka
      disko.nixosModules.disko

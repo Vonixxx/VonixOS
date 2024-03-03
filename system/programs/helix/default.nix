@@ -20,18 +20,20 @@ with pkgs;
        defaultEditor = true;
 
        extraPackages = [
-         ghc
          haskell-language-server
+         marksman
+         nil
+         rust-analyzer
        ];
 
        settings = {
          theme = "catppuccin_mocha";
 
          editor = {
-           true-color        = true;
-           undercurl         = true;
+           true-color              = true;
+           undercurl               = true;
            whitespace.render.space = "all";
-           line-number       = "relative";
+           line-number             = "relative";
          };
        };
      };
