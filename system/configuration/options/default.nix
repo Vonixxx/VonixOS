@@ -47,6 +47,11 @@ with types;
      default = false;
    };
 
+   atuin.enable = mkOption {
+     type    = bool;
+     default = false;
+   };
+
    gnome.enable = mkOption {
      type    = bool;
      default = false;
@@ -80,6 +85,11 @@ with types;
    firefox.enable = mkOption {
      type    = bool;
      default = true;
+   };
+
+   joshuto.enable = mkOption {
+     type    = bool;
+     default = false;
    };
 
    wpaperd.enable = mkOption {
