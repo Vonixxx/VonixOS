@@ -48,10 +48,6 @@ with pkgs;
    };
  };
 
- environment.systemPackages = [
-   ghc
- ];
-
  home-manager.users.vonix = {
    programs.git = {
      userName  = "Vonixxx";

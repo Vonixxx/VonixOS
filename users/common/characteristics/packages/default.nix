@@ -4,7 +4,7 @@
 # System-Specific Package Configuration #
 #########################################
 { pkgs
-, ... 
+, ...
 }:
 
 with pkgs;
@@ -13,6 +13,7 @@ with pkgs;
  environment.systemPackages = [
    efibootmgr
    freetube
+   ghc
    libreoffice-fresh
    mediainfo
    parted
