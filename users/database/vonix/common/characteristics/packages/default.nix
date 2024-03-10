@@ -11,11 +11,6 @@ with pkgs;
 
 {
  environment.systemPackages = [
-   ############
-   # Standard #
-   ############
-   efibootmgr
-   xdg-utils
    ######################
    # Terminal Utilities #
    ######################
@@ -25,17 +20,12 @@ with pkgs;
    pfetch-rs
    swayimg
    tldr
-   wget
    ################
    # Applications #
    ################
-   freetube
    mkpasswd
-   mediainfo
    nixos-generators
    pulsemixer
    youtube-dl
  ];
-
- services.udev.packages = [ android-udev-rules ];
 }

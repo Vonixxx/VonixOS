@@ -6,29 +6,25 @@
 { ... }:
 
 {
- bat.enable       = true;
- git.enable       = true;
- lsd.enable       = true;
- mpv.enable       = true;
- zsh.enable       = true;
- foot.enable      = true;
- mako.enable      = true;
- wofi.enable      = true;
- atuin.enable     = true;
- helix.enable     = true;
- amdcpu.enable    = true;
- amdgpu.enable    = true;
- sioyek.enable    = true;
- waybar.enable    = true;
- joshuto.enable   = true;
- wpaperd.enable   = true;
- hyprland.enable  = true;
- gammastep.enable = true;
-
- services = {
-   udev.enable         = true;
-   getty.autologinUser = "Vonix";
- };
+ bat.enable                   = true;
+ git.enable                   = true;
+ lsd.enable                   = true;
+ mpv.enable                   = true;
+ zsh.enable                   = true;
+ foot.enable                  = true;
+ mako.enable                  = true;
+ wofi.enable                  = true;
+ atuin.enable                 = true;
+ helix.enable                 = true;
+ amdcpu.enable                = true;
+ amdgpu.enable                = true;
+ sioyek.enable                = true;
+ waybar.enable                = true;
+ joshuto.enable               = true;
+ wpaperd.enable               = true;
+ hyprland.enable              = true;
+ gammastep.enable             = true;
+ services.getty.autologinUser = "Vonix";
 
  environment = {
    loginShellInit = ''

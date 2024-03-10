@@ -17,17 +17,18 @@ with types;
 
 {
  config = mkIf (config.general-configuration.enable) {
-   programs.dconf.enable                  = true;
-   networking.networkmanager.enable       = true;
-   hardware.enableRedistributableFirmware = true;
-   documentation.nixos.enable             = false;
-   system.stateVersion                    = "23.11";
-   powerManagement.cpuFreqGovernor        = "ondemand";
-   i18n.defaultLocale                     = mkDefault "en_GB.UTF-8";
-   nixpkgs.hostPlatform                   = mkDefault "x86_64-linux";
+   programs.dconf.enable            = true;
+   networking.networkmanager.enable = true;
+   documentation.nixos.enable       = false;
+   system.stateVersion              = "23.11";
+   powerManagement.cpuFreqGovernor  = "ondemand";
+   i18n.defaultLocale               = mkDefault "en_GB.UTF-8";
+   nixpkgs.hostPlatform             = mkDefault "x86_64-linux";
 
    hardware = {
-     pulseaudio.enable = false;
+     uinput.enable                 = true;
+     enableRedistributableFirmware = true;
+     pulseaudio.enable             = false;
 
      opengl = {
        enable          = true;
@@ -81,6 +82,21 @@ with types;
    };
 
    services = {
+     fstrim.enable                = true;
+     automatic-timezoned.enable   = true;
+     power-profiles-daemon.enable = false;
+     logind.lidSwitch             = "poweroff";
+     tlp.enable                   = mkDefault true;
+
+     udev = {
+       enable = true;
+
+       packages = [
+         android-udev-rules
+         game-devices-udev-rules
+       ];
+     };
+
      pipewire = {
        enable             = true;
        alsa.enable        = true;
@@ -89,12 +105,6 @@ with types;
        alsa.support32Bit  = true;
        wireplumber.enable = true;
      };
-
-     fstrim.enable                = true;
-     automatic-timezoned.enable   = true;
-     power-profiles-daemon.enable = false;
-     logind.lidSwitch             = "poweroff";
-     tlp.enable                   = mkDefault true;
    };
 
    home-manager.users.vonix = {
