@@ -53,6 +53,7 @@ with types;
        "ahci"
        "ext4"
        "nvme"
+       "hidraw"
        "sd_mod"
        "usbhid"
        "xhci_pci"
