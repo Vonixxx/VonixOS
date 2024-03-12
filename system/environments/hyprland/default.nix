@@ -23,10 +23,8 @@ with lib;
          ];
 
          decoration = {
-           rounding         = 10;
-           active_opacity   = 0.95;
-           inactive_opacity = 0.60;
-           drop_shadow      = false;
+           rounding    = 10;
+           drop_shadow = false;
          };
 
          input = {
@@ -40,17 +38,12 @@ with lib;
          ];
 
          windowrule = [
-           "opacity 0.8 override, ^(foot)$"
+           "workspace 5, ^(rpcs3)$"
+           "workspace 3, ^(sioyek)$"
+           "workspace 1, ^(firefox)$"
+           "workspace 4, ^(FreeTube)$"
 
-           "workspace 3         , ^(sioyek)$"
-           "opacity 1.0 override, ^(sioyek)$"
-
-           "workspace 1         , ^(firefox)$"
-           "opacity 1.0 override, ^(firefox)$"
-
-           "workspace 4         , ^(FreeTube)$"
-           "nofullscreenrequest , ^(FreeTube)$"
-           "opacity 1.0 override, ^(FreeTube)$"
+           "nofullscreenrequest, ^(FreeTube)$"
          ];
 
          misc = {

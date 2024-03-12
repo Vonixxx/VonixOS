@@ -27,5 +27,6 @@ with pkgs;
    nixos-generators
    pulsemixer
    youtube-dl
+   lutris
  ];
 }
