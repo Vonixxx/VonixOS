@@ -18,7 +18,6 @@
  helix.enable                 = true;
  amdcpu.enable                = true;
  amdgpu.enable                = true;
- sioyek.enable                = true;
  waybar.enable                = true;
  joshuto.enable               = true;
  wpaperd.enable               = true;
