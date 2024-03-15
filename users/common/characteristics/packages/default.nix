@@ -11,6 +11,7 @@ with pkgs;
 
 {
  environment.systemPackages = [
+   du-dust
    efibootmgr
    freetube
    hidapi

@@ -7,9 +7,9 @@
 
 {
  imports = [
-   ./characteristics/users/default.nix
-   ./characteristics/packages/default.nix
-   ./characteristics/bookmarks/default.nix
-   ./characteristics/configuration/default.nix
+   ./users/default.nix
+   ./packages/default.nix
+   ./bookmarks/default.nix
+   ./configuration/default.nix
  ];
 }

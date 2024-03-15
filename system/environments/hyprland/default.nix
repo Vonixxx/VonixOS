@@ -33,17 +33,17 @@ with lib;
          };
 
          monitor = [
-           "eDP-1   , 1920x1080@60, 0x0, 1"
-           "HDMI-A-1, 2560x1440@75, 0x0, 1"
+           "eDP-1    , 1920x1080@60 , 0x0 , 1"
+           "HDMI-A-1 , 2560x1440@75 , 0x0 , 1"
          ];
 
          windowrule = [
-           "workspace 5, ^(rpcs3)$"
-           "workspace 3, ^(sioyek)$"
-           "workspace 1, ^(firefox)$"
-           "workspace 4, ^(FreeTube)$"
-
-           "nofullscreenrequest, ^(FreeTube)$"
+           "opacity 0.8 0.8     , ^(foot)$"
+           "workspace 5         , ^(rpcs3)$"
+           "workspace 3         , ^(sioyek)$"
+           "workspace 1         , ^(firefox)$"
+           "workspace 4         , ^(FreeTube)$"
+           "nofullscreenrequest , ^(FreeTube)$"
          ];
 
          misc = {
@@ -64,31 +64,31 @@ with lib;
          };
 
          bind = [ 
-           "SUPER, C, killactive"
-           "SUPER, F, fullscreen"
+           "SUPER , C , killactive"
+           "SUPER , F , fullscreen"
 
-           "SUPER, 1, workspace, 1"
-           "SUPER, 2, workspace, 2"
-           "SUPER, 3, workspace, 3"
-           "SUPER, 4, workspace, 4"
-           "SUPER, 5, workspace, 5"
+           "SUPER , 1 , workspace , 1"
+           "SUPER , 2 , workspace , 2"
+           "SUPER , 3 , workspace , 3"
+           "SUPER , 4 , workspace , 4"
+           "SUPER , 5 , workspace , 5"
 
-           "SUPER, K, movefocus, u"
-           "SUPER, J, movefocus, d"
-           "SUPER, H, movefocus, l"
-           "SUPER, L, movefocus, r"
+           "SUPER , K , movefocus , u"
+           "SUPER , J , movefocus , d"
+           "SUPER , H , movefocus , l"
+           "SUPER , L , movefocus , r"
 
-           "SUPER, T, exec, foot"
-           "SUPER, D, exec, wofi"
-           "SUPER, P, exec, sioyek"
-           "SUPER, B, exec, firefox"
-           "SUPER, Y, exec, freetube"
+           "SUPER , T , exec , foot"
+           "SUPER , D , exec , wofi"
+           "SUPER , P , exec , sioyek"
+           "SUPER , B , exec , firefox"
+           "SUPER , Y , exec , freetube"
 
-           "SUPER SHIFT, 1, movetoworkspace, 1"
-           "SUPER SHIFT, 2, movetoworkspace, 2"
-           "SUPER SHIFT, 3, movetoworkspace, 3"
-           "SUPER SHIFT, 4, movetoworkspace, 4"
-           "SUPER SHIFT, 5, movetoworkspace, 5"
+           "SUPER SHIFT , 1 , movetoworkspace , 1"
+           "SUPER SHIFT , 2 , movetoworkspace , 2"
+           "SUPER SHIFT , 3 , movetoworkspace , 3"
+           "SUPER SHIFT , 4 , movetoworkspace , 4"
+           "SUPER SHIFT , 5 , movetoworkspace , 5"
          ];
        };
      };

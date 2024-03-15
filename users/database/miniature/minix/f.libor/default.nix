@@ -7,7 +7,7 @@
 
 {
  imports = [
-   ./characteristics/users/default.nix
-   ./characteristics/configuration/default.nix
+   ./users/default.nix
+   ./configuration/default.nix
  ];
 }

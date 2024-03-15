@@ -33,7 +33,7 @@
             "2" = "<big>󰆍</big>";
             "3" = "<big>󰭣</big>";
             "4" = "<big>󰔂</big>";
-            "5" = "<big>󰮃</big>";
+            "5" = "<big>󱤙</big>";
           };
         };
 
@@ -77,7 +77,7 @@
         "clock" = {
           interval = 30;
           tooltip  = false;
-          format   = "[{:%d/%m/%y - %H:%M}]";
+          format   = "DATE [{:%d/%m/%y - %H:%M}]";
         };
 
         "backlight" = {

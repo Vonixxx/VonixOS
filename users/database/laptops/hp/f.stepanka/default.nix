@@ -7,8 +7,8 @@
 
 {
  imports = [
-   ./characteristics/users/default.nix
-   ./characteristics/bookmarks/default.nix
-   ./characteristics/configuration/default.nix
+   ./users/default.nix
+   ./bookmarks/default.nix
+   ./configuration/default.nix
  ];
 }

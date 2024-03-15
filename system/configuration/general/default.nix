@@ -72,7 +72,6 @@ with types;
 
        timeout                  = 5;
        efi.canTouchEfiVariables = true;
-       grub.enable              = false;
      };
 
      tmp.cleanOnBoot      = true;
