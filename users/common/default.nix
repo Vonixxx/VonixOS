@@ -7,6 +7,6 @@
 
 {
  imports = [
-   ./characteristics/packages/default.nix
+   ./packages/default.nix
  ];
 }

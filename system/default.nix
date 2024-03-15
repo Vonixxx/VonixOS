@@ -17,7 +17,6 @@
    ./programs/wofi/default.nix
    ./programs/atuin/default.nix
    ./programs/helix/default.nix
-   ./programs/sioyek/default.nix
    ./programs/waybar/default.nix
    ./programs/firefox/default.nix
    ./programs/joshuto/default.nix
@@ -28,8 +27,7 @@
    ./environments/gnome/default.nix
    ./environments/hyprland/default.nix
 
-   ./configuration/disk/sda.nix
-   ./configuration/disk/nvme.nix
+   ./configuration/disk/default.nix
    ./configuration/general/default.nix
    ./configuration/options/default.nix
    ./configuration/arch/amd/cpu/default.nix

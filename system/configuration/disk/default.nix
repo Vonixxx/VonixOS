@@ -1,7 +1,11 @@
+{ device ? throw
+, ...
+}:
+
 {
  disko.devices.disk.vdb = {
-   type   = "disk";
-   device = "/dev/nvme0n1";
+   type = "disk";
+   inherit device;
 
    content = {
      type = "gpt";
@@ -10,6 +14,7 @@
        ESP = {
          type = "EF00";
          size = "512M";
+
          content = {
            format     = "vfat";
            mountpoint = "/boot";
@@ -19,6 +24,7 @@
 
        root = {
          size = "100%";
+
          content = {
            mountpoint = "/";
            format     = "xfs";
