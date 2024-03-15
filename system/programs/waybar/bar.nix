@@ -3,12 +3,7 @@
 #####################
 # Bar Configuration #
 #####################
-{ lib
-, config
-, ...
-}: 
-
-with lib;
+{ ... }:
 
 {
  home-manager.users.vonix.programs = {
@@ -18,12 +13,12 @@ with lib;
         layer          = "top";
         position       = "top";
         modules-center = [ "hyprland/workspaces" ];
-        modules-right  = [ "disk" "memory" "cpu" "clock" ];
+        modules-right  = [ "cpu" "memory" "disk" "clock" ];
         modules-left   = [ "custom/power" "custom/reboot" "custom/sleep" "battery" "backlight" "network" "pulseaudio" ];
 
         "hyprland/workspaces" = {
           all-outputs = true;
-          format      = "  {icon}  ";
+          format      = "{icon}";
 
           persistent-workspaces = {
             "1" = "[]";
@@ -38,8 +33,14 @@ with lib;
             "2" = "<big>󰆍</big>";
             "3" = "<big>󰭣</big>";
             "4" = "<big>󰔂</big>";
-            "5" = "<big>󰮂</big>";
+            "5" = "<big>󰮃</big>";
           };
+        };
+
+        "cpu" = {
+          interval = 10;
+          tooltip  = false;
+          format   = "CPU [{usage}%]";
         };
 
         "custom/reboot" = {
@@ -60,17 +61,23 @@ with lib;
           on-click = "systemctl poweroff";
         };
 
-      	"disk" = {
-      	  interval = 60;
-      	  path     = "/";
+        "memory" = {
+          interval = 10;
           tooltip  = false;
-      	  format   = "󰋊 [{percentage_used}%]";
-      	};
+          format   = "RAM [{percentage}%]";
+        };
+
+        "pulseaudio" = {
+          format-icons = {
+            headphone = "󰋋";
+            default   = [ "󰖁" "󰕿" "󰖀" "󰕾" ];
+          };
+        };
 
         "clock" = {
           interval = 30;
           tooltip  = false;
-          format   = "󰃭 [{:%d/%m/%y - %H:%M}]";
+          format   = "[{:%d/%m/%y - %H:%M}]";
         };
 
         "backlight" = {
@@ -81,20 +88,22 @@ with lib;
           format         = "<big>{icon}</big>";
         };
 
-	      "network" = {
+        "disk" = {
+          interval = 60;
+          path     = "/";
+          tooltip  = false;
+          format   = "DISK [{percentage_used}%]";
+        };
+
+        "network" = {
           tooltip             = false;
-      	  format-wifi         = "<big>󰤨</big>";
-      	  format-ethernet     = "<big>󰤪</big>";
+          format-wifi         = "<big>󰤨</big>";
+          format-ethernet     = "<big>󰤪</big>";
           format-disconnected = "<big>󰤭</big>";
           on-click            = "foot nmtui connect";
         };
 
         "pulseaudio" = {
-          format-icons = {
-            headphone = "󰋋";
-            default   = [ "󰖁" "󰕿" "󰖀" "󰕾" ];
-          };
-
           tooltip        = false;
           on-click       = "foot pulsemixer";
           format         = "<big>{icon}</big>";
@@ -110,18 +119,6 @@ with lib;
           tooltip-format-charging    = "Full Charge: {time}";
           format-icons               = [ "󰁻" "󰁽" "󰁿" "󰂁" "󰁹" ];
           tooltip-format-discharging = "Full Discharge: {time}";
-        };
-
-        "cpu" = {
-          interval = 10;
-          tooltip  = false;
-          format   = "<span rise='-1500'><big>󰻠</big></span> [{usage}%]";
-        };
-
-        "memory" = {
-          interval = 10;
-          tooltip  = false;
-          format   = "<span rise='-1500'><big>󰍛</big></span> [{percentage}%]";
         };
      }];
    };

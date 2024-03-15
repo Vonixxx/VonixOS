@@ -3,12 +3,7 @@
 #######################
 # Style Configuration #
 #######################
-{ lib
-, config
-, ...
-}: 
-
-with lib;
+{ ... }:
 
 {
  home-manager.users.vonix.programs = {
@@ -22,8 +17,8 @@ with lib;
         @define-color green  #A6E3A1;
         @define-color crust  #11111B;
         @define-color yellow #F9E2AF;
- 
- 
+
+
         /* Modules */
         #cpu,
         #mode,
@@ -40,7 +35,7 @@ with lib;
          color:   @white;
          padding: 2px 12px;
         }
-  
+
 
         /* Base */
         * {
@@ -50,8 +45,8 @@ with lib;
          border:        none;
          margin:        1px 1px 1px 1px;
         }
-      
-  
+
+
         /* Whole Bar */
         #waybar {
          font-size:     20px;
@@ -62,7 +57,7 @@ with lib;
          border-top:    3px solid @mauve;
          border-bottom: 3px solid @mauve;
         }
-      
+
 
         /* Icon Color */
         #custom-power  { color: @red; }
@@ -72,23 +67,23 @@ with lib;
         #pulseaudio    { color: @mauve; }
         #custom-reboot { color: @yellow; }
         #backlight     { color: @yellow; }
- 
+
 
         /* Icon Position */
         #battery      { margin-right: -9px; }
         #custom-sleep { margin-right: 7.5px; }
         #network      { margin-right: -3.5px; }
         #backlight    { margin-right: -3.5px; }
-        #clock        { margin-bottom: 2.5px; }
-        #disk         { margin-bottom: 2.5px; }
-        #cpu          { margin-bottom: 2.5px; }
-        #memory       { margin-bottom: 2.5px; }
 
 
         /* Workspaces */
+        #workspaces button { 
+         margin-left:  10px;
+         margin-right: 10px;
+         color:        @white; 
+        }
         #workspaces button.urgent { color: @red; }
         #workspaces button.active { color: @mauve; }
-        #workspaces button        { color: @white; }
      '';
    };
  };
