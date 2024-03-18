@@ -12,8 +12,8 @@
         height         = 45;
         layer          = "top";
         position       = "top";
+        modules-right  = [ "disk" "clock" ];
         modules-center = [ "hyprland/workspaces" ];
-        modules-right  = [ "cpu" "memory" "disk" "clock" ];
         modules-left   = [ "custom/power" "custom/reboot" "custom/sleep" "battery" "backlight" "network" "pulseaudio" ];
 
         "hyprland/workspaces" = {
@@ -37,12 +37,6 @@
           };
         };
 
-        "cpu" = {
-          interval = 10;
-          tooltip  = false;
-          format   = "CPU [{usage}%]";
-        };
-
         "custom/reboot" = {
           tooltip  = false;
           format   = "<big>󰜉</big>";
@@ -61,12 +55,6 @@
           on-click = "systemctl poweroff";
         };
 
-        "memory" = {
-          interval = 10;
-          tooltip  = false;
-          format   = "RAM [{percentage}%]";
-        };
-
         "pulseaudio" = {
           format-icons = {
             headphone = "󰋋";
@@ -74,10 +62,17 @@
           };
         };
 
+        "disk" = {
+          path     = "/";
+          interval = 3600;
+          tooltip  = false;
+          format   = "󰋊 [{percentage_used}%]";
+        };
+
         "clock" = {
           interval = 30;
           tooltip  = false;
-          format   = "DATE [{:%d/%m/%y - %H:%M}]";
+          format   = "󰸗 [{:%d/%m/%y - %H:%M}]";
         };
 
         "backlight" = {
@@ -86,13 +81,6 @@
           on-scroll-up   = "exec light -A 1";
           on-scroll-down = "exec light -U 1";
           format         = "<big>{icon}</big>";
-        };
-
-        "disk" = {
-          interval = 60;
-          path     = "/";
-          tooltip  = false;
-          format   = "DISK [{percentage_used}%]";
         };
 
         "network" = {

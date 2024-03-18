@@ -8,7 +8,7 @@
 {
  home-manager.users.vonix.programs = {
    waybar = {
-     style = '' 
+     style = ''
         /* Colors */
         @define-color red    #F38BA8;
         @define-color blue   #89B4FA;
@@ -20,17 +20,15 @@
 
 
         /* Modules */
-        #cpu,
-        #mode,
         #disk,
+        #mode,
         #clock,
-        #memory,
-        #network,
         #battery,
+        #network,
         #backlight,
         #pulseaudio,
-        #custom-sleep,
         #custom-power,
+        #custom-sleep,
         #custom-reboot {
          color:   @white;
          padding: 2px 12px;
@@ -70,20 +68,18 @@
 
 
         /* Icon Position */
+        #custom-sleep { margin-right: 8px; }
         #network      { margin-right: -3px; }
         #backlight    { margin-right: -4px; }
-        #cpu          { margin-right: -10px; }
         #disk         { margin-right: -10px; }
-        #memory       { margin-right: -10px; }
         #battery      { margin-right: -12px; }
-        #custom-sleep { margin-right: 7.5px; }
 
 
         /* Workspaces */
-        #workspaces button { 
+        #workspaces button {
          margin-left:  10px;
          margin-right: 10px;
-         color:        @white; 
+         color:        @white;
         }
         #workspaces button.urgent { color: @red; }
         #workspaces button.active { color: @mauve; }
