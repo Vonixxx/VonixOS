@@ -70,8 +70,8 @@
 
 
         /* Icon Position */
-        #network      { margin-right: -4px; }
-        #backlight    { margin-right: -5px; }
+        #network      { margin-right: -3px; }
+        #backlight    { margin-right: -4px; }
         #cpu          { margin-right: -10px; }
         #disk         { margin-right: -10px; }
         #memory       { margin-right: -10px; }
