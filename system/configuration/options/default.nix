@@ -102,6 +102,11 @@ with types;
      default = false;
    };
 
+   printing.enable = mkOption {
+     type    = bool;
+     default = false;
+   };
+
    intelcpu.enable = mkOption {
      type    = bool;
      default = false;

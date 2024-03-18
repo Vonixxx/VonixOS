@@ -6,7 +6,7 @@
 { lib
 , config
 , ...
-}: 
+}:
 
 with lib;
 
@@ -40,7 +40,6 @@ with lib;
          windowrule = [
            "opacity 0.8 0.8     , ^(foot)$"
            "workspace 5         , ^(rpcs3)$"
-           "workspace 3         , ^(sioyek)$"
            "workspace 1         , ^(firefox)$"
            "workspace 4         , ^(FreeTube)$"
            "nofullscreenrequest , ^(FreeTube)$"
@@ -80,7 +79,7 @@ with lib;
 
            "SUPER , T , exec , foot"
            "SUPER , D , exec , wofi"
-           "SUPER , P , exec , sioyek"
+           "SUPER , P , exec , evince"
            "SUPER , B , exec , firefox"
            "SUPER , Y , exec , freetube"
 

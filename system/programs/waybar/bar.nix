@@ -31,9 +31,9 @@
           format-icons = {
             "1" = "<big>󰖟</big>";
             "2" = "<big>󰆍</big>";
-            "3" = "<big>󰭣</big>";
-            "4" = "<big>󰔂</big>";
-            "5" = "<big>󱤙</big>";
+            "3" = "<big>󱤙</big>";
+            "4" = "<big>󰭣</big>";
+            "5" = "<big>󰔂</big>";
           };
         };
 

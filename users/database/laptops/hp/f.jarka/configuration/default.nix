@@ -9,6 +9,7 @@
  gnome.enable       = true;
  intelcpu.enable    = true;
  intelgpu.enable    = true;
+ printing.enable    = true;
  i18n.defaultLocale = "cs_CZ.UTF-8";
 
  services = {

@@ -70,13 +70,13 @@
 
 
         /* Icon Position */
-        #backlight    { margin-right: -4px; }
+        #network      { margin-right: -4px; }
+        #backlight    { margin-right: -5px; }
         #cpu          { margin-right: -10px; }
         #disk         { margin-right: -10px; }
         #memory       { margin-right: -10px; }
         #battery      { margin-right: -12px; }
         #custom-sleep { margin-right: 7.5px; }
-        #network      { margin-right: -3.5px; }
 
 
         /* Workspaces */

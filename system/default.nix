@@ -21,6 +21,7 @@
    ./programs/firefox/default.nix
    ./programs/joshuto/default.nix
    ./programs/wpaperd/default.nix
+   ./programs/printing/default.nix
    ./programs/gammastep/default.nix
    ./programs/kdenlive-obs/default.nix
 

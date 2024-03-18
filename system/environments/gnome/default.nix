@@ -7,7 +7,7 @@
 , pkgs
 , config
 , ...
-}: 
+}:
 
 with lib;
 with pkgs;
@@ -16,65 +16,21 @@ with gnomeExtensions;
 
 {
  config = mkIf (config.gnome.enable) {
-   hardware.sane = {
-     enable          = true;
-     openFirewall    = true;
-     brscan4.enable  = true;
-     brscan5.enable  = true;
-     dsseries.enable = true;
+   services.xserver = {
+     enable                      = true;
+     desktopManager.gnome.enable = true;
 
-     extraBackends = [
-       epkowa
-       hplipWithPlugin
-       sane-airscan
-       utsushi
-     ];
-
-     disabledDefaultBackends = [ "escl" ];
-   };
-
-   services = {
-     ipp-usb.enable = true;
-
-     avahi = {
-       enable  = true;
-       nssmdns = true;
-     };
-
-     printing = {
-       enable          = true;
-       browsing        = true;
-       openFirewall    = true;
-       defaultShared   = true;
-       startWhenNeeded = false;
-
-       drivers = [
-         brlaser 
-         brgenml1lpr 
-         brgenml1cupswrapper
-         gutenprint 
-         gutenprintBin
-         hplip
-         postscript-lexmark
-       ];
-     };
-
-     xserver = {
-       enable                      = true;
-       desktopManager.gnome.enable = true;
-
-       displayManager = {
-         gdm.enable     = true;
-         defaultSession = "gnome";
-       };
+     displayManager = {
+       gdm.enable     = true;
+       defaultSession = "gnome";
      };
    };
 
-   environment = { 
+   environment = {
      systemPackages = [
        arcmenu
        dash-to-panel
-       gnome-tweaks       
+       gnome-tweaks
        user-themes
      ];
 
@@ -142,7 +98,6 @@ with gnomeExtensions;
          enable-hot-corners  = false;
          font-antialiasing   = "rgba";
          font-hinting        = "full";
-         color-scheme        = "prefer-dark";
          monospace-font-name = "Liberation Mono 12";
          font-name           = "Liberation Serif 12";
          document-font-name  = "Liberation Serif 12";

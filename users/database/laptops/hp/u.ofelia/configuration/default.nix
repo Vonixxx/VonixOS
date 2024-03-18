@@ -9,10 +9,11 @@
  gnome.enable    = true;
  intelcpu.enable = true;
  intelgpu.enable = true;
+ printing.enable = true;
 
  services = { 
-   xserver.layout = "be"; 
-   tlp.enable     = false; 
+   xserver.layout = "be";
+   tlp.enable     = false;
  };
 
  home-manager.users.vonix = {
