@@ -14,7 +14,7 @@ with lib;
  config = mkIf (config.aria.enable) {
    services.aria2 = {
      enable      = true;
-     downloadDir = "~/Downloads";
+     downloadDir = "/home/vonixos/Downloads";
    };
  };
 }
