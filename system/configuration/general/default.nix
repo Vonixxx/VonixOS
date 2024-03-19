@@ -136,7 +136,7 @@ with types;
      uid            = 1000;
      isNormalUser   = true;
      home           = "/home/vonixos";
-     extraGroups    = [ "lp" "audio" "video" "wheel" "scanner" "networkmanager" ];
+     extraGroups    = [ "lp" "audio" "video" "wheel" "scanner" "transmission" "networkmanager" ];
    };
 
    home-manager.users.vonix = {

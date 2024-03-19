@@ -11,7 +11,6 @@
  lsd.enable                   = true;
  mpv.enable                   = true;
  zsh.enable                   = true;
- aria.enable                  = true;
  foot.enable                  = true;
  mako.enable                  = true;
  wofi.enable                  = true;
@@ -24,6 +23,7 @@
  wpaperd.enable               = true;
  hyprland.enable              = true;
  gammastep.enable             = true;
+ transmission.enable          = true;
  services.getty.autologinUser = "Vonix";
 
  environment = {
