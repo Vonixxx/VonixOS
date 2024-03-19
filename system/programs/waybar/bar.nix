@@ -55,13 +55,6 @@
           on-click = "systemctl poweroff";
         };
 
-        "pulseaudio" = {
-          format-icons = {
-            headphone = "󰋋";
-            default   = [ "󰖁" "󰕿" "󰖀" "󰕾" ];
-          };
-        };
-
         "disk" = {
           path     = "/";
           interval = 3600;
@@ -70,12 +63,13 @@
         };
 
         "clock" = {
-          interval = 30;
+          interval = 45;
           tooltip  = false;
           format   = "󰸗 [{:%d/%m/%y - %H:%M}]";
         };
 
         "backlight" = {
+          interval       = 5;
           tooltip        = false;
           format-icons   = [ "󰃞" "󰃟" "󰃠" ];
           on-scroll-up   = "exec light -A 1";
@@ -92,11 +86,17 @@
         };
 
         "pulseaudio" = {
+          interval       = 5;
           tooltip        = false;
           on-click       = "foot pulsemixer";
           format         = "<big>{icon}</big>";
           on-scroll-up   = "exec amixer -q sset Master 1%+";
           on-scroll-down = "exec amixer -q sset Master 1%-";
+
+          format-icons = {
+            headphone = "󰋋";
+            default   = [ "󰖁" "󰕿" "󰖀" "󰕾" ];
+          };
         };
 
         "battery" = {

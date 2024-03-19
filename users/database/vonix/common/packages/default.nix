@@ -17,18 +17,23 @@ with gnome;
    ######################
    alsa-utils
    du-dust
+   efibootmgr
    grimblast
+   mediainfo
    pfetch-rs
    pulsemixer
    tldr
    youtube-dl
+   xdg-utils
    ################
    # Applications #
    ################
+   amberol
    celluloid
    eog
    evince
    fragments
+   gdk-pixbuf
    gnome-calculator
  ];
 }

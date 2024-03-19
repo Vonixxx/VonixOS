@@ -30,6 +30,7 @@
    ./configuration/disk/default.nix
    ./configuration/general/default.nix
    ./configuration/options/default.nix
+   ./configuration/packages/default.nix
    ./configuration/arch/amd/cpu/default.nix
    ./configuration/arch/amd/gpu/default.nix
    ./configuration/arch/intel/cpu/default.nix
