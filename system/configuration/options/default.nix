@@ -32,6 +32,11 @@ with types;
      default = false;
    };
 
+   aria.enable = mkOption {
+     type    = bool;
+     default = false;
+   };
+
    foot.enable = mkOption {
      type    = bool;
      default = false;

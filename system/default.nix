@@ -12,6 +12,7 @@
    ./programs/lsd/default.nix
    ./programs/mpv/default.nix
    ./programs/zsh/default.nix
+   ./programs/aria/default.nix
    ./programs/foot/default.nix
    ./programs/mako/default.nix
    ./programs/wofi/default.nix

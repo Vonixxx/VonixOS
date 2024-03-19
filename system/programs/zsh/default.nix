@@ -16,7 +16,19 @@ with pkgs;
  config = mkIf (config.zsh.enable) {
    users.defaultUserShell = zsh;
    programs.zsh.enable    = true;
-   environment.shells     = [ zsh ];
+
+   environment = {
+     shells = [ zsh ];
+
+     systemPackages = [
+       gzip
+       gnutar
+       p7zip
+       unar
+       unzip
+       xz
+     ];
+   };
 
    home-manager.users.vonix.programs = {
      starship = {
