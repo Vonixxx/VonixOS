@@ -15,8 +15,7 @@ with lib;
    services.transmission = {
      enable = true;
      settings = {
-       incomplete-dir-enabled = false;
-       download-dir           = "/home/vonix/Downloads";
+       home = "/home/vonix/Transmission";
      };
    };
  };
