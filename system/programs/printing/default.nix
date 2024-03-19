@@ -1,8 +1,8 @@
 ###########
 # VonixOS #
-#######################
-# Gnome Configuration #
-#######################
+#########################
+# Printer Configuration #
+#########################
 { lib
 , config
 , ...
@@ -45,10 +45,10 @@ with lib;
        startWhenNeeded = false;
 
        drivers = [
-         brlaser 
-         brgenml1lpr 
+         brlaser
+         brgenml1lpr
          brgenml1cupswrapper
-         gutenprint 
+         gutenprint
          gutenprintBin
          hplip
          postscript-lexmark

@@ -11,8 +11,8 @@ with pkgs;
 
 {
  environment.systemPackages = [
+   bottles
    dolphin-emu
-   lutris
    pcsx2
    rpcs3
  ];

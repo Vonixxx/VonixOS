@@ -39,9 +39,10 @@ with lib;
 
          windowrule = [
            "opacity 0.8 0.8     , ^(foot)$"
-           "workspace 5         , ^(rpcs3)$"
+           "workspace 3         , ^(rpcs3)$"
+           "workspace 4         , ^(evince)$"
            "workspace 1         , ^(firefox)$"
-           "workspace 4         , ^(FreeTube)$"
+           "workspace 5         , ^(FreeTube)$"
            "nofullscreenrequest , ^(FreeTube)$"
          ];
 

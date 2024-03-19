@@ -81,8 +81,9 @@
          margin-right: 10px;
          color:        @white;
         }
-        #workspaces button.urgent { color: @red; }
-        #workspaces button.active { color: @mauve; }
+        #workspaces button.urgent { color:  @red; }
+        #workspaces button.active { color:  @mauve; }
+        #workspaces button:hover  { border: solid transparent; }
      '';
    };
  };
