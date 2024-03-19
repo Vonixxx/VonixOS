@@ -23,7 +23,6 @@
  wpaperd.enable               = true;
  hyprland.enable              = true;
  gammastep.enable             = true;
- transmission.enable          = true;
  services.getty.autologinUser = "Vonix";
 
  environment = {

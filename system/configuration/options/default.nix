@@ -127,11 +127,6 @@ with types;
      default = false;
    };
 
-   transmission.enable = mkOption {
-     type    = bool;
-     default = false;
-   };
-
    general-configuration.enable = mkOption {
      type    = bool;
      default = true;

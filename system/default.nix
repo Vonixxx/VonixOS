@@ -24,7 +24,6 @@
    ./programs/printing/default.nix
    ./programs/gammastep/default.nix
    ./programs/kdenlive-obs/default.nix
-   ./programs/transmission/default.nix
 
    ./environments/gnome/default.nix
    ./environments/hyprland/default.nix

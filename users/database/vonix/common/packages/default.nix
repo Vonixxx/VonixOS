@@ -4,7 +4,7 @@
 # System-Specific Package Configuration #
 #########################################
 { pkgs
-, ... 
+, ...
 }:
 
 with pkgs;
@@ -23,6 +23,7 @@ with pkgs;
    ################
    # Applications #
    ################
+   fragments
    mkpasswd
    nixos-generators
    pulsemixer
