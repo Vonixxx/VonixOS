@@ -10,7 +10,6 @@
    ./programs/bat/default.nix
    ./programs/git/default.nix
    ./programs/lsd/default.nix
-   ./programs/mpv/default.nix
    ./programs/zsh/default.nix
    ./programs/foot/default.nix
    ./programs/mako/default.nix

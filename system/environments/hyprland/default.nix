@@ -78,17 +78,25 @@ with lib;
            "SUPER , H , movefocus , l"
            "SUPER , L , movefocus , r"
 
-           "SUPER , T , exec , foot"
-           "SUPER , D , exec , wofi"
-           "SUPER , P , exec , evince"
-           "SUPER , B , exec , firefox"
-           "SUPER , Y , exec , freetube"
-
            "SUPER SHIFT , 1 , movetoworkspace , 1"
            "SUPER SHIFT , 2 , movetoworkspace , 2"
            "SUPER SHIFT , 3 , movetoworkspace , 3"
            "SUPER SHIFT , 4 , movetoworkspace , 4"
            "SUPER SHIFT , 5 , movetoworkspace , 5"
+
+           "SUPER , T                     , exec , foot"
+           "SUPER , D                     , exec , wofi"
+           "SUPER , P                     , exec , evince"
+           "SUPER , B                     , exec , firefox"
+           "SUPER , Y                     , exec , freetube"
+
+           "      , XF86MonBrightnessUp   , exec , light -A 1"
+           "      , XF86MonBrightnessDown , exec , light -U 1"
+           "      , XF86AudioLowerVolume  , exec , amixer -q sset Master 1%-"
+           "      , XF86AudioRaiseVolume  , exec , amixer -q sset Master 1%+"
+           "      , XF86AudioMute         , exec , amixer -q sset Master mute"
+           "SUPER , XF86AudioMute         , exec , amixer -q sset Master unmute"
+           "      , PrintScreen           , exec , grimblast save area ~/screenshot.png"
          ];
        };
      };

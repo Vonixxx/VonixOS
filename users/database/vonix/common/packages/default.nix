@@ -8,6 +8,7 @@
 }:
 
 with pkgs;
+with gnome;
 
 {
  environment.systemPackages = [
@@ -15,18 +16,19 @@ with pkgs;
    # Terminal Utilities #
    ######################
    alsa-utils
+   du-dust
    grimblast
-   parted
    pfetch-rs
-   swayimg
+   pulsemixer
    tldr
+   youtube-dl
    ################
    # Applications #
    ################
+   celluloid
+   eog
+   evince
    fragments
-   mkpasswd
-   nixos-generators
-   pulsemixer
-   youtube-dl
+   gnome-calculator
  ];
 }

@@ -9,7 +9,6 @@
  bat.enable                   = true;
  git.enable                   = true;
  lsd.enable                   = true;
- mpv.enable                   = true;
  zsh.enable                   = true;
  foot.enable                  = true;
  mako.enable                  = true;

@@ -22,11 +22,6 @@ with types;
      default = false;
    };
 
-   mpv.enable = mkOption {
-     type    = bool;
-     default = false;
-   };
-
    zsh.enable = mkOption {
      type    = bool;
      default = false;
