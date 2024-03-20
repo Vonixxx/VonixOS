@@ -57,7 +57,7 @@
 
         "disk" = {
           path     = "/";
-          interval = 3600;
+          interval = 6000;
           tooltip  = false;
           format   = "󰋊 [{percentage_used}%]";
         };
@@ -69,7 +69,6 @@
         };
 
         "backlight" = {
-          interval       = 5;
           tooltip        = false;
           format-icons   = [ "󰃞" "󰃟" "󰃠" ];
           on-scroll-up   = "exec light -A 1";
@@ -86,7 +85,6 @@
         };
 
         "pulseaudio" = {
-          interval       = 5;
           tooltip        = false;
           on-click       = "foot pulsemixer";
           format         = "<big>{icon}</big>";
@@ -100,7 +98,7 @@
         };
 
         "battery" = {
-          interval                   = 5;
+          interval                   = 6000;
           bat                        = "BAT0";
           format-charging            = "<big>󰂄</big>";
           format                     = "<big>{icon}</big>";

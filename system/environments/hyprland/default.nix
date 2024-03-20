@@ -92,13 +92,13 @@ with lib;
            "SUPER , B                     , exec , firefox"
            "SUPER , Y                     , exec , freetube"
 
-           "      , XF86MonBrightnessUp   , exec , light -A 5"
-           "      , XF86MonBrightnessDown , exec , light -U 5"
-           "      , XF86AudioLowerVolume  , exec , amixer -q sset Master 5%-"
-           "      , XF86AudioRaiseVolume  , exec , amixer -q sset Master 5%+"
-           "      , XF86AudioMute         , exec , amixer -q sset Master mute"
-           "SUPER , XF86AudioMute         , exec , amixer -q sset Master unmute"
-           "      , Print                 , exec , grimblast save area ~/screenshot.png"
+           "            , XF86MonBrightnessUp   , exec , light -A 5"
+           "            , XF86MonBrightnessDown , exec , light -U 5"
+           "            , XF86AudioLowerVolume  , exec , amixer -q sset Master 5%-"
+           "            , XF86AudioRaiseVolume  , exec , amixer -q sset Master 5%+"
+           "            , XF86AudioMute         , exec , amixer -q sset Master 100%-"
+           "SUPER       , XF86AudioMute         , exec , amixer -q sset Master 100%+"
+           "SUPER_SHIFT , S                     , exec , grimblast save area ~/screenshot.png"
          ];
        };
      };
