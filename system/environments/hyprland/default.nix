@@ -55,6 +55,8 @@ with lib;
          };
 
          general = {
+           gaps_in                 = 8;
+           gaps_out                = 8;
            border_size             = 3;
            cursor_inactive_timeout = 5;
            resize_on_border        = true;

@@ -3,7 +3,7 @@
 #######################################
 # NixOS System-Specific Configuration #
 #######################################
-{ ... }:
+{ pkgs, ... }:
 
 {
  bat.enable                   = true;
@@ -32,9 +32,10 @@
    '';
 
    variables = {
-     TERMINAL = "foot";
-     BROWSER  = "firefox";
-     PF_INFO  = "ascii title uptime pkgs kernel memory os host";
+     NIXOS_OZONE_WL = "1";
+     TERMINAL       = "foot";
+     BROWSER        = "firefox";
+     PF_INFO        = "ascii title uptime pkgs kernel memory os host";
    };
  };
 
