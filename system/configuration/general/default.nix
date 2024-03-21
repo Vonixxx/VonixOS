@@ -143,12 +143,6 @@ with types;
      programs.home-manager.enable = true;
      home.stateVersion            = "23.11";
      dconf.settings               = { "org/gnome/desktop/interface" = { color-scheme = "prefer-dark"; }; };
-
-     home.pointerCursor = {
-       gtk.enable = true;
-       package    = catppuccin-cursors.mochaLight;
-       name       = "Catppuccin-Mocha-Light-Cursors";
-     };
    };
 
    environment.shellAliases = {

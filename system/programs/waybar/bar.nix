@@ -98,7 +98,7 @@
         };
 
         "battery" = {
-          interval                   = 6000;
+          interval                   = 30;
           bat                        = "BAT0";
           format-charging            = "<big>󰂄</big>";
           format                     = "<big>{icon}</big>";
