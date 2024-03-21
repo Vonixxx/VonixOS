@@ -37,7 +37,6 @@ with gnome;
    eog
    evince
    fragments
-   gdk-pixbuf
-   gnome-calculator
+   nautilus
  ];
 }

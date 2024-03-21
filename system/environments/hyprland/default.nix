@@ -37,15 +37,6 @@ with lib;
            "HDMI-A-1 , 2560x1440@75 , 0x0 , 1"
          ];
 
-         windowrule = [
-           "opacity 0.8 0.8     , ^(foot)$"
-           "workspace 3         , ^(rpcs3)$"
-           "workspace 4         , ^(evince)$"
-           "workspace 1         , ^(firefox)$"
-           "workspace 5         , ^(FreeTube)$"
-           "nofullscreenrequest , ^(FreeTube)$"
-         ];
-
          misc = {
            force_default_wallpaper      = 0;
            disable_autoreload           = true;
@@ -65,6 +56,17 @@ with lib;
            "col.inactive_border"   = "rgb(11111B)";
          };
 
+         windowrule = [
+           "opacity 0.8 0.8     , ^(foot)$"
+           "workspace 3         , ^(rpcs3)$"
+           "workspace 4         , ^(evince)$"
+           "workspace 1         , ^(firefox)$"
+           "workspace 5         , ^(FreeTube)$"
+           "nofullscreenrequest , ^(FreeTube)$"
+           "workspace 3         , title:^(PCSX2)$"
+           "workspace 6         , ^(de.haeckerfelix.Fragments)$"
+         ];
+
          bind = [ 
            "SUPER , C , killactive"
            "SUPER , F , fullscreen"
@@ -74,6 +76,7 @@ with lib;
            "SUPER , 3 , workspace , 3"
            "SUPER , 4 , workspace , 4"
            "SUPER , 5 , workspace , 5"
+           "SUPER , 6 , workspace , 6"
 
            "SUPER , K , movefocus , u"
            "SUPER , J , movefocus , d"
@@ -85,12 +88,14 @@ with lib;
            "SUPER SHIFT , 3 , movetoworkspace , 3"
            "SUPER SHIFT , 4 , movetoworkspace , 4"
            "SUPER SHIFT , 5 , movetoworkspace , 5"
+           "SUPER SHIFT , 6 , movetoworkspace , 6"
 
            "SUPER , T                     , exec , foot"
-           "SUPER , D                     , exec , wofi"
-           "SUPER , P                     , exec , evince"
+           "SUPER , R                     , exec , wofi"
+           "SUPER , D                     , exec , evince"
            "SUPER , B                     , exec , firefox"
            "SUPER , Y                     , exec , freetube"
+           "SUPER , P                     , exec , fragments"
 
            "            , XF86MonBrightnessUp   , exec , light -A 5"
            "            , XF86MonBrightnessDown , exec , light -U 5"
