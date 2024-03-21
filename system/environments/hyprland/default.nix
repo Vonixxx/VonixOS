@@ -64,6 +64,7 @@ with lib;
            "workspace 5         , ^(FreeTube)$"
            "nofullscreenrequest , ^(FreeTube)$"
            "workspace 3         , title:^(PCSX2)$"
+           "workspace 3         , ^(com.usebottles.bottles)$"
            "workspace 6         , ^(de.haeckerfelix.Fragments)$"
          ];
 
