@@ -4,11 +4,13 @@
 # Printer Configuration #
 #########################
 { lib
+, pkgs
 , config
 , ...
 }:
 
 with lib;
+with pkgs;
 
 {
  config = mkIf (config.printing.enable) {

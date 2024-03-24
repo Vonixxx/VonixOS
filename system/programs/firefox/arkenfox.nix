@@ -4,7 +4,7 @@
 # ArkenFox Configuration #
 ##########################
 { arkenfox
-, ... 
+, ...
 }:
 
 {
@@ -13,7 +13,7 @@
 
    programs.firefox = {
      arkenfox = {
-       enable = true;
+       enable  = true;
        version = "122.0";
      };
 
