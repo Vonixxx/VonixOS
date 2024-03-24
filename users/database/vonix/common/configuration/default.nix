@@ -29,15 +29,10 @@ with gnome;
  joshuto.enable               = false;
  services.getty.autologinUser = "Vonix";
 
- xdg.portal = {
-   enable                = true;
-   config.common.default = [ "gtk" ];
-
-   extraPortals = [
-     xdg-desktop-portal-gtk
-     xdg-desktop-portal-hyprland
-   ];
- };
+ xdg.portal.extraPortals = [
+   xdg-desktop-portal-gtk
+   xdg-desktop-portal-hyprland
+ ];
 
  environment = {
    loginShellInit = ''
@@ -48,8 +43,6 @@ with gnome;
 
    variables = {
      NIXOS_OZONE_WL = "1";
-     TERMINAL       = "foot";
-     BROWSER        = "firefox";
      PF_INFO        = "ascii title uptime pkgs kernel memory os host";
    };
  };

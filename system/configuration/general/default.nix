@@ -25,6 +25,12 @@ with types;
    i18n.defaultLocale               = mkDefault "en_GB.UTF-8";
    nixpkgs.hostPlatform             = mkDefault "x86_64-linux";
 
+   security = {
+     rtkit.enable            = true;
+     polkit.enable           = true;
+     sudo.wheelNeedsPassword = false;
+   };
+
    hardware = {
      uinput.enable                 = true;
      enableRedistributableFirmware = true;
@@ -40,12 +46,6 @@ with types;
          vaapiVdpau
        ];
      };
-   };
-
-   security = {
-     rtkit.enable            = true;
-     polkit.enable           = true;
-     sudo.wheelNeedsPassword = false;
    };
 
    boot = {
@@ -104,6 +104,12 @@ with types;
        alsa.support32Bit  = true;
        wireplumber.enable = true;
      };
+   };
+
+   xdg.portal = {
+     enable                = true;
+     xdgOpenUsePortal      = true;
+     config.common.default = [ "gtk" ];
    };
 
    nix = {
