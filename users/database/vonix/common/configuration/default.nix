@@ -18,7 +18,7 @@
  amdcpu.enable                = true;
  amdgpu.enable                = true;
  waybar.enable                = true;
- joshuto.enable               = true;
+ joshuto.enable               = false;
  wpaperd.enable               = true;
  hyprland.enable              = true;
  gammastep.enable             = true;
