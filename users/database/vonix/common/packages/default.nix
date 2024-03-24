@@ -12,10 +12,6 @@ with gnome;
 
 {
  environment.systemPackages = [
-   #############
-   # Necessary #
-   #############
-   adwaita-icon-theme
    ######################
    # Terminal Utilities #
    ######################

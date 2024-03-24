@@ -3,7 +3,12 @@
 #######################################
 # NixOS System-Specific Configuration #
 #######################################
-{ ... }:
+{ pkgs
+, ...
+}:
+
+with pkgs;
+with gnome;
 
 {
  bat.enable                   = true;
@@ -18,11 +23,21 @@
  amdcpu.enable                = true;
  amdgpu.enable                = true;
  waybar.enable                = true;
- joshuto.enable               = false;
  wpaperd.enable               = true;
  hyprland.enable              = true;
  gammastep.enable             = true;
+ joshuto.enable               = false;
  services.getty.autologinUser = "Vonix";
+
+ xdg.portal = {
+   enable                = true;
+   config.common.default = [ "gtk" ];
+
+   extraPortals = [
+     xdg-desktop-portal-gtk
+     xdg-desktop-portal-hyprland
+   ];
+ };
 
  environment = {
    loginShellInit = ''
@@ -35,12 +50,20 @@
      NIXOS_OZONE_WL = "1";
      TERMINAL       = "foot";
      BROWSER        = "firefox";
-     GTK_THEME      = "Adwaita:dark";
      PF_INFO        = "ascii title uptime pkgs kernel memory os host";
    };
  };
 
  home-manager.users.vonix = {
+   gtk = {
+     enable = true;
+
+     iconTheme = {
+       name    = "Adwaita";
+       package = adwaita-icon-theme;
+     };
+   };
+
    programs.git = {
      userName  = "Vonixxx";
      userEmail = "vonixxxwork@tuta.io";

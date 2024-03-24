@@ -142,7 +142,7 @@ with types;
    home-manager.users.vonix = {
      programs.home-manager.enable = true;
      home.stateVersion            = "23.11";
-     dconf.settings               = { "org/gnome/desktop/interface" = { color-scheme = "prefer-dark"; }; };
+     dconf.settings               = { "org/gnome/desktop/interface".color-scheme = "prefer-dark"; };
    };
 
    environment.shellAliases = {
