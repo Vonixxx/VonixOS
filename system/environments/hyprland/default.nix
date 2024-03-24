@@ -57,15 +57,14 @@ with lib;
          };
 
          windowrule = [
-           "opacity 0.8 0.8     , ^(foot)$"
-           "workspace 3         , ^(rpcs3)$"
-           "workspace 4         , ^(evince)$"
-           "workspace 1         , ^(firefox)$"
-           "workspace 5         , ^(FreeTube)$"
-           "nofullscreenrequest , ^(FreeTube)$"
-           "workspace 3         , title:^(PCSX2)$"
-           "workspace 3         , ^(com.usebottles.bottles)$"
-           "workspace 6         , ^(de.haeckerfelix.Fragments)$"
+           "opacity 0.8 0.8 , ^(foot)$"
+           "workspace 3     , ^(rpcs3)$"
+           "workspace 5     , ^(evince)$"
+           "workspace 1     , ^(firefox)$"
+           "workspace 6     , ^(FreeTube)$"
+           "workspace 3     , title:^(PCSX2)$"
+           "workspace 3     , ^(com.usebottles.bottles)$"
+           "workspace 4     , ^(de.haeckerfelix.Fragments)$"
          ];
 
          bind = [ 

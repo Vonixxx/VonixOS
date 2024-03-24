@@ -3,7 +3,7 @@
 #######################################
 # NixOS System-Specific Configuration #
 #######################################
-{ pkgs, ... }:
+{ ... }:
 
 {
  bat.enable                   = true;
@@ -35,6 +35,7 @@
      NIXOS_OZONE_WL = "1";
      TERMINAL       = "foot";
      BROWSER        = "firefox";
+     GTK_THEME      = "Adwaita:dark";
      PF_INFO        = "ascii title uptime pkgs kernel memory os host";
    };
  };

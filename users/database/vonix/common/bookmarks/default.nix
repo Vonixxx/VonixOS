@@ -14,49 +14,49 @@
           toplevel_name = "Bookmarks";
          }
          {
-     	    name = "GitHub";
-     	    url  = "https://github.com";
-     	   }
+          name = "GitHub";
+          url  = "https://github.com";
+         }
          {
-     	    name = "Hoogle";
-     	    url  = "https://hoogle.haskell.org/";
-     	   }
+          name = "Hoogle";
+          url  = "https://hoogle.haskell.org/";
+         }
          {
-     	    name = "ChatGPT";
-     	    url  = "https://chat.openai.com";
-     	   }
+          name = "ChatGPT";
+          url  = "https://chat.openai.com";
+         }
          {
-     	    name = "Tutanota";
-     	    url  = "https://app.tuta.com/login";
-     	   }
+          name = "Tutanota";
+          url  = "https://app.tuta.com/login";
+         }
          {
-     	    name = "Roadmap";
-     	    url  = "https://roadmap.sh/devops";
-     	   }
+          name = "Roadmap";
+          url  = "https://roadmap.sh/devops";
+         }
          {
-     	    name = "Coinbase";
-     	    url  = "https://www.coinbase.com/home";
-     	   }
+          name = "Coinbase";
+          url  = "https://www.coinbase.com/home";
+         }
          {
-     	    name = "Certificates";
-     	    url  = "https://devopscube.com/best-devops-certifications";
-     	   }
+          name = "Certificates";
+          url  = "https://devopscube.com/best-devops-certifications";
+         }
          {
-     	    name = "Home-Manager";
-     	    url  = "https://mipmip.github.io/home-manager-option-search";
-     	   }
+          name = "Home-Manager";
+          url  = "https://home-manager-options.extranix.com/?query=steam&release=release-23.11";
+         }
          {
-     	    name = "NixOS Options";
-     	    url  = "https://search.nixos.org/options?channel=23.11&";
-     	   }
+          name = "NixOS Options";
+          url  = "https://search.nixos.org/options?channel=23.11&";
+         }
          {
-     	    name = "NixOS Packages";
-     	    url  = "https://search.nixos.org/packages?channel=23.11&";
-     	   }
+          name = "NixOS Packages";
+          url  = "https://search.nixos.org/packages?channel=23.11&";
+         }
          {
-     	    name = "Nix User Repository";
-     	    url  = "https://nur.nix-community.org";
-     	   }
+          name = "Nix User Repository";
+          url  = "https://nur.nix-community.org";
+         }
        ];
      };
    };
