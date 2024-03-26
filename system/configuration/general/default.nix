@@ -107,8 +107,8 @@ with types;
 
    xdg.portal = {
      enable                = true;
-     xdgOpenUsePortal      = true;
      config.common.default = [ "gtk" ];
+     xdgOpenUsePortal      = mkDefault true;
    };
 
    nix = {
