@@ -53,6 +53,11 @@ with gnome;
  };
 
  home-manager.users.vonix = {
+   programs.git = {
+     userName  = "Vonixxx";
+     userEmail = "vonixxxwork@tuta.io";
+   };
+
    gtk = {
      enable = true;
 
@@ -62,9 +67,11 @@ with gnome;
      };
    };
 
-   programs.git = {
-     userName  = "Vonixxx";
-     userEmail = "vonixxxwork@tuta.io";
+   home.pointerCursor = {
+     gtk.enable = true;
+     x11.enable = true;
+     package    = catppuccin-cursors.mochaMauve;
+     name       = "Catppuccin-Mocha-Mauve-Cursors";
    };
 
    programs.firefox = {
