@@ -47,6 +47,7 @@ with gnome;
 
    variables = {
      NIXOS_OZONE_WL = "1";
+     TERMINAL       = "foot";
      BROWSER        = "firefox";
      PF_INFO        = "ascii title uptime pkgs kernel memory os host";
    };
