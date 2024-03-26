@@ -12,6 +12,11 @@ with gnome;
 
 {
  environment.systemPackages = [
+   ###############
+   # Programming #
+   ###############
+   ghc
+   rustc
    ######################
    # Terminal Utilities #
    ######################

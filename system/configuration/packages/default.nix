@@ -12,7 +12,6 @@ with pkgs;
 {
  environment.systemPackages = [
    freetube
-   ghc
    libreoffice-fresh
  ];
 }
