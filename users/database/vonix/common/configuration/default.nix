@@ -28,10 +28,14 @@ with gnome;
  gammastep.enable             = true;
  joshuto.enable               = false;
 
- xdg.portal.extraPortals = [
-   xdg-desktop-portal-gtk
-   xdg-desktop-portal-hyprland
- ];
+ xdg.portal = {
+   xdgOpenUsePortal = false;
+
+   extraPortals = [
+     xdg-desktop-portal-gtk
+     xdg-desktop-portal-hyprland
+   ];
+ };
 
  services = {
    gvfs.enable         = true;
@@ -47,18 +51,12 @@ with gnome;
 
    variables = {
      NIXOS_OZONE_WL = "1";
-     TERMINAL       = "foot";
      BROWSER        = "firefox";
      PF_INFO        = "ascii title uptime pkgs kernel memory os host";
    };
  };
 
  home-manager.users.vonix = {
-   programs.git = {
-     userName  = "Vonixxx";
-     userEmail = "vonixxxwork@tuta.io";
-   };
-
    gtk = {
      enable = true;
 
@@ -66,6 +64,11 @@ with gnome;
        name    = "Adwaita";
        package = adwaita-icon-theme;
      };
+   };
+
+   programs.git = {
+     userName  = "Vonixxx";
+     userEmail = "vonixxxwork@tuta.io";
    };
 
    home.pointerCursor = {

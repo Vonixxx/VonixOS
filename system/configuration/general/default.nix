@@ -97,12 +97,11 @@ with types;
      };
 
      pipewire = {
-       enable             = true;
-       alsa.enable        = true;
-       jack.enable        = true;
-       pulse.enable       = true;
-       alsa.support32Bit  = true;
-       wireplumber.enable = true;
+       enable            = true;
+       alsa.enable       = true;
+       jack.enable       = true;
+       pulse.enable      = true;
+       alsa.support32Bit = true;
      };
    };
 
